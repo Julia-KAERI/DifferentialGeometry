@@ -1,0 +1,47 @@
+project:
+  type: book
+  output-dir : docs
+
+book:
+  title: "Differential Geometry"
+  author: "julia.kaeri@gmail.con"
+  site-url: https://julia-kaeri.github.io/DifferentialGeometry/
+  repo-url: https://github.com/Julia-KAERI/DifferentialGeometry
+  repo-branch: main
+  date: "7/18/2023"
+  page-navigation: true
+  reader-mode: true
+  #language: _language-ko_custom.yml
+  sidebar:
+    search: true
+    style: floating
+    collapse-level: 1
+    border: true
+  
+  chapters:
+    - index.qmd
+    - part : src/AnalysisOnManifolds/AOM.qmd
+      chapters :
+        - src/AnalysisOnManifolds/3_1_functions_on_Euclidean_space.qmd
+        - src/AnalysisOnManifolds/3_2_differentiation_of_manifolds.qmd
+        - src/AnalysisOnManifolds/3_3_inverse_function_theorem.qmd
+        - src/AnalysisOnManifolds/3_4_integration.qmd
+        - src/AnalysisOnManifolds/3_5_change_of_variables.qmd
+        - src/AnalysisOnManifolds/3_6_differential_forms.qmd
+        - src/AnalysisOnManifolds/3_7_stokes_theorem.qmd
+
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    fontsize: 0.9em
+    # html-math-method: mathml
+    css: custom.css
+  # pdf:
+  #   documentclass: scrreprt
+
+
+
