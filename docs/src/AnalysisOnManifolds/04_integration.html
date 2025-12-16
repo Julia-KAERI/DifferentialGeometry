@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -113,7 +133,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/04_integration.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/04_integration.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +175,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/AnalysisOnManifolds/AOM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">다변수 함수의 해석학</span></a>
+ <span class="menu-text">다변수 해석학</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -249,7 +269,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/04_integration.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/04_integration.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">다변수 함수의 적분</span></h1>
 </div>
@@ -287,7 +307,7 @@ window.Quarto = {
 </div>
 <div class="callout-body-container">
 <ul>
-<li><p><span class="math inline">\(\mathbb{R}\)</span> 에서의 분할은 <span class="quarto-unresolved-ref">?def-MA_partition</span> 을 참고하라. 전체적으로 <a href="../part2/2_5_riemann_stieltjes_integral.qmd">리만-스틸체스 적분</a> 를 참고하라.</p></li>
+<li><p><span class="math inline">\(\mathbb{R}\)</span> 에서의 분할을 포함하여 1-변수 함수의 적분은 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html">리만-스틸체스 적분</a> 를 참고하라.</p></li>
 <li><p>여기서의 <span class="math inline">\(n\)</span>-cell 은 특별한 언급이 없는 한 닫힌 <span class="math inline">\(n\)</span>-cell 을 의미한다.</p></li>
 </ul>
 </div>
@@ -407,7 +427,7 @@ L(f,\,P_1) \le L(f,\, P_3) \le U(f,\, P_3) \le L(f,\,P_2)
 </div>
 </div>
 <p><br></p>
-<p>일변수 함수에서의 <span class="quarto-unresolved-ref">?thm-MA_properties_of_stieltjes_integral_1</span> 와 유사한 아래 정리는 아주 유용하다.</p>
+<p><a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html#thm-MA_properties_of_stieltjes_integral_1">일변수 함수에서의 분할과 관련된 정리</a> 와 유사한 아래 정리는 아주 유용하다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_properties_of_integral" class="theorem">
@@ -726,7 +746,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 가 <span class="math inline">\(C\)</span> 의 덮개이고 <span class="math inline">\(U=\bigcup_{i=1}^n U_i\)</span> 는 닫힌 집합이다. <span class="math inline">\(C\subset U\)</span> 이며 <span class="math inline">\(\overline{C}=C\cup \partial C\subset U\)</span> (<span class="quarto-unresolved-ref">?prp-MA_closure</span>) 이므로 <span class="math inline">\(\partial C\subset U\)</span> 이다. 따라서 <span class="math inline">\(C\)</span> 의 경계도 content zero 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 가 <span class="math inline">\(C\)</span> 의 덮개이고 <span class="math inline">\(U=\bigcup_{i=1}^n U_i\)</span> 는 닫힌 집합이다. <span class="math inline">\(C\subset U\)</span> 이며 <span class="math inline">\(\overline{C}=C\cup \partial C\subset U\)</span> (<a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_closure">참고하라</a>) 이므로 <span class="math inline">\(\partial C\subset U\)</span> 이다. 따라서 <span class="math inline">\(C\)</span> 의 경계도 content zero 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A=\mathbb{Q}\cap [0,\,1]\)</span>. <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로 <span class="math inline">\(A\)</span> 도 measure zero 이며 유계이다. 그러나 <span class="math inline">\(\partial A=[0,\,1]\)</span> 이므로 measure zero 가 아니다.</p>
 </div>
 <br>
@@ -947,7 +967,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="quarto-unresolved-ref">?prp-MA_monitonic_and_countable_number_of_discontinuity</span>, <a href="#prp-CM_meazure_zero" class="quarto-xref">명제&nbsp;<span>4.2</span></a>, <a href="#thm-CM_meazure_zero" class="quarto-xref">정리&nbsp;<span>4.2</span></a></p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#prp-MA_monotonic_and_countable_number_of_discontinuity">단조함수의 연속성에 관한 명제</a>, <a href="#prp-CM_meazure_zero" class="quarto-xref">명제&nbsp;<span>4.2</span></a>, <a href="#thm-CM_meazure_zero" class="quarto-xref">정리&nbsp;<span>4.2</span></a></p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -956,7 +976,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>조르당 가측의 정의에 의해 <span class="math inline">\(A\)</span> 는 유계이며, <span class="math inline">\(\partial A\)</span> 역시 유계이다. <span class="quarto-unresolved-ref">?exr-MA_KKK_2_7_6</span> 에 의해 <span class="math inline">\(\partial A\)</span> 는 닫힌 집합며 따라서 하이네 보렐 정리(<span class="quarto-unresolved-ref">?thm-MA_heine_borrel</span>) 에 따라 <span class="math inline">\(\partial A\)</span> 는 옹골집합이다. <a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 content <span class="math inline">\(0\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>조르당 가측의 정의에 의해 <span class="math inline">\(A\)</span> 는 유계이며, <span class="math inline">\(\partial A\)</span> 역시 유계이다. <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<span>2011</span>)</span> 연습문제 2.7.6</a> 에 의해 <span class="math inline">\(\partial A\)</span> 는 닫힌 집합며 따라서 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel">하이네 보렐 정리</a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 옹골집합이다. <a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 content <span class="math inline">\(0\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1233,7 +1253,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(\tilde{g}(x) := \int_a^x g\)</span> 라고 하자. 그렇다면 미적분의 제 1 기본정리(<span class="quarto-unresolved-ref">?thm-MA_first_fundamental_theorem_of_calculus</span>) 에 의해</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g:\mathbb{R}\to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(\tilde{g}(x) := \int_a^x g\)</span> 라고 하자. 그렇다면 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html#thm-MA_first_fundamental_theorem_of_calculus">미적분의 제 1 기본정리</a> 에 의해</p>
 <p><span class="math display">\[
 \lim_{h \to 0}\dfrac{\tilde{g}(x+h)-\tilde{g}(x)}{h} = \tilde{g}'(x) = g(x)
 \]</span></p>
@@ -1355,6 +1375,11 @@ D_1 f(x,\,y) &amp;= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-KKK2011" class="csl-entry" role="listitem">
+김성기, 김도한, and 계승혁. 2011. <em>해석개론</em>. 2nd ed. 서울대학교 출판문화원.
+</div>
+</div>
 </section>
 </section>
 

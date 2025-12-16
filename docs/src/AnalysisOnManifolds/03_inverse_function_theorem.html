@@ -337,7 +337,7 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^n\)</span> 전체 에서 연속이며 미분가능하다. 또한 <span class="math inline">\(L'(\boldsymbol{x}) = L\)</span> 이므로 <span class="math inline">\(L\)</span> 은 <span class="math inline">\(C^1\)</span> 함수이다. <span class="math inline">\((L\circ F)'(\boldsymbol{x}) = L\cdot F'(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(L \circ F\)</span> 는 미분가능하며, <span class="quarto-unresolved-ref">?prp-MA_continuity_of_composited_function</span> 에 의해 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(C^1\)</span> 함수이면 <span class="math inline">\(L \circ F\)</span> 도 <span class="math inline">\(C^1\)</span> 함수이다. <span class="math inline">\(F = L^{-1}\circ (L \circ F)\)</span> 이므로 <span class="math inline">\(L\circ F\)</span> 가 <span class="math inline">\(C^1\)</span> 함수이면 <span class="math inline">\(F\)</span> 역시 <span class="math inline">\(C^1\)</span> 함수이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^n\)</span> 전체 에서 연속이며 미분가능하다. 또한 <span class="math inline">\(L'(\boldsymbol{x}) = L\)</span> 이므로 <span class="math inline">\(L\)</span> 은 <span class="math inline">\(C^1\)</span> 함수이다. <span class="math inline">\((L\circ F)'(\boldsymbol{x}) = L\cdot F'(\boldsymbol{x})\)</span> 이므로 <span class="math inline">\(L \circ F\)</span> 는 미분가능하며, <span class="math inline">\(F\)</span> 가 <span class="math inline">\(C^1\)</span> 함수이면 <span class="math inline">\(L \circ F\)</span> 도 <span class="math inline">\(C^1\)</span> 함수이다. <span class="math inline">\(F = L^{-1}\circ (L \circ F)\)</span> 이므로 <span class="math inline">\(L\circ F\)</span> 가 <span class="math inline">\(C^1\)</span> 함수이면 <span class="math inline">\(F\)</span> 역시 <span class="math inline">\(C^1\)</span> 함수이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -420,14 +420,14 @@ f_i(\boldsymbol{y})-f_i(\boldsymbol{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldo
 \boldsymbol{x}\in U_3 \implies \|D_jf_i(\boldsymbol{x})-D_jf_i(\boldsymbol{a})\|&lt; \dfrac{1}{2n^2}
 \]</span></p>
 <p>이며, 따라서 <span class="math inline">\(U_3\)</span> 에서 <span class="math inline">\(D_jf_i(\boldsymbol{x})\)</span> 는 유계이다. (<a href="#lem-CM_inverse_function_theorem_1" class="quarto-xref">보조정리&nbsp;<span>3.1</span></a> 의 조건)</p>
-<p>이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 <span class="math inline">\(U_1 \cap U_2 \cap U_3\)</span> 에 포함되는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(U\)</span> 를 작게 잡아 <span class="math inline">\(\partial U \cap \partial U_1 = \varnothing\)</span> 이 되도록 잡을 수 있다. 이 때 <span class="math inline">\(\partial U\)</span> 는 <span class="math inline">\(U\)</span> 의 경계점(<span class="quarto-unresolved-ref">?exr-MA_KKK_2_7_6</span>) 이다.</p>
+<p>이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 <span class="math inline">\(U_1 \cap U_2 \cap U_3\)</span> 에 포함되는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(U\)</span> 를 작게 잡아 <span class="math inline">\(\partial U \cap \partial U_1 = \varnothing\)</span> 이 되도록 잡을 수 있다. 이 때 <span class="math inline">\(\partial U\)</span> 는 <span class="math inline">\(U\)</span> 의 경계점(<span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<a href="../../references.html#ref-KKK2011" role="doc-biblioref">2011</a>)</span> 연습문제 2.7.6) 이다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\partial U\)</span> 는 유계인 닫힌 집합이므로 옹골집합이며 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하지 않는다. <span class="math inline">\(\partial U \subset U_1\)</span> 이며 <span class="math inline">\(U_1\)</span> 에서 <span class="math inline">\(F\)</span> 는 단사이므로 <span class="math inline">\(F(\boldsymbol{a}) \notin F(\partial U)\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F\)</span> 가 연속이므로 <span class="math inline">\(F(\partial U)\)</span> 도 옹골집합이며 따라서 모든 <span class="math inline">\(\boldsymbol{x}\in \partial U\)</span> 에 대해 <span class="math inline">\(\|F(\boldsymbol{x})-F(\boldsymbol{a})\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다.</p>
 <p>이 <span class="math inline">\(d\)</span> 에 대해 집합 <span class="math inline">\(W\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
 W:= \{\boldsymbol{y} \in \mathbb{R}^n: \|\boldsymbol{y}-F(\boldsymbol{a})\|&lt;d/2\}.
 \]</span></p>
-<p>이 때 <span class="math inline">\(W\)</span> 는 열린집합이다(<span class="quarto-unresolved-ref">?exr-MA_rudin_4_3</span>). 그렇다면 <span class="math inline">\(\boldsymbol{y}\in W,\, \boldsymbol{x}\in \partial U\)</span> 일 때</p>
+<p>이 때 <span class="math inline">\(W\)</span> 는 열린집합이다(<span class="citation" data-cites="Rudin1976">Rudin (<a href="../../references.html#ref-Rudin1976" role="doc-biblioref">1976</a>)</span> 연습문제 4.3). 그렇다면 <span class="math inline">\(\boldsymbol{y}\in W,\, \boldsymbol{x}\in \partial U\)</span> 일 때</p>
 <p><span class="math display">\[
 \begin{aligned}
 \|\boldsymbol{y}-F(\boldsymbol{x})\| &amp;= \|F(\boldsymbol{x})-F(\boldsymbol{a})-\boldsymbol{y}+F(\boldsymbol{a})\| \\[0.3em]
@@ -514,7 +514,7 @@ F^{-1}(\boldsymbol{y}_1) = F^{-1}(\boldsymbol{y}) + L^{-1}(\boldsymbol{y}_1-\bol
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="quarto-unresolved-ref">?thm-MA_continuity_and_inverse_of_map</span> 로부터 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에서 <span class="math inline">\(F\)</span> 가 연속가 연속인 것과 임의의 열린 집합 <span class="math inline">\(W\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(F^{-1}(W)\)</span> 가 열린 집합인 것은 동치이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#sec-MA_continuity_and_inverse_image">연속함수와 역사상의 성질</a> 로부터 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에서 <span class="math inline">\(F\)</span> 가 연속가 연속인 것과 임의의 열린 집합 <span class="math inline">\(W\subset \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(F^{-1}(W)\)</span> 가 열린 집합인 것은 동치이다.</p>
 <p>역함수 정리에 의해 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린 집합 <span class="math inline">\(V_x \subset A\)</span> 와 <span class="math inline">\(F(\boldsymbol{x})\)</span> 를 포함하는 열린 집합 <span class="math inline">\(W_x\)</span> 가 존재하여 <span class="math inline">\(F^{-1} : W_x \to V_x\)</span> 는 미분 가능 함수이므로 연속이다. <span class="math inline">\(\boldsymbol{y}_1\in F(A)\)</span> 이면 어떤 <span class="math inline">\(\boldsymbol{x}_1\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x}_1)=\boldsymbol{y}_1\)</span> 이며 따라서 <span class="math inline">\(\boldsymbol{x}_1\)</span> 을 포함하는 어떤 열린집합 <span class="math inline">\(V_1\)</span> 과 <span class="math inline">\(\boldsymbol{y}_1\)</span> 을 포함하는 어떤 열린집합 <span class="math inline">\(W_1\)</span> 에 대해 미분가능한, 따라서 연속인 <span class="math inline">\(F^{-1}: W_1 \to V_1\)</span> 이 존재한다. <span class="math inline">\(\boldsymbol{y}\in F(V_1) = (F^{-1})^{-1}(V_1) \subset F(A)\)</span> 는 열린 집합이므로 <span class="math inline">\(F(A)\)</span> 는 열린집합이다. <span class="math inline">\(F(A) = \bigcup_{\boldsymbol{x}\in A} W_x\)</span> 이므로 <span class="math inline">\(F^{-1}:F(A) \to A\)</span> 는 미분가능이다. 또한 <span class="math inline">\(B\subset A\)</span> 가 열린 집합이면 당연히 <span class="math inline">\(F(B)\)</span> 도 열린 집합임은 자명하다.</p>
 </div>
 <br>
@@ -892,6 +892,9 @@ Rudin, W. 1976. <em>Principles of Mathematical Analysis</em>. Third. Internation
 </div>
 <div id="ref-Spivak1965" class="csl-entry" role="listitem">
 Spivak, M. 1965. <em>Calculus on Manifolds: A Modern Approach to Classical Theorems of Advanced Calculus</em>. Avalon Publishing.
+</div>
+<div id="ref-KKK2011" class="csl-entry" role="listitem">
+김성기, 김도한, and 계승혁. 2011. <em>해석개론</em>. 2nd ed. 서울대학교 출판문화원.
 </div>
 </div>
 </section>

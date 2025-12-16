@@ -12,7 +12,7 @@ crossref:
 
 ## 기본 개념과 표기법
 
-여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 @def-MA_Euclidean_space 와 @prp-MA_norm_of_Euclidean_space 를 보라. 
+여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 [유클리드 공간의 정의](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_Euclidean_space) 와 [유클리드 노름에 대한 명제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space) 를 보라. 
 
 - 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x_1,\ldots,\,x_n)$ 식 표기법과 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
@@ -46,7 +46,7 @@ $\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
 
 ::: {.solution}
 
-$\bf{x} = \sum_{i=1}^n x_i \bf{e}_i$ 이다. @prp-MA_norm_of_Euclidean_space ($5$) 로 부터
+$\bf{x} = \sum_{i=1}^n x_i \bf{e}_i$ 이다. [유클리드 노름에 대한 명제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space)  ($5$) 로 부터
 
 $$
 \|\bf{x}\| = \left\|\sum_{i=1}^n x_i \bf{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \bf{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
@@ -68,7 +68,7 @@ ${\large|} \|\bf{x}\| -\|\bf{y}\| {\large |} \le \|\bf{x}-\bf{y}\|$ 임을 보�
 
 ::: {.solution}
 
-@prp-MA_norm_of_Euclidean_space ($5$) 에서 $\bf{y} \to \bf{y}-\bf{x}$ 로 바꾸면
+[유클리드 노름에 대한 명제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space)  ($5$) 에서 $\bf{y} \to \bf{y}-\bf{x}$ 로 바꾸면
 
 $$
 \|\bf{y}\| \le \|\bf{x}\|+ \|\bf{y}-\bf{x}\|
@@ -367,7 +367,7 @@ $$
 
 #### 열린 $n$-cell
 
-@def-MA_n_cell 에서 $n$-cell 을 정의하였다. 이와 비슷하게 
+[$n$-cell](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_n_cell) 의 정의를 보라. 이와 비슷하게 
 
 $$
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \R^n
@@ -448,7 +448,7 @@ $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol
 
 </br>
 
-[기본적인 위상수학](../part2/2_1_basic_topology.qmd) 의 옹골집합 부분과 하이네 보렐 정리(@thm-MA_heine_borrel) 를 참고하라. 또한 @exr-MA_KKK_2_7_20 을 통해 $A\subset \R^m$ 과 $B\subset \R^n$ 이 옹골집합이면 $A \times B$ 도 옹골집합임을 보였다.
+[기본적인 위상수학](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html) 의 옹골집합 부분과 [하이네 보렐 정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel) 를 참고하라. 또한 [연습문제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_20) 을 통해 $A\subset \R^m$ 과 $B\subset \R^n$ 이 옹골집합이면 $A \times B$ 도 옹골집합임을 보였다.
 
 
 </br>
@@ -641,7 +641,7 @@ $\mathcal{L}(\R^n,\,\R^m)$ 에 거리함수가 행렬의 노름으로 주어졌�
 
 ::: {.proof}
 
-행렬의 노름이 @def-MA_metric_space 의 거리함수의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.
+행렬의 노름이 [거리 함수](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_metric_space) 의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.
 
 :::
 
@@ -755,7 +755,7 @@ $$
 
 </br>
 
-연속성에 대해 [함수의 극한과 연속](../part2/2_3_continuity_of_functions.qmd#sec-MA_limit_and_continuity_of_functions) 을 참고하라.
+연속성에 대해 [함수의 극한과 연속](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#sec-MA_limit_and_continuity_of_functions) 을 참고하라.
 
 
 </br>
@@ -960,7 +960,7 @@ $A$ 가 옹골집합이면 모든 연속함수 $f:A\to \R$ 은 최대값과 최�
 
 ::: {.solution}
 
-see @thm-MA_extreme_value_theorem
+see [최대최소정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#thm-MA_extreme_value_theorem)
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">

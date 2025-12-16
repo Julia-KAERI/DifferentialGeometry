@@ -13,7 +13,7 @@ crossref:
 ### 정의와 기본적 성질 {#sec-CA_definition_of_integration_and_basic_properties}
 
 ::: {.callout-tip appearance="minimal"}
-- $\R$ 에서의 분할은 @def-MA_partition 을 참고하라. 전체적으로 [리만-스틸체스 적분](../part2/2_5_riemann_stieltjes_integral.qmd) 를 참고하라.
+- $\R$ 에서의 분할을 포함하여 1-변수 함수의 적분은 [리만-스틸체스 적분](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html) 를 참고하라.
 
 - 여기서의 $n$-cell 은 특별한 언급이 없는 한 닫힌 $n$-cell 을 의미한다.
 :::
@@ -164,7 +164,7 @@ $$
 
 </br>
 
-일변수 함수에서의 @thm-MA_properties_of_stieltjes_integral_1 와 유사한 아래 정리는 아주 유용하다.
+[일변수 함수에서의 분할과 관련된 정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html#thm-MA_properties_of_stieltjes_integral_1) 와 유사한 아래 정리는 아주 유용하다.
 
 </br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -708,7 +708,7 @@ $\text{vol}([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]) = (b_1-a_1)\times \cdot
 
 ::: {.solution}
 
-($a$) $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 가 $C$ 의 덮개이고 $U=\bigcup_{i=1}^n U_i$ 는 닫힌 집합이다. $C\subset U$ 이며 $\overline{C}=C\cup \partial C\subset U$ (@prp-MA_closure) 이므로 $\partial C\subset U$ 이다. 따라서 $C$ 의 경계도 content zero 이다.
+($a$) $n$-cell 의 집합 $\mathcal{U}=\{U_1,\ldots,\,U_m\}$ 가 $C$ 의 덮개이고 $U=\bigcup_{i=1}^n U_i$ 는 닫힌 집합이다. $C\subset U$ 이며 $\overline{C}=C\cup \partial C\subset U$ ([참고하라](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_closure)) 이므로 $\partial C\subset U$ 이다. 따라서 $C$ 의 경계도 content zero 이다.
 
 ($b$) $A=\Q \cap [0,\,1]$. $\Q$ 가 measure zero 이므로 $A$ 도 measure zero 이며 유계이다. 그러나 $\partial A=[0,\,1]$ 이므로 measure zero 가 아니다. 
 :::
@@ -1061,7 +1061,7 @@ $\partial U = [0,\,1]-U$ 가 meausre $0$ 이 아니므로 적분가능하지 않
 </div>
 
 ::: {.solution}
-@prp-MA_monitonic_and_countable_number_of_discontinuity, @prp-CM_meazure_zero, @thm-CM_meazure_zero
+[단조함수의 연속성에 관한 명제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#prp-MA_monotonic_and_countable_number_of_discontinuity), @prp-CM_meazure_zero, @thm-CM_meazure_zero
 
 
 :::
@@ -1077,7 +1077,7 @@ $A\subset \R^n$ 이 조르당 가측이면 $\partial A$ 는 content $0$ 임을 �
 
 ::: {.solution}
 
-조르당 가측의 정의에 의해 $A$ 는 유계이며, $\partial A$ 역시 유계이다. @exr-MA_KKK_2_7_6  에 의해 $\partial A$ 는 닫힌 집합며 따라서 하이네 보렐 정리(@thm-MA_heine_borrel) 에 따라 $\partial A$ 는 옹골집합이다. @prp-CM_content_zero_and_compact 에 따라 $\partial A$ 는 content $0$ 이다. 
+조르당 가측의 정의에 의해 $A$ 는 유계이며, $\partial A$ 역시 유계이다. [@KKK2011 연습문제 2.7.6](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6) 에 의해 $\partial A$ 는 닫힌 집합며 따라서 [하이네 보렐 정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel) 에 따라 $\partial A$ 는 옹골집합이다. @prp-CM_content_zero_and_compact 에 따라 $\partial A$ 는 content $0$ 이다. 
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1529,7 +1529,7 @@ $A$ 의 내부에서 $D_i \tilde{f}(\bf{x})$ 는 무엇인가?
 
 ::: {.solution}
 
-$g:\R \to \R$ 이 연속일 때 $\tilde{g}(x) := \int_a^x g$ 라고 하자. 그렇다면 미적분의 제 1 기본정리(@thm-MA_first_fundamental_theorem_of_calculus) 에 의해 
+$g:\R \to \R$ 이 연속일 때 $\tilde{g}(x) := \int_a^x g$ 라고 하자. 그렇다면 [미적분의 제 1 기본정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html#thm-MA_first_fundamental_theorem_of_calculus) 에 의해 
 
 $$
 \lim_{h \to 0}\dfrac{\tilde{g}(x+h)-\tilde{g}(x)}{h} = \tilde{g}'(x) = g(x)

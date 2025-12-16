@@ -406,7 +406,7 @@ $$
 
 ### 다변수 함수의 연쇄규칙 {#sec-CM_chain_rule_for_mutivariable_function}
 
-일변수 함수에 대한 연쇄규칙은 @thm-MA_chain_rule 을 참고하라.
+[일변수 함수에 대한 연쇄규칙](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html#sec-MA_chain_rule) 을 참고하라.
 
 </br>
 
@@ -1505,7 +1505,7 @@ $g$ 는 $(a_1-\varepsilon,\,a_1+\varepsilon) \times \cdots \times (a_n-\varepsil
 </div>
 ::: {.solution}
 
-($a$) 우선 $k \in \Z_+$ 에 대해 로피탈의 정리(@thm-MA_Lhopital_theorem) 를 사용하여 다음을 보일 수 있다.
+($a$) 우선 $k \in \Z_+$ 에 대해 [로피탈의 정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html#thm-MA_Lhopital_theorem) 를 사용하여 다음을 보일 수 있다.
 
 $$
 \lim_{t \to 0} \dfrac{e^{-1/t^2}}{t^k} = \lim_{s \to +\infty} \dfrac{s^k}{e^{s^2}} = 0
@@ -1706,7 +1706,7 @@ $$
 
 </br>
 
-집합 $E\subset \R^n$ 가 각각의 $\bf{x},\,\bf{y}\in E$ 에 대해 $\bf{x},\,\bf{y}$ 를 잇는 선분의 모든 점이 $E$ 에 포함될 때 $E$ 를 볼록 집합(@def-MA_convex) 이라고 한다.
+집합 $E\subset \R^n$ 가 각각의 $\bf{x},\,\bf{y}\in E$ 에 대해 $\bf{x},\,\bf{y}$ 를 잇는 선분의 모든 점이 $E$ 에 포함될 때 $E$ 를 [볼록 집합](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_convex) 이라고 한다.
 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">

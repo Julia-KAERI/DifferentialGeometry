@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/01_functions_on_Euclidean_space.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/01_functions_on_Euclidean_space.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +155,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/AnalysisOnManifolds/AOM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">다변수 함수의 해석학</span></a>
+ <span class="menu-text">다변수 해석학</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -241,7 +241,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/01_functions_on_Euclidean_space.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/01_functions_on_Euclidean_space.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">유클리드 공간에서의 함수</span></h1>
 </div>
@@ -271,7 +271,7 @@ window.Quarto = {
 <p><br></p>
 <section id="기본-개념과-표기법" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="기본-개념과-표기법"><span class="header-section-number">1.1</span> 기본 개념과 표기법</h2>
-<p>여기서는 유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 <span class="quarto-unresolved-ref">?def-MA_Euclidean_space</span> 와 <span class="quarto-unresolved-ref">?prp-MA_norm_of_Euclidean_space</span> 를 보라.</p>
+<p>여기서는 유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_Euclidean_space">유클리드 공간의 정의</a> 와 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space">유클리드 노름에 대한 명제</a> 를 보라.</p>
 <ul>
 <li><p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 는 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 를 의미한다. 실제로 여기서는 <span class="math inline">\((x_1,\ldots,\,x_n)\)</span> 식 표기법과 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 를 섞어서 사용한다.</p></li>
 <li><p><span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 &amp; \cdots &amp; x_m \end{bmatrix}\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x})\)</span> 를 <span class="math inline">\(F(x_1,\ldots,\,x_m)\)</span> 으로 표기하기도 한다.</p></li>
@@ -289,7 +289,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = \sum_{i=1}^n x_i \boldsymbol{e}_i\)</span> 이다. <span class="quarto-unresolved-ref">?prp-MA_norm_of_Euclidean_space</span> (<span class="math inline">\(5\)</span>) 로 부터</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = \sum_{i=1}^n x_i \boldsymbol{e}_i\)</span> 이다. <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space">유클리드 노름에 대한 명제</a> (<span class="math inline">\(5\)</span>) 로 부터</p>
 <p><span class="math display">\[
 \|\boldsymbol{x}\| = \left\|\sum_{i=1}^n x_i \boldsymbol{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \boldsymbol{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
 \]</span></p>
@@ -301,7 +301,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="quarto-unresolved-ref">?prp-MA_norm_of_Euclidean_space</span> (<span class="math inline">\(5\)</span>) 에서 <span class="math inline">\(\boldsymbol{y} \to \boldsymbol{y}-\boldsymbol{x}\)</span> 로 바꾸면</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space">유클리드 노름에 대한 명제</a> (<span class="math inline">\(5\)</span>) 에서 <span class="math inline">\(\boldsymbol{y} \to \boldsymbol{y}-\boldsymbol{x}\)</span> 로 바꾸면</p>
 <p><span class="math display">\[
 \|\boldsymbol{y}\| \le \|\boldsymbol{x}\|+ \|\boldsymbol{y}-\boldsymbol{x}\|
 \]</span></p>
@@ -483,7 +483,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 <div class="callout-body-container">
 <div id="def-CM_n_cell" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.2 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <span class="quarto-unresolved-ref">?def-MA_n_cell</span> 에서 <span class="math inline">\(n\)</span>-cell 을 정의하였다. 이와 비슷하게</p>
+<p><span class="theorem-title"><strong>정의 1.2 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_n_cell"><span class="math inline">\(n\)</span>-cell</a> 의 정의를 보라. 이와 비슷하게</p>
 <p><span class="math display">\[
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \mathbb{R}^n
 \]</span></p>
@@ -542,7 +542,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta)\)</span> 는 자명하다. <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 의 한 모서리에서 <span class="math inline">\(\boldsymbol{a}\)</span> 까지의 거리는 <span class="math inline">\(\sqrt{n}\delta\)</span> 이므로 <span class="math inline">\(C(\boldsymbol{a},\,\delta) \subset N(\boldsymbol{a},\,\sqrt{n}\delta)\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p><a href="../part2/2_1_basic_topology.qmd">기본적인 위상수학</a> 의 옹골집합 부분과 하이네 보렐 정리(<span class="quarto-unresolved-ref">?thm-MA_heine_borrel</span>) 를 참고하라. 또한 <span class="quarto-unresolved-ref">?exr-MA_KKK_2_7_20</span> 을 통해 <span class="math inline">\(A\subset \mathbb{R}^m\)</span> 과 <span class="math inline">\(B\subset \mathbb{R}^n\)</span> 이 옹골집합이면 <span class="math inline">\(A \times B\)</span> 도 옹골집합임을 보였다.</p>
+<p><a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html">기본적인 위상수학</a> 의 옹골집합 부분과 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel">하이네 보렐 정리</a> 를 참고하라. 또한 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_20">연습문제</a> 을 통해 <span class="math inline">\(A\subset \mathbb{R}^m\)</span> 과 <span class="math inline">\(B\subset \mathbb{R}^n\)</span> 이 옹골집합이면 <span class="math inline">\(A \times B\)</span> 도 옹골집합임을 보였다.</p>
 <p><br></p>
 <section id="연습문제-1" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
@@ -657,7 +657,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>행렬의 노름이 <span class="quarto-unresolved-ref">?def-MA_metric_space</span> 의 거리함수의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>행렬의 노름이 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_metric_space">거리 함수</a> 의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.</p>
 </div>
 <p><br></p>
 <p><span class="math inline">\(\mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다.</p>
@@ -736,7 +736,7 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 </div>
 </div>
 <p><br></p>
-<p>연속성에 대해 <a href="../part2/2_3_continuity_of_functions.qmd#sec-MA_limit_and_continuity_of_functions">함수의 극한과 연속</a> 을 참고하라.</p>
+<p>연속성에 대해 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#sec-MA_limit_and_continuity_of_functions">함수의 극한과 연속</a> 을 참고하라.</p>
 <p><br></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -859,7 +859,7 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>see <span class="quarto-unresolved-ref">?thm-MA_extreme_value_theorem</span></p>
+<p><span class="proof-title"><em>(해답)</em>. </span>see <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#thm-MA_extreme_value_theorem">최대최소정리</a></p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1287,8 +1287,8 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../src/AnalysisOnManifolds/AOM.html" class="pagination-link" aria-label="다변수 함수의 해석학">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">다변수 함수의 해석학</span>
+      <a href="../../src/AnalysisOnManifolds/AOM.html" class="pagination-link" aria-label="다변수 해석학">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">다변수 해석학</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

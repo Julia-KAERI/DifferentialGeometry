@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/02_differentiation_of_manifolds.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/02_differentiation_of_manifolds.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,7 +155,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/AnalysisOnManifolds/AOM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">다변수 함수의 해석학</span></a>
+ <span class="menu-text">다변수 해석학</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -250,7 +250,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 함수의 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/02_differentiation_of_manifolds.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/02_differentiation_of_manifolds.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">다변수 함수의 미분</span></h1>
 </div>
@@ -532,7 +532,7 @@ g(x) = \sum_{i=0}^n \dfrac{f^{(i)}(a)}{i!} (x-a)^i
 <h2 data-number="2.2" class="anchored" data-anchor-id="연쇄규칙과-미분의-기본-성질"><span class="header-section-number">2.2</span> 연쇄규칙과 미분의 기본 성질</h2>
 <section id="sec-CM_chain_rule_for_mutivariable_function" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="sec-CM_chain_rule_for_mutivariable_function"><span class="header-section-number">2.2.1</span> 다변수 함수의 연쇄규칙</h3>
-<p>일변수 함수에 대한 연쇄규칙은 <span class="quarto-unresolved-ref">?thm-MA_chain_rule</span> 을 참고하라.</p>
+<p><a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html#sec-MA_chain_rule">일변수 함수에 대한 연쇄규칙</a> 을 참고하라.</p>
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_chain_rule" class="theorem">
@@ -1216,7 +1216,7 @@ g(\boldsymbol{x}) := f\left(\dfrac{x_1-a_1}{\varepsilon}\right) \cdots f\left(\d
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 우선 <span class="math inline">\(k \in \mathbb{Z}_+\)</span> 에 대해 로피탈의 정리(<span class="quarto-unresolved-ref">?thm-MA_Lhopital_theorem</span>) 를 사용하여 다음을 보일 수 있다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) 우선 <span class="math inline">\(k \in \mathbb{Z}_+\)</span> 에 대해 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_4_differentiation.html#thm-MA_Lhopital_theorem">로피탈의 정리</a> 를 사용하여 다음을 보일 수 있다.</p>
 <p><span class="math display">\[
 \lim_{t \to 0} \dfrac{e^{-1/t^2}}{t^k} = \lim_{s \to +\infty} \dfrac{s^k}{e^{s^2}} = 0
 \]</span></p>
@@ -1341,7 +1341,7 @@ F(\boldsymbol{a}+\boldsymbol{h}) - F(\boldsymbol{a}) = F'(\boldsymbol{x})\cdot \
 <p>인 <span class="math inline">\(t_0\in (0,\,1)\)</span> 이 존재하며 이는 <a href="#eq-thm_CM_mean_value_theorem_for_vector_function" class="quarto-xref">식&nbsp;<span>2.16</span></a> 를 의미한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>집합 <span class="math inline">\(E\subset \mathbb{R}^n\)</span> 가 각각의 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in E\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 를 잇는 선분의 모든 점이 <span class="math inline">\(E\)</span> 에 포함될 때 <span class="math inline">\(E\)</span> 를 볼록 집합(<span class="quarto-unresolved-ref">?def-MA_convex</span>) 이라고 한다.</p>
+<p>집합 <span class="math inline">\(E\subset \mathbb{R}^n\)</span> 가 각각의 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in E\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 를 잇는 선분의 모든 점이 <span class="math inline">\(E\)</span> 에 포함될 때 <span class="math inline">\(E\)</span> 를 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_convex">볼록 집합</a> 이라고 한다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-CM_mean_value_theorem_for_convex" class="theorem corollary">
 <p><span class="theorem-title"><strong>따름정리 2.2 (볼록집합에서의 중간값 정리)</strong></span> 열린 볼록집합 <span class="math inline">\(U\subset\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(F:U \to \mathbb{R}\)</span> 가 <span class="math inline">\(U\)</span> 에서 미분가능하면 <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in U\)</span> 일 때 다음을 만족하는 <span class="math inline">\(\boldsymbol{c}\in U\)</span> 가 존재한다.</p>

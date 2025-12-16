@@ -125,7 +125,7 @@ $$
 
 ::: {.proof}
 
-($a$) $G$ 와 $G^{-1}$ 이 연속이므로 $E$ 는 옹골집합이고(@thm-MA_continuity_and_compactness), $G(\text{int}(K)) \subset E$ 이며 열린 집합이다(@thm-MA_continuity_and_inverse_of_map). 따라서 $\text{int}(E)$ 는 $E$ 에 포함되는 가장 큰 열린집합이므로(@exr-MA_rudin_2_9) 
+($a$) $G$ 와 $G^{-1}$ 이 연속이므로 $E$ 는 [옹골집합이고](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#thm-MA_continuity_and_compactness), $G(\text{int}(K)) \subset E$ 이며 [열린 집합이다](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#thm-MA_continuity_and_inverse_of_map). 따라서 $\text{int}(E)$ 는 $E$ 에 포함되는 가장 큰 [열린집합이므로](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_rudin_2_9) 
 
 $$
 G(\text{int}(K))\subset \text{int}(E)\tag{1}
@@ -845,7 +845,7 @@ $$
 D_i =\{\bf{x}\in A: \|\bf{x}\| \le i,\, \text{dist}(\{\bf{x}\},\,\partial A) \ge 1/i\}
 $$
 
-이 수열 $\langle D_i \rangle$ ($1$), ($2$) 를 만족한다. $\text{dist}(\{\bf{x}\},\,\partial A)$ 는 연속함수 이므로 (@exr-MA_rudin_4_20) $D_i$ 는 닫힌 집합이고 각각의 $D_i$ 가 유계이므로 $D_i$ 는 옹골집합이다. 그러나 $\int_{D_i}1$ 의 존재성은 알 수 없다. 이제 각각의 $\bf{x}\in D_i$ 에 대해 $\bf{x}$ 를 중심으로 하며 $\text{int}(D_{i+1})$ 에 포함되는 $n$-입방체의 합집합을 생각하자. $D_i$ 가 옹골집합이므로 유한개의 원소만으로 $D_i$ 를 덮을 수 있으며 이 유한개의 원소의 합집합을 $A_i$ 라고 하면 $D_i \subset A_i \text{int}(D_{i+1})$ 이며 $A_i$ 는 옹골집합이다. 각각의 $A_i$ 는 유한개의 $n$-입방체의 합집합이므로 적분가능하고 ($1$), ($2$) 를 만족한다.
+이 수열 $\langle D_i \rangle$ ($1$), ($2$) 를 만족한다. $\text{dist}(\{\bf{x}\},\,\partial A)$ 는 [연속함수 이므로](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#exr-MA_rudin_4_20) $D_i$ 는 닫힌 집합이고 각각의 $D_i$ 가 유계이므로 $D_i$ 는 옹골집합이다. 그러나 $\int_{D_i}1$ 의 존재성은 알 수 없다. 이제 각각의 $\bf{x}\in D_i$ 에 대해 $\bf{x}$ 를 중심으로 하며 $\text{int}(D_{i+1})$ 에 포함되는 $n$-입방체의 합집합을 생각하자. $D_i$ 가 옹골집합이므로 유한개의 원소만으로 $D_i$ 를 덮을 수 있으며 이 유한개의 원소의 합집합을 $A_i$ 라고 하면 $D_i \subset A_i \text{int}(D_{i+1})$ 이며 $A_i$ 는 옹골집합이다. 각각의 $A_i$ 는 유한개의 $n$-입방체의 합집합이므로 적분가능하고 ($1$), ($2$) 를 만족한다.
 
 :::
 
