@@ -1,5 +1,5 @@
 ---
-title: "다변수 함수의 해석학"
+title: "다변수 해석학"
 number-sections: true
 number-depth : 2
 crossref:
