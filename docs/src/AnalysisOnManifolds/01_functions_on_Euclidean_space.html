@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6270b3fc96d87e7c219eb207d6c41939.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -406,7 +406,10 @@ window.Quarto = {
 \]</span></p>
 <p>이다. <span class="math inline">\(M_0 = \max \{|T_{ij}| : 1 \le i \le m,\, 1 \le j \le n\}\)</span> 이라고 하자.</p>
 <p><span class="math display">\[
-\||T(\boldsymbol{h})\| \le \sum_{j=1}^n \left|\left(T(\boldsymbol{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\boldsymbol{h}\|= mnM_0\|\boldsymbol{h}\|
+\begin{aligned}
+\||T(\boldsymbol{h})\| &amp; \le \sum_{j=1}^n \left|\left(T(\boldsymbol{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \\[0.3em]
+&amp;\le \sum_{i, j}M_0 \|\boldsymbol{h}\|= mnM_0\|\boldsymbol{h}\|
+\end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\(M=mnM_0\)</span> 로 잡으면 된다.</p>
 </div>
@@ -443,7 +446,7 @@ T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_13" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.10 (Spivak 1.13)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in\mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x \cdot y}=0\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 와 <span class="math inline">\(\boldsymbol{y}\)</span> 는 서로 직교(perpendicular, orthogonal) 한다고 한다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 가 직교한다면 <span class="math inline">\(\|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2+\|\boldsymbol{y}\|^2\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 1.10 (Spivak 1.13)</strong></span> <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\in\mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x \cdot y}=0\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 와 <span class="math inline">\(\boldsymbol{y}\)</span> 는 서로 직교한다고 한다. <span class="math inline">\(\boldsymbol{x},\,\boldsymbol{y}\)</span> 가 직교한다면 <span class="math inline">\(\|\boldsymbol{x}+\boldsymbol{y}\|^2 = \|\boldsymbol{x}\|^2+\|\boldsymbol{y}\|^2\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -456,14 +459,18 @@ T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_
 </section>
 <section id="유클리드-공간의-부분공간" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="유클리드-공간의-부분공간"><span class="header-section-number">1.2</span> 유클리드 공간의 부분공간</h2>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span>데카르트곱
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.1 (데카르트곱)</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 1.1</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
 (\boldsymbol{x},\,\boldsymbol{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \mathbb{R}^{m+n}.
 \]</span></p>
@@ -474,16 +481,19 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>열린 <span class="math inline">\(n\)</span>-cell</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_n_cell" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.2 (열린 <span class="math inline">\(n\)</span>-cell)</strong></span> <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_n_cell"><span class="math inline">\(n\)</span>-cell</a> 의 정의를 보라. 이와 비슷하게</p>
+<p><span class="theorem-title"><strong>정의 1.2</strong></span> <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_n_cell"><span class="math inline">\(n\)</span>-cell</a> 의 정의를 보라. 이와 비슷하게</p>
 <p><span class="math display">\[
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \mathbb{R}^n
 \]</span></p>
@@ -491,41 +501,46 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 </div>
 </div>
-</div>
 <p>앞서 일변수 해석학에서는 <span class="math inline">\(\boldsymbol{a}\in \mathbb{R}^n\)</span> 주위의 열린 집합을 잡을 때 <span class="math inline">\(N(\boldsymbol{a},\,\delta)\)</span> 을 생각했지만 여기서는 자주 <span class="math inline">\(\boldsymbol{a}\)</span> 주위의 열린 <span class="math inline">\(n\)</span>-cell, 혹은 아래의 입방체 를 생각한다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>열린/닫힌 입방체</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_neighboring_cube" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.3 (열린/닫힌 입방체)</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
+<p><span class="theorem-title"><strong>정의 1.3</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 C(\boldsymbol{a},\,\delta) &amp;:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
 \overline{C}(\boldsymbol{a},\,\delta) &amp;:=  [a_1-\delta,\,a_1+\delta] \times \cdots \times [a_n - \delta,\, a_n+\delta].
 \end{aligned}
 \]</span></p>
-<p>이 때 <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 를 열린 입방체, 혹은 열린 <span class="math inline">\(n\)</span>-입방체 라고 하며 <span class="math inline">\(\overline{C}(\boldsymbol{a},\,\delta)\)</span> 를 닫힌 입방체, 혹은 닫힌 <span class="math inline">\(n\)</span>-입방체 라고 한다.</p>
-</div>
+<p>이 때 <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 를 <strong>열린 입방체</strong>, 혹은 열린 <span class="math inline">\(n\)</span>-입방체 라고 하며 <span class="math inline">\(\overline{C}(\boldsymbol{a},\,\delta)\)</span> 를 <strong>닫힌 입방체</strong>, 혹은 닫힌 <span class="math inline">\(n\)</span>-입방체 라고 한다.</p>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>내부, 외부, 경계</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_interior_and_exterior" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.4 (내부와 외부)</strong></span> <span class="math inline">\(A\in \mathbb{R}^n,\, x\in \mathbb{R}^n\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 1.4</strong></span> <span class="math inline">\(A\in \mathbb{R}^n,\, x\in \mathbb{R}^n\)</span> 에 대해</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(x\in U\subset A\)</span> 인 열린 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U\)</span> 가 존재하면 <span class="math inline">\(x\)</span> 가 <span class="math inline">\(A\)</span> 의 내부에 있다고 한다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(x\)</span> 가 <span class="math inline">\(\mathbb{R}^n\backslash A\)</span> 의 내부에 있을 때 <span class="math inline">\(x\)</span> 가 <span class="math inline">\(A\)</span> 의 외부에 있다고 한다.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(x\)</span> 가 <span class="math inline">\(A\)</span> 의 내부와 외부에 있지 않을 때 <span class="math inline">\(x\)</span> 가 <span class="math inline">\(A\)</span> 의 경계에 있다고 한다.</p>
 <p><span class="math inline">\(A\)</span> 의 내부에 있는 점들의 집합을 <span class="math inline">\(\text{int}(A)\)</span> 라 표기하고 <span class="math inline">\(A\)</span> 의 경계에 있는 점들의 집합을 <span class="math inline">\(\partial A\)</span> 라고 표기한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -551,7 +566,6 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <p><span class="theorem-title"><strong>연습문제 1.11 (Spivak 1.17)</strong></span> <span class="math inline">\([0,\,1]\times [0,\,1]\)</span> 의 어떤 부분집합 <span class="math inline">\(A\)</span> 는 각각의 수직선과 수평선에 대해 많아야 하나의 점만을 포함하며 <span class="math inline">\(A\)</span> 의 경계 <span class="math inline">\(\partial A\)</span> 는 <span class="math inline">\([0,\,1]\times [0,\,1]\)</span> 이다. <span class="math inline">\(A\)</span> 를 구하라.</p>
 </div>
 </div>
-<p><br></p>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><em>to be done</em></p>
 </div>
@@ -577,7 +591,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_21" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.14 (Spivak 1.21)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(A\)</span> 가 닫힌 집합이고 <span class="math inline">\(x\notin A\)</span> 일 때 모든 <span class="math inline">\(y\in A\)</span> 에 대해 <span class="math inline">\(\|y-x\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 1.14 (Spivak 1.21)</strong></span> <br> (<span class="math inline">\(a\)</span>) <span class="math inline">\(A\)</span> 가 닫힌 집합이고 <span class="math inline">\(x\notin A\)</span> 일 때 모든 <span class="math inline">\(y\in A\)</span> 에 대해 <span class="math inline">\(\|y-x\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재함을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(A\)</span> 가 닫힌 집합이고 <span class="math inline">\(B\)</span> 가 옹골집합이며 <span class="math inline">\(A \cap B=\varnothing\)</span> 일 때 모든 <span class="math inline">\(y\in A,\, x \in B\)</span> 에 대해 <span class="math inline">\(\|y-x\|\ge d\)</span> 인 <span class="math inline">\(d&gt; 0\)</span> 이 존재함을 보여라.</p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> 가 닫힌 집합이지만 옹골집합은 아닐 때 <span class="math inline">\(\mathbb{R}^2\)</span> 에서 (<span class="math inline">\(b\)</span>) 가 성립하지 않는 예를 들어라.</p>
 </div>
@@ -609,22 +623,25 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <section id="sec-CM_norm_of_matrix" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="sec-CM_norm_of_matrix"><span class="header-section-number">1.3.1</span> 행렬의 노름</h3>
 <p><a href="#exr-CM_spivak_1_10" class="quarto-xref">연습문제&nbsp;<span>1.7</span></a> 에서 우리는 선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 에 대해 <span class="math inline">\(\|L(\boldsymbol{x})\|\le M\|\boldsymbol{x}\|\)</span> 인 양수 <span class="math inline">\(M\)</span> 이 존재함을 보였다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>행렬의 norm</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_norm_of_matrix" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.5 (행렬의 norm)</strong></span> 선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 에 대해 행렬의 norm <span class="math inline">\(\|L\|\)</span> 은 아래와 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 1.5</strong></span> 선형사상 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 에 대해 행렬의 norm <span class="math inline">\(\|L\|\)</span> 은 아래와 같이 정의된다.</p>
 <p><span id="eq-CM_definition_of_matrix_norm"><span class="math display">\[
 \|L\| := \sup \{\|L\boldsymbol{x}\| : \boldsymbol{x} \in \mathbb{R}^n,\, \|\boldsymbol{x}\|=1\}.
 \tag{1.2}\]</span></span></p>
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
+<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_properties_of_matrix_norm_1" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.2</strong></span> 행렬의 노름에 대해 다음이 성립한다.</p>
@@ -657,9 +674,8 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>행렬의 노름이 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_metric_space">거리 함수</a> 의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>행렬의 노름이 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_metric_space">거리 함수</a> 의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><br></p>
 <p><span class="math inline">\(\mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -700,29 +716,35 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 </section>
 <section id="sec-CM_functions_and_continuity" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="sec-CM_functions_and_continuity"><span class="header-section-number">1.3.2</span> 함수의 연속성</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-CM_component_functions" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.6 (성분 함수)</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>성분 함수</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-CM_component_functions" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.6</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
 </div>
 </div>
 </div>
 <p>벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 나 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(f_i\)</span> 는 성분함수이다.</p>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-CM_projection_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.7 (사영 함수)</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi_i (\boldsymbol{x})= x_i\)</span> 이다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span>사영 함수
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-CM_projection_function" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 1.7</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi_i (\boldsymbol{x})= x_i\)</span> 이다.</p>
 </div>
 </div>
 </div>
@@ -738,14 +760,18 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 <p><br></p>
 <p>연속성에 대해 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_3_continuity_of_functions.html#sec-MA_limit_and_continuity_of_functions">함수의 극한과 연속</a> 을 참고하라.</p>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>Oscillation</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_oscillation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.8 (Oscillation)</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 1.8</strong></span> <span class="math inline">\(f:A\subset \mathbb{R}^n \to \mathbb{R}\)</span> 가 유계이며 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 정해진 <span class="math inline">\(\delta&gt;0\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
 M(f,\,\boldsymbol{a},\,\delta) &amp;:= \sup \{f(\boldsymbol{x}): \boldsymbol{x}\in A,\, \|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta\}, \\
@@ -756,8 +782,6 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 </div>
 </div>
 </div>
-</div>
-<p><br></p>
 <p><span class="math inline">\(f\)</span> 가 유계이므로 <span class="math inline">\(M(f,\boldsymbol{a},\delta)\)</span> 와 <span class="math inline">\(m(f,\boldsymbol{a},\delta)\)</span> 는 존재한다. <span class="math inline">\(M(f,\boldsymbol{a},\delta)-m(f,\boldsymbol{a},\delta)\)</span> 는 <span class="math inline">\(\delta\)</span> 에 대해 단조 감소 함수이므로 <span class="math inline">\(o(f,\boldsymbol{a})\)</span> 는 항상 존재한다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">

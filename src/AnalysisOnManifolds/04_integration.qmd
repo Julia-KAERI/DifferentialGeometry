@@ -19,10 +19,11 @@ crossref:
 :::
 
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_volume_of_n_cell}
+::: {.callout-note icon="false"}
 
-#### $n$-cell 의 부피
+#### **$n$-cell 의 부피**
+
+::: {#def-CM_volume_of_n_cell}
 
 $\R^n$ 에서 정의된 $n$-cell $Q=[a_1,b_1] \times \cdots \times [a_n,b_n]$ 의 부피 $\text{vol(Q)}$ 는 다음과 같이 정의된다.
 
@@ -34,45 +35,37 @@ $$
 :::
 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **$n$-cell 의 분할과 subcell**
 
 ::: {#def-CM_partition_of_n_cell}
 
-#### $n$-cell 의 분할과 subcell
-
 닫힌 $n$-cell $Q=[a_1,\,b_1] \times \cdots \times [a_n,\,b_n]$ 을 생각하자. 각각의 $i=1,\ldots,\,n$ 에 대해 $P_i$ 가 $[a_i,\,b_i]$ 의 분할 일 때 $P = (P_1,\ldots,\,P_n)$ 를 $Q$ 의 **분할 (partition)** 이라고 한다. $Q$ 에 대한 모든 분할의 집합을 $\mathcal{P}[Q]$ 라고 표기한다. 
 
-$n$ cell $q=[a^{(1)}_{i_1},\,a^{(1)}_{i_1+1}] \times \cdots \times [a^{(n)}_{i_n},\,a^{(n)}_{i_{n}+1}]$ 가 각각의 $k=1,\ldots,\,n$ 에 대해 $a^{(k)}_{i_k},\, a^{(k)}_{i_k+1} \in P_k$ 일 때 이 $n$-cell $q$ 를 분할 $P$ 에 의한 $Q$ 의 subcell 이라고 한다.
-
-
+$n$ cell $q=[a^{(1)}_{i_1},\,a^{(1)}_{i_1+1}] \times \cdots \times [a^{(n)}_{i_n},\,a^{(n)}_{i_{n}+1}]$ 가 각각의 $k=1,\ldots,\,n$ 에 대해 $a^{(k)}_{i_k},\, a^{(k)}_{i_k+1} \in P_k$ 일 때 이 $n$-cell $q$ 를 분할 $P$ 에 의한 $Q$ 의 **subcell** 이라고 한다.
 
 ::: 
 :::
 
-</br>
-
-짐작하듯이 $n$-cell $Q$ 에 대한 분할 $P$ 가 정해지면 $n$-cell 에 대한 모든 subcell 도 정해진다. 
-
-</br>
+짐작하듯이 $n$-cell $Q$ 에 대한 분할 $P$ 가 정해지면 이에 따른 모든 subcell 도 정해진다. 
 
 ::: {.callout-note appearance="simple" icon="false"}
 
-::: {#def-CM_refinement_of_partition}
-
 #### refinement
+
+::: {#def-CM_refinement_of_partition}
 
 $n$-cell $Q$ 에 대한 두 분할 $P_1$, $P_2$ 를 생각하자. $P_1$ 에 의한 subcell 이 모두 $P_2$ 에 의한 subcell 이거나 $P_2$ 의 subcell 에 포함된다면 $P_2$ 를 $P_1$ 의 **refinement** 라고 한다. $P_2$ 가 $P_1$ 의 refinement 일 때 $P_1 \subset P_2$ 라고 표기한다.
 
 ::: 
 :::
 
-</br>
-
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-CM_riemann_upper_sum_and_lower_sum}
+::: {.callout-note icon="false"}
 
 #### 리만 상합, 리만 하합
+
+::: {#def-CM_riemann_upper_sum_and_lower_sum}
 
 $Q\subset \R^n$ 이 $n$-cell 이고 $Q$ 에 대해 정의된 함수 $f:Q \to \R$ 이 유계라고 하자. $P$ 가 $Q$ 의 분할이며 $S$ 가 $P$ 의 subcell 일 때
 
@@ -139,11 +132,11 @@ $$
 임도 안다. 일변수 함수의 적분에서와 같이 다변수 실함수에 대한 리만 적분을 정의 할 수 있다.
 
 
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-CM_riemann_integration_of_multivariable_function}
+::: {.callout-note icon="false"}
 
 #### 리만 적분
+
+::: {#def-CM_riemann_integration_of_multivariable_function}
 
 $n$-cell $Q$ 에서 정의된 유계인 함수 $f:Q\to \R$ 에 대해 리만 상적분 $\displaystyle \overline{\int_Q}f$ 와 리만 하적분 $\displaystyle \underline{\int_Q}f$ 를 다음과 같이 정의한다.
 
@@ -162,12 +155,10 @@ $$
 ::: 
 :::
 
-</br>
 
 [일변수 함수에서의 분할과 관련된 정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_5_riemann_stieltjes_integral.html#thm-MA_properties_of_stieltjes_integral_1) 와 유사한 아래 정리는 아주 유용하다.
 
-</br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_properties_of_integral}
 
@@ -297,15 +288,19 @@ $f,\,g:A \to \R$ 은 적분가능하다.
 ($a$) 임의의 분할 $P$ 와 $P$ 에 의한 $n$-cell $S$ 에 대해 
 
 $$
-m_S(f)+m_S(g) \le m_S(f+g),\qquad M_S(f+g) \le M_S(f)+M_S(g)
+\begin{gather}
+m_S(f)+m_S(g) \le m_S(f+g),\\ 
+M_S(f+g) \le M_S(f)+M_S(g)
+\end{gather}
 $$ {#eq-CM_spivak_3_3_1}
 
 이며, 따라서
 
 $$
-\begin{eqnarray}
-L(f,\,P) + L(g,\,P) \le L(f+g,\,P) \le U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
-\end{eqnarray}
+\begin{aligned}
+L(f,\,P) + L(g,\,P) &\le L(f+g,\,P) \\[0.3em]
+&\le U(f+g,\,P) \le U(f,\,P) + U(g,\,P)
+\end{aligned}
 $$ {#eq-CM_spivak_3_3_2}
 
 임을 보여라.
@@ -326,7 +321,9 @@ $$ {#eq-CM_spivak_3_3_2}
 ($b$) 임의의 $\varepsilon>0$ 에 대해 $U(f,\,P_1)-L(f,\,P_1)<\frac{\varepsilon}{2}$ 인 $A$ 의 분할 $P_1$ 과 $U(g,\,P_2)-L(g,\,P_2)<\frac{\varepsilon}{2}$ 인 $A$ 의 분할 $P_2$ 가 존재한다. $P_1$ 과 $P_2$ 의 공통 refinement 인 $P$ 에 대해서도 위의 부등식이 성립하며,
 
 $$
+\begin{aligned}
 U(f+g,\,P)-L(f+g,\,P) \le U(f,\,P)-L(f,\,P) + U(g,\,P)-L(g,\,P) < \varepsilon
+\end{aligned}
 $$
 
 이다. 따라서 $f+g \in \mathcal{R}[A]$ 이다. 임의의 $\varepsilon>0$ 에 대해 $\int_A f - L(f,\,P_1)<\frac{\varepsilon}{2}$, $\int_A g - L(g,\,P_1)<\frac{\varepsilon}{2}$ 인 분할 $P_1$ 이 존재하며 $U(f,\,P_2)-\int_A f<\frac{\varepsilon}{2}$, $U(g,\,P_2)-\int_A g<\frac{\varepsilon}{2}$ 인 분할 $P_2$ 가 존재한다. $P$ 를 $P_1$ 과 $P_2$ 의 공통의 refinement 라고 하면 위의 부등식이 모두 성립하며
@@ -493,11 +490,11 @@ $$
 
 ### Measure zero {#sec-CM_measure_zero}
 
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-CM_measure_zero}
+::: {.callout-note icon="false"}
 
 #### Measure zero
+
+::: {#def-CM_measure_zero}
 
 $A\subset \R^n$ 을 생각하자. 만약 각각의 $\varepsilon>0$ 에 대해 닫힌 $n$-cell 의 집합 $\mathcal{U}=\{U_1,\,U_2,\ldots\}$ 가 존재하여 다음의 두 조건을 만족한다면 $A$ 는 **measure zero** 라고 한다.
 
@@ -508,10 +505,7 @@ $A\subset \R^n$ 을 생각하자. 만약 각각의 $\varepsilon>0$ 에 대해 �
 ::: 
 :::
 
-</br>
-
 즉 $A$ 가 가산 무한(countably infinite) 개의 집합족 $\mathcal{U}$ 로 덮일 수 있으며 집합족의 부피의 합이 임의로 작아질 수 있다면 $A$ 는 measure zero 이다. Measure $0$ 인 집합에 대해 아래 명제들은 쉽게 보일 수 있다.
-
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -574,11 +568,11 @@ $$
 
 ### Content zero {#sec-CM_content_zero}
 
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-CM_content_zero}
+::: {.callout-note icon="false"}
 
 #### Content zero
+
+::: {#def-CM_content_zero}
 
 $A\subset \R^n$ 을 생각하자. 각각의 $\varepsilon>0$ 에 대해 유한개의 닫힌 $n$-cell 의 집합 $\mathcal{U} = \{U_1,\ldots,\,U_m\}$ 이 존재하여 다음의 두 조건을 만족하면 $A$ 를 **content zero** 라고 한다.
 
@@ -589,11 +583,10 @@ $A\subset \R^n$ 을 생각하자. 각각의 $\varepsilon>0$ 에 대해 유한개
 ::: 
 :::
 
-</br>
 
 아래 명제는 쉽게 보일 수 있다.
 
-</br>
+
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_content_zero}
@@ -880,10 +873,13 @@ $$
 지금까지는 $n$-cell 위에서의 적분만을 생각했다. 이제 $n$-cell 에서의 적분을 확장하여 임의의 집합에 대한 적분에 대해 알아보자.
 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **특성함수와 집합의 적분**
+
 ::: {#def-CM_characteristic_function}
 
-#### 특성함수와 집합의 적분
+
 
 아래와 같이 정의된 함수 $\chi_A:A\subset \R^n \to \R$ 를 $A$ 에서의 **특성 함수 (characteristic fucntion)** 라고 한다.
 
@@ -918,10 +914,11 @@ $x\in \text{int}(A)$ 이거나 $x$ 가 $A$ 의 외부라면 $\chi_A$ 가 $x$ 에
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_jordan_measureable_and_volume}
+::: {.callout-note icon="false"}
 
-#### 조르당 가측
+#### **조르당 가측**
+
+::: {#def-CM_jordan_measureable_and_volume}
 
 집합 $A$ 가 유계이고 $\partial A$ 가 measure $0$ 일 때 $A$ 를 **조르당 가측(Jordan-measureable)** 이라고 한다. $\int_A 1$ 을 $A$ 의 **content** 혹은 **$n$-차원 부피(volumn)** 라고 한다. $1$ 차원일 경우는 **길이(length)**, 2차원일 경우는 **넓이(area)** 라고 한다.
 
@@ -929,7 +926,6 @@ $x\in \text{int}(A)$ 이거나 $x$ 가 $A$ 의 외부라면 $\chi_A$ 가 $x$ 에
 :::
 
 </br>
-
 
 ### 연습문제 {.unnumbered}
 

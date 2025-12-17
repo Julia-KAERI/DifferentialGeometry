@@ -254,7 +254,10 @@ $$
 이다. $M_0 = \max \{|T_{ij}| : 1 \le i \le m,\, 1 \le j \le n\}$ 이라고 하자. 
 
 $$
-\||T(\bf{h})\| \le \sum_{j=1}^n \left|\left(T(\bf{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
+\begin{aligned}
+\||T(\bf{h})\| & \le \sum_{j=1}^n \left|\left(T(\bf{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \\[0.3em]
+&\le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
+\end{aligned}
 $$
 
 이므로 $M=mnM_0$ 로 잡으면 된다.
@@ -320,7 +323,7 @@ $\psi_x \in \ker (T)$ 라면 모든 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{x}(\bf
 ::: {#exr-CM_spivak_1_13}
 #### Spivak 1.13
 
-$\bf{x},\,\bf{y}\in\R^n$ 에 대해 $\bf{x \cdot y}=0$ 이면 $\bf{x}$ 와 $\bf{y}$ 는 서로 직교(perpendicular, orthogonal) 한다고 한다. $\bf{x},\,\bf{y}$ 가 직교한다면 $\|\bf{x}+\bf{y}\|^2 = \|\bf{x}\|^2+\|\bf{y}\|^2$ 임을 보여라. 
+$\bf{x},\,\bf{y}\in\R^n$ 에 대해 $\bf{x \cdot y}=0$ 이면 $\bf{x}$ 와 $\bf{y}$ 는 서로 직교한다고 한다. $\bf{x},\,\bf{y}$ 가 직교한다면 $\|\bf{x}+\bf{y}\|^2 = \|\bf{x}\|^2+\|\bf{y}\|^2$ 임을 보여라. 
 
 :::
 
@@ -338,11 +341,11 @@ $$
 
 ## 유클리드 공간의 부분공간
 
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-CM_cartesian_product}
+::: {.callout-note icon="false"}
 
 #### 데카르트곱
+
+::: {#def-CM_cartesian_product}
 
 $\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x},\,\bf{y})$ 를 다음과 같이 정의한다. 
 
@@ -361,11 +364,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **열린 $n$-cell**
 
 ::: {#def-CM_n_cell}
-
-#### 열린 $n$-cell
 
 [$n$-cell](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_n_cell) 의 정의를 보라. 이와 비슷하게 
 
@@ -383,11 +386,11 @@ $$
 앞서 일변수 해석학에서는 $\bf{a}\in \R^n$ 주위의 열린 집합을 잡을 때 $N(\bf{a},\,\delta)$ 을 생각했지만 여기서는 자주 $\bf{a}$ 주위의 열린 $n$-cell, 혹은 아래의 입방체 를 생각한다.
 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **열린/닫힌 입방체**
 
 ::: {#def-CM_neighboring_cube}
-
-#### 열린/닫힌 입방체
 
 $\bf{a} = (a_1,\ldots,\,a_n) \in \R^n$ 에 대해 $\bf{a}$ 를 중심으로 모서리의 길이가 모두 같은 열린 $n$-cell 을 아래와 같이 정의 할 수 있다. 
 
@@ -398,7 +401,7 @@ C(\bf{a},\,\delta) &:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \d
 \end{aligned}
 $$
 
-이 때 $C(\bf{a},\,\delta)$ 를 열린 입방체, 혹은 열린 $n$-입방체 라고 하며 $\overline{C}(\bf{a},\,\delta)$ 를 닫힌 입방체, 혹은 닫힌 $n$-입방체 라고 한다.
+이 때 $C(\bf{a},\,\delta)$ 를 **열린 입방체**, 혹은 열린 $n$-입방체 라고 하며 $\overline{C}(\bf{a},\,\delta)$ 를 **닫힌 입방체**, 혹은 닫힌 $n$-입방체 라고 한다.
 
 :::
 
@@ -406,11 +409,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **내부, 외부, 경계**
 
 ::: {#def-CM_interior_and_exterior}
-
-#### 내부와 외부
 
 $A\in \R^n,\, x\in \R^n$ 에 대해 
 
@@ -464,7 +467,7 @@ $[0,\,1]\times [0,\,1]$ 의 어떤 부분집합 $A$ 는 각각의 수직선과 �
 
 :::
 
-</div></br>
+</div>
 
 ::: {.solution}
 
@@ -513,7 +516,7 @@ $A$ 가 닫힌 집합이며 $C\subset A$ 이면 $\overline{C}\subset A$ 이다. 
 
 ::: {#exr-CM_spivak_1_21}
 #### Spivak 1.21
-
+</br>
 ($a$) $A$ 가 닫힌 집합이고 $x\notin A$ 일 때 모든 $y\in A$ 에 대해 $\|y-x\| \ge d$ 인 $d>0$ 이 존재함을 보여라.
 
 ($b$) $A$ 가 닫힌 집합이고 $B$ 가 옹골집합이며 $A \cap B=\varnothing$ 일 때 모든 $y\in A,\, x \in B$ 에 대해 $\|y-x\|\ge d$ 인 $d> 0$ 이 존재함을 보여라.
@@ -567,11 +570,11 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-CM_spiva
 
 @exr-CM_spivak_1_10 에서 우리는 선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 $\|L(\bf{x})\|\le M\|\bf{x}\|$ 인 양수 $M$ 이 존재함을 보였다. 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **행렬의 norm**
 
 ::: {#def-CM_norm_of_matrix}
-
-#### 행렬의 norm
 
 선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 행렬의 norm $\|L\|$ 은 아래와 같이 정의된다.
 
@@ -582,9 +585,7 @@ $$ {#eq-CM_definition_of_matrix_norm}
 :::
 :::
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_properties_of_matrix_norm_1}
 
@@ -641,11 +642,10 @@ $\mathcal{L}(\R^n,\,\R^m)$ 에 거리함수가 행렬의 노름으로 주어졌�
 
 ::: {.proof}
 
-행렬의 노름이 [거리 함수](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_metric_space) 의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다.
+행렬의 노름이 [거리 함수](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_metric_space) 의 4가지 성질을 만족함을 보이면 되는데 이는 쉽게 보일 수 있다. $\square$
 
 :::
 
-</br>
 
 $\mathcal{L}(\R^n,\, \R^m)$ 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다.
 
@@ -709,11 +709,11 @@ $$
 
 ### 함수의 연속성 {#sec-CM_functions_and_continuity}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **성분 함수**
 
 ::: {#def-CM_component_functions}
-
-#### 성분 함수
 
 함수 $F:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f_i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots & f_m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\bf{x}) \\ \vdots \\ f_m(\bf{x}) \end{bmatrix}$ 와 같이 열벡터로 표기한다.
 
@@ -725,11 +725,12 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### 사영 함수
 
 ::: {#def-CM_projection_function}
 
-#### 사영 함수
 항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 하고 $\pi_i$ 라고 쓴다. 즉 $\pi_i (\bf{x})= x_i$ 이다.
 
 :::
@@ -760,11 +761,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **Oscillation**
 
 ::: {#def-CM_oscillation} 
-
-#### Oscillation
 
 $f:A\subset \R^n \to \R$ 가 유계이며 $\bf{a}\in A$ 일 때 정해진 $\delta>0$ 에 대해
 
@@ -780,7 +781,6 @@ $$
 :::
 :::
 
-</br>
 
 $f$ 가 유계이므로 $M(f,\bf{a},\delta)$ 와 $m(f,\bf{a},\delta)$ 는 존재한다. $M(f,\bf{a},\delta)-m(f,\bf{a},\delta)$ 는 $\delta$ 에 대해 단조 감소 함수이므로 $o(f,\bf{a})$ 는 항상 존재한다.
 

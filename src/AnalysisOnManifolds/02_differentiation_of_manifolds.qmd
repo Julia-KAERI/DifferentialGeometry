@@ -27,11 +27,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **다변수 함수의 미분**
 
 ::: {#def-CM_differentiation_of_multivariable_function}
-
-#### 다변수 함수의 미분
 
 함수 $F:\R^n\to \R^m$ 와 $\bf{a}\in \R^n$ 에 대해 어떤 선형변환 $L:\R^n \to \R^m$ 이 존재하여
 
@@ -87,11 +87,11 @@ $$
 
 $F:\R^n\to\R^m$ 이 모든 $\bf{x}\in \R^n$ 에서 미분가능하면 마치 일변수 함수의 $f'(x)$ 처럼 $F'(\bf{x})$ 와 같이 쓸 수 있다. 이 때 $F'(\bf{a})$ 는 선형변환이므로 행렬로 표현할 때 기저에 따라 그 성분값이 달라진다. 여기에 기준이 되는 야코비 행렬을 아래와 같이 정의한다.
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **야코비 행렬**
 
 ::: {#def-CM_jacobian}
-
-#### 야코비 행렬
 
 $F:A \subset \R^n \to \R^m$ 에 대해 $F'(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 표준기저에 대해 표현한 행렬을 **야코비 행렬 (Jacobian matrix)** 이라고 하며 $J[F](\bf{a})$ 혹은 $J_F(\bf{a})$ 와 같이 표기한다. 모든 $A\subset \R^n$ 에서 미분가능할 때는 $A$ 에서 정의된 함수로서 $J_F(\bf{x})$ 라고 표기한다. 
 
@@ -1145,11 +1145,13 @@ $F\circ F^{-1} = \bf{\pi}$ 이며 양변을 미분하면 $F'(F^{-1}(\bf{a})) (F^
 
 ### 편미분의 정의 {#sec-CM_partial_derivative}
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **편미분**
 
 ::: {#def-CM_partial_derivative}
 
-#### 편미분
+
 
 $f:\R^n \to \R$ 과 $\bf{a}\in \R^n$ 에 대해 아래와 같이 정의된 $D_if(\bf{a})$ 가 존재할 때 이를 $f$ 의 $\bf{a}$ 에서의 $i$ 번째 편미분이라고 한다.
 

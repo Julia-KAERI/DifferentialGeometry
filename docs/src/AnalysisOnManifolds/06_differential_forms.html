@@ -274,14 +274,18 @@ window.Quarto = {
 <h2 data-number="6.1" class="anchored" data-anchor-id="다중-선형-대수"><span class="header-section-number">6.1</span> 다중 선형 대수</h2>
 <section id="sec-CM_tensor_and_tensor_product" class="level3" data-number="6.1.1">
 <h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-CM_tensor_and_tensor_product"><span class="header-section-number">6.1.1</span> 텐서와 텐서곱</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong><span class="math inline">\(k\)</span>-텐서</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_k_tensor" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.1 (<span class="math inline">\(k\)</span>-텐서)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V^k \mapsto \mathbb{R}\)</span> 인 다중선형 함수의 집합을 <strong><span class="math inline">\(k\)</span>-텐서 (<span class="math inline">\(k\)</span>-tensor)</strong> 라고 하며 <span class="math inline">\(k\)</span>-텐서 의 집합을 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 라고 쓴다. 즉 <span class="math inline">\(a\in \mathbb{R}\)</span> 와 각각의 <span class="math inline">\(i=1,\ldots,\,n\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>정의 6.1</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V^k \mapsto \mathbb{R}\)</span> 인 다중선형 함수의 집합을 <strong><span class="math inline">\(k\)</span>-텐서 (<span class="math inline">\(k\)</span>-tensor)</strong> 라고 하며 <span class="math inline">\(k\)</span>-텐서 의 집합을 <span class="math inline">\(\mathfrak{J}^k(V)\)</span> 라고 쓴다. 즉 <span class="math inline">\(a\in \mathbb{R}\)</span> 와 각각의 <span class="math inline">\(i=1,\ldots,\,n\)</span> 에 대해</p>
 <p><span id="eq-CM_multilinear_property"><span class="math display">\[
 \begin{aligned}
 \phi(v_1,\ldots,v_i+av'_i,\ldots,v_k) = \phi(v_1,\ldots,v_i,\ldots,v_k) + a\phi(v_1,\ldots,cv'_i,\,v_k)
@@ -298,7 +302,6 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
 <p>우리는 <span class="math inline">\(\mathfrak{J}^1(V)\)</span> 가 <span class="math inline">\(V\)</span> 의 쌍대공간 <span class="math inline">\(V^\ast\)</span> 이라는 것을 쉽게 알 수 있다. 그리고 아래는 쉽게 보일 수 있다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -307,18 +310,21 @@ window.Quarto = {
 </div>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>텐서곱</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_tensor_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.2 (텐서곱)</strong></span> <span class="math inline">\(\phi\in\mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)\)</span> 일 때 텐서곱 <span class="math inline">\(\phi\otimes \psi \in \mathfrak{J}^{k+l}(V)\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.2</strong></span> <span class="math inline">\(\phi\in\mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)\)</span> 일 때 텐서곱 <span class="math inline">\(\phi\otimes \psi \in \mathfrak{J}^{k+l}(V)\)</span> 를 다음과 같이 정의한다.</p>
 <p><span id="eq-CM_tensor_product"><span class="math display">\[
 (\phi\otimes \psi)(v_1,\ldots,v_k,v_{k+1},\ldots,v_{k+l})=\phi(v_1,\ldots,v_k) \cdot \psi(v_{k+1},\ldots,v_{k+l})
 \tag{6.3}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -367,18 +373,21 @@ T(v_1,\ldots,v_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T
 <p>일 때 모든 <span class="math inline">\(a_{i_1,\ldots,i_k}=0\)</span> 이라는 것을 보이면 된다. 이 함수를 <span class="math inline">\((e_{j_1},\ldots,e_{j_k})\)</span> 에 적용시켜보면 이를 확인 할 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>Pull-back</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_pullback" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.3 (Pull-back)</strong></span> 미분가능한 함수 <span class="math inline">\(F:V \to W\)</span> 와 <span class="math inline">\(\phi\in \mathfrak{J}^k(W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 를 <span class="math inline">\(F\)</span> 에 의한 <span class="math inline">\(\phi\)</span> 의 <strong>pull-back</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 6.3</strong></span> 미분가능한 함수 <span class="math inline">\(F:V \to W\)</span> 와 <span class="math inline">\(\phi\in \mathfrak{J}^k(W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 를 <span class="math inline">\(F\)</span> 에 의한 <span class="math inline">\(\phi\)</span> 의 <strong>pull-back</strong> 이라고 한다.</p>
 <p><span id="eq-CM_def_pull_back_for_k_tensor"><span class="math display">\[
 \left(F^\ast (\phi)\right)(v_1,\ldots,v_k) := \phi(F(v_1),\ldots,\,F(v_k))
 \tag{6.5}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -415,19 +424,22 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 </section>
 <section id="sec-CM_alternating_tensor" class="level3" data-number="6.1.2">
 <h3 data-number="6.1.2" class="anchored" data-anchor-id="sec-CM_alternating_tensor"><span class="header-section-number">6.1.2</span> 교대 텐서</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>교대 텐서</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_alternating_k_tensor" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.4 (교대 텐서)</strong></span> <span class="math inline">\(\omega \in \mathfrak{J}^k(V)\)</span> 가 아래와 같은 성질을 가질 때 <span class="math inline">\(\omega\)</span> 를 <strong>교대 <span class="math inline">\(k\)</span>-텐서 (alternaging <span class="math inline">\(k\)</span>-tensor)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 6.4</strong></span> <span class="math inline">\(\omega \in \mathfrak{J}^k(V)\)</span> 가 아래와 같은 성질을 가질 때 <span class="math inline">\(\omega\)</span> 를 <strong>교대 <span class="math inline">\(k\)</span>-텐서 (alternaging <span class="math inline">\(k\)</span>-tensor)</strong> 라고 한다.</p>
 <p><span id="eq-CM_alternating_property_of_k_tensor"><span class="math display">\[
 \omega (v_1,\ldots,v_i,\ldots,v_j,\ldots,v_n) = -\omega (v_1,\ldots,v_j,\ldots,v_i,\ldots,v_n) .
 \tag{6.6}\]</span></span></p>
 <p>그리고 교대 <span class="math inline">\(k\)</span>-텐서의 집합을 <span class="math inline">\(\Omega^k(V)\)</span> 로 표기한다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -439,18 +451,21 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 </div>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span>교대화
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_alternatization" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.5 (교대화)</strong></span> 아래에 정의된 <span class="math inline">\(\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)\)</span> 는 <span class="math inline">\(k\)</span>-텐서의 선형결합으로 교대 <span class="math inline">\(k\)</span>-텐서를 반환한다. 이를 <strong>교대화(Alternatization)</strong> 라고 한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
+<p><span class="theorem-title"><strong>정의 6.5</strong></span> 아래에 정의된 <span class="math inline">\(\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)\)</span> 는 <span class="math inline">\(k\)</span>-텐서의 선형결합으로 교대 <span class="math inline">\(k\)</span>-텐서를 반환한다. 이를 <strong>교대화(Alternatization)</strong> 라고 한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
 <p><span id="eq-CM_definition_of_alt_function"><span class="math display">\[
 \text{Alt}(\phi)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot \phi\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
 \tag{6.7}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -490,20 +505,23 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 </section>
 <section id="쐐기곱" class="level3" data-number="6.1.3">
 <h3 data-number="6.1.3" class="anchored" data-anchor-id="쐐기곱"><span class="header-section-number">6.1.3</span> 쐐기곱</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>쐐기곱</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_wedge_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.6 (쐐기곱)</strong></span> <span class="math inline">\(\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)\)</span> 에 대해 <span class="math inline">\(\omega\)</span> 와 <span class="math inline">\(\eta\)</span> 의 <strong>쐐기곱 (wedge product)</strong> 혹은 <strong>외적 (exterior product)</strong> <span class="math inline">\(\omega \wedge \eta : V^{k+l} \to \mathbb{R}\)</span> 은 아래와 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 6.6</strong></span> <span class="math inline">\(\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)\)</span> 에 대해 <span class="math inline">\(\omega\)</span> 와 <span class="math inline">\(\eta\)</span> 의 <strong>쐐기곱 (wedge product)</strong> 혹은 <strong>외적 (exterior product)</strong> <span class="math inline">\(\omega \wedge \eta : V^{k+l} \to \mathbb{R}\)</span> 은 아래와 같이 정의된다.</p>
 <p><span id="eq-CM_definition_of_wedge_product"><span class="math display">\[
 \begin{aligned}
 \omega \wedge \eta &amp;:= \dfrac{(k+l)!}{k!\,l!} \text{Alt}(\omega \otimes \eta)
 \end{aligned}
 \tag{6.8}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -964,14 +982,18 @@ F(x_1,\ldots,x_{n-1}) = x_1\times \cdots \times x_{n-1}.
 <h2 data-number="6.2" class="anchored" data-anchor-id="장과-형식"><span class="header-section-number">6.2</span> 장과 형식</h2>
 <section id="sec-CM_tangent_space_and_vector_field" class="level3" data-number="6.2.1">
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="sec-CM_tangent_space_and_vector_field"><span class="header-section-number">6.2.1</span> 탄젠트 공간과 벡터장</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>탄젠트 공간</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_tangent_space" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.7 (탄젠트 공간)</strong></span> 정해진 <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{p}\)</span> 에서의 <strong>탄젠트 공간 (tangent space)</strong> <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 는</p>
+<p><span class="theorem-title"><strong>정의 6.7</strong></span> 정해진 <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{p}\)</span> 에서의 <strong>탄젠트 공간 (tangent space)</strong> <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 는</p>
 <p><span class="math display">\[
 T_\boldsymbol{p}({\mathbb{R}^n}) = \{(\boldsymbol{p},\,\boldsymbol{x}) : \boldsymbol{x}\in \mathbb{R}^n\}
 \]</span></p>
@@ -986,7 +1008,6 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 </div>
 </div>
-</div>
 <p>다음은 쉽게 보일 수 있다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_tangent_space_as_a_vector_space" class="theorem proposition">
@@ -995,14 +1016,18 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <p><br></p>
 <p>일반적인 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터는 원점으로부터의 화살표로 표현되는 경우가 많다. 이와 유사하게 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 의 벡터 <span class="math inline">\((\boldsymbol{p},\boldsymbol{v})\)</span> 는 <span class="math inline">\(\boldsymbol{p}\)</span> 를 시작으로 <span class="math inline">\(\boldsymbol{p}+\boldsymbol{v}\)</span> 를 향하는 화살표로 표현된다. 또한 내적과 방향의 경우 <span class="math inline">\(\mathbb{R}^n\)</span> 과 같이 정의 할 수 있으며 이를 통상 내적, 통상 방향이라고 한다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>통상 내적, 통상 방향</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_usual_inner_product_and_orientation" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.8 (통상 내적, 통상 방향)</strong></span> <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서의 내적 <span class="math inline">\(\langle\,,\,\rangle_\boldsymbol{p}\)</span> 을</p>
+<p><span class="theorem-title"><strong>정의 6.8</strong></span> <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서의 내적 <span class="math inline">\(\langle\,,\,\rangle_\boldsymbol{p}\)</span> 을</p>
 <p><span class="math display">\[
 \langle (\boldsymbol{p},\boldsymbol{u}), (\boldsymbol{p},\boldsymbol{v})\rangle_\boldsymbol{p}= \langle \boldsymbol{u},\boldsymbol{v}\rangle
 \]</span></p>
@@ -1014,16 +1039,19 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>벡터장</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_vector_field" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.9 (벡터장)</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터장 (vector field)</strong> 라고 한다. <span class="math inline">\(F(\boldsymbol{p})\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 <span class="math inline">\(f_i(\boldsymbol{p})\)</span> 로 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 6.9</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터장 (vector field)</strong> 라고 한다. <span class="math inline">\(F(\boldsymbol{p})\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 <span class="math inline">\(f_i(\boldsymbol{p})\)</span> 로 표기한다.</p>
 <p><span class="math inline">\(F,\,G\)</span> 가 벡터장이고 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 함수일 때 연산을 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1036,36 +1064,41 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong><span class="math inline">\(\nabla\)</span> 연산자</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_nabla_operator" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.10 (Nabla 연산자)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 nabla 연산자 <span class="math inline">\(\nabla\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.10</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 nabla 연산자 <span class="math inline">\(\nabla\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_nabla_operator"><span class="math display">\[
 \nabla := \sum_{i=1}^n \boldsymbol{e}_i \boldsymbol{\cdot}D_i.
 \tag{6.18}\]</span></span></p>
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>Divergence 와 Curl</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_divergence_and_curl" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.11 (Divergence 와 Curl)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F(\boldsymbol{p}) = (f_1(\boldsymbol{p}),\ldots,f_n(\boldsymbol{p}))\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i f_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다. <span class="math inline">\(n=3\)</span> 인 경우 아래와 같이 정의된 <span class="math inline">\(\text{curl}\,F(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>curl</strong> 이라고 하며 <span class="math inline">\(\nabla \times F\)</span> 로도 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 6.11</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F(\boldsymbol{p}) = (f_1(\boldsymbol{p}),\ldots,f_n(\boldsymbol{p}))\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i f_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다. <span class="math inline">\(n=3\)</span> 인 경우 아래와 같이 정의된 <span class="math inline">\(\text{curl}\,F(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>curl</strong> 이라고 하며 <span class="math inline">\(\nabla \times F\)</span> 로도 표기한다.</p>
 <p><span class="math display">\[
 \text{curl}\, F(\boldsymbol{p}) := (D_2f_3 - D_3f_2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f_1 - D_1f_3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f_2-D_2f_1)(\boldsymbol{e}_3)_\boldsymbol{p}.
 \]</span></p>
-</div>
 </div>
 </div>
 </div>
@@ -1074,18 +1107,21 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <section id="sec-CM_differential_form" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-CM_differential_form"><span class="header-section-number">6.2.2</span> 미분 형식</h3>
 <p><span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span>, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 <span class="math inline">\(k\)</span>-form 을 정의 할 수 있다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>미분 형식</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_differential_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.12 (미분 형식)</strong></span> <span class="math inline">\(\omega (\boldsymbol{p})\in \Omega^k(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 를 <span class="math inline">\(\mathbb{R}^n_\boldsymbol{p}\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 은 아래의 형태이다.</p>
+<p><span class="theorem-title"><strong>정의 6.12</strong></span> <span class="math inline">\(\omega (\boldsymbol{p})\in \Omega^k(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 를 <span class="math inline">\(\mathbb{R}^n_\boldsymbol{p}\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 은 아래의 형태이다.</p>
 <p><span id="eq-CM_form_of_differential_form"><span class="math display">\[
 \omega(\boldsymbol{p}) = \sum_{i_1&lt;\cdots &lt;i_k} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right]
 \tag{6.19}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -1106,14 +1142,18 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>미분 형식의 연산</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_arithmatic_of_differential_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.13 (미분 형식의 연산)</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \zeta\)</span>, <span class="math inline">\(m\)</span>-형식 <span class="math inline">\(\eta\)</span>, 스칼라장 <span class="math inline">\(f\)</span> 에 대해 연산이 아래와 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 6.13</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \zeta\)</span>, <span class="math inline">\(m\)</span>-형식 <span class="math inline">\(\eta\)</span>, 스칼라장 <span class="math inline">\(f\)</span> 에 대해 연산이 아래와 같이 정의된다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 \omega (\boldsymbol{p}) + \zeta (\boldsymbol{p}) &amp;:= \sum_{[I]} \left(\omega_I(\boldsymbol{p}) + \zeta_I(\boldsymbol{p})\right) \cdot d\varphi_I(\boldsymbol{p}), \\[0.3em]
@@ -1124,24 +1164,26 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 </div>
 </div>
-</div>
 <p><br></p>
 </section>
 <section id="sec-CM_form_and_differentiation" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-CM_form_and_differentiation"><span class="header-section-number">6.2.3</span> 형식과 미분</h3>
 <p>미분 가능한 함수 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 을 생각하자. 이런 함수를 <strong>스칼라장 (scalar field)</strong> 라고 한다. <span class="math inline">\(Df(\boldsymbol{p})\in \Omega^1(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>함수의 미분과 1차 형식</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_1_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.14 (함수의 미분과 1차 형식)</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.14</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_differential_1-form"><span class="math display">\[
 df(\boldsymbol{p}) (\boldsymbol{v}_\boldsymbol{p}) := Df(\boldsymbol{p})(\boldsymbol{v}) = Df(\boldsymbol{p})\cdot \boldsymbol{v}.
 \tag{6.20}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -1166,14 +1208,18 @@ df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle df(\boldsymbol{p})(\boldsymbol{v}_p) = Df(\boldsymbol{p}) \boldsymbol{\cdot}\boldsymbol{v} = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot v_i = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot \left(dx_i(\boldsymbol{p})(\boldsymbol{v}_p)\right). \square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span>Pull-back 과 Push-forward
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_push_forward_and_pull_back" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.15 (Pull-back 과 Push-forward)</strong></span> 미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 아래와 같이 정의되는 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}(T_\boldsymbol{p}(\mathbb{R}^n),\, T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 을 <span class="math inline">\(F\)</span> 에 대한 <strong>push-forward</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 6.15</strong></span> 미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 아래와 같이 정의되는 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}(T_\boldsymbol{p}(\mathbb{R}^n),\, T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 을 <span class="math inline">\(F\)</span> 에 대한 <strong>push-forward</strong> 라고 한다.</p>
 <p><span id="eq-def_CM_push_forward"><span class="math display">\[
 F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(\boldsymbol{p})}
 \tag{6.21}\]</span></span></p>
@@ -1189,7 +1235,6 @@ F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1279,20 +1324,23 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 </section>
 <section id="sec-CM_external_derivative_of_differantial_form" class="level3" data-number="6.2.4">
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="sec-CM_external_derivative_of_differantial_form"><span class="header-section-number">6.2.4</span> 외미분</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>외미분</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_differential_of_forms" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.16 (외미분)</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega = \sum_{[I]} \omega_{I}dx_{I}\)</span> 에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.16</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega = \sum_{[I]} \omega_{I}dx_{I}\)</span> 에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_def_of_differential_of_form"><span class="math display">\[
 \begin{aligned}
 d\omega :=&amp; \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx_\alpha \wedge dx_{I}.
 \end{aligned}
 \tag{6.23}\]</span></span></p>
-</div>
 </div>
 </div>
 </div>
@@ -1353,15 +1401,18 @@ F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\
 <p>임을 안다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
-<div id="def-CM_closed_and_exact_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.17 (닫힌 형식과 완전 형식)</strong></span> 형식 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(d\omega=0\)</span> 일 때 <strong>닫힌 형식 (closed form)</strong> 이라고 한다. <span class="math inline">\(\omega\)</span> 가 다른 형식 <span class="math inline">\(\eta\)</span> 에 대해 <span class="math inline">\(\omega = d\eta\)</span> 일 때 <span class="math inline">\(\omega\)</span> 를 <strong>완전 형식 (exact form)</strong> 이라고 한다.</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>닫힌 형식과 완전 형식</strong>
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-CM_closed_and_exact_form" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 6.17</strong></span> 형식 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(d\omega=0\)</span> 일 때 <strong>닫힌 형식 (closed form)</strong> 이라고 한다. <span class="math inline">\(\omega\)</span> 가 다른 형식 <span class="math inline">\(\eta\)</span> 에 대해 <span class="math inline">\(\omega = d\eta\)</span> 일 때 <span class="math inline">\(\omega\)</span> 를 <strong>완전 형식 (exact form)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -1395,19 +1446,23 @@ f(\boldsymbol{x}) = \int_0^1 \dfrac{d}{dt}f(t\boldsymbol{x})\,dt = \int_0^1 \sum
 I\omega (\boldsymbol{x}) := \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdot x_i \,dt.
 \tag{6.25}\]</span></span></p>
 <p><span class="math inline">\(I\omega\)</span> 의 정의가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 <span class="math inline">\(\omega\)</span> 가 정의되는 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 일 때 <span class="math inline">\(0\)</span> 부터 <span class="math inline">\(\boldsymbol{x}\)</span> 까지의 선분이 <span class="math inline">\(A\)</span> 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 <strong>별모양 집합 (star shaped set)</strong> 이라고 한다.</p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<p><br></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-body-container">
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span>미분가능한 호모토피
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div id="def-CM_differentiable_homotopy" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.18 (미분가능한 호모토피)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n,\,B\subset \mathbb{R}^m\)</span> 이 열린 집합이고 <span class="math inline">\(G,\,H \to A\to B\)</span> 가 <span class="math inline">\(C^\infty\)</span> 사상이라고 하자. 이 때 어떤 <span class="math inline">\(C^\infty\)</span> 사상 <span class="math inline">\(K:A\times [0,\,1] \to B\)</span> 가 존재하여</p>
+<p><span class="theorem-title"><strong>정의 6.18</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n,\,B\subset \mathbb{R}^m\)</span> 이 열린 집합이고 <span class="math inline">\(G,\,H \to A\to B\)</span> 가 <span class="math inline">\(C^\infty\)</span> 사상이라고 하자. 이 때 어떤 <span class="math inline">\(C^\infty\)</span> 사상 <span class="math inline">\(K:A\times [0,\,1] \to B\)</span> 가 존재하여</p>
 <p><span class="math display">\[
 K(\boldsymbol{x},\,0) = G(\boldsymbol{x}),\qquad K(\boldsymbol{x},\,1) = H(\boldsymbol{x})
 \]</span></p>
 <p>일 때 <span class="math inline">\(K\)</span> 를 <span class="math inline">\(G,\,H\)</span> 사이의 <strong>미분가능한 호모토피(differentiable homotopy)</strong> 라고 하고 <span class="math inline">\(G\)</span> 와 <span class="math inline">\(H\)</span> 는 differentiably homotopic 하다고 한다.</p>
-</div>
 </div>
 </div>
 </div>

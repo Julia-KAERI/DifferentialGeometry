@@ -11,10 +11,11 @@ crossref:
 
 ### 텐서와 텐서곱 {#sec-CM_tensor_and_tensor_product}
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_k_tensor}
+::: {.callout-note icon="false"}
 
-#### $k$-텐서
+#### **$k$-텐서**
+
+::: {#def-CM_k_tensor}
 
 벡터공간 $V$ 에 대해 $V^k \mapsto \R$ 인 다중선형 함수의 집합을 **$k$-텐서 ($k$-tensor)** 라고 하며 $k$-텐서 의 집합을 $\mathfrak{J}^k(V)$ 라고 쓴다. 즉 $a\in \R$ 와 각각의 $i=1,\ldots,\,n$ 에 대해
 
@@ -50,10 +51,11 @@ $\mathfrak{J}^k(V)$ 는 벡터공간이다.
 
 </div></br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_tensor_product}
+::: {.callout-note icon="false"}
 
-#### 텐서곱
+#### **텐서곱**
+
+::: {#def-CM_tensor_product}
 
 $\phi\in\mathfrak{J}^k(V),\, \psi\in \mathfrak{J}^l(V)$ 일 때 텐서곱 $\phi\otimes \psi \in \mathfrak{J}^{k+l}(V)$ 를 다음과 같이 정의한다.
 
@@ -129,10 +131,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_pullback}
+::: {.callout-note icon="false"}
 
-#### Pull-back
+#### **Pull-back**
+
+::: {#def-CM_pullback}
 
 미분가능한 함수 $F:V \to W$ 와 $\phi\in \mathfrak{J}^k(W)$ 에 대해 아래와 같이 정의되는 $F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 를 $F$ 에 의한 $\phi$ 의 **pull-back** 이라고 한다.
 
@@ -190,10 +193,11 @@ $$
 
 ### 교대 텐서 {#sec-CM_alternating_tensor}
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_alternating_k_tensor}
+::: {.callout-note icon="false"}
 
-#### 교대 텐서
+#### **교대 텐서**
+
+::: {#def-CM_alternating_k_tensor}
 
 $\omega \in \mathfrak{J}^k(V)$ 가 아래와 같은 성질을 가질 때 $\omega$ 를 **교대 $k$-텐서 (alternaging $k$-tensor)** 라고 한다.
 
@@ -219,10 +223,11 @@ $\Omega^k(V)$ 는 벡터공간이며 $\mathfrak{J}^k(V)$ 의 부분공간이다.
 
 </div></br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_alternatization}
+::: {.callout-note icon="false"}
 
 #### 교대화
+
+::: {#def-CM_alternatization}
 
 아래에 정의된 $\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)$ 는 $k$-텐서의 선형결합으로 교대 $k$-텐서를 반환한다. 이를 **교대화(Alternatization)** 라고 한다. 여기서 $\sigma$ 는 대칭군 $S_k$ 에 속하는 순열이며 $\text{sgn}(\sigma)$ 는 순열에 대한 부호함수이다.
 
@@ -288,10 +293,11 @@ $$
 
 ### 쐐기곱
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_wedge_product}
+::: {.callout-note icon="false"}
 
-#### 쐐기곱
+#### **쐐기곱**
+
+::: {#def-CM_wedge_product}
 
 $\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)$ 에 대해 $\omega$ 와 $\eta$ 의 **쐐기곱 (wedge product)** 혹은 **외적 (exterior product)** $\omega \wedge \eta : V^{k+l} \to \R$ 은 아래와 같이 정의된다.
 
@@ -1025,10 +1031,11 @@ $$
 
 ### 탄젠트 공간과 벡터장 {#sec-CM_tangent_space_and_vector_field}
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_tangent_space}
+::: {.callout-note icon="false"}
 
-#### 탄젠트 공간
+#### **탄젠트 공간**
+
+::: {#def-CM_tangent_space}
 
 정해진 $\bf{p}\in \R^n$ 에 대해 $\bf{p}$ 에서의 **탄젠트 공간 (tangent space)** $T_\bf{p}(\R^n)$ 는 
 
@@ -1065,10 +1072,11 @@ $T_\bf{p}(\R^n)$ 는 $(\bf{p},\,\bf{0})$ 을 영벡터로 하는 벡터공간이
 일반적인 $\R^n$ 의 벡터는 원점으로부터의 화살표로 표현되는 경우가 많다. 이와 유사하게 $T_\bf{p}(\R^n)$ 의 벡터 $(\bf{p},\bf{v})$ 는 $\bf{p}$ 를 시작으로 $\bf{p}+\bf{v}$ 를 향하는 화살표로 표현된다. 또한 내적과 방향의 경우 $\R^n$ 과 같이 정의 할 수 있으며 이를 통상 내적, 통상 방향이라고 한다.
 
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_usual_inner_product_and_orientation}
+::: {.callout-note icon="false"}
 
-#### 통상 내적, 통상 방향
+#### **통상 내적, 통상 방향**
+
+::: {#def-CM_usual_inner_product_and_orientation}
 
 $T_\bf{p}(\R^n)$ 에서의 내적 $\langle\,,\,\rangle_\bf{p}$ 을 
 
@@ -1089,10 +1097,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_vector_field}
+::: {.callout-note icon="false"}
 
-#### 벡터장
+#### **벡터장**
+
+::: {#def-CM_vector_field}
 
 $F:\R^n \to T_\bf{p}(\R^n)$ 를 $\R^n$ 에서의 **벡터장 (vector field)** 라고 한다. $F(\bf{p})$ 의 $i$ 번째 성분을 $f_i(\bf{p})$ 로 표기한다.
 
@@ -1112,10 +1121,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_nabla_operator}
+::: {.callout-note icon="false"}
 
-#### Nabla 연산자
+#### **$\nabla$ 연산자**
+
+::: {#def-CM_nabla_operator}
 
 $\R^n$ 에서 nabla 연산자 $\nabla$ 를 아래와 같이 정의한다.
 
@@ -1128,10 +1138,13 @@ $$ {#eq-CM_nabla_operator}
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
+
+#### **Divergence 와 Curl**
+
 ::: {#def-CM_divergence_and_curl}
 
-#### Divergence 와 Curl
+
 
 $\R^n$ 에서의 벡터장 $F(\bf{p}) = (f_1(\bf{p}),\ldots,f_n(\bf{p}))$ 에 대해 $\sum_{i=1}^n D_i f_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. $n=3$ 인 경우 아래와 같이 정의된 $\text{curl}\,F(\bf{p})$ 를 $F$ 에 대한 **curl** 이라고 하며 $\nabla \times F$ 로도 표기한다.
 
@@ -1148,10 +1161,11 @@ $$
 
 $\R^n$ 과 $T_\bf{p}(\R^n)$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-form 을 정의 할 수 있다.
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_differential_form}
+::: {.callout-note icon="false"}
 
-#### 미분 형식
+#### **미분 형식**
+
+::: {#def-CM_differential_form}
 
 $\omega (\bf{p})\in \Omega^k(T_\bf{p}(\R^n))$ 를 $\R^n_\bf{p}$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega(\bf{p})$ 은 아래의 형태이다.
 
@@ -1195,10 +1209,11 @@ $f:\R^n \to \R$ 은 $0$-형식이다. $1$-형식은 선형 변환이다.
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_arithmatic_of_differential_form}
+::: {.callout-note icon="false"}
 
-#### 미분 형식의 연산
+#### **미분 형식의 연산**
+
+::: {#def-CM_arithmatic_of_differential_form}
 
 $k$-형식 $\omega,\, \zeta$, $m$-형식 $\eta$, 스칼라장 $f$ 에 대해 연산이 아래와 같이 정의된다.
 
@@ -1220,10 +1235,11 @@ $$
 
 미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. 이런 함수를 **스칼라장 (scalar field)** 라고 한다. $Df(\bf{p})\in \Omega^1(T_\bf{p}(\R^n))$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_1_form}
+::: {.callout-note icon="false"}
 
-#### 함수의 미분과 1차 형식
+#### **함수의 미분과 1차 형식**
+
+::: {#def-CM_1_form}
 
 $f:\R^n \to \R$ 에 대해 $1$-형식 $df(\bf{p})$ 를 아래와 같이 정의한다. 
 
@@ -1268,10 +1284,11 @@ $\displaystyle df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n
 </br>
 
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_push_forward_and_pull_back}
+::: {.callout-note icon="false"}
 
 #### Pull-back 과 Push-forward
+
+::: {#def-CM_push_forward_and_pull_back}
 
 미분가능한 함수 $F:\R^n \to \R^m$ 과 선형변환인 $F'(\bf{p}) \in \mathcal{L}(\R^n, \R^m)$ 을 생각하자. 아래와 같이 정의되는 선형변환 $F_\ast  \in \mathcal{L}(T_\bf{p}(\R^n),\, T_{F(\bf{p})}(\R^m)$ 을 $F$ 에 대한 **push-forward** 라고 한다.
 
@@ -1420,10 +1437,11 @@ $$
 
 ### 외미분 {#sec-CM_external_derivative_of_differantial_form}
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_differential_of_forms}
+::: {.callout-note icon="false"}
 
-#### 외미분
+#### **외미분**
+
+::: {#def-CM_differential_of_forms}
 
 $\R^n$ 에서 정의된 $k$-형식 $\omega = \sum_{[I]} \omega_{I}dx_{I}$ 에 대한 $\omega$ 의 **외미분 (external derivative)** $d\omega$ 를 아래와 같이 정의한다.
 
@@ -1523,10 +1541,11 @@ $$
 
 </br>
 
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_closed_and_exact_form}
+::: {.callout-note icon="false"}
 
-#### 닫힌 형식과 완전 형식
+#### **닫힌 형식과 완전 형식**
+
+::: {#def-CM_closed_and_exact_form}
 
 형식 $\omega$ 가 $d\omega=0$ 일 때 **닫힌 형식 (closed form)** 이라고 한다. $\omega$ 가 다른 형식 $\eta$ 에 대해 $\omega = d\eta$ 일 때 $\omega$ 를 **완전 형식 (exact form)** 이라고 한다. 
 
@@ -1583,12 +1602,13 @@ $$ {#eq-CM_Iomega_transform}
 
 $I\omega$ 의 정의가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 $\omega$ 가 정의되는 열린 집합 $A\subset \R^n$ 이 $\bf{x}\in A$ 일 때 $0$ 부터 $\bf{x}$ 까지의 선분이 $A$ 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 $\bf{0}$ 주위의 **별모양 집합 (star shaped set)** 이라고 한다. 
 
+</br>
 
-
-::: {.callout-note appearance="simple" icon="false"}
-::: {#def-CM_differentiable_homotopy}
+::: {.callout-note icon="false"}
 
 #### 미분가능한 호모토피
+
+::: {#def-CM_differentiable_homotopy}
 
 $A\subset \R^n,\,B\subset \R^m$ 이 열린 집합이고 $G,\,H \to A\to B$ 가 $C^\infty$ 사상이라고 하자. 이 때 어떤 $C^\infty$ 사상 $K:A\times [0,\,1] \to B$ 가 존재하여
 
