@@ -984,7 +984,7 @@ see [최대최소정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/
 ::: {#exr-CM_spivak_1_30}
 #### Spivak 1.30
 
-$f:[a,\,b] \to \R$ 이 증가함수이다. $x_1,\ldots,\,x_n \in [a,\,b]$ 가 모두 다른 값이라면 $\sum_{i=1}^n o(f,\,x_i) < f(b)-f(a)$ 임을 보여라.
+$f:[a,\,b] \to \R$ 이 증가함수이다. $x_1,\ldots,\,x_n \in [a,\,b]$ 가 모두 다른 값이라면 $\sum_{i=1}^n o(f,\,x^i) < f(b)-f(a)$ 임을 보여라.
 
 :::
 
@@ -992,17 +992,17 @@ $f:[a,\,b] \to \R$ 이 증가함수이다. $x_1,\ldots,\,x_n \in [a,\,b]$ 가 �
 
 ::: {.solution}
 
-임의의 $\delta>0$ 에 대해 $o(f,\,x_i) < f(x_{i}+\delta)- f(x_i-\delta)$ 이다. 일반성을 잃지 않고 $x_1<\cdots <x_n$ 라고 할 수 있다. $\delta < \frac{1}{2}\min \{x_{k}-x_{k-1}: k=2,\ldots,\,n\}$ 으로 잡자. 그렇다면 $f(x_{k+1}-\delta) - f(x_k+\delta )>0$ 이며 
+임의의 $\delta>0$ 에 대해 $o(f,\,x^i) < f(x^{i}+\delta)- f(x^i-\delta)$ 이다. 일반성을 잃지 않고 $x^1<\cdots <x^n$ 라고 할 수 있다. $\delta < \frac{1}{2}\min \{x^{k}-x^{k-1}: k=2,\ldots,\,n\}$ 으로 잡자. 그렇다면 $f(x^{k+1}-\delta) - f(x^k+\delta )>0$ 이며 
 
 $$
 \begin{aligned}
-\sum_{i=1}^n o(f,\,x_i) &< f(x_1+\delta)- f(x_1-\delta) + \cdots + f(x_n+\delta)- f(x_n-\delta) \\
-&= f(x_n+\delta) - (f(x_n-\delta)-f(x_{n-1}+\delta))  \\
-&\qquad \qquad \cdots - (f(x_2-\delta)+ f(x_1+\delta)) - f(x_1-\delta)\\
-&< f(x_n+\delta) - f(x_1-\delta)
+\sum_{i=1}^n o(f,\,x^i) &< f(x^1+\delta)- f(x^1-\delta) + \cdots + f(x^n+\delta)- f(x^n-\delta) \\
+&= f(x^n+\delta) - (f(x^n-\delta)-f(x^{n-1}+\delta))  \\
+&\qquad \qquad \cdots - (f(x^2-\delta)+ f(x^1+\delta)) - f(x^1-\delta)\\
+&< f(x^n+\delta) - f(x^1-\delta)
 \end{aligned}
 $$
 
-이다. 임의의 작은 $\delta>0$ 에 대해 성립하므로 $\sum_{i=1}^n o(f,\,x_i) < f(b)-f(a)$ 이다.
+이다. 임의의 작은 $\delta>0$ 에 대해 성립하므로 $\sum_{i=1}^n o(f,\,x^i) < f(b)-f(a)$ 이다.
 
 :::

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -54,15 +54,14 @@ div.csl-indent {
 <link href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6270b3fc96d87e7c219eb207d6c41939.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7fead300425d5cf2829466f16b52b05f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,7 +104,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -319,7 +318,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong><span class="math inline">\(n\)</span>-cell 의 부피</strong>
+<strong><span class="math inline">\(n\)</span>-cell 의 부피</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -337,7 +336,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong><span class="math inline">\(n\)</span>-cell 의 분할과 subcell</strong>
+<strong><span class="math inline">\(n\)</span>-cell 의 분할과 subcell</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -354,7 +353,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>refinement
+refinement
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -369,7 +368,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>리만 상합, 리만 하합
+리만 상합, 리만 하합
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -421,7 +420,7 @@ L(f,\,P_1) \le L(f,\, P_3) \le U(f,\, P_3) \le L(f,\,P_2)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>리만 적분
+리만 적분
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -640,7 +639,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>Measure zero
+Measure zero
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -694,7 +693,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>Content zero
+Content zero
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -883,7 +882,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>특성함수와 집합의 적분</strong>
+<strong>특성함수와 집합의 적분</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -915,7 +914,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>조르당 가측</strong>
+<strong>조르당 가측</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1461,14 +1460,13 @@ D_1 f(x,\,y) &amp;= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

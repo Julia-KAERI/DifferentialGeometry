@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/AnalysisOnManifolds/01_functions_on_Euclidean_space.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6270b3fc96d87e7c219eb207d6c41939.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7fead300425d5cf2829466f16b52b05f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +84,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -283,9 +282,9 @@ window.Quarto = {
 <section id="sec-CM_differentiation_of_multivariable_function" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-CM_differentiation_of_multivariable_function"><span class="header-section-number">2.1.1</span> 다변수 함수의 미분</h3>
 <p>선형변환 <span class="math inline">\(L:\mathbb{R}^n \to \mathbb{R}^m\)</span> 은 정해진 기저에 대해 <span class="math inline">\(m \times n\)</span> 행렬로 표현할 수 있다는 것을 안다. <span class="math inline">\(\mathbb{R}^n\)</span> 의 기저 <span class="math inline">\(\mathcal{B}_n=(\boldsymbol{v}_1,\ldots,\,\boldsymbol{v}_n)\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 기저 <span class="math inline">\(\mathcal{B}_m=(\boldsymbol{u}_1,\ldots,\,\boldsymbol{u}_m)\)</span> 에 대한 <span class="math inline">\(L\)</span> 에 대한 행렬 표현을 <span class="math inline">\([L]_{\mathcal{B}_n,\, \mathcal{B}_m}\)</span> 라고 하자. <span class="math inline">\(\mathbb{R}^m\)</span> 과 <span class="math inline">\(\mathbb{R}^n\)</span> 각각의 표준기저에 대한 행렬표현은 <span class="math inline">\([L]\)</span> 라고 쓰기로 하자. 즉 <span class="math inline">\(L(\boldsymbol{x}) = [L]\cdot \boldsymbol{x}\)</span> 이다.</p>
-<p>혼동의 여지가 있지만 <span class="math inline">\([L]\)</span> 의 <span class="math inline">\(i\)</span> 행 <span class="math inline">\(j\)</span> 열 성분을 <span class="math inline">\([L]_{ij}\)</span> 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 &amp; \ldots &amp; x_n\end{bmatrix}^T \in \mathbb{R}^m\)</span> 과 <span class="math inline">\(\boldsymbol{y} = L(\boldsymbol{x})\)</span> 에 대해</p>
+<p>혼동의 여지가 있지만 <span class="math inline">\([L]\)</span> 의 <span class="math inline">\(i\)</span> 행 <span class="math inline">\(j\)</span> 열 성분을 <span class="math inline">\({L^i}_{j}\)</span> 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x^1 &amp; \ldots &amp; x^n\end{bmatrix}^T \in \mathbb{R}^m\)</span> 과 <span class="math inline">\(\boldsymbol{y} = L(\boldsymbol{x})\)</span> 에 대해</p>
 <p><span class="math display">\[
-y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
+y^i = (L(\boldsymbol{x}))^i = \sum_{j=1}^n {L^i}_jx^j
 \]</span></p>
 <p>이다.</p>
 <p><br></p>
@@ -295,7 +294,7 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>다변수 함수의 미분</strong>
+<strong>다변수 함수의 미분</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -343,12 +342,12 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>야코비 행렬</strong>
+<strong>야코비 행렬</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_jacobian" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 2.2</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 표준기저에 대해 표현한 행렬을 <strong>야코비 행렬 (Jacobian matrix)</strong> 이라고 하며 <span class="math inline">\(J[F](\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(J_F(\boldsymbol{a})\)</span> 와 같이 표기한다. 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 미분가능할 때는 <span class="math inline">\(A\)</span> 에서 정의된 함수로서 <span class="math inline">\(J_F(\boldsymbol{x})\)</span> 라고 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 2.2</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(F'(\boldsymbol{a})\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(\mathbb{R}^m\)</span> 의 표준기저에 대해 표현한 행렬을 <strong>야코비 행렬 (Jacobian matrix)</strong> 이라고 하며 <span class="math inline">\(J[F](\boldsymbol{a})\)</span> 혹은 <span class="math inline">\(J_F(\boldsymbol{a})\)</span> 와 같이 표기한다. 모든 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 미분가능할 때는 <span class="math inline">\(A \mapsto \mathbb{R}^{m\times n}\)</span> 함수로서 <span class="math inline">\(J_F(\boldsymbol{x})\)</span> 라고 표기한다.</p>
 </div>
 </div>
 </div>
@@ -358,18 +357,18 @@ y_i = (L(\boldsymbol{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_differentiability_of_identity_function" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 2.1</strong></span> <a href="01_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>1.7</span></a> 에서 정의된 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라. 사영함수 <span class="math inline">\(\pi_i:\mathbb{R}^n \to \mathbb{R}\)</span> 도 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 2.1</strong></span> <a href="01_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>1.7</span></a> 에서 정의된 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라. 사영함수 <span class="math inline">\(\pi^i:\mathbb{R}^n \to \mathbb{R}\)</span> 도 모든 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에서 미분가능함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(I_n :\mathbb{R}^n \to \mathbb{R}^n\)</span> 을 항등사상이라고 하자. <span class="math inline">\(\boldsymbol{\pi} = I_n\)</span> 이며 <span class="math inline">\(\pi_i = \boldsymbol{e}_i^T\)</span> 임을 안다. <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(I_n :\mathbb{R}^n \to \mathbb{R}^n\)</span> 을 항등사상이라고 하자. <span class="math inline">\(\boldsymbol{\pi} = I_n\)</span> 이며 <span class="math inline">\(\pi^i = \boldsymbol{e}_i^T\)</span> 임을 안다. <span class="math display">\[
 \|\boldsymbol{\pi}(\boldsymbol{x}+\boldsymbol{h})-\boldsymbol{\pi}(\boldsymbol{x})-I(\boldsymbol{h})\| = 0
 \]</span></p>
 <p>이므로 <span class="math inline">\(\boldsymbol{\pi}'(\boldsymbol{x})=I_n\)</span> 이다. 또한</p>
 <p><span class="math display">\[
-\|\pi_i (\boldsymbol{x}+\boldsymbol{h})-\pi_i (\boldsymbol{x})-\pi_i(\boldsymbol{h})\| = 0
+\|\pi^i (\boldsymbol{x}+\boldsymbol{h})-\pi^i (\boldsymbol{x})-\pi^i(\boldsymbol{h})\| = 0
 \]</span></p>
-<p>이므로 <span class="math inline">\(\pi'_i(\boldsymbol{x})= \pi_i = \boldsymbol{e}_i^T\)</span> 이다.</p>
+<p>이므로 <span class="math inline">\({\pi^i}'(\boldsymbol{x})= \pi^i = \boldsymbol{e}_i^T\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -478,7 +477,7 @@ f(x,\,y) = \left\{ \begin{array}{ll} \dfrac{x|y|}{\sqrt{x^2+y^2}}, \qquad &amp; 
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_2_8" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 2.8 (Spivak 2.8)</strong></span> <span class="math inline">\(F:\mathbb{R}\to \mathbb{R}^2\)</span> 이며 <span class="math inline">\(F = \begin{bmatrix} f_1 &amp; f_2\end{bmatrix}^T\)</span> 라 하자. <span class="math inline">\(F\)</span> 가 <span class="math inline">\(a\in R\)</span> 에서 미분가능할 필요충분조건은 <span class="math inline">\(f_1,\,f_2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(F'(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 2.8 (Spivak 2.8)</strong></span> <span class="math inline">\(F:\mathbb{R}\to \mathbb{R}^2\)</span> 이며 <span class="math inline">\(F = \begin{bmatrix} f^1 &amp; f^2\end{bmatrix}^T\)</span> 라 하자. <span class="math inline">\(F\)</span> 가 <span class="math inline">\(a\in R\)</span> 에서 미분가능할 필요충분조건은 <span class="math inline">\(f^1,\,f^2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(F'(a) = \begin{bmatrix} Df^1(a) &amp; Df^2(a)\end{bmatrix}^T\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -487,17 +486,17 @@ f(x,\,y) = \left\{ \begin{array}{ll} \dfrac{x|y|}{\sqrt{x^2+y^2}}, \qquad &amp; 
 \]</span></p>
 <p>이어야 한다. <span class="math inline">\(i=1,\,2\)</span> 에 대해</p>
 <p><span class="math display">\[
-\dfrac{|f_i(a+h) - f_i(a) - c_ih|}{|h|} \le \dfrac{\|F(a+h) - F(a) - \begin{bmatrix} c_1h &amp; c_2h\end{bmatrix}^T\|}{|h|}
+\dfrac{|f^i(a+h) - f^i(a) - c_ih|}{|h|} \le \dfrac{\|F(a+h) - F(a) - \begin{bmatrix} c_1h &amp; c_2h\end{bmatrix}^T\|}{|h|}
 \]</span></p>
-<p>이므로 양변에 <span class="math inline">\(h \to 0\)</span> 극한을 취하면 좌변의 극한은 <span class="math inline">\(0\)</span> 이며 미분의 정의에 의해 <span class="math inline">\(c_i = f_i'(a)\)</span> 이다. 즉 <span class="math inline">\(F'(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 이다.</p>
-<p>역으로 <span class="math inline">\(f_1,\,, f_2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하다고 하면</p>
+<p>이므로 양변에 <span class="math inline">\(h \to 0\)</span> 극한을 취하면 좌변의 극한은 <span class="math inline">\(0\)</span> 이며 미분의 정의에 의해 <span class="math inline">\(c_i = {f^i}'(a)\)</span> 이다. 즉 <span class="math inline">\(F'(a) = \begin{bmatrix} {f^1}'(a) &amp; {f^2}'(a)\end{bmatrix}^T\)</span> 이다.</p>
+<p>역으로 <span class="math inline">\(f^1,\,, f^2\)</span> 가 각각 <span class="math inline">\(a\)</span> 에서 미분가능하다고 하면</p>
 <p><span class="math display">\[
 \begin{aligned}
-&amp;\dfrac{\|F(a+h) - F(a) - \begin{bmatrix} f_1'(a)h &amp; f_2'(a)h\end{bmatrix}^T\|}{|h|} \\
-&amp;\qquad \qquad \qquad \le \dfrac{|f_1(a+h) - f_1(a) - f_1'(a)h|}{|h|} +\dfrac{|f_2(a+h) - f_2(a) - f_2'(a) h|}{|h|}
+&amp;\dfrac{\|F(a+h) - F(a) - \begin{bmatrix} Df^1(a)h &amp; Df^2(a)h\end{bmatrix}^T\|}{|h|} \\
+&amp;\qquad \qquad \qquad \le \dfrac{|f^1(a+h) - f^1(a) - Df^1(a)h|}{|h|} +\dfrac{|f^2(a+h) - f^2(a) - Df^2(a) h|}{|h|}
 \end{aligned}
 \]</span></p>
-<p>이므로 양변에 극한을 취하면 <span class="math inline">\(0\)</span> 좌변이 <span class="math inline">\(0\)</span> 이 됨을 안다. 즉 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(F'(a) = \begin{bmatrix} f_1'(a) &amp; f_2'(a)\end{bmatrix}^T\)</span> 이다.</p>
+<p>이므로 양변에 극한을 취하면 <span class="math inline">\(0\)</span> 좌변이 <span class="math inline">\(0\)</span> 이 됨을 안다. 즉 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(a\)</span> 에서 미분가능하며 <span class="math inline">\(F'(a) = \begin{bmatrix} Df^1(a) &amp; Df^2(a)\end{bmatrix}^T\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -615,7 +614,6 @@ R(\boldsymbol{x}) &amp;= G(F(\boldsymbol{x})) -  G(\boldsymbol{b}) - (T \circ L)
 </section>
 <section id="sec-CM_basic_properties_of_derivative_of_multivariable_functions" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-CM_basic_properties_of_derivative_of_multivariable_functions"><span class="header-section-number">2.2.2</span> 다변수 함수 미분의 기본 성질</h3>
-<br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_derivative_of_multivariable_functions" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 2.1</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 다음이 성립한다.</p>
@@ -630,27 +628,22 @@ R(\boldsymbol{x}) &amp;= G(F(\boldsymbol{x})) -  G(\boldsymbol{b}) - (T \circ L)
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_basic_properties_of_derivative_of_multivariable_functions" class="theorem">
-<p><span class="theorem-title"><strong>정리 2.3</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix}f_1(\boldsymbol{x}) &amp;\cdots &amp; f_m(\boldsymbol{x})\end{bmatrix}^T\)</span> 이라고 일 때 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분 가능한 필요충분조건은 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능한 것이며</p>
+<p><span class="theorem-title"><strong>정리 2.3</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix}f^1(\boldsymbol{x}) &amp;\cdots &amp; f^m(\boldsymbol{x})\end{bmatrix}^T\)</span> 일 때 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분 가능한 필요충분조건은 각각의 <span class="math inline">\(f^i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능한 것이며 이 때</p>
 <p><span class="math display">\[
-F'(\boldsymbol{a}) = \begin{bmatrix} f_1'(\boldsymbol{a}) &amp; \cdots &amp;f_m'(\boldsymbol{a})\end{bmatrix}^T
+F'(\boldsymbol{a}) = \begin{bmatrix} Df^1(\boldsymbol{a}) &amp; \cdots &amp; Df^m(\boldsymbol{a})\end{bmatrix}^T
 \]</span></p>
 <p>이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(f_i'(\boldsymbol{a})\)</span> 는 <span class="math inline">\(1 \times n\)</span> 행렬, 즉 열행렬임을 안다. <span class="math inline">\(1 \times n\)</span> 열행렬 <span class="math inline">\(\boldsymbol{a}_1,\ldots,\, \boldsymbol{a}_m\)</span> 에 대해</p>
-<p><span class="math display">\[
-\begin{bmatrix} \boldsymbol{a}_1 \\ \vdots \\ \boldsymbol{a}_m \end{bmatrix} = \begin{bmatrix} (\boldsymbol{a}_1)_1 &amp; \cdots &amp; (\boldsymbol{a}_1)_n \\ \vdots &amp; &amp; \vdots \\ (\boldsymbol{a}_m)_1 &amp; \cdots &amp; (\boldsymbol{a}_m)_n\end{bmatrix}
-\]</span></p>
-<p>이라고 하자.</p>
-<p>이제 각각의 <span class="math inline">\(f_i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 <span class="math inline">\(T=\begin{bmatrix} f_1'(\boldsymbol{a}) \\ \vdots \\ f_m'(\boldsymbol{a})\end{bmatrix}\)</span> 라고 하자.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(f^i\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하며 <span class="math inline">\(T=\begin{bmatrix} Df^1(\boldsymbol{a}) \\ \vdots \\ Df^m(\boldsymbol{a})\end{bmatrix}\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\dfrac{\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a})-T(\boldsymbol{h})\|}{\|\boldsymbol{h}\|}  \le \sum_{i=1}^m \dfrac{|f_i(\boldsymbol{a}+\boldsymbol{h}) - f_i(\boldsymbol{a})- f_i'(\boldsymbol{a})(\boldsymbol{h})|}{\|\boldsymbol{h}\|}
+\dfrac{\|F(\boldsymbol{a}+\boldsymbol{h})-F(\boldsymbol{a})-T(\boldsymbol{h})\|}{\|\boldsymbol{h}\|}  \le \sum_{i=1}^m \dfrac{|f^i(\boldsymbol{a}+\boldsymbol{h}) - f^i(\boldsymbol{a})- Df^i(\boldsymbol{a})(\boldsymbol{h})|}{\|\boldsymbol{h}\|}
 \end{aligned}
 \]</span></p>
 <p>이며 <span class="math inline">\(\boldsymbol{h}\to \boldsymbol{0}\)</span> 극한에서 우변이 <span class="math inline">\(0\)</span> 이므로 좌변도 <span class="math inline">\(0\)</span> 이다. 즉 <span class="math inline">\(F'(\boldsymbol{a}) = T\)</span> 이다.</p>
-<p>이제 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다고 하자. 사영함수(<a href="01_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>1.7</span></a>) <span class="math inline">\(\pi_i\)</span> 에 대해 <a href="#exr-CM_differentiability_of_identity_function" class="quarto-xref">연습문제&nbsp;<span>2.1</span></a> 에서 미분가능함을 보였다. <a href="#thm-CM_chain_rule" class="quarto-xref">정리&nbsp;<span>2.2</span></a> 에 의해 <span class="math inline">\(\pi_i \circ F\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다. <span class="math inline">\(\square\)</span></p>
+<p>이제 <span class="math inline">\(F\)</span> 가 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다고 하자. 사영함수(<a href="01_functions_on_Euclidean_space.html#def-CM_projection_function" class="quarto-xref">정의&nbsp;<span>1.7</span></a>) <span class="math inline">\(\pi^i\)</span> 에 대해 <a href="#exr-CM_differentiability_of_identity_function" class="quarto-xref">연습문제&nbsp;<span>2.1</span></a> 에서 미분가능함을 보였다. <a href="#thm-CM_chain_rule" class="quarto-xref">정리&nbsp;<span>2.2</span></a> 에 의해 <span class="math inline">\(\pi^i \circ F\)</span> 도 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 미분가능하다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
@@ -1014,7 +1007,7 @@ f'(t) = \sum_{j=1}^n \det \begin{bmatrix} a_{11}(t) &amp; \cdots &amp; a_{1n}(t)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>편미분</strong>
+<strong>편미분</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1595,14 +1588,13 @@ f(\boldsymbol{x}) = f(\boldsymbol{x})- f(\boldsymbol{0}) = \int_0^1 \dfrac{d h_{
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

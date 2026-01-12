@@ -17,10 +17,10 @@ crossref:
 
 선형변환 $L:\R^n \to \R^m$ 은 정해진 기저에 대해 $m \times n$ 행렬로 표현할 수 있다는 것을 안다. $\R^n$ 의 기저 $\mathcal{B}_n=(\bf{v}_1,\ldots,\,\bf{v}_n)$ 과 $\R^m$ 의 기저 $\mathcal{B}_m=(\bf{u}_1,\ldots,\,\bf{u}_m)$ 에 대한 $L$ 에 대한 행렬 표현을 $[L]_{\mathcal{B}_n,\, \mathcal{B}_m}$ 라고 하자. $\R^m$ 과 $\R^n$ 각각의 표준기저에 대한 행렬표현은 $[L]$ 라고 쓰기로 하자. 즉 $L(\bf{x}) = [L]\cdot \bf{x}$ 이다. 
 
-혼동의 여지가 있지만 $[L]$ 의 $i$ 행 $j$ 열 성분을 $[L]_{ij}$ 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 $\bf{x} = \begin{bmatrix} x_1 & \ldots & x_n\end{bmatrix}^T \in \R^m$ 과 $\bf{y} = L(\bf{x})$ 에 대해  
+혼동의 여지가 있지만 $[L]$ 의 $i$ 행 $j$ 열 성분을 ${L^i}_{j}$ 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 $\bf{x} = \begin{bmatrix} x^1 & \ldots & x^n\end{bmatrix}^T \in \R^m$ 과 $\bf{y} = L(\bf{x})$ 에 대해  
 
 $$
-y_i = (L(\bf{x}))_i = \sum_{i=1}^m [L]_{ij}x_j
+y^i = (L(\bf{x}))^i = \sum_{j=1}^n {L^i}_jx^j
 $$
 
 이다. 
@@ -93,7 +93,7 @@ $F:\R^n\to\R^m$ 이 모든 $\bf{x}\in \R^n$ 에서 미분가능하면 마치 일
 
 ::: {#def-CM_jacobian}
 
-$F:A \subset \R^n \to \R^m$ 에 대해 $F'(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 표준기저에 대해 표현한 행렬을 **야코비 행렬 (Jacobian matrix)** 이라고 하며 $J[F](\bf{a})$ 혹은 $J_F(\bf{a})$ 와 같이 표기한다. 모든 $A\subset \R^n$ 에서 미분가능할 때는 $A$ 에서 정의된 함수로서 $J_F(\bf{x})$ 라고 표기한다. 
+$F:A \subset \R^n \to \R^m$ 에 대해 $F'(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 표준기저에 대해 표현한 행렬을 **야코비 행렬 (Jacobian matrix)** 이라고 하며 $J[F](\bf{a})$ 혹은 $J_F(\bf{a})$ 와 같이 표기한다. 모든 $A\subset \R^n$ 에서 미분가능할 때는 $A \mapsto \R^{m\times n}$ 함수로서 $J_F(\bf{x})$ 라고 표기한다. 
 
 ::: 
 :::
@@ -108,7 +108,7 @@ $F:A \subset \R^n \to \R^m$ 에 대해 $F'(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 �
 
 ::: {#exr-CM_differentiability_of_identity_function}
 
-@def-CM_projection_function 에서 정의된 $\bf{\pi}:\R^n \to \R^n$ 은 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라. 사영함수 $\pi_i:\R^n \to \R$ 도 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라.
+@def-CM_projection_function 에서 정의된 $\bf{\pi}:\R^n \to \R^n$ 은 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라. 사영함수 $\pi^i:\R^n \to \R$ 도 모든 $\bf{x}\in \R^n$ 에서 미분가능함을 보여라.
 
 :::
 
@@ -116,7 +116,7 @@ $F:A \subset \R^n \to \R^m$ 에 대해 $F'(\bf{a})$ 를 $\R^n$ 과 $\R^m$ 의 �
 
 ::: {.solution}
 
-$I_n :\R^n \to \R^n$ 을 항등사상이라고 하자. $\bf{\pi} = I_n$ 이며 $\pi_i = \bf{e}_i^T$ 임을 안다.
+$I_n :\R^n \to \R^n$ 을 항등사상이라고 하자. $\bf{\pi} = I_n$ 이며 $\pi^i = \bf{e}_i^T$ 임을 안다.
 $$
 \|\bf{\pi}(\bf{x}+\bf{h})-\bf{\pi}(\bf{x})-I(\bf{h})\| = 0 
 $$
@@ -124,10 +124,10 @@ $$
 이므로 $\bf{\pi}'(\bf{x})=I_n$ 이다. 또한
 
 $$
-\|\pi_i (\bf{x}+\bf{h})-\pi_i (\bf{x})-\pi_i(\bf{h})\| = 0
+\|\pi^i (\bf{x}+\bf{h})-\pi^i (\bf{x})-\pi^i(\bf{h})\| = 0
 $$
 
-이므로 $\pi'_i(\bf{x})= \pi_i = \bf{e}_i^T$ 이다. 
+이므로 ${\pi^i}'(\bf{x})= \pi^i = \bf{e}_i^T$ 이다. 
 
 :::
 
@@ -315,7 +315,7 @@ $$
 ::: {#exr-CM_spivak_2_8}
 #### Spivak 2.8
 
-$F:\R \to \R^2$ 이며 $F = \begin{bmatrix} f_1 & f_2\end{bmatrix}^T$ 라 하자. $F$ 가 $a\in R$ 에서 미분가능할 필요충분조건은 $f_1,\,f_2$ 가 각각 $a$ 에서 미분가능하며 $F'(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 임을 보여라.
+$F:\R \to \R^2$ 이며 $F = \begin{bmatrix} f^1 & f^2\end{bmatrix}^T$ 라 하자. $F$ 가 $a\in R$ 에서 미분가능할 필요충분조건은 $f^1,\,f^2$ 가 각각 $a$ 에서 미분가능하며 $F'(a) = \begin{bmatrix} Df^1(a) & Df^2(a)\end{bmatrix}^T$ 임을 보여라.
 
 :::
 
@@ -331,21 +331,21 @@ $$
 이어야 한다. $i=1,\,2$ 에 대해
 
 $$
-\dfrac{|f_i(a+h) - f_i(a) - c_ih|}{|h|} \le \dfrac{\|F(a+h) - F(a) - \begin{bmatrix} c_1h & c_2h\end{bmatrix}^T\|}{|h|}
+\dfrac{|f^i(a+h) - f^i(a) - c_ih|}{|h|} \le \dfrac{\|F(a+h) - F(a) - \begin{bmatrix} c_1h & c_2h\end{bmatrix}^T\|}{|h|}
 $$
 
-이므로 양변에 $h \to 0$ 극한을 취하면 좌변의 극한은 $0$ 이며 미분의 정의에 의해 $c_i = f_i'(a)$ 이다. 즉 $F'(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 이다. 
+이므로 양변에 $h \to 0$ 극한을 취하면 좌변의 극한은 $0$ 이며 미분의 정의에 의해 $c_i = {f^i}'(a)$ 이다. 즉 $F'(a) = \begin{bmatrix} {f^1}'(a) & {f^2}'(a)\end{bmatrix}^T$ 이다. 
 
-역으로 $f_1,\,, f_2$ 가 각각 $a$ 에서 미분가능하다고 하면 
+역으로 $f^1,\,, f^2$ 가 각각 $a$ 에서 미분가능하다고 하면 
 
 $$
 \begin{aligned}
-&\dfrac{\|F(a+h) - F(a) - \begin{bmatrix} f_1'(a)h & f_2'(a)h\end{bmatrix}^T\|}{|h|} \\
-&\qquad \qquad \qquad \le \dfrac{|f_1(a+h) - f_1(a) - f_1'(a)h|}{|h|} +\dfrac{|f_2(a+h) - f_2(a) - f_2'(a) h|}{|h|} 
+&\dfrac{\|F(a+h) - F(a) - \begin{bmatrix} Df^1(a)h & Df^2(a)h\end{bmatrix}^T\|}{|h|} \\
+&\qquad \qquad \qquad \le \dfrac{|f^1(a+h) - f^1(a) - Df^1(a)h|}{|h|} +\dfrac{|f^2(a+h) - f^2(a) - Df^2(a) h|}{|h|} 
 \end{aligned}
 $$
 
-이므로 양변에 극한을 취하면 $0$ 좌변이 $0$ 이 됨을 안다. 즉 $F$ 는 $a$ 에서 미분가능하며 $F'(a) = \begin{bmatrix} f_1'(a) & f_2'(a)\end{bmatrix}^T$ 이다.
+이므로 양변에 극한을 취하면 $0$ 좌변이 $0$ 이 됨을 안다. 즉 $F$ 는 $a$ 에서 미분가능하며 $F'(a) = \begin{bmatrix} Df^1(a) & Df^2(a)\end{bmatrix}^T$ 이다.
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -521,7 +521,6 @@ $$
 
 ### 다변수 함수 미분의 기본 성질 {#sec-CM_basic_properties_of_derivative_of_multivariable_functions}
 
-</br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_basic_properties_of_derivative_of_multivariable_functions}
@@ -549,10 +548,10 @@ $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
 ::: {#thm-CM_basic_properties_of_derivative_of_multivariable_functions}
 
-$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix}f_1(\bf{x}) &\cdots & f_m(\bf{x})\end{bmatrix}^T$ 이라고 일 때 $F$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능한 것이며 
+$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix}f^1(\bf{x}) &\cdots & f^m(\bf{x})\end{bmatrix}^T$ 일 때 $F$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f^i$ 가 $\bf{a}$ 에서 미분가능한 것이며 이 때
 
 $$
-F'(\bf{a}) = \begin{bmatrix} f_1'(\bf{a}) & \cdots &f_m'(\bf{a})\end{bmatrix}^T
+F'(\bf{a}) = \begin{bmatrix} Df^1(\bf{a}) & \cdots & Df^m(\bf{a})\end{bmatrix}^T
 $$
 
 이다. 
@@ -562,26 +561,17 @@ $$
 </div>
 
 ::: {.proof}
-우선 $f_i'(\bf{a})$ 는 $1 \times n$ 행렬, 즉 열행렬임을 안다. $1 \times n$ 열행렬 $\bf{a}_1,\ldots,\, \bf{a}_m$ 에 대해 
-
-$$
-\begin{bmatrix} \bf{a}_1 \\ \vdots \\ \bf{a}_m \end{bmatrix} = \begin{bmatrix} (\bf{a}_1)_1 & \cdots & (\bf{a}_1)_n \\ \vdots & & \vdots \\ (\bf{a}_m)_1 & \cdots & (\bf{a}_m)_n\end{bmatrix}
-$$ 
-
-이라고 하자. 
-
-
-이제 각각의 $f_i$ 가 $\bf{a}$ 에서 미분가능하며 $T=\begin{bmatrix} f_1'(\bf{a}) \\ \vdots \\ f_m'(\bf{a})\end{bmatrix}$ 라고 하자. 
+각각의 $f^i$ 가 $\bf{a}$ 에서 미분가능하며 $T=\begin{bmatrix} Df^1(\bf{a}) \\ \vdots \\ Df^m(\bf{a})\end{bmatrix}$ 라고 하자. 
 
 $$
 \begin{aligned}
-\dfrac{\|F(\bf{a}+\bf{h})-F(\bf{a})-T(\bf{h})\|}{\|\bf{h}\|}  \le \sum_{i=1}^m \dfrac{|f_i(\bf{a}+\bf{h}) - f_i(\bf{a})- f_i'(\bf{a})(\bf{h})|}{\|\bf{h}\|}
+\dfrac{\|F(\bf{a}+\bf{h})-F(\bf{a})-T(\bf{h})\|}{\|\bf{h}\|}  \le \sum_{i=1}^m \dfrac{|f^i(\bf{a}+\bf{h}) - f^i(\bf{a})- Df^i(\bf{a})(\bf{h})|}{\|\bf{h}\|}
 \end{aligned}
 $$
 
 이며 $\bf{h}\to \bf{0}$ 극한에서 우변이 $0$ 이므로 좌변도 $0$ 이다. 즉 $F'(\bf{a}) = T$ 이다. 
 
-이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-CM_projection_function) $\pi_i$ 에 대해 @exr-CM_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-CM_chain_rule 에 의해 $\pi_i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. $\square$
+이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-CM_projection_function) $\pi^i$ 에 대해 @exr-CM_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-CM_chain_rule 에 의해 $\pi^i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. $\square$
 :::
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/AnalysisOnManifolds/05_change_of_variables.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6270b3fc96d87e7c219eb207d6c41939.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7fead300425d5cf2829466f16b52b05f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +84,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -280,7 +279,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong><span class="math inline">\(k\)</span>-텐서</strong>
+<strong><span class="math inline">\(k\)</span>-텐서</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -316,7 +315,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>텐서곱</strong>
+<strong>텐서곱</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -379,7 +378,7 @@ T(v_1,\ldots,v_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>Pull-back</strong>
+<strong>Pull-back</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -430,7 +429,7 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>교대 텐서</strong>
+<strong>교대 텐서</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -457,7 +456,7 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>교대화
+교대화
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -511,7 +510,7 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>쐐기곱</strong>
+<strong>쐐기곱</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -988,7 +987,7 @@ F(x_1,\ldots,x_{n-1}) = x_1\times \cdots \times x_{n-1}.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>탄젠트 공간</strong>
+<strong>탄젠트 공간</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1022,7 +1021,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>통상 내적, 통상 방향</strong>
+<strong>통상 내적, 통상 방향</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1046,7 +1045,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>벡터장</strong>
+<strong>벡터장</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1071,7 +1070,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong><span class="math inline">\(\nabla\)</span> 연산자</strong>
+<strong><span class="math inline">\(\nabla\)</span> 연산자</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1090,7 +1089,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>Divergence 와 Curl</strong>
+<strong>Divergence 와 Curl</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1113,7 +1112,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>미분 형식</strong>
+<strong>미분 형식</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1148,7 +1147,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>미분 형식의 연산</strong>
+<strong>미분 형식의 연산</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1175,7 +1174,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>함수의 미분과 1차 형식</strong>
+<strong>함수의 미분과 1차 형식</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1214,7 +1213,7 @@ df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>Pull-back 과 Push-forward
+Pull-back 과 Push-forward
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1330,7 +1329,7 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>외미분</strong>
+<strong>외미분</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1407,7 +1406,7 @@ F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>닫힌 형식과 완전 형식</strong>
+<strong>닫힌 형식과 완전 형식</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1453,7 +1452,7 @@ I\omega (\boldsymbol{x}) := \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdo
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>미분가능한 호모토피
+미분가능한 호모토피
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2116,14 +2115,13 @@ d( (bz-cy)dx &amp;+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

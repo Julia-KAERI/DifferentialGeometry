@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/AnalysisOnManifolds/AOM.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6270b3fc96d87e7c219eb207d6c41939.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7fead300425d5cf2829466f16b52b05f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -85,7 +84,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -468,7 +467,7 @@ T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>데카르트곱</strong>
+<strong>데카르트곱</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -491,7 +490,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>열린/닫힌 <span class="math inline">\(n\)</span>-cell</strong>
+<strong>열린/닫힌 <span class="math inline">\(n\)</span>-cell</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -514,7 +513,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>열린/닫힌 입방체</strong>
+<strong>열린/닫힌 입방체</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -537,7 +536,7 @@ C(\boldsymbol{a},\,\delta) &amp;:=  (a^1-\delta,\,a^1+\delta) \times \cdots \tim
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>내부, 외부, 경계</strong>
+<strong>내부, 외부, 경계</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -635,7 +634,7 @@ N(\boldsymbol{a},\,\delta) \subset C(\boldsymbol{a},\,\delta) \subset N(\boldsym
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>행렬의 norm</strong>
+<strong>행렬의 norm</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -728,7 +727,7 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>성분 함수</strong>
+<strong>성분 함수</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -748,7 +747,7 @@ F(\boldsymbol{x}) = \begin{bmatrix} f^1(\boldsymbol{x}) &amp; \cdots &amp; f^m(\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>사영 함수
+사영 함수
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -775,7 +774,7 @@ F(\boldsymbol{x}) = \begin{bmatrix} f^1(\boldsymbol{x}) &amp; \cdots &amp; f^m(\
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>Oscillation</strong>
+<strong>Oscillation</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -897,20 +896,20 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_30" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.22 (Spivak 1.30)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(x_1,\ldots,\,x_n \in [a,\,b]\)</span> 가 모두 다른 값이라면 <span class="math inline">\(\sum_{i=1}^n o(f,\,x_i) &lt; f(b)-f(a)\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 1.22 (Spivak 1.30)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(x_1,\ldots,\,x_n \in [a,\,b]\)</span> 가 모두 다른 값이라면 <span class="math inline">\(\sum_{i=1}^n o(f,\,x^i) &lt; f(b)-f(a)\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(o(f,\,x_i) &lt; f(x_{i}+\delta)- f(x_i-\delta)\)</span> 이다. 일반성을 잃지 않고 <span class="math inline">\(x_1&lt;\cdots &lt;x_n\)</span> 라고 할 수 있다. <span class="math inline">\(\delta &lt; \frac{1}{2}\min \{x_{k}-x_{k-1}: k=2,\ldots,\,n\}\)</span> 으로 잡자. 그렇다면 <span class="math inline">\(f(x_{k+1}-\delta) - f(x_k+\delta )&gt;0\)</span> 이며</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>임의의 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 <span class="math inline">\(o(f,\,x^i) &lt; f(x^{i}+\delta)- f(x^i-\delta)\)</span> 이다. 일반성을 잃지 않고 <span class="math inline">\(x^1&lt;\cdots &lt;x^n\)</span> 라고 할 수 있다. <span class="math inline">\(\delta &lt; \frac{1}{2}\min \{x^{k}-x^{k-1}: k=2,\ldots,\,n\}\)</span> 으로 잡자. 그렇다면 <span class="math inline">\(f(x^{k+1}-\delta) - f(x^k+\delta )&gt;0\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
-\sum_{i=1}^n o(f,\,x_i) &amp;&lt; f(x_1+\delta)- f(x_1-\delta) + \cdots + f(x_n+\delta)- f(x_n-\delta) \\
-&amp;= f(x_n+\delta) - (f(x_n-\delta)-f(x_{n-1}+\delta))  \\
-&amp;\qquad \qquad \cdots - (f(x_2-\delta)+ f(x_1+\delta)) - f(x_1-\delta)\\
-&amp;&lt; f(x_n+\delta) - f(x_1-\delta)
+\sum_{i=1}^n o(f,\,x^i) &amp;&lt; f(x^1+\delta)- f(x^1-\delta) + \cdots + f(x^n+\delta)- f(x^n-\delta) \\
+&amp;= f(x^n+\delta) - (f(x^n-\delta)-f(x^{n-1}+\delta))  \\
+&amp;\qquad \qquad \cdots - (f(x^2-\delta)+ f(x^1+\delta)) - f(x^1-\delta)\\
+&amp;&lt; f(x^n+\delta) - f(x^1-\delta)
 \end{aligned}
 \]</span></p>
-<p>이다. 임의의 작은 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 성립하므로 <span class="math inline">\(\sum_{i=1}^n o(f,\,x_i) &lt; f(b)-f(a)\)</span> 이다.</p>
+<p>이다. 임의의 작은 <span class="math inline">\(\delta&gt;0\)</span> 에 대해 성립하므로 <span class="math inline">\(\sum_{i=1}^n o(f,\,x^i) &lt; f(b)-f(a)\)</span> 이다.</p>
 </div>
 
 
@@ -969,14 +968,13 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
