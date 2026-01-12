@@ -14,9 +14,9 @@ crossref:
 
 여기서는 유클리드 공간 $\R^n$ 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 [유클리드 공간의 정의](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_Euclidean_space) 와 [유클리드 노름에 대한 명제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space) 를 보라. 
 
-- 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x_1,\ldots,\,x_n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x_1,\ldots,\,x_n)$ 식 표기법과 $\begin{bmatrix} x_1 & \cdots & x_n\end{bmatrix}^T$ 를 섞어서 사용한다.
+- 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x^1,\ldots,\,x^n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x^1 & \cdots & x^n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x^1,\ldots,\,x^n)$ 식 표기법과 $\begin{bmatrix} x^1 & \cdots & x^n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
-- $F:\R^m \to \R^n$ 에서 $\bf{x} = \begin{bmatrix} x_1 & \cdots & x_m \end{bmatrix}$ 에 대해 $F(\bf{x})$ 를 $F(x_1,\ldots,\,x_m)$ 으로 표기하기도 한다.
+- $F:\R^m \to \R^n$ 에서 $\bf{x} = \begin{bmatrix} x^1 & \cdots & x^m \end{bmatrix}$ 에 대해 $F(\bf{x})$ 를 $F(x^1,\ldots,\,x^m)$ 으로 표기하기도 한다.
   
 - 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\R^n$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\R^{m\times n}$ 으로 표기한다.
 
@@ -26,6 +26,11 @@ crossref:
 
 - 벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. $F:\R^n \to \R^m$ 혹은 $\bf{f}:\R^n \to \R^m$ 과 같이 사용한다. $\mathcal{L}(\R^m,\,\R^n)$ 은 $\R^m \mapsto \R^n$ 선형사상의 집합이다.
 
+- 선형 변환 $L\in \mathcal{L}(\R^m,\,\R^n)$ 과 $\bf{x}= (x^1,\ldots,\,x^m)\in \R^m$ 에 대해 
+  $$
+  L(\bf{x}) = \sum_{i=1}^n \sum_{j=1}^m {L^i}_j x^j\bf{e}_i
+  $$
+  이다.
 
 
 <br>
@@ -38,7 +43,7 @@ crossref:
 ::: {#exr-CM_spivak_1_1}
 #### Spivak 1.1
 
-$\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
+$\|\bf{x}\| \le \sum_{i=1}^n |x^i|$ 임을 보여라.
 
 :::
 
@@ -49,7 +54,7 @@ $\|\bf{x}\| \le \sum_{i=1}^n |x_i|$ 임을 보여라.
 $\bf{x} = \sum_{i=1}^n x_i \bf{e}_i$ 이다. [유클리드 노름에 대한 명제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space)  ($5$) 로 부터
 
 $$
-\|\bf{x}\| = \left\|\sum_{i=1}^n x_i \bf{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \bf{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
+\|\bf{x}\| = \left\|\sum_{i=1}^n x^i \bf{e}_i\right\| \le |x^1| + \left\|\sum_{i=2}^n x^i \bf{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x^i|
 $$
 
 :::
@@ -245,17 +250,17 @@ $$
 
 ::: {.solution}
 
-$\bf{h} = (h_1,\ldots,\,h_n)$ 이며 $(T(\bf{h}))_i = \sum_{j=1}^n T_{ij}h_j$ 라 하자. 
+$\bf{h} = (h^1,\ldots,\,h^n)$ 이며 $(T(\bf{h}))^i = \sum_{j=1}^n {T^i}_j h^j$ 라 하자. 
 
 $$
-\left|\left(T(\bf{h})_i\right)\right| = \left| \sum_{j=1}^n T_{ij}h_j\right| \le \sum_{j=1}^n |T_{ij}|\cdot |h_j|
+\left|\left(T(\bf{h})^i\right)\right| = \left| \sum_{j=1}^n {T^i}_{j}h^j\right| \le \sum_{j=1}^n |{T^i}_{j}|\cdot |h^j|
 $$
 
-이다. $M_0 = \max \{|T_{ij}| : 1 \le i \le m,\, 1 \le j \le n\}$ 이라고 하자. 
+이다. $M_0 = \max \{\left|{T^i}_{j}\right| : 1 \le i \le m,\, 1 \le j \le n\}$ 이라고 하자. 
 
 $$
 \begin{aligned}
-\||T(\bf{h})\| & \le \sum_{j=1}^n \left|\left(T(\bf{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \\[0.3em]
+\||T(\bf{h})\| & \le \sum_{i=1}^n \left|\left(T(\bf{h})\right)^i\right| \le \sum_{i=1}^m \sum_{j=1}^n |{T^i}_{j}|\cdot |h^j| \le \sum_{i, j}M_0 |h^j| \\[0.3em]
 &\le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
 \end{aligned}
 $$
@@ -343,14 +348,14 @@ $$
 
 ::: {.callout-note icon="false"}
 
-#### 데카르트곱
+#### **데카르트곱**
 
 ::: {#def-CM_cartesian_product}
 
-$\bf{x} = (x_1,\ldots,\,x_m)\in \R^m,\, \bf{y}=(y_1,\ldots,\,y_n) \in \R^n$ 에 대해 $(\bf{x},\,\bf{y})$ 를 다음과 같이 정의한다. 
+$\bf{x} = (x^1,\ldots,\,x^m)\in \R^m,\, \bf{y}=(y^1,\ldots,\,y^n) \in \R^n$ 에 대해 $(\bf{x},\,\bf{y})$ 를 다음과 같이 정의한다. 
 
 $$
-(\bf{x},\,\bf{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \R^{m+n}.
+(\bf{x},\,\bf{y}) := (x^1,\ldots,\,x^m,\,y^1,\ldots,\,y^n) \in \R^{m+n}.
 $$
 
 또한 $A\subset \R^m,\,B\subset \R^n$ 에 대해 $A\times B \subset \R^{m + n}$ 를 아래와 같이 정의한다.
@@ -366,7 +371,7 @@ $$
 
 ::: {.callout-note icon="false"}
 
-#### **열린 $n$-cell**
+#### **열린/닫힌 $n$-cell**
 
 ::: {#def-CM_n_cell}
 
@@ -376,7 +381,12 @@ $$
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \R^n
 $$
 
-은 열린 집합이며 이를 열린 $n$-cell 이라고 한다.
+은 열린 집합이며 이를 **열린 $n$-cell** 이라고 한다. 또한
+$$
+[a_1,\,b_1] \times \cdots \times [a_n,\,b_n]\subset \R^n
+$$
+
+은 닫힌 집합이며 이를 **닫힌 $n$-cell** 이라고 한다.
 
 :::
 
@@ -392,12 +402,12 @@ $$
 
 ::: {#def-CM_neighboring_cube}
 
-$\bf{a} = (a_1,\ldots,\,a_n) \in \R^n$ 에 대해 $\bf{a}$ 를 중심으로 모서리의 길이가 모두 같은 열린 $n$-cell 을 아래와 같이 정의 할 수 있다. 
+$\bf{a} = (a^1,\ldots,\,a^n) \in \R^n$ 에 대해 $\bf{a}$ 를 중심으로 모서리의 길이가 모두 같은 열린 $n$-cell 을 아래와 같이 정의 할 수 있다. 
 
 $$
 \begin{aligned}
-C(\bf{a},\,\delta) &:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
-\overline{C}(\bf{a},\,\delta) &:=  [a_1-\delta,\,a_1+\delta] \times \cdots \times [a_n - \delta,\, a_n+\delta]. 
+C(\bf{a},\,\delta) &:=  (a^1-\delta,\,a^1+\delta) \times \cdots \times (a^n - \delta,\, a^n+\delta), \\
+\overline{C}(\bf{a},\,\delta) &:=  [a^1-\delta,\,a^1+\delta] \times \cdots \times [a^n - \delta,\, a^n+\delta]. 
 \end{aligned}
 $$
 
@@ -715,13 +725,19 @@ $$
 
 ::: {#def-CM_component_functions}
 
-함수 $F:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f_i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots & f_m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\bf{x}) \\ \vdots \\ f_m(\bf{x}) \end{bmatrix}$ 와 같이 열벡터로 표기한다.
+함수 $F:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f^i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $F(\bf{x})$ 를 아래와 같이 열벡터로 표기한다.
+
+$$
+F(\bf{x}) = \begin{bmatrix} f^1(\bf{x}) & \cdots & f^m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f^1(\bf{x}) \\ \vdots \\ f^m(\bf{x}) \end{bmatrix}.
+$$ 
+
+
 
 :::
 :::
 
 
-벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 $F:\R^n \to \R^m$ 나 $\bf{f}:\R^n \to \R^m$ 에 대해 $f_i$ 는 성분함수이다.
+벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 $F:\R^n \to \R^m$ 나 $\bf{f}:\R^n \to \R^m$ 에 대해 $f^i$ 는 성분함수이다.
 
 </br>
 
@@ -731,7 +747,7 @@ $$
 
 ::: {#def-CM_projection_function}
 
-항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 하고 $\pi_i$ 라고 쓴다. 즉 $\pi_i (\bf{x})= x_i$ 이다.
+항등함수 $\bf{\pi}:\R^n \to \R^n$ 은 $\bf{\pi}(\bf{x})=\bf{x}$ 이며 $\bf{\pi}$ 의 $i$ 번째 성분 함수를 $i$ 번째 **사영 함수(projection function)** 이라고 하고 $\pi_i$ 라고 쓴다. 즉 $\pi^i (\bf{x})= x^i$ 이다.
 
 :::
 :::
@@ -746,9 +762,9 @@ $$
 
 ($1$) 항등함수 $\bf{\pi}$ 는 선형사상이며 $\bf{\pi}:\R^n \to \R^n$ 은 $n \times n$ 항등행렬 $\bf{I}_n$ 과 같다. 
 
-($2$) 사영함수 $\pi_i :\R^n \to \R$ 역시 선형사상이며 표준기저 $\bf{e}_i$ 에 대해 $\pi_i (\bf{x}) = \bf{e}_i^T \bf{\cdot x}$ 이다.  
+($2$) 사영함수 $\pi_i :\R^n \to \R$ 역시 선형사상이며 표준기저 $\bf{e}_i$ 에 대해 $\pi^i (\bf{x}) = \bf{e}_i^T \bf{\cdot x}$ 이다.  
 
-($3$) $F = \begin{bmatrix} f_1 & \cdots & f_m\end{bmatrix}^T$ 일 때 $f_i = \pi_i (F)$ 이다.
+($3$) $F = \begin{bmatrix} f^1 & \cdots & f^m\end{bmatrix}^T$ 일 때 $f^i = \pi^i (F)$ 이다.
 
 :::
 
@@ -855,7 +871,7 @@ $B=\{\bf{x}\in A: o(f,\,\bf{x}) \ge \varepsilon\}$ 라고 하고 $\R^n-B$ 가 �
 $F:A \subset \R^n \to \R^m$ 이고 $\bf{a}\in A$ 일 때 다음이 성립함을 보여라.
 
 $$
-\displaystyle \lim_{\bf{x}\to \bf{a}} F(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\bf{x}\to \bf{a}} f_i(\bf{x}) = b_i
+\displaystyle \lim_{\bf{x}\to \bf{a}} F(\bf{x}) = \bf{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\bf{x}\to \bf{a}} f^i(\bf{x}) = b^i
 $$
 
 :::
@@ -864,13 +880,13 @@ $$
 
 ::: {.solution}
 
-($\implies$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies \|F(\bf{x})-\bf{b}\|<\varepsilon$ 인 $\delta>0$ 이 존재한다. $|f_i(\bf{x})-b_i|\le\|f(\bf{x})-\bf{b}\|$ 이므로 성립한다. 
+($\implies$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies \|F(\bf{x})-\bf{b}\|<\varepsilon$ 인 $\delta>0$ 이 존재한다. $|f^i(\bf{x})-b^i|\le\|f(\bf{x})-\bf{b}\|$ 이므로 성립한다. 
 
 
 ($\impliedby$) 임의의 $\varepsilon>0$ 에 대해 $0<\|\bf{x}-\bf{a}\|<\delta \implies |f_i(\bf{x})-b_i|<\varepsilon/m$ 인 $\delta>0$ 이 존재한다. 그렇다면.
 
 $$
-\|F(\bf{x})-\bf{b}\| \le \sum_{i=1}^m |f_i(\bf{x})-b_i| < m \cdot \dfrac{\varepsilon}{m} = \varepsilon
+\|F(\bf{x})-\bf{b}\| \le \sum_{i=1}^m |f^i(\bf{x})-b^i| < m \cdot \dfrac{\varepsilon}{m} = \varepsilon
 $$
 
 이므로 성립한다.

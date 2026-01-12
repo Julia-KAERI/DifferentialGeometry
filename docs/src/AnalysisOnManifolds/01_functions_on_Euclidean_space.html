@@ -273,25 +273,28 @@ window.Quarto = {
 <h2 data-number="1.1" class="anchored" data-anchor-id="기본-개념과-표기법"><span class="header-section-number">1.1</span> 기본 개념과 표기법</h2>
 <p>여기서는 유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 해석학을 다룬다. 기본적인 정의와 성질에 대해서는 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#def-MA_Euclidean_space">유클리드 공간의 정의</a> 와 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space">유클리드 노름에 대한 명제</a> 를 보라.</p>
 <ul>
-<li><p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_n)\)</span> 는 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 를 의미한다. 실제로 여기서는 <span class="math inline">\((x_1,\ldots,\,x_n)\)</span> 식 표기법과 <span class="math inline">\(\begin{bmatrix} x_1 &amp; \cdots &amp; x_n\end{bmatrix}^T\)</span> 를 섞어서 사용한다.</p></li>
-<li><p><span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x_1 &amp; \cdots &amp; x_m \end{bmatrix}\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x})\)</span> 를 <span class="math inline">\(F(x_1,\ldots,\,x_m)\)</span> 으로 표기하기도 한다.</p></li>
+<li><p>유클리드 공간 <span class="math inline">\(\mathbb{R}^n\)</span> 의 벡터 <span class="math inline">\(\boldsymbol{x} = (x^1,\ldots,\,x^n)\)</span> 는 <span class="math inline">\(n \times 1\)</span> 행렬 <span class="math inline">\(\begin{bmatrix} x^1 &amp; \cdots &amp; x^n\end{bmatrix}^T\)</span> 를 의미한다. 실제로 여기서는 <span class="math inline">\((x^1,\ldots,\,x^n)\)</span> 식 표기법과 <span class="math inline">\(\begin{bmatrix} x^1 &amp; \cdots &amp; x^n\end{bmatrix}^T\)</span> 를 섞어서 사용한다.</p></li>
+<li><p><span class="math inline">\(F:\mathbb{R}^m \to \mathbb{R}^n\)</span> 에서 <span class="math inline">\(\boldsymbol{x} = \begin{bmatrix} x^1 &amp; \cdots &amp; x^m \end{bmatrix}\)</span> 에 대해 <span class="math inline">\(F(\boldsymbol{x})\)</span> 를 <span class="math inline">\(F(x^1,\ldots,\,x^m)\)</span> 으로 표기하기도 한다.</p></li>
 <li><p>실수를 성분으로 갖는 <span class="math inline">\(n \times 1\)</span> 행렬의 집합은 <span class="math inline">\(\mathbb{R}^n\)</span> 로 표기하기로 한다. 또한 실계수를 갖는 <span class="math inline">\(m\times n\)</span> 행렬의 집합을 <span class="math inline">\(\mathbb{R}^{m\times n}\)</span> 으로 표기한다.</p></li>
 <li><p><span class="math inline">\(\mathbb{R}^n\)</span> 의 표준기저, 즉 <span class="math inline">\(i\)</span> 번째 성분만 <span class="math inline">\(1\)</span> 이며 나머지 성분은 <span class="math inline">\(0\)</span> 인 벡터를 <span class="math inline">\(\boldsymbol{e}_i\)</span> 라고 쓰기로 한다.</p></li>
 <li><p>두 벡터의 일반적인 내적은 <span class="math inline">\(\langle \boldsymbol{x},\, \boldsymbol{y}\rangle\)</span> 라고 쓰며 유클리드 내적은 <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{\cdot y}\)</span> 라고 쓴다. 여기서의 내적은 모두 유클리드 내적이므로 필요에 따라 두가지를 혼용하기로 한다.</p></li>
 <li><p>벡터값을 갖는 함수는 대문자를 사용하거나 볼드체를 사용한다. <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 혹은 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 같이 사용한다. <span class="math inline">\(\mathcal{L}(\mathbb{R}^m,\,\mathbb{R}^n)\)</span> 은 <span class="math inline">\(\mathbb{R}^m \mapsto \mathbb{R}^n\)</span> 선형사상의 집합이다.</p></li>
+<li><p>선형 변환 <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^m,\,\mathbb{R}^n)\)</span> 과 <span class="math inline">\(\boldsymbol{x}= (x^1,\ldots,\,x^m)\in \mathbb{R}^m\)</span> 에 대해 <span class="math display">\[
+L(\boldsymbol{x}) = \sum_{i=1}^n \sum_{j=1}^m {L^i}_j x^j\boldsymbol{e}_i
+\]</span> 이다.</p></li>
 </ul>
 <p><br></p>
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_1_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 1.1 (Spivak 1.1)</strong></span> <span class="math inline">\(\|\boldsymbol{x}\| \le \sum_{i=1}^n |x_i|\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 1.1 (Spivak 1.1)</strong></span> <span class="math inline">\(\|\boldsymbol{x}\| \le \sum_{i=1}^n |x^i|\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
 <p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{x} = \sum_{i=1}^n x_i \boldsymbol{e}_i\)</span> 이다. <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#prp-MA_norm_of_Euclidean_space">유클리드 노름에 대한 명제</a> (<span class="math inline">\(5\)</span>) 로 부터</p>
 <p><span class="math display">\[
-\|\boldsymbol{x}\| = \left\|\sum_{i=1}^n x_i \boldsymbol{e}_i\right\| \le |x_1| + \left\|\sum_{i=2}^n x_i \boldsymbol{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x_i|
+\|\boldsymbol{x}\| = \left\|\sum_{i=1}^n x^i \boldsymbol{e}_i\right\| \le |x^1| + \left\|\sum_{i=2}^n x^i \boldsymbol{e}_i\right\| \le \cdots \le \sum_{i=1}^n |x^i|
 \]</span></p>
 </div>
 <br>
@@ -400,14 +403,14 @@ window.Quarto = {
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{h} = (h_1,\ldots,\,h_n)\)</span> 이며 <span class="math inline">\((T(\boldsymbol{h}))_i = \sum_{j=1}^n T_{ij}h_j\)</span> 라 하자.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\boldsymbol{h} = (h^1,\ldots,\,h^n)\)</span> 이며 <span class="math inline">\((T(\boldsymbol{h}))^i = \sum_{j=1}^n {T^i}_j h^j\)</span> 라 하자.</p>
 <p><span class="math display">\[
-\left|\left(T(\boldsymbol{h})_i\right)\right| = \left| \sum_{j=1}^n T_{ij}h_j\right| \le \sum_{j=1}^n |T_{ij}|\cdot |h_j|
+\left|\left(T(\boldsymbol{h})^i\right)\right| = \left| \sum_{j=1}^n {T^i}_{j}h^j\right| \le \sum_{j=1}^n |{T^i}_{j}|\cdot |h^j|
 \]</span></p>
-<p>이다. <span class="math inline">\(M_0 = \max \{|T_{ij}| : 1 \le i \le m,\, 1 \le j \le n\}\)</span> 이라고 하자.</p>
+<p>이다. <span class="math inline">\(M_0 = \max \{\left|{T^i}_{j}\right| : 1 \le i \le m,\, 1 \le j \le n\}\)</span> 이라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\||T(\boldsymbol{h})\| &amp; \le \sum_{j=1}^n \left|\left(T(\boldsymbol{h})\right)_j\right| \le \sum_{j=1}^n \sum_{i=1}^m |T_{ij}|\cdot |h_j| \le \sum_{i, j}M_0 |h_j| \\[0.3em]
+\||T(\boldsymbol{h})\| &amp; \le \sum_{i=1}^n \left|\left(T(\boldsymbol{h})\right)^i\right| \le \sum_{i=1}^m \sum_{j=1}^n |{T^i}_{j}|\cdot |h^j| \le \sum_{i, j}M_0 |h^j| \\[0.3em]
 &amp;\le \sum_{i, j}M_0 \|\boldsymbol{h}\|= mnM_0\|\boldsymbol{h}\|
 \end{aligned}
 \]</span></p>
@@ -465,14 +468,14 @@ T(\boldsymbol{x}_1+c\boldsymbol{x}_2)= \varphi_{x_1}(\boldsymbol{y}) + c\varphi_
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>데카르트곱
+<span class="screen-reader-only">노트</span><strong>데카르트곱</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_cartesian_product" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.1</strong></span> <span class="math inline">\(\boldsymbol{x} = (x_1,\ldots,\,x_m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y_1,\ldots,\,y_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 1.1</strong></span> <span class="math inline">\(\boldsymbol{x} = (x^1,\ldots,\,x^m)\in \mathbb{R}^m,\, \boldsymbol{y}=(y^1,\ldots,\,y^n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\((\boldsymbol{x},\,\boldsymbol{y})\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
-(\boldsymbol{x},\,\boldsymbol{y}) := (x_1,\ldots,\,x_m,\,y_1,\ldots,\,y_n) \in \mathbb{R}^{m+n}.
+(\boldsymbol{x},\,\boldsymbol{y}) := (x^1,\ldots,\,x^m,\,y^1,\ldots,\,y^n) \in \mathbb{R}^{m+n}.
 \]</span></p>
 <p>또한 <span class="math inline">\(A\subset \mathbb{R}^m,\,B\subset \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(A\times B \subset \mathbb{R}^{m + n}\)</span> 를 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
@@ -488,7 +491,7 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>열린 <span class="math inline">\(n\)</span>-cell</strong>
+<span class="screen-reader-only">노트</span><strong>열린/닫힌 <span class="math inline">\(n\)</span>-cell</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -497,7 +500,10 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 <p><span class="math display">\[
 (a_1,\,b_1) \times \cdots \times (a_n,\,b_n)\subset \mathbb{R}^n
 \]</span></p>
-<p>은 열린 집합이며 이를 열린 <span class="math inline">\(n\)</span>-cell 이라고 한다.</p>
+<p>은 열린 집합이며 이를 <strong>열린 <span class="math inline">\(n\)</span>-cell</strong> 이라고 한다. 또한 <span class="math display">\[
+[a_1,\,b_1] \times \cdots \times [a_n,\,b_n]\subset \mathbb{R}^n
+\]</span></p>
+<p>은 닫힌 집합이며 이를 <strong>닫힌 <span class="math inline">\(n\)</span>-cell</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
@@ -513,11 +519,11 @@ A \times B := \{(\boldsymbol{x},\,\boldsymbol{y}) : \boldsymbol{x}\in A,\, \bold
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_neighboring_cube" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.3</strong></span> <span class="math inline">\(\boldsymbol{a} = (a_1,\ldots,\,a_n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
+<p><span class="theorem-title"><strong>정의 1.3</strong></span> <span class="math inline">\(\boldsymbol{a} = (a^1,\ldots,\,a^n) \in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 모서리의 길이가 모두 같은 열린 <span class="math inline">\(n\)</span>-cell 을 아래와 같이 정의 할 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-C(\boldsymbol{a},\,\delta) &amp;:=  (a_1-\delta,\,a_1+\delta) \times \cdots \times (a_n - \delta,\, a_n+\delta), \\
-\overline{C}(\boldsymbol{a},\,\delta) &amp;:=  [a_1-\delta,\,a_1+\delta] \times \cdots \times [a_n - \delta,\, a_n+\delta].
+C(\boldsymbol{a},\,\delta) &amp;:=  (a^1-\delta,\,a^1+\delta) \times \cdots \times (a^n - \delta,\, a^n+\delta), \\
+\overline{C}(\boldsymbol{a},\,\delta) &amp;:=  [a^1-\delta,\,a^1+\delta] \times \cdots \times [a^n - \delta,\, a^n+\delta].
 \end{aligned}
 \]</span></p>
 <p>이 때 <span class="math inline">\(C(\boldsymbol{a},\,\delta)\)</span> 를 <strong>열린 입방체</strong>, 혹은 열린 <span class="math inline">\(n\)</span>-입방체 라고 하며 <span class="math inline">\(\overline{C}(\boldsymbol{a},\,\delta)\)</span> 를 <strong>닫힌 입방체</strong>, 혹은 닫힌 <span class="math inline">\(n\)</span>-입방체 라고 한다.</p>
@@ -727,11 +733,14 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_component_functions" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.6</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f_i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots &amp; f_m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f_1(\boldsymbol{x}) \\ \vdots \\ f_m(\boldsymbol{x}) \end{bmatrix}\)</span> 와 같이 열벡터로 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 1.6</strong></span> 함수 <span class="math inline">\(F:A\subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 은 <span class="math inline">\(m\)</span> 개의 <strong>성분 함수(component function)</strong> <span class="math inline">\(f^i :\mathbb{R}^n \to \mathbb{R}\)</span> <span class="math inline">\((i=1,\ldots,\,m)\)</span> 를 가진다. 이 때 <span class="math inline">\(F(\boldsymbol{x})\)</span> 를 아래와 같이 열벡터로 표기한다.</p>
+<p><span class="math display">\[
+F(\boldsymbol{x}) = \begin{bmatrix} f^1(\boldsymbol{x}) &amp; \cdots &amp; f^m(\boldsymbol{x}) \end{bmatrix}^T= \begin{bmatrix} f^1(\boldsymbol{x}) \\ \vdots \\ f^m(\boldsymbol{x}) \end{bmatrix}.
+\]</span></p>
 </div>
 </div>
 </div>
-<p>벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 나 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(f_i\)</span> 는 성분함수이다.</p>
+<p>벡터값 함수는 대문자 혹은 볼드체를 사용하며 성분함수는 일반체 소문자를 사용하기로 한다. 특별한 언급이 없다면 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 나 <span class="math inline">\(\boldsymbol{f}:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(f^i\)</span> 는 성분함수이다.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -744,7 +753,7 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_projection_function" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 1.7</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi_i (\boldsymbol{x})= x_i\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>정의 1.7</strong></span> 항등함수 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(\boldsymbol{\pi}(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 <span class="math inline">\(\boldsymbol{\pi}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분 함수를 <span class="math inline">\(i\)</span> 번째 <strong>사영 함수(projection function)</strong> 이라고 하고 <span class="math inline">\(\pi_i\)</span> 라고 쓴다. 즉 <span class="math inline">\(\pi^i (\boldsymbol{x})= x^i\)</span> 이다.</p>
 </div>
 </div>
 </div>
@@ -753,8 +762,8 @@ B^{-1} - A^{-1} = B^{-1}(A-B)A^{-1}.
 <div id="exm-CM_projection_functions" class="theorem example">
 <p><span class="theorem-title"><strong>예제 1.1</strong></span> 다음은 쉽게 보일 수 있다.</p>
 <p>(<span class="math inline">\(1\)</span>) 항등함수 <span class="math inline">\(\boldsymbol{\pi}\)</span> 는 선형사상이며 <span class="math inline">\(\boldsymbol{\pi}:\mathbb{R}^n \to \mathbb{R}^n\)</span> 은 <span class="math inline">\(n \times n\)</span> 항등행렬 <span class="math inline">\(\boldsymbol{I}_n\)</span> 과 같다.</p>
-<p>(<span class="math inline">\(2\)</span>) 사영함수 <span class="math inline">\(\pi_i :\mathbb{R}^n \to \mathbb{R}\)</span> 역시 선형사상이며 표준기저 <span class="math inline">\(\boldsymbol{e}_i\)</span> 에 대해 <span class="math inline">\(\pi_i (\boldsymbol{x}) = \boldsymbol{e}_i^T \boldsymbol{\cdot x}\)</span> 이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F = \begin{bmatrix} f_1 &amp; \cdots &amp; f_m\end{bmatrix}^T\)</span> 일 때 <span class="math inline">\(f_i = \pi_i (F)\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) 사영함수 <span class="math inline">\(\pi_i :\mathbb{R}^n \to \mathbb{R}\)</span> 역시 선형사상이며 표준기저 <span class="math inline">\(\boldsymbol{e}_i\)</span> 에 대해 <span class="math inline">\(\pi^i (\boldsymbol{x}) = \boldsymbol{e}_i^T \boldsymbol{\cdot x}\)</span> 이다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(F = \begin{bmatrix} f^1 &amp; \cdots &amp; f^m\end{bmatrix}^T\)</span> 일 때 <span class="math inline">\(f^i = \pi^i (F)\)</span> 이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -825,15 +834,15 @@ m(f,\,\boldsymbol{a},\,\delta) &amp;:= \inf \{f(\boldsymbol{x}): \boldsymbol{x}\
 <div id="exr-CM_spivak_1_23" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 1.16 (Spivak 1.23)</strong></span> <span class="math inline">\(F:A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> 이고 <span class="math inline">\(\boldsymbol{a}\in A\)</span> 일 때 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
-\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} F(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f_i(\boldsymbol{x}) = b_i
+\displaystyle \lim_{\boldsymbol{x}\to \boldsymbol{a}} F(\boldsymbol{x}) = \boldsymbol{b} \iff \forall i\in \{1,\ldots,\,m\}\, \lim_{\boldsymbol{x}\to \boldsymbol{a}} f^i(\boldsymbol{x}) = b^i
 \]</span></p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|F(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f_i(\boldsymbol{x})-b_i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(\implies\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies \|F(\boldsymbol{x})-\boldsymbol{b}\|&lt;\varepsilon\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. <span class="math inline">\(|f^i(\boldsymbol{x})-b^i|\le\|f(\boldsymbol{x})-\boldsymbol{b}\|\)</span> 이므로 성립한다.</p>
 <p>(<span class="math inline">\(\impliedby\)</span>) 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(0&lt;\|\boldsymbol{x}-\boldsymbol{a}\|&lt;\delta \implies |f_i(\boldsymbol{x})-b_i|&lt;\varepsilon/m\)</span> 인 <span class="math inline">\(\delta&gt;0\)</span> 이 존재한다. 그렇다면.</p>
 <p><span class="math display">\[
-\|F(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^m |f_i(\boldsymbol{x})-b_i| &lt; m \cdot \dfrac{\varepsilon}{m} = \varepsilon
+\|F(\boldsymbol{x})-\boldsymbol{b}\| \le \sum_{i=1}^m |f^i(\boldsymbol{x})-b^i| &lt; m \cdot \dfrac{\varepsilon}{m} = \varepsilon
 \]</span></p>
 <p>이므로 성립한다.</p>
 </div>
