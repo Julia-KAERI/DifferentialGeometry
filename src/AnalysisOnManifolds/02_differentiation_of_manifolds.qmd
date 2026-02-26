@@ -17,7 +17,7 @@ crossref:
 
 선형변환 $L:\R^n \to \R^m$ 은 정해진 기저에 대해 $m \times n$ 행렬로 표현할 수 있다는 것을 안다. $\R^n$ 의 기저 $\mathcal{B}_n=(\bf{v}_1,\ldots,\,\bf{v}_n)$ 과 $\R^m$ 의 기저 $\mathcal{B}_m=(\bf{u}_1,\ldots,\,\bf{u}_m)$ 에 대한 $L$ 에 대한 행렬 표현을 $[L]_{\mathcal{B}_n,\, \mathcal{B}_m}$ 라고 하자. $\R^m$ 과 $\R^n$ 각각의 표준기저에 대한 행렬표현은 $[L]$ 라고 쓰기로 하자. 즉 $L(\bf{x}) = [L]\cdot \bf{x}$ 이다. 
 
-혼동의 여지가 있지만 $[L]$ 의 $i$ 행 $j$ 열 성분을 ${L^i}_{j}$ 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 $\bf{x} = \begin{bmatrix} x^1 & \ldots & x^n\end{bmatrix}^T \in \R^m$ 과 $\bf{y} = L(\bf{x})$ 에 대해  
+혼동의 여지가 있지만 $[L]$ 의 $i$ 행 $j$ 열 성분을 ${L^i}_{j}$ 라고 표현하기로 하자. 첨자가 인덱스이면 행렬의 성분이며 첨자가 기저이면 특정 기저의 행렬표현이다. 하지만 여기서는 대부분 전자의 의미로 사용되며, 혼동의 여지가 있다면 특정하기로 하자. 즉 $\bf{x} = (x^1 , \ldots , x^n) \in \R^m$ 과 $\bf{y} = L(\bf{x})$ 에 대해  
 
 $$
 y^i = (L(\bf{x}))^i = \sum_{j=1}^n {L^i}_jx^j
@@ -121,7 +121,7 @@ $$
 \|\bf{\pi}(\bf{x}+\bf{h})-\bf{\pi}(\bf{x})-I(\bf{h})\| = 0 
 $$
 
-이므로 $\bf{\pi}'(\bf{x})=I_n$ 이다. 또한
+이므로 $\bf{\pi}'(\bf{x})=I_n(\bf{x})$ 이다. 또한
 
 $$
 \|\pi^i (\bf{x}+\bf{h})-\pi^i (\bf{x})-\pi^i(\bf{h})\| = 0
@@ -144,7 +144,7 @@ $F:\R^n \to \R^m$ 이 $\bf{a}$ 에서 미분가능하면 $\bf{a}$ 에서 연속�
 
 ::: {.solution}
 
-@eq-CM_derivative_of_vector_function 로부터 $\displaystyle \lim_{\bf{h}\to \bf{0}} \|F(\bf{a}+\bf{h}) - F(\bf{a}) - T(\bf{h})\| = 0$ 이며 @exr-CM_spivak_1_10 로부터 $\displaystyle \lim_{\bf{h} \to \bf{0}} T(\bf{h})=\bf{0}$ 이므로 $\displaystyle \lim_{\bf{h}\to \bf{0}} F(\bf{a}+\bf{h})-F(\bf{a}) = \bf{0}$ 이다. 즉 $F$ 는 $\bf{a}$ 에서 연속이다.
+@eq-CM_derivative_of_vector_function 로부터 $\displaystyle \lim_{\bf{h}\to \bf{0}} \|F(\bf{a}+\bf{h}) - F(\bf{a}) - L(\bf{h})\| = 0$ 이며 @exr-CM_spivak_1_10 로부터 $\displaystyle \lim_{\bf{h} \to \bf{0}} L(\bf{h})=\bf{0}$ 이므로 $\displaystyle \lim_{\bf{h}\to \bf{0}} F(\bf{a}+\bf{h})-F(\bf{a}) = \bf{0}$ 이다. 즉 $F$ 는 $\bf{a}$ 에서 연속이다.
 :::
 
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -529,7 +529,7 @@ $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
 ($1$) $F$ 가 상수함수이면 모든 $\bf{x}\in \R^n$ 에 대해 $F'(\bf{x}) = \bf{0}$ 이다.
 
-($2$) $F$ 가 선형사상이면 $F'(\bf{a})= F$ 이다. 
+($2$) $F$ 가 선형사상이면 모든 $\bf{x}\in \R^n$ 에 대해 $F'(\bf{x})= F$ 이다. 
 
 :::
 
@@ -548,10 +548,10 @@ $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
 ::: {#thm-CM_basic_properties_of_derivative_of_multivariable_functions}
 
-$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix}f^1(\bf{x}) &\cdots & f^m(\bf{x})\end{bmatrix}^T$ 일 때 $F$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f^i$ 가 $\bf{a}$ 에서 미분가능한 것이며 이 때
+$F:\R^n \to \R^m$, $F(\bf{x}) = \left( f^1(\bf{x}),\ldots,\, f^m(\bf{x})\right)$ 일 때 $F$ 가 $\bf{a}$ 에서 미분 가능한 필요충분조건은 각각의 $f^i$ 가 $\bf{a}$ 에서 미분가능한 것이며 이 때
 
 $$
-F'(\bf{a}) = \begin{bmatrix} Df^1(\bf{a}) & \cdots & Df^m(\bf{a})\end{bmatrix}^T
+F'(\bf{a}) = \left(Df^1(\bf{a}) ,\ldots,\, Df^m(\bf{a}) \right)
 $$
 
 이다. 
@@ -561,15 +561,15 @@ $$
 </div>
 
 ::: {.proof}
-각각의 $f^i$ 가 $\bf{a}$ 에서 미분가능하며 $T=\begin{bmatrix} Df^1(\bf{a}) \\ \vdots \\ Df^m(\bf{a})\end{bmatrix}$ 라고 하자. 
+각각의 $f^i$ 가 $\bf{a}$ 에서 미분가능하며 $L=\begin{bmatrix} Df^1(\bf{a}) \\ \vdots \\ Df^m(\bf{a})\end{bmatrix}$ 라고 하자. $Df^i(\bf{a})$ 는 $1\times m$ 행렬이다. 
 
 $$
 \begin{aligned}
-\dfrac{\|F(\bf{a}+\bf{h})-F(\bf{a})-T(\bf{h})\|}{\|\bf{h}\|}  \le \sum_{i=1}^m \dfrac{|f^i(\bf{a}+\bf{h}) - f^i(\bf{a})- Df^i(\bf{a})(\bf{h})|}{\|\bf{h}\|}
+\dfrac{\|F(\bf{a}+\bf{h})-F(\bf{a})-L(\bf{h})\|}{\|\bf{h}\|}  \le \sum_{i=1}^m \dfrac{|f^i(\bf{a}+\bf{h}) - f^i(\bf{a})- Df^i(\bf{a})(\bf{h})|}{\|\bf{h}\|}
 \end{aligned}
 $$
 
-이며 $\bf{h}\to \bf{0}$ 극한에서 우변이 $0$ 이므로 좌변도 $0$ 이다. 즉 $F'(\bf{a}) = T$ 이다. 
+이며 $\bf{h}\to \bf{0}$ 극한에서 우변이 $0$ 이므로 좌변도 $0$ 이다. 즉 $F'(\bf{a}) = L$ 이다. 
 
 이제 $F$ 가 $\bf{a}$ 에서 미분가능하다고 하자. 사영함수(@def-CM_projection_function) $\pi^i$ 에 대해 @exr-CM_differentiability_of_identity_function 에서 미분가능함을 보였다. @thm-CM_chain_rule 에 의해 $\pi^i \circ F$ 도 $\bf{a}$ 에서 미분가능하다. $\square$
 :::
@@ -703,7 +703,7 @@ $$
 
 ::: {.solution}
 
-($a$) $x^y = e^{y\ln (x)}$ 임을 안다. $\bf{x} = (x,\,y,\,z) \in R^3$ 에 대해 $f(\bf{x}) = e^{\pi_2 (\bf{x}) \ln(\pi_1(\bf{x}))}$ 이다. $g:\R \to \R$ 을 $g(t) := e^t$, $h:\R^3 \to \R$ 을 $h(\bf{x}) := \pi_2 \cdot \ln (\pi_1)$ 이라고 하면 $f = g \circ h$ 이다. $g'(t) = g(t)$ 임을 안다. 또한 $\pi_i'=\pi_i$ 이며 $(\ln x)'=1/x$ 이므로
+($a$) $x^y = e^{y\ln (x)}$ 임을 안다. $\bf{x} = (x,\,y,\,z) \in R^3$ 에 대해 $f(\bf{x}) = e^{\pi^2 (\bf{x}) \ln(\pi_1(\bf{x}))}$ 이다. $g:\R \to \R$ 을 $g(t) := e^t$, $h:\R^3 \to \R$ 을 $h(\bf{x}) := \pi_2 \cdot \ln (\pi^1)$ 이라고 하면 $f = g \circ h$ 이다. $g'(t) = g(t)$ 임을 안다. 또한 $D\pi^i=\pi^i$ 이며 $(\ln x)'=1/x$ 이므로
 
 $$
 \begin{aligned}
@@ -721,7 +721,7 @@ f'(x,\,y,\,z) &= g'(h(\bf{x})) \cdot h'(\bf{x}) = x^y \begin{bmatrix} \dfrac{y}{
 \end{aligned}
 $$
 
-($b$) $F(\bf{x}) = (h(\bf{x}),\, \pi_3(\bf{x})) = \begin{bmatrix} h(\bf{x}) \\ \pi_3(\bf{x})\end{bmatrix}$, 이며 $h$ 는 ($a$) 의 $f$ 이다. 이로부터
+($b$) $F(\bf{x}) = (h(\bf{x}),\, \pi^3(\bf{x})) = \begin{bmatrix} h(\bf{x}) \\ \pi^3(\bf{x})\end{bmatrix}$, 이며 $h$ 는 ($a$) 의 $f$ 이다. 이로부터
 
 $$
 DF = \begin{bmatrix}  y x^{y-1} & x^y \ln x & 0 \\ 0 & 0 & 1 \end{bmatrix}
@@ -729,11 +729,11 @@ $$
 
 이다. 
 
-($c$) $f(\bf{x}) = \sin (\pi_1(\bf{x}) \cdot \sin (\pi_2(\bf{x})))$ 이다. $g(x) = \sin (x)$, $h(\bf{x}) = \pi_1(\bf{x})\cdot \sin (\pi_2(\bf{x}))$ 라고 하면, $f= g\circ h$ 이다. $g'(x) = \cos (x)$ 이며, 
+($c$) $f(\bf{x}) = \sin (\pi^1(\bf{x}) \cdot \sin (\pi^2(\bf{x})))$ 이다. $g(x) = \sin (x)$, $h(\bf{x}) = \pi^1(\bf{x})\cdot \sin (\pi^2(\bf{x}))$ 라고 하면, $f= g\circ h$ 이다. $g'(x) = \cos (x)$ 이며, 
 
 $$
 \begin{aligned}
-h'(\bf{x}) &= \bf{e}_1^T \sin (\pi_2(\bf{x})) + \pi_1(\bf{x})\bf{e}_2^T \cos (\pi_2(\bf{x})) \\[0.3em]
+h'(\bf{x}) &= \bf{e}_1^T \sin (\pi^2(\bf{x})) + \pi^1(\bf{x})\bf{e}_2^T \cos (\pi^2(\bf{x})) \\[0.3em]
 &= \begin{bmatrix} \sin y & x \cos y & 0 \end{bmatrix} 
 \end{aligned}
 $$
@@ -802,7 +802,7 @@ $$
 ::: {#exr-CM_spivak_2_12}
 #### Spivak 2.12
 
-$F:\R^n \times \R^m \to \R^p$ 가 $\bf{x},\, \bf{x}_1,\,\bf{x}_2\in \R^n$, $\bf{y},\,\bf{y}_1,\,\bf{y}_2\in \R^m$, $a\in \R$ 에 대해 다음을 만족하면 $f$ 를 **쌍선형(bilinear)** 이라고 한다.
+$F:\R^n \times \R^m \to \R^p$ 가 $\bf{x},\, \bf{x}_1,\,\bf{x}_2\in \R^n$, $\bf{y},\,\bf{y}_1,\,\bf{y}_2\in \R^m$, $a\in \R$ 에 대해 다음을 만족하면 $F$ 를 **쌍선형 함수 (bilinear function)** 라고 한다.
 
 $$
 \begin{aligned}
@@ -847,23 +847,23 @@ $F:\R^n \times \R^m \to \R^p$ 가 쌍선형 형식일 때 다음이 성립한다
 
 ($1$) @eq-CM_spivak_2_12_1 의 첫번째 식으로부터  $F(-\bf{x},\,\bf{y}) = - F(\bf{x},\, \bf{y})= F(\bf{x},\, -\bf{y})$ 임을 안다. 이를 이용하면 $F(\bf{0},\, \bf{y})= F(\bf{x},\, \bf{0})= \bf{0}$ 임을 안다. 
 
-($2$) $\R^n,\, \R^m$ 에서의 표준기저를 각각 $(\bf{e}_i),\, (\bf{t}_j)$ 라고 하자. $\bf{x} = \sum_i x_i \bf{e}_i$, $\bf{y}= \sum_j y_j \bf{t}_j$ 라고 하면 
+($2$) $\R^n,\, \R^m$ 에서의 표준기저를 각각 $(\bf{e}_i),\, (\bf{t}_j)$ 라고 하자. $\bf{x} = \sum_i x^i \bf{e}_i$, $\bf{y}= \sum_j y^j \bf{t}_j$ 라고 하면 
 
 $$
 \begin{aligned}
-F(\bf{x},\,\bf{y}) = \sum_{i, j} x_i y_j F(\bf{e}_i,\, \bf{t}_j)
+F(\bf{x},\,\bf{y}) = \sum_{i, j} x^i y^j F(\bf{e}_i,\, \bf{t}_j)
 \end{aligned}
 $$
 
 임을 안다. $M_{ij} = \|F(\bf{e}_i,\, \bf{t}_j)\|$, 이며 $M_0=\max \{M_{ij}\}$ 라고 하자. 또한 
 
 $$
-|x_iy_j| \le \|\bf{x}\||y_j| \le \|\bf{x}\|\cdot \|\bf{y}\| \le  \|\bf{x}\|^2+\|\bf{y}\|^2 = \|(\bf{x},\, \bf{y})\|^2
+|x^iy^j| \le \|\bf{x}\||y^j| \le \|\bf{x}\|\cdot \|\bf{y}\| \le  \|\bf{x}\|^2+\|\bf{y}\|^2 = \|(\bf{x},\, \bf{y})\|^2
 $$ 
 
 이므로 
 $$
-\|F(\bf{x},\,\bf{y})\| = \sum_{i, j} |x_i y_j| M_{ij} \le \sum_{i, j}|x_iy_j|M \le mn\|(\bf{x},\, \bf{y})\|^2M_0
+\|F(\bf{x},\,\bf{y})\| = \sum_{i, j} |x^i y^j| M_{ij} \le \sum_{i, j}|x^iy^j|M \le mn\|(\bf{x},\, \bf{y})\|^2M_0
 $$
 
 이 성립한다. $M=mnM_0$ 라고 놓으면 ($2$) 가 성립함을 안다. $\square$
@@ -905,14 +905,14 @@ $$
 ::: {#exr-CM_spivak_2_13}
 #### Spivak 2.13
 
-$IP:\R^n \times \R^n \to \R$ 을 $IP(\bf{x},\, \bf{y}) := \langle \bf{x},\,\bf{y}\rangle = \bf{x}^T \bf{y}$ 로 정의한다.
+$IP:\R^n \times \R^n \to \R$ 을 $IP(\bf{x},\, \bf{y}) := \langle \bf{x},\,\bf{y}\rangle$ 로 정의한다.
 
 ($a$) $D(IP)(\bf{a},\,\bf{b})$ 와 $(IP)'(\bf{a},\,\bf{b})$ 를 구하라
 
 ($b$) $F,\,G : \R \to \R^n$ 이 미분가능하고 $h:\R \to \R$ 이 $h(t) = \langle F(t),\, G(t)\rangle$ 로 정의되었을 때 다음이 성립함을 보여라.
 
 $$
-h'(\bf{a}) = \langle F'(a)^T,\, G(a)\rangle + \langle F(a),\, G'(\bf{a})^T\rangle.
+h'(\bf{a}) = \langle F'(a),\, G(a)\rangle + \langle F(a),\, G'(\bf{a})\rangle.
 $$
 
 ($c$) $F:\R \to \R^n$ 이 미분가능하고 모든 $t\in \R$ 에 대해 $\|F\|=1$ 이면 $\langle F'(t),\, F(t)\rangle = 0$ 임을 보여라.
@@ -928,7 +928,7 @@ $$
 ($b$) $h(t) = \langle F(t),\, G(t) \rangle = \displaystyle \sum_{i=1}^n f_i (t) g_i (t)$ 이므로
 
 $$
-h'(t) = \sum_{i=1}^n f'_i(t)g_i(t) + f_i(t) g'_i(t) = \langle F'(t),\, \bf{g}(t)\rangle + \langle F(t),\, \bf{g}'(t)\rangle.
+h'(t) = \sum_{i=1}^n Df^i(t)g^i(t) + f^i(t) Dg^i(t) = \langle F'(t),\, G(t)\rangle + \langle F(t),\, G'(t)\rangle.
 $$
 
 
@@ -947,7 +947,7 @@ $$
 ::: {#exr-CM_spivak_2_14}
 #### Spivak 2.14
 
-$i=1,\ldots,\,k$ 에 대해 $E_i$ 는 각각의 차원을 가진 유클리드 공간이다. $F:E_1 \times \cdots \times E_k \to \R^p$ 이다. 각각의 $x_j \in E_j,\, j \ne i$ 에 대해 아래와 같은 $G:\R \to \R^p$ 가 선형함수라면 $F$ 를 다중선형함수라고 한다.
+$i=1,\ldots,\,k$ 에 대해 $E_i$ 는 각각의 차원을 가진 유클리드 공간이다. $F:E_1 \times \cdots \times E_k \to \R^p$ 이다. 각각의 $x_j \in E_j,\, j \ne i$ 에 대해 아래와 같은 $G:\R \to \R^p$ 가 선형함수라면 $F$ 를 **다중선형함수 (multilinear function)** 라고 한다.
 $$
 G(x) = F(x_1,\ldots,\,x_{i-1},\,x,\, x_{i+1},\ldots,\,x_k)
 $$
@@ -1007,15 +1007,18 @@ $$
 $$
 \begin{aligned}
 \|F(x_1,\ldots,\,x_n)\| &= \left\|F\left(\sum_{j_1} c^{(1)}_{j_1} \bf{e}^{(1)}_{j_1}, \ldots,\, \sum_{j_n} c^{(n)}_{j_n} \bf{e}^{(n)}_{j_n}\right) \right\| \\[0.3em]
-&= \sum_{j_1,\ldots,\,j_n} \left|c^{(1)}_{j_1} \cdots c^{(n)}_{j_n}\right| F\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\\[0.3em]
-& \le \sum_{j_1,\ldots,\,j_n} \|\bf{x}_1\|\cdots \|\bf{x}_n\| F\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\\[0.3em]
+&= \sum_{j_1,\ldots,\,j_n} \left|c^{(1)}_{j_1} \cdots c^{(n)}_{j_n}\right| \cdot \left\|F\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\right\|\\[0.3em]
+& \le \sum_{j_1,\ldots,\,j_n} \|\bf{x}_1\|\cdots \|\bf{x}_n\| \cdot \left\|F\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\right\|
 \end{aligned}
 $$
 
 $M_0 = \max \left\{\left\| F\left(\bf{e}^{(1)}_{j_1},\ldots,\, \bf{e}^{(n)}_{j_n}\right)\right\|\right\}$ 라고 하자. 또한
 
 $$
-\|\bf{x}_1\|\cdots \|\bf{x}_n\| \le \|\bf{x}_1\|^n + \cdots + \|\bf{x}_1\|^n \le (\|\bf{x}_1\|^2 + \cdots + \|\bf{x}_n\|^2)^{n/2} = \|(\bf{x}_1,\ldots,\,\bf{x}_n)\|^{n}
+\begin{aligned}
+\|\bf{x}_1\|\cdots \|\bf{x}_n\| & \le \|\bf{x}_1\|^n + \cdots + \|\bf{x}_1\|^n  \\[0.3em]
+&\le (\|\bf{x}_1\|^2 + \cdots + \|\bf{x}_n\|^2)^{n/2} = \|(\bf{x}_1,\ldots,\,\bf{x}_n)\|^{n}
+\end{aligned}
 $$
 
 이므로 
@@ -1027,7 +1030,6 @@ $$
 이다. 즉 $M=d_1 \cdots d_n M_0 \|(\bf{x}_1,\ldots,\,\bf{x}_n)$ 로 잡으면 ($2$) 이다. $\square$
 
 :::
-
 
 문제로 돌아와서 Multilinear 의 정의에 의해
 
@@ -1058,7 +1060,7 @@ $$
 ::: {#exr-CM_spivak_2_15}
 #### Spivak 2.15
 
-$n\times n$ 행렬은 $n$ 개의 $\R^n$ 의 데카르트곱 $\R^n \times \cdots \times R^n$ 의 한 점으로 간주 할 수 있다. 이 때 행렬의 각 행은 $\R^n$ 의 원소이다.
+$n\times n$ 행렬은 $n$ 개의 $\R^n$ 의 데카르트곱 $\R^n \times \cdots \times \R^n$ 의 한 점으로 간주 할 수 있다. 이 때 행렬의 각 행은 $\R^n$ 의 원소이다.
 
 ($a$) $\det:\R^n \times \cdots \times \R^n \to \R$ 이 미분가능이며
 
@@ -1090,7 +1092,7 @@ $$
 
 ($a$) 우리는 $n \times n$ 행렬의 행렬식이 $n$-선형 형식임을 안다. 따라서 @exr-CM_spivak_2_14 ($b$) 에 의해 주어진 식이 성립함을 안다.
 
-($b$) $f'(t) = D(\det)(a_{ij}(t))(a'_{ij}(t))$ 이므로 식시 성립한다.
+($b$) $f'(t) = D(\det)(a_{ij}(t))(a'_{ij}(t))$ 이므로 식이 성립한다.
 
 ($c$) $[a_{ij}(t)]=\bf{A}(t)$, $[s_j(t)]=\bf{s}(t)$, $[b_i(t)]=\bf{b}(t)$ 라고 하면 주어진 방정식은 $\bf{sA}=\bf{b}$ 이다. $\det(\bf{A})\ne 0$ 이므로 역행렬이 존재하므로 방정식의 해 $\bf{s}$ 가 존재한다. $\bf{sA}=\bf{b}$ 의 양변을 미분하면
 
@@ -1150,7 +1152,7 @@ D_i f(\bf{a}) :=\lim_{h \to 0} \dfrac{f(\bf{a}+\bf{e}_i h) - f(\bf{a})}{h}.
 $$ {#eq-CM_ith_partial_derivative}
 
 
-$D_if(\bf{a})$ 를 $\partial_i f(\bf{a})$ 혹은 $\dfrac{\partial f(\bf{a})}{\partial x_i}$ 와 같이 쓰기도 한다. 
+$D_if(\bf{a})$ 를 $\partial_i f(\bf{a})$ 혹은 $\dfrac{\partial f(\bf{a})}{\partial x^i}$ 와 같이 쓰기도 한다. 
 ::: 
 :::
 
@@ -1186,7 +1188,7 @@ $f : A \subset \R^n \to \R$ 이 $\bf{a}\in \text{int}(A)$ 에서 극값을 갖�
 
 ::: {.proof}
 
-$g_i(x) = f(a_1,\ldots,\,a_{i-1},\,x.,\,a_{i+1},\ldots,\,a_n)$ 이라고 하자. $g_i(x)$ 는 $a_i$ 에서 극값을 가지며 따라서 $g_i'(a_i) = 0$ 이다. 이는 $D_i f(\bf{a})=0$ 과 같다. $\square$
+$g_i(x) = f(a_1,\ldots,\,a_{i-1},\,x,\,a_{i+1},\ldots,\,a_n)$ 이라고 하자. $g_i(x)$ 는 $a_i$ 에서 극값을 가지며 따라서 $g_i'(a_i) = 0$ 이다. 이는 $D_i f(\bf{a})=0$ 과 같다. $\square$
 
 :::
 
@@ -1545,10 +1547,10 @@ $$
 
 #### 다변수 벡터함수의 미분과 편미분 1
 
-$F:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 각각의 $1 \le i \le m,\, 1 \le j \le n$ 에 대해 $D_jf_i(\bf{a})$ 가 존재하며, $F'(\bf{a})$ 는 $m\times n$ 행렬로 $D_jf_i(\bf{a})$ 를 $i$ 행 $j$ 열 성분으로 가진다. 즉
+$F:\R^n \to \R^m$ 이 $\bf{a}\in \R^n$ 에서 미분가능하다면 각각의 $1 \le i \le m,\, 1 \le j \le n$ 에 대해 $D_jf_i(\bf{a})$ 가 존재하며, $F'(\bf{a})$ 는 $m\times n$ 행렬로 $D_jf^i(\bf{a})$ 를 $i$ 행 $j$ 열 성분으로 가진다. 즉
 
 $$
-F'(\bf{a}) = \begin{bmatrix} D_1f_1(\bf{a}) & \cdots & D_nf_1(\bf{a})\\ \vdots & & \vdots \\ D_1 f_m(\bf{a}) & \cdots & D_n f_m(\bf{a}) \end{bmatrix}
+F'(\bf{a}) = \begin{bmatrix} D_1f^1(\bf{a}) & \cdots & D_nf^1(\bf{a})\\ \vdots & & \vdots \\ D_1 f^m(\bf{a}) & \cdots & D_n f^m(\bf{a}) \end{bmatrix}
 $$ 
 
 이다.
@@ -1564,7 +1566,7 @@ $$
 H(\bf{a}) = (a_1,\ldots,\,a_{j-1},\,x,\,a_{j+1},\ldots,\,a_n)
 $$
 
-이다. 그렇다면 $D_j f_i(\bf{a}) = (f_i \circ H)'(a_j) = f_i'(\bf{a}) \cdot H'(a_j) =f'_i(\bf{a})\cdot \bf{e}_j= (f'_i(\bf{a}))_j$ 이다. 따라서 
+이다. 그렇다면 $D_j f^i(\bf{a}) = (f^i \circ H)'(a_j) = Df^i(\bf{a}) \cdot H'(a_j) =Df^i(\bf{a})\cdot \bf{e}_j= (Df^i(\bf{a}))^j$ 이다. 따라서 
 
 $$
 f_i'(\bf{a}) = \begin{bmatrix} D_1 f_i(\bf{a}) & \cdots D_n f_i(\bf{a})\end{bmatrix}

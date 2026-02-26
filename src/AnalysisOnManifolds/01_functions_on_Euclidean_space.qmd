@@ -16,7 +16,7 @@ crossref:
 
 - 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x^1,\ldots,\,x^n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x^1 & \cdots & x^n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x^1,\ldots,\,x^n)$ 식 표기법과 $\begin{bmatrix} x^1 & \cdots & x^n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
-- $F:\R^m \to \R^n$ 에서 $\bf{x} = \begin{bmatrix} x^1 & \cdots & x^m \end{bmatrix}$ 에 대해 $F(\bf{x})$ 를 $F(x^1,\ldots,\,x^m)$ 으로 표기하기도 한다.
+- $F:\R^m \to \R^n$ 에서 $\bf{x} = (x^1,\ldots,\,x^m)$ 에 대해 $F(\bf{x})$ 를 $F(x^1,\ldots,\,x^m)$ 으로 표기하기도 한다.
   
 - 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\R^n$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\R^{m\times n}$ 으로 표기한다.
 
@@ -28,10 +28,16 @@ crossref:
 
 - 선형 변환 $L\in \mathcal{L}(\R^m,\,\R^n)$ 과 $\bf{x}= (x^1,\ldots,\,x^m)\in \R^m$ 에 대해 
   $$
-  L(\bf{x}) = \sum_{i=1}^n \sum_{j=1}^m {L^i}_j x^j\bf{e}_i
+  L(\bf{x}) = \sum_{i=1}^n \sum_{j=1}^m L^i_j x^j\bf{e}_i
   $$
-  이다.
+  
+  이며
 
+  $$
+  L^i_j = \bf{e}_i \bf{\cdot} L(\bf{e}_j)
+  $$
+
+  이다. 
 
 <br>
 
@@ -131,7 +137,7 @@ $$
 ::: {#exr-CM_spivak_1_7}
 #### Spivak 1.7
 
-선형 변환 $T:\R^n \to \R^n$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $\langle T(\bf{x}),\, T(\bf{y}) \rangle = \langle \bf{x},\,  \bf{y}\rangle$ 이면 **inner product preserving** 이라고 한다. 
+선형 변환 $T \in \mathcal{L}(\R^n,\R^n)$ 이 $\|T(\bf{x})\|=\|\bf{x}\|$ 이면 **norm preserving** 이라고 하고 $\langle T(\bf{x}),\, T(\bf{y}) \rangle = \langle \bf{x},\,  \bf{y}\rangle$ 이면 **inner product preserving** 이라고 한다. 
 
 ($a$) $T$ 가 norm preserving 인 것의 필요충분조건은 inner product preserving 임을 보여라. 
 
@@ -242,7 +248,7 @@ $$
 ::: {#exr-CM_spivak_1_10}
 #### Spivak 1.10
 
-선형변환 $T:\R^n \to \R^m$ 를 생각하자. 모든 $\boldsymbol{h}\in \R^n$ 에 대해 $\|T(\bf{h})\| \le M \|\bf{h}\|$ 인 $M$ 이 존재함을 보여라. 
+선형변환 $T \in \mathcal{L}(\R^n, \R^m)$ 를 생각하자. 모든 $\boldsymbol{h}\in \R^n$ 에 대해 $\|T(\bf{h})\| \le M \|\bf{h}\|$ 인 $M$ 이 존재함을 보여라. 
 
 :::
 
@@ -250,18 +256,11 @@ $$
 
 ::: {.solution}
 
-$\bf{h} = (h^1,\ldots,\,h^n)$ 이며 $(T(\bf{h}))^i = \sum_{j=1}^n {T^i}_j h^j$ 라 하자. 
-
-$$
-\left|\left(T(\bf{h})^i\right)\right| = \left| \sum_{j=1}^n {T^i}_{j}h^j\right| \le \sum_{j=1}^n |{T^i}_{j}|\cdot |h^j|
-$$
-
-이다. $M_0 = \max \{\left|{T^i}_{j}\right| : 1 \le i \le m,\, 1 \le j \le n\}$ 이라고 하자. 
+$\bf{h} = (h^1,\ldots,\,h^n)$ 이며 $M_0 = \max \{\left|T^i_j\right| : 1 \le i \le m,\, 1 \le j \le n\}$ 이라고 하자. 
 
 $$
 \begin{aligned}
-\||T(\bf{h})\| & \le \sum_{i=1}^n \left|\left(T(\bf{h})\right)^i\right| \le \sum_{i=1}^m \sum_{j=1}^n |{T^i}_{j}|\cdot |h^j| \le \sum_{i, j}M_0 |h^j| \\[0.3em]
-&\le \sum_{i, j}M_0 \|\bf{h}\|= mnM_0\|\bf{h}\|
+\| T(\bf{h})\| &  = \left\|\sum_{j=1}^\mathbf{text}\sum_{i=1}^n T(\bf{e}_i)h^i \bf{e}_j\right\| \le \left\|\sum_{j=1}^m\sum_{i=1}^n T(\bf{e}_i) \bf{e}_j \right\| \|\bf{h}\| \le nmM_0 \|\bf{h}\|
 \end{aligned}
 $$
 
@@ -306,18 +305,16 @@ $(\R^n)^\ast$ 는 $\R^n$ 의 쌍대공간이다. 정해진 $\bf{x}\in \R^n$ 에 
 
 ::: {.solution}
 
-우선 $T$ 가 선형변환임을 보이자. $\bf{x}_1,\,\bf{x}_2 \in\R^n$ 과 $c\in\R$ 에 대해 $T(\bf{x}_1 + c\bf{x}_2)= T(\bf{x}_1)+cT(\bf{x}_2)$ 이면 $T$ 는 선형변환이다. $T(\bf{x}_1 + c\bf{x}_2)= \varphi _{\bf{x}_1+c\bf{x}_2}$ 이며 
+우선 $T$ 가 선형변환임을 보이자. 
 
 $$
-\varphi_{\bf{x}_1+c\bf{x}_2}(\bf{y})= (\bf{x}_1+c\bf{x}_2)\bf{\cdot y}= \bf{x}_1 \bf{\cdot y}+ c\bf{x}_2 \bf{\cdot y} = \varphi_{x_1}(\bf{y}) + c\varphi_{x_2}(\bf{y})
+\begin{aligned}
+T(\bf{x}_1+c\bf{x}_2) (\bf{y}) &= \varphi_{\bf{x}_1+c\bf{x}_2}(\bf{y})= (\bf{x}_1+c\bf{x}_2)\bf{\cdot y}= \bf{x}_1 \bf{\cdot y}+ c\bf{x}_2 \bf{\cdot y} \\[0.3em]
+&= \varphi_{x_1}(\bf{y}) + c\varphi_{x_2}(\bf{y}) = \left(T(\bf{x}_1) + cT(\bf{x}_2)\right)(\bf{y})
+\end{aligned}
 $$
 
-이므로 
-$$
-T(\bf{x}_1+c\bf{x}_2)= \varphi_{x_1}(\bf{y}) + c\varphi_{x_2}(\bf{y}) = T(\bf{x}_1) + cT(\bf{x}_2)
-$$
-
-이다. 즉 $T$ 는 선형변환이다.
+이므로 $T$ 는 선형변환이다.
 
 $\psi_x \in \ker (T)$ 라면 모든 $\bf{y}\in \R^n$ 에 대해 $\phi_\bf{x}(\bf{y})=\bf{0}$ 이어야 한다. 이 경우는 $\bf{x}=\bf{0}$ 인 경우밖에 없으므로 $\ker (T)=\{\bf{0}\}$ 이므로 $T$ 는 단사이다. 따라서 $T$ 는 전단사이다.
 
@@ -389,12 +386,9 @@ $$
 은 닫힌 집합이며 이를 **닫힌 $n$-cell** 이라고 한다.
 
 :::
-
 :::
 
-
-앞서 일변수 해석학에서는 $\bf{a}\in \R^n$ 주위의 열린 집합을 잡을 때 $N(\bf{a},\,\delta)$ 을 생각했지만 여기서는 자주 $\bf{a}$ 주위의 열린 $n$-cell, 혹은 아래의 입방체 를 생각한다.
-
+</br>
 
 ::: {.callout-note icon="false"}
 
@@ -425,13 +419,13 @@ $$
 
 ::: {#def-CM_interior_and_exterior}
 
-$A\in \R^n,\, x\in \R^n$ 에 대해 
+$A\in \R^n,\, \bf{x}\in \R^n$ 에 대해 
 
-&emsp;($1$) $x\in U\subset A$ 인 열린 $n$-cell $U$ 가 존재하면 $x$ 가 $A$ 의 내부에 있다고 한다. 
+&emsp;($1$) $\bf{x}\in U\subset A$ 인 열린 $n$-cell $U$ 가 존재하면 $\bf{x}$ 가 $A$ 의 내부에 있다고 한다. 
 
-&emsp;($2$) $x$ 가 $\R^n\backslash A$ 의 내부에 있을 때 $x$ 가 $A$ 의 외부에 있다고 한다.
+&emsp;($2$) $\bf{x}$ 가 $\R^n\backslash A$ 의 내부에 있을 때 $\bf{x}$ 가 $A$ 의 외부에 있다고 한다.
 
-&emsp;($3$) $x$ 가 $A$ 의 내부와 외부에 있지 않을 때 $x$ 가 $A$ 의 경계에 있다고 한다.
+&emsp;($3$) $\bf{x}$ 가 $A$ 의 내부와 외부에 있지 않을 때 $\bf{x}$ 가 $A$ 의 경계에 있다고 한다.
 
 $A$ 의 내부에 있는 점들의 집합을 $\text{int}(A)$ 라 표기하고 $A$ 의 경계에 있는 점들의 집합을 $\partial A$ 라고 표기한다.
 
@@ -439,7 +433,7 @@ $A$ 의 내부에 있는 점들의 집합을 $\text{int}(A)$ 라 표기하고 $A
 
 :::
 
-
+<!-- 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_open_sphere_and_cube}
@@ -457,9 +451,9 @@ $$
 ::: {.proof}
 $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol{a},\,\delta)$ 의 한 모서리에서 $\boldsymbol{a}$ 까지의 거리는 $\sqrt{n}\delta$ 이므로 $C(\bf{a},\,\delta) \subset N(\bf{a},\,\sqrt{n}\delta)$ 이다. $\square$
 
-:::
+::: 
 
-</br>
+</br>-->
 
 [기본적인 위상수학](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html) 의 옹골집합 부분과 [하이네 보렐 정리](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel) 를 참고하라. 또한 [연습문제](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_20) 을 통해 $A\subset \R^m$ 과 $B\subset \R^n$ 이 옹골집합이면 $A \times B$ 도 옹골집합임을 보였다.
 
@@ -941,7 +935,7 @@ $A=\{(x,\,y) \in \R^2 : x>0 \text{ and } 0<y<x^2\}$ 이라고 하자.
 
 ::: {.solution}
 
-($a$) 원점을 지나는 직선 $y=ax$ 를 생각하자. $a=0$ 일 경우는 전체 구간에서 직선이 $\R^2-A$ 에 포함되며 $a\ne 0$ 일 경우 $$[-|a|,\, |a|]$ 구간에서 $\R^2-A$ 에 포함된다.
+($a$) 원점을 지나는 직선 $y=ax$ 를 생각하자. $a=0$ 일 경우는 전체 구간에서 직선이 $\R^2-A$ 에 포함되며 $a\ne 0$ 일 경우 $[-|a|,\, |a|]$ 구간에서 $\R^2-A$ 에 포함된다.
 
 ($b$) $\lim_{s \to 0} f(s,\, s^2/2) = 1 \ne 0 =  f(0,\,0)$ 이므로 $f$ 는 $(0,\,0)$ 에서 연속이 아니다. ($a$) 로부터 $\lim_{t \to 0} g_\bf{h}(t) = 0 = g_\bf{h}(0)$ 임을 안다. 
 :::
