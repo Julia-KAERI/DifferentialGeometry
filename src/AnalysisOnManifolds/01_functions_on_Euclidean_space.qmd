@@ -16,7 +16,7 @@ crossref:
 
 - 유클리드 공간 $\R^n$ 의 벡터 $\bf{x} = (x^1,\ldots,\,x^n)$ 는 $n \times 1$ 행렬 $\begin{bmatrix} x^1 & \cdots & x^n\end{bmatrix}^T$ 를 의미한다. 실제로 여기서는 $(x^1,\ldots,\,x^n)$ 식 표기법과 $\begin{bmatrix} x^1 & \cdots & x^n\end{bmatrix}^T$ 를 섞어서 사용한다.
 
-- $F:\R^m \to \R^n$ 에서 $\bf{x} = (x^1,\ldots,\,x^m)$ 에 대해 $F(\bf{x})$ 를 $F(x^1,\ldots,\,x^m)$ 으로 표기하기도 한다.
+- $F:\R^n \to \R^m$ 에서 $\bf{x} = (x^1,\ldots,\,x^n)$ 에 대해 $F(\bf{x})$ 를 $F(x^1,\ldots,\,x^n)$ 으로 표기하기도 한다.
   
 - 실수를 성분으로 갖는 $n \times 1$ 행렬의 집합은 $\R^n$ 로 표기하기로 한다. 또한 실계수를 갖는 $m\times n$ 행렬의 집합을 $\R^{m\times n}$ 으로 표기한다.
 
@@ -576,11 +576,11 @@ $U^C$ 는 닫힌 집합이며 $C \cap U^C = \varnothing$ 이므로 @exr-CM_spiva
 
 ::: {.callout-note icon="false"}
 
-#### **행렬의 norm**
+#### **행렬의 노름**
 
 ::: {#def-CM_norm_of_matrix}
 
-선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 행렬의 norm $\|L\|$ 은 아래와 같이 정의된다.
+선형사상 $L\in \mathcal{L}(\R^n,\, \R^m)$ 에 대해 행렬의 **노름(norm)** $\|L\|$ 은 아래와 같이 정의된다.
 
 $$
 \|L\| := \sup \{\|L\bf{x}\| : \bf{x} \in \R^n,\, \|\bf{x}\|=1\}.
@@ -613,7 +613,7 @@ $$
 \|T\circ L\| \le \|T\|\cdot \|L\|
 $$
 
-&emsp;($6$) $L\in \mathcal{L}(R^n)$ 이 가역일 때 $\|L^{-1}\| \ge 1/\|L\|$ 이다.
+&emsp;($6$) $L\in \mathcal{L}(\R^n)$ 이 가역일 때 $\|L^{-1}\| \ge 1/\|L\|$ 이다.
 :::
 
 </div>
@@ -687,7 +687,7 @@ $${#eq-prp-CM_properties_of_matrix_norm_3_1}
 
 이다. $\alpha-\beta > 0$ 이므로 $\bf{x}\ne 0 \implies B\bf{x}\ne \bf{0}$ 이다. 즉 $B$ 는 가역이다. 
 
-($b$) $A\in \omega$ 에 대해 $\|B-A\|\le 1/\|A^{-1}\|$ 을 만족하는 $B\in \mathcal{L}(\R^n)$ 은 모두 가역이므로 $\Omega$ 는 열린집합이다. @eq-prp-CM_properties_of_matrix_norm_3_1 에서 $\bf{x}=B\bf{y}$ 라고 하면
+($b$) $A\in \Omega$ 에 대해 $\|B-A\|\le 1/\|A^{-1}\|$ 을 만족하는 $B\in \mathcal{L}(\R^n)$ 은 모두 가역이므로 $\Omega$ 는 열린집합이다. @eq-prp-CM_properties_of_matrix_norm_3_1 에서 $\bf{x}=B\bf{y}$ 라고 하면
 
 $$
 (\alpha-\beta) \|B^{-1}\bf{y}\| \le \|BB^{-1}\bf{y}\| \le \|\bf{y}\|
@@ -722,7 +722,7 @@ $$
 함수 $F:A\subset \R^n \to \R^m$ 은 $m$ 개의 **성분 함수(component function)** $f^i :\R^n \to \R$ $(i=1,\ldots,\,m)$ 를 가진다. 이 때 $F(\bf{x})$ 를 아래와 같이 열벡터로 표기한다.
 
 $$
-F(\bf{x}) = \begin{bmatrix} f^1(\bf{x}) & \cdots & f^m(\bf{x}) \end{bmatrix}^T= \begin{bmatrix} f^1(\bf{x}) \\ \vdots \\ f^m(\bf{x}) \end{bmatrix}.
+F(\bf{x}) =  \begin{bmatrix} f^1(\bf{x}) \\ \vdots \\ f^m(\bf{x}) \end{bmatrix}.
 $$ 
 
 
@@ -737,7 +737,7 @@ $$
 
 ::: {.callout-note icon="false"}
 
-#### 사영 함수
+#### **사영 함수**
 
 ::: {#def-CM_projection_function}
 
@@ -777,22 +777,26 @@ $$
 
 ::: {#def-CM_oscillation} 
 
-$f:A\subset \R^n \to \R$ 가 유계이며 $\bf{a}\in A$ 일 때 정해진 $\delta>0$ 에 대해
+$f:A\subset \R^n \to \R$ 가 유계이며 $\bf{a}\in A$ 일 때 정해진 $\delta>0$ 에 대해 
 
 $$
 \begin{aligned}
-M(f,\,\bf{a},\,\delta) &:= \sup \{f(\bf{x}): \bf{x}\in A,\, \|\bf{x}-\bf{a}\|<\delta\}, \\
+M(f,\,\bf{a},\,\delta) &:= \sup \{f(\bf{x}): \bf{x}\in A,\, \|\bf{x}-\bf{a}\|<\delta\}, \\[0.4em]
 m(f,\,\bf{a},\,\delta) &:= \inf \{f(\bf{x}): \bf{x}\in A,\, \|\bf{x}-\bf{a}\|<\delta\}
 \end{aligned} 
 $$
 
-라 하자. 그리고 $\displaystyle o(f,\,\bf{a}) := \lim_{\delta \to 0} M(f,\,\bf{a},\,\delta) - m(f,\,\bf{a},\,\delta)$ 라고 정의하자. 이 때 $o(f,\bf{a})$ 를 $\bf{a}$ 에서의 $f$ 의 **oscillation** 이라고 한다.
+라 하자. 그리고 $\bf{a}$ 에서의 $f$ 의 **oscillation** $o(f,\bf{a})$ 를 다음과 같이 정의한다.
+
+$$
+\displaystyle o(f,\,\bf{a}) := \lim_{\delta \to 0} M(f,\,\bf{a},\,\delta) - m(f,\,\bf{a},\,\delta)
+$$ 
 
 :::
 :::
 
 
-$f$ 가 유계이므로 $M(f,\bf{a},\delta)$ 와 $m(f,\bf{a},\delta)$ 는 존재한다. $M(f,\bf{a},\delta)-m(f,\bf{a},\delta)$ 는 $\delta$ 에 대해 단조 감소 함수이므로 $o(f,\bf{a})$ 는 항상 존재한다.
+$f$ 가 유계이므로 $M(f,\bf{a},\delta)$ 와 $m(f,\bf{a},\delta)$ 는 존재한다. $M(f,\bf{a},\delta)-m(f,\bf{a},\delta)$ 는 $\delta$ 에 대해 단조증가함수이므로 $o(f,\bf{a})$ 는 항상 존재한다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -806,7 +810,13 @@ $f:A\subset \R^n \to \R$ 이 유계일 때 $f$ 가 $\bf{a}\in A$ 에서 연속�
 
 ::: {.proof}
 
-$f$ 가 연속임을 가정하자. 임의의 $\varepsilon>0$ 에 대해 $\|\bf{x}-\bf{a}\|<\delta \implies |f(\bf{x})-f(\bf{a})| < \varepsilon$ 인 $\delta>0$ 이 존재한다. 따라서 $\|\bf{x}-\bf{a}\|<\delta$ 일 때
+$f$ 가 연속임을 가정하자. 임의의 $\varepsilon>0$ 에 대해 
+
+$$
+\|\bf{x}-\bf{a}\|<\delta \implies |f(\bf{x})-f(\bf{a})| < \varepsilon
+$$ 
+
+인 $\delta>0$ 이 존재한다. 따라서 $\|\bf{x}-\bf{a}\|<\delta$ 일 때
 
 $$
 {\big |}|f(\bf{x})| - |f(\bf{a})| {\big |}< |f(\bf{x}) - f(\bf{a})| < \varepsilon
@@ -820,7 +830,7 @@ $$
 
 이다. 즉 $o(f,\,\bf{a}) < 2\varepsilon$ 인데 임의의 $\varepsilon>0$ 에 대해 성립하므로 $o(f,\,\bf{a})=0$ 이다.
 
-이제 $o(f,\,\bf{a})=0$ 임을 가정하자. Osillation 의 정의에 의해 임의의 $\varepsilon >0$ 에 대해 어떤 $\delta_\bf{x}>0$ 이 존재하여 $M(f,\,\bf{a},\,\delta_\bf{x})- m(f,\, \bf{a},\,\delta_\bf{x})<\varepsilon$ 이다. $\|\bf{x}-\bf{a}\|<\delta_\bf{x}$ 이면 
+이제 $o(f,\,\bf{a})=0$ 임을 가정하자. Oscillation 의 정의에 의해 임의의 $\varepsilon >0$ 에 대해 어떤 $\delta_\bf{x}>0$ 이 존재하여 $M(f,\,\bf{a},\,\delta_\bf{x})- m(f,\, \bf{a},\,\delta_\bf{x})<\varepsilon$ 이다. $\|\bf{x}-\bf{a}\|<\delta_\bf{x}$ 이면 
 
 $$
 |f(\bf{x})-f(\bf{a})| \le M(f,\,\bf{a},\,\delta_\bf{x})- m (f,\,\bf{a},\,\delta_\bf{x})<\varepsilon
