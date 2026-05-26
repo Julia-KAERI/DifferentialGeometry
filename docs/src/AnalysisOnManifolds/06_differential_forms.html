@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; 미분 형식 – Differential Geometry</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -37,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/AnalysisOnManifolds/05_change_of_variables.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4ae354899999076519ddbd72a595fc11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6270b3fc96d87e7c219eb207d6c41939.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -266,7 +264,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-<p>%</p>
+%
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -1439,7 +1437,7 @@ d\omega = (D_1Q - D_2P)\, (dx \wedge dy)
 </div>
 </div>
 <p><br></p>
-<p><span class="math inline">\(\omega = \sum_{i=1}^n \omega_i dx_i\)</span> 가 <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 1-형식이며 어떤 <span class="math inline">\(f\)</span> 에 대해 <span class="math inline">\(\omega = df = \sum_{i=1}^n D_if\cdot dx_i\)</span> 라고 하자. <span class="math inline">\(f(\boldsymbol{0}) = 0\)</span> 이라고 가정 할 수 있다. 우리는 <a href="02_differentiation_of_manifolds.html#exr-CM_spivak_2_35" class="quarto-xref">연습문제&nbsp;<span>2.34</span></a> 에서 보였듯이 다음이 성립함을 안다.</p>
+<p><span class="math inline">\(\omega = \sum_{i=1}^n \omega_i dx_i\)</span> 가 <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 1-형식이며 어떤 <span class="math inline">\(f\)</span> 에 대해 <span class="math inline">\(\omega = df = \sum_{i=1}^n D_if\cdot dx_i\)</span> 라고 하자. <span class="math inline">\(f(\boldsymbol{0}) = 0\)</span> 이라고 가정 할 수 있다. 우리는 <a href="02_differentiation_of_manifolds.html#exr-CM_spivak_2_35" class="quarto-xref">연습문제&nbsp;<span>2.36</span></a> 에서 보였듯이 다음이 성립함을 안다.</p>
 <p><span class="math display">\[
 f(\boldsymbol{x}) = \int_0^1 \dfrac{d}{dt}f(t\boldsymbol{x})\,dt = \int_0^1 \sum_{i=1}^n D_i f(t\boldsymbol{x})\cdot x_i\, dt = \int_0^1 \sum_{i=1}^n \omega (t\boldsymbol{x})\cdot x_i \,dt.
 \]</span></p>
@@ -1703,7 +1701,7 @@ F^\ast \omega (\underline{(p,\,v_1)},\ldots,\, \underline{(p,\,v_k)})&amp;= \ome
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="02_differentiation_of_manifolds.html#exr-CM_spivak_2_29" class="quarto-xref">연습문제&nbsp;<span>2.28</span></a> 의 방향 미분의 정의에 의해</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="02_differentiation_of_manifolds.html#exr-CM_spivak_2_29" class="quarto-xref">연습문제&nbsp;<span>2.30</span></a> 의 방향 미분의 정의에 의해</p>
 <p><span class="math display">\[
 D_\boldsymbol{v}f(\boldsymbol{p}) = \sum_i D_i f(\boldsymbol{p}) (\boldsymbol{v}) = \sum_i v_i D_i f(\boldsymbol{p}) = \langle \boldsymbol{v},\,\boldsymbol{w}\rangle
 \]</span></p>

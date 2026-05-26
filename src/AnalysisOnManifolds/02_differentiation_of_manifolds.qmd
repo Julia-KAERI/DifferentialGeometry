@@ -1893,9 +1893,13 @@ h'(\bf{x}) &= \begin{bmatrix} (D_1 g)(H(\bf{x})) & (D_2 g)(H(\bf{x})) \end{bmatr
 \end{aligned}
 $$
 
-$$
+$h'(\bf{x})$ 는 $1\times n$ 행렬이며 이 $i$ 번째 성분을 $[h'(\bf{x})]_i$ 라고 하면
 
 $$
+[h'(\bf{x})]_i = x^i D_1 g(H(\bf{x})) + D_2 g(H(\bf{x}))
+$$
+
+이다. 이를 이용하여 $\|h'(\bf{x})\|^2$ 를 구할 수 있다.
 
 :::
 

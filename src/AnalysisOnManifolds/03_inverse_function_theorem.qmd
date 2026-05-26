@@ -16,7 +16,7 @@ $C^1$ 급 함수 $f:\R\to \R$ 이 $f'(a)\ne 0$ 일 때 $(f^{-1})'(a) = 1/f'(a)$ 
 
 ::: {#lem-CM_inverse_function_theorem_1}
 
-$n$-입방체 $A\subset \R^n$ 에서 정의된 $F:A \to \R^n$ 이 $C^1$ 급이라고 하자. 어떤 양수 $M>0$ 이 존재하여 모든 $\bf{x}\in \text{int}(A)$ 에 대해 $|D_jf_i(\bf{x})|\le M$ 이면 다음이 성립한다.
+$n$-입방체 $A\subset \R^n$ 에서 정의된 $F:A \to \R^n$ 이 $C^1$ 급이라고 하자. 어떤 양수 $M>0$ 이 존재하여 모든 $\bf{x}\in \text{int}(A)$ 에 대해 $|D_jf^i(\bf{x})|\le M$ 이면 다음이 성립한다.
 
 $$
 \bf{x},\,\bf{y}\in A \implies \|F(\bf{y})-F(\bf{x})\|\le n^2M \|\bf{y}-\bf{x}\|.
@@ -28,32 +28,27 @@ $$
 
 ::: {.proof}
 
-$F(\bf{x}) = (f_1 (\bf{x}),\, \cdots,\, f_n (\bf{x}))$ 이고 $\bf{x},\,\bf{y}\in A$ 일 때 다음이 성립한다.
+볼록집합에서의 중간값 정리(@cor-CM_mean_value_theorem_for_convex) 에 의해
 
 $$
+f^i(\bf{y})-f^i(\bf{x}) = \nabla f^i(\bf{c}) (\bf{y}-\bf{x})
+$$
+
+를 만족하는 $\bf{c}$ 가 $\bf{y}$ 와 $\bf{x}$ 를 잇는 직선상에 존재한다. 
+$$
 \begin{aligned}
-f_i(\bf{y})-f_i(\bf{x}) &= f_i(y_1,\,x_2,\ldots,\,x_n) - f_i(x_1,\ldots,\,x_n) \\[0.3em]
-&\qquad + f_i(y_1,y_2,x_3,\ldots,x_n) - f_i(y_1,x_2,\ldots,x_n)\\[0.3em] 
-&\qquad + \qquad \vdots \\[0.3em]
-&\qquad + f_i(y_1,\ldots,\,y_n) - f_i(y_1,\ldots,\,y_{n-1},x_n).
+\left| f^i(\bf{y})-f^i(\bf{x}) \right| &= \left| \sum_j D_j f^i (\bf{c}) (y^j-x^j)\right| \le nM\|\bf{y}-\bf{x}\|
 \end{aligned}
 $$
 
-각 줄마다 편미분에 대한 중간값 정리를 사용하면 $i=1,\ldots,\,n$ 에 대해
+임을 안다. 이로부터
 
 $$
-f_i(\bf{y})-f_i(\bf{x}) = \sum_{j=1}^n (y_j-x_j)D_j f_i(y_1,\ldots,\,y_{j-1},\, z_{ij},\, x_{j+1},\ldots,\,x_n)
+\|F(\bf{y})-F(\bf{x})\| \le \sum_i \left|f^i(\bf{y})-f^i(\bf{x}) \right| \le n^2M\|\bf{y}-\bf{x}\|
 $$
 
-을 만족하는 $z_{ij}$ 가 $x_j$ 와 $y_j$ 사이에 존재함을 안다. 이로부터 다음을 보일 수 있다.
+을 얻는다. $\square$
 
-$$
-\begin{aligned}
-\|F(\bf{y}) - F(\bf{x})\| &\le \sum_{i=1}^n |f_i(\bf{y}) - f_i(\bf{x})| \\[0.3em]
-& =\sum_{i=1}^n \sum_{j=1}^n |y_j-x_j| \cdot |D_j f_i (y_1,\ldots,\,y_{j-1},z_{ij},x_{j+1},\ldots,x_n)| \\[0.3em]
-&\le \sum_{i=1}^n \sum_{j=1}^n \|\bf{y}-\bf{x}\| M = n^2M\|\bf{y}-\bf{x}\|. \qquad \square
-\end{aligned}
-$$
 
 :::
 

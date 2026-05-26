@@ -613,7 +613,8 @@ $$
 \|T\circ L\| \le \|T\|\cdot \|L\|
 $$
 
-&emsp;($6$) $L\in \mathcal{L}(\R^n)$ 이 가역일 때 $\|L^{-1}\| \ge 1/\|L\|$ 이다.
+&emsp;($6$) $L\in \mathcal{L}(\R^n)$ 이 가역일 때 $\|L^{-1}\| \ge 1/\|L\|$ 이다. 
+
 :::
 
 </div>
