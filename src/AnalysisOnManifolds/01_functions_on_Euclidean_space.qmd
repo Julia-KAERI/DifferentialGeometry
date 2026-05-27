@@ -659,9 +659,9 @@ $\mathcal{L}(\R^n,\, \R^m)$ 이 행렬의 노름에 대해 거리공간이므로
 
 ::: {#prp-CM_properties_of_matrix_norm_3}
 
-$\Omega$ 가 $\R^n$ 에서의 모든 가역 선형 연자의 집합이라고 하자.
+$GL_n(\R)$ 은 $\R^n$ 에서의 모든 가역 선형 연자의 집합이다.
 
-&emsp;($1$) $A\in \Omega,\, B\in \mathcal{L}(\R^n)$ 이며 $\|B-A\|\cdot \|A^{-1}\| < 1$ 이면 $B \in \Omega$ 이다.
+&emsp;($1$) $A\in GL_n(\R),\, B\in \mathcal{L}(\R^n)$ 이며 $\|B-A\|\cdot \|A^{-1}\| < 1$ 이면 $B \in GL_n(\R)$ 이다.
 
 &emsp;($2$) $\Omega$ 는 $\mathcal{L}(\R^n)$ 의 열린 집합이며 $\phi(A)=A^{-1}$ 은 연속이다.
 

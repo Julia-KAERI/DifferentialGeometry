@@ -37,7 +37,7 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    fontsize: 1em
+    fontsize: 0.9em
     # html-math-method: mathml
     css: custom.css
   # pdf:
