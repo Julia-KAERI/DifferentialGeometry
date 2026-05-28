@@ -723,8 +723,6 @@ $$
 
 ::: {.proof}
 
-@prp-CM_properties_of_matrix_norm_3
-
 ($1$) (**1-a**) 우선 어떤 열린집합 $U\subset A$ 에 대해 $F|_U : U \to \R^n$ 이 단사임을 보이자.$\bf{b}=F(\bf{a}),\, L=F'(\bf{a})$ 에 대해 
 
 $$
@@ -800,7 +798,10 @@ $$ {#eq-thm-CM_inverse_function_theorem_rudin_10}
 이므로 $F'(\bf{x})$ 는 가역이다. 이제 $G=F^{-1}$, $T=\left(F'(\bf{x})\right)^{-1}$ 라고 하자.
 
 $$
-G(\bf{y}+\bf{k}) - G(\bf{y})-T\bf{k} = \bf{h} - T\bf{k} = -T \left[F(\bf{x}+\bf{h}) - F(\bf{x}) - F'(\bf{x})\bf{h}\right]
+\begin{aligned}
+G(\bf{y}+\bf{k}) - G(\bf{y})-T\bf{k} &= \bf{h} - T\bf{k} \\[0.3em]
+&= -T \left[F(\bf{x}+\bf{h}) - F(\bf{x}) - F'(\bf{x})\bf{h}\right]
+\end{aligned}
 $${#eq-thm-CM_inverse_function_theorem_rudin_11}
 
 이며 @eq-thm-CM_inverse_function_theorem_rudin_6 를 이용하면 
@@ -817,14 +818,16 @@ $$
 G'(\bf{y}) = (F'(G(\bf{y})))^{-1}
 $$
 
-이다. 이제 $G'$ 이 연속임을 보이자. $G$ 가 $V$ 에서 $U$ 로의 전단사 연속함수아고 $F'$ 역시 $U$ 에서 $\Omega$ 로의 연속함수이며, $(F')^{-1}$ 역시 $\Omega \mapsto \Omega$ 연속함수이므로 $G'$ 역시 $V$ 에서 $\Omega$ 로의 연속함수이다. 즉 $G$ 는 $V$ 에서 정의된 $C^1$-급 함수이다. $\square$
+이다. 이제 $G'$ 이 연속임을 보이자. $G$ 가 $V$ 에서 $U$ 로의 전단사 연속함수이고 $F'$ 역시 $U$ 에서 $GL_n(\R)$ 로의 연속함수이며, $(F')^{-1}$ 역시 $U \mapsto GL_n(\R)$ 연속함수이다. @prp-CM_properties_of_matrix_norm_3 ($2$) 의 $\phi(A)=A^{-1}$ 은 연속함수 이며 $G'(\bf{y}) = \phi (F'(G(\bf{y})))$ 이므로 $G'(\bf{y})$ 는 연속이다. 즉 $G=F^{-1}$ 역시 $C^1$ 급 함수이다.
+
+($3$) 귀납법을 이용해 증명한다. $k=1$ 경우는 이미 보였다. $k$ 에 대해 성립함을 가정하자. $F$ 가 $C^{k+1}$ 급이면 $F$ 는 $C^k$ 급이고 귀납적 가정에 의해 $G$ 역시 $C^k$ 급이다. 
+$\square$
 
 :::
 
 </br>
 
 ### 음함수 정리 {#sec-CM_implicit_function_theorem_by_rudin}
-
 
 $\bf{x}\in \R^n,\, \bf{y}\in \R^m$ 을 $(\bf{x},\, \bf{y}) = (x_1,\ldots,\,x_n,\, y_1,\ldots,\,y_m)$ 으로 흔히 표기한다. $L\in \mathcal{L}(\R^{n}\times \R^m,\, \R^m)$ 일 때 $L$ 를 $L_x\bf{x}=A(\bf{x},\,\bf{0}),\, L_y \bf{y} = A(\bf{0},\, \bf{y})$ 인 두 선형변환 $L_x,\,L_y$ 로 분리할 수 있다. 그렇다면
 

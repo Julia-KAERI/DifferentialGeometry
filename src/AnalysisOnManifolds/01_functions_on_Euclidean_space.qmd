@@ -39,6 +39,7 @@ crossref:
 
   이다. 
 
+- $n \times n$ 실행렬 가운데 가역인 행렬의 집합을 일반선형군이라고 하며 $GL_n(\R)$ 이라고 표기한다. 
 <br>
 
 ### 연습문제 {.unnumbered}
@@ -652,7 +653,7 @@ $\mathcal{L}(\R^n,\,\R^m)$ 에 거리함수가 행렬의 노름으로 주어졌�
 :::
 
 
-$\mathcal{L}(\R^n,\, \R^m)$ 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다.
+$\mathcal{L}(\R^n,\, \R^m)$ 이 행렬의 노름에 대해 거리공간이므로 열림, 닫힘, 연속성과 같은 성질을 논할 수 있다. 아래의 성질은 이후 [역함수 정리와 음함수 정리](03_inverse_function_theorem.qmd) 에서 중요하게 사용된다.
 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -663,7 +664,7 @@ $GL_n(\R)$ 은 $\R^n$ 에서의 모든 가역 선형 연자의 집합이다.
 
 &emsp;($1$) $A\in GL_n(\R),\, B\in \mathcal{L}(\R^n)$ 이며 $\|B-A\|\cdot \|A^{-1}\| < 1$ 이면 $B \in GL_n(\R)$ 이다.
 
-&emsp;($2$) $\Omega$ 는 $\mathcal{L}(\R^n)$ 의 열린 집합이며 $\phi(A)=A^{-1}$ 은 연속이다.
+&emsp;($2$) $GL_n(\R)$ 는 $\mathcal{L}(\R^n)$ 의 열린 집합이며 $\phi(A)=A^{-1}$ 은 연속이다.
 
 :::
 
@@ -688,7 +689,7 @@ $${#eq-prp-CM_properties_of_matrix_norm_3_1}
 
 이다. $\alpha-\beta > 0$ 이므로 $\bf{x}\ne 0 \implies B\bf{x}\ne \bf{0}$ 이다. 즉 $B$ 는 가역이다. 
 
-($b$) $A\in \Omega$ 에 대해 $\|B-A\|\le 1/\|A^{-1}\|$ 을 만족하는 $B\in \mathcal{L}(\R^n)$ 은 모두 가역이므로 $\Omega$ 는 열린집합이다. @eq-prp-CM_properties_of_matrix_norm_3_1 에서 $\bf{x}=B\bf{y}$ 라고 하면
+($b$) $A\in GL_n(\R)$ 에 대해 $\|B-A\|\le 1/\|A^{-1}\|$ 을 만족하는 $B\in \mathcal{L}(\R^n)$ 은 모두 가역이므로 $GL_n(\R)$ 은 열린집합이다. @eq-prp-CM_properties_of_matrix_norm_3_1 에서 $\bf{x}=B\bf{y}$ 라고 하면
 
 $$
 (\alpha-\beta) \|B^{-1}\bf{y}\| \le \|BB^{-1}\bf{y}\| \le \|\bf{y}\|

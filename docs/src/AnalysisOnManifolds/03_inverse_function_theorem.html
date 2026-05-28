@@ -735,8 +735,7 @@ x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="01_functions_on_Euclidean_space.html#prp-CM_properties_of_matrix_norm_3" class="quarto-xref">명제&nbsp;<span>1.3</span></a></p>
-<p>(<span class="math inline">\(1\)</span>) (<strong>1-a</strong>) 우선 어떤 열린집합 <span class="math inline">\(U\subset A\)</span> 에 대해 <span class="math inline">\(F|_U : U \to \mathbb{R}^n\)</span> 이 단사임을 보이자.<span class="math inline">\(\boldsymbol{b}=F(\boldsymbol{a}),\, L=F'(\boldsymbol{a})\)</span> 에 대해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) (<strong>1-a</strong>) 우선 어떤 열린집합 <span class="math inline">\(U\subset A\)</span> 에 대해 <span class="math inline">\(F|_U : U \to \mathbb{R}^n\)</span> 이 단사임을 보이자.<span class="math inline">\(\boldsymbol{b}=F(\boldsymbol{a}),\, L=F'(\boldsymbol{a})\)</span> 에 대해</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_0"><span class="math display">\[
 2\lambda \left\|L^{-1}\right\|=1
 \tag{3.6}\]</span></span></p>
@@ -784,7 +783,10 @@ x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
 \tag{3.16}\]</span></span></p>
 <p>이므로 <span class="math inline">\(F'(\boldsymbol{x})\)</span> 는 가역이다. 이제 <span class="math inline">\(G=F^{-1}\)</span>, <span class="math inline">\(T=\left(F'(\boldsymbol{x})\right)^{-1}\)</span> 라고 하자.</p>
 <p><span id="eq-thm-CM_inverse_function_theorem_rudin_11"><span class="math display">\[
-G(\boldsymbol{y}+\boldsymbol{k}) - G(\boldsymbol{y})-T\boldsymbol{k} = \boldsymbol{h} - T\boldsymbol{k} = -T \left[F(\boldsymbol{x}+\boldsymbol{h}) - F(\boldsymbol{x}) - F'(\boldsymbol{x})\boldsymbol{h}\right]
+\begin{aligned}
+G(\boldsymbol{y}+\boldsymbol{k}) - G(\boldsymbol{y})-T\boldsymbol{k} &amp;= \boldsymbol{h} - T\boldsymbol{k} \\[0.3em]
+&amp;= -T \left[F(\boldsymbol{x}+\boldsymbol{h}) - F(\boldsymbol{x}) - F'(\boldsymbol{x})\boldsymbol{h}\right]
+\end{aligned}
 \tag{3.17}\]</span></span></p>
 <p>이며 <a href="#eq-thm-CM_inverse_function_theorem_rudin_6" class="quarto-xref">식&nbsp;<span>3.12</span></a> 를 이용하면</p>
 <p><span class="math display">\[
@@ -796,7 +798,8 @@ G(\boldsymbol{y}+\boldsymbol{k}) - G(\boldsymbol{y})-T\boldsymbol{k} = \boldsymb
 <p><span class="math display">\[
 G'(\boldsymbol{y}) = (F'(G(\boldsymbol{y})))^{-1}
 \]</span></p>
-<p>이다. 이제 <span class="math inline">\(G'\)</span> 이 연속임을 보이자. <span class="math inline">\(G\)</span> 가 <span class="math inline">\(V\)</span> 에서 <span class="math inline">\(U\)</span> 로의 전단사 연속함수아고 <span class="math inline">\(F'\)</span> 역시 <span class="math inline">\(U\)</span> 에서 <span class="math inline">\(\Omega\)</span> 로의 연속함수이며, <span class="math inline">\((F')^{-1}\)</span> 역시 <span class="math inline">\(\Omega \mapsto \Omega\)</span> 연속함수이므로 <span class="math inline">\(G'\)</span> 역시 <span class="math inline">\(V\)</span> 에서 <span class="math inline">\(\Omega\)</span> 로의 연속함수이다. 즉 <span class="math inline">\(G\)</span> 는 <span class="math inline">\(V\)</span> 에서 정의된 <span class="math inline">\(C^1\)</span>-급 함수이다. <span class="math inline">\(\square\)</span></p>
+<p>이다. 이제 <span class="math inline">\(G'\)</span> 이 연속임을 보이자. <span class="math inline">\(G\)</span> 가 <span class="math inline">\(V\)</span> 에서 <span class="math inline">\(U\)</span> 로의 전단사 연속함수이고 <span class="math inline">\(F'\)</span> 역시 <span class="math inline">\(U\)</span> 에서 <span class="math inline">\(GL_n(\mathbb{R})\)</span> 로의 연속함수이며, <span class="math inline">\((F')^{-1}\)</span> 역시 <span class="math inline">\(U \mapsto GL_n(\mathbb{R})\)</span> 연속함수이다. <a href="01_functions_on_Euclidean_space.html#prp-CM_properties_of_matrix_norm_3" class="quarto-xref">명제&nbsp;<span>1.3</span></a> (<span class="math inline">\(2\)</span>) 의 <span class="math inline">\(\phi(A)=A^{-1}\)</span> 은 연속함수 이며 <span class="math inline">\(G'(\boldsymbol{y}) = \phi (F'(G(\boldsymbol{y})))\)</span> 이므로 <span class="math inline">\(G'(\boldsymbol{y})\)</span> 는 연속이다. 즉 <span class="math inline">\(G=F^{-1}\)</span> 역시 <span class="math inline">\(C^1\)</span> 급 함수이다.</p>
+<p>(<span class="math inline">\(3\)</span>) 귀납법을 이용해 증명한다. <span class="math inline">\(k=1\)</span> 경우는 이미 보였다. <span class="math inline">\(k\)</span> 에 대해 성립함을 가정하자. <span class="math inline">\(F\)</span> 가 <span class="math inline">\(C^{k+1}\)</span> 급이면 <span class="math inline">\(F\)</span> 는 <span class="math inline">\(C^k\)</span> 급이고 귀납적 가정에 의해 <span class="math inline">\(G\)</span> 역시 <span class="math inline">\(C^k\)</span> 급이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
