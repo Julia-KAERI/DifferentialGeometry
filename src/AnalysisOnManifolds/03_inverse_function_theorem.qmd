@@ -463,63 +463,104 @@ $$
 
 ## 음함수 정리 {#sec-CM_implicit_function_theorem}
 
-</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
-
-::: {#exm-CM_pts_of_inverse_function}
-
-$F:\R^n \times \R^m \to \R^n \times \R^m$ 이 $F(\bf{x},\,\bf{y}) = (\bf{x},\, H(\bf{x,\,y}))$ 꼴이며 역함수가 존재한다면 어떤 $K:\R^n\times \R^m \to \R^m$ 에 대해 $F^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\bf{y}))$ 꼴임을 보이자. $i\le n$ 일 때,
+$\bf{x}\in \R^n,\, \bf{y}\in \R^m$ 에 대해 $(\bf{x},\, \bf{y}) := (x_1,\ldots,\,x_n,\, y_1,\ldots,\,y_m)$ 라고 하자. $L\in \mathcal{L}(\R^{n}\times \R^m,\, \R^m)$ 일 때 $L$ 를 $L_x\bf{x}=L(\bf{x},\,\bf{0}),\, L_y \bf{y} = L(\bf{0},\, \bf{y})$ 인 두 선형변환 $L_x,\,L_y$ 로 분리할 수 있다. 그렇다면
 
 $$
-x_i = \left((F^{-1}\circ F)(\bf{x},\bf{y})\right)_i = \left(F^{-1}(\bf{x},H(\bf{x},\bf{y}))\right)_i
+L(\bf{x},\,\bf{y}) = L_x\bf{x} + L_y\bf{y}
+$${#eq-CM_split_of_linear_operator}
+
+이다. 이 때 $L$ 의 행렬 형태는 $\begin{bmatrix} L_x & L_y \end{bmatrix}$ 임은 쉽게 알 수 있다.
+
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#lem-CM_implicit_function_theorem_rudin}
+
+$L\in \mathcal{L}(\R^{n}\times \R^m,\, \R^m)$ 에서 $L_y$ 가 가역행렬이라고 하자. 각각의 $\bf{h}\in \R^n$ 에 대해 $L(\bf{h},\,\bf{k})=\bf{0}$ 이 되도록 하는 $\bf{k}\in \R^m$ 이 유일하게 존재하며 그 $\bf{k}$ 는 다음과 같다.
+
 $$
+\bf{k} = -(L_y)^{-1} L_x\bf{h}.
+$$ {#eq-CM_split_of_linear_operator_2}
 
-이다.
 
-:::
+::: 
 
 </div>
 
-</br>
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_implicit_function_theorem_1}
-
-$F: \R^n \times \R^m \to \R^m$ 이 $(\bf{a}, \bf{b})$ 를 포함하는 열린 집합에서 $C^1$ 급 함수이며 $F(\bf{a}, \bf{b})=0$ 이라고 하자. $m \times m$ 행렬 $M$ 을 $M_{ij} = D_{n+j}f^i(\bf{a},\,\bf{b})$ 로 정할 때 $\det (M) \ne 0$ 이면 $\bf{a}$ 를 포함하는 어떤 열린 집합 $A\subset \R^n$ 와 $\bf{b}$ 를 포함하는 어떤 열린집합 $B\subset \R^m$ 에서 정의된 미분가능한 단사 함수 $G:A \to B$ 가 존재하여 $F(\bf{x},\, G(\bf{x})) = 0$ 이 되도록 한다.
+::: {.proof}
+$L_y$ 가 가역행렬이므로 유일하다. $\square$
 
 :::
+
+</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_implicit_function_theorem}
+
+#### 음함수 정리
+
+열린 $E\subset \R^{n}\times \R^m$ 에서 정의된 $F:E \to \R^m$ 이 $C^1$ 함수이고 어떤 $(\bf{a},\,\bf{b}) \in E$ 에서 $F(\bf{a},\bf{b})=\bf{0}$ 이라고 하자. $L=F'(\bf{a},\,\bf{b})$ 이라고 할 때 $L=\begin{bmatrix} L_x &L_y\end{bmatrix}$ 라고 하자. 여기서 $L_y$ 는 $m \times m$ 행렬이다. $L_y$ 가 가역이면 어떤 $(\bf{a},\,\bf{b})$ 를 포함하는 열린집합 $U$ 와 $\bf{a}$ 를 포함하는 열린 집합 $W\subset \R^n$ 가 존재하여
+
+&emsp;($a$) 각각의 $\bf{x}\in W$ 에 대해 유일한 $\bf{y}\in \R^m$ 이 존재하여 $(\bf{x},\,\bf{y})\in U,\,F(\bf{x},\,\bf{y})=\bf{0}$ 이고,
+
+&emsp;($b$) ($a$) 에 의해 $\bf{x}=G(\bf{y})$ 라 놓을 수 있는데, $G$ 는 $C^1$ 급 함수이며 $G(\bf{a})=\bf{b}$ 이다.
+
+&emsp;($c$) $G'(\bf{a}) = -(L_y)^{-1}L_x$ 이다.
+
+::: 
 
 </div>
 
 ::: {.proof}
 
-$\widetilde{F}: \R^n \times \R^m \to \R^n \times \R^m$ 을 $\widetilde{F}(\bf{x},\,\bf{y}) := (\bf{x},\, F(\bf{x},\,\bf{y}))$ 로 정의하자. $\det (\widetilde{F}'(\bf{a},\, \bf{b}))$$= \det (M) \ne 0$ 이므로 역함수 정리 (@thm-CM_inverse_function_theorem) 에 따라 $(\bf{a},\,\bf{b})$ 를 포함하는 열린 집합 $V$ 와 $\widetilde{F}(\bf{a},\, \bf{b})=(\bf{a},\, \bf{0})$ 을 포함하는 열린 집합 $W$ 에서 정의된 $\widetilde{F}$ 의 $C^1$-급 역함수 $\widetilde{F}^{-1}:W \to V$ 가 존재한다.
-
-$V$ 를 $A\subset \R^n,\, B\subset \R^m$ 에 대해 $V=A \times B$ 가 되도록 할 수 있으며$^1$[$^1$ 예를 들어 $n$ 입방체로 잡는다던지...]{.aside} 그렇다면 $\widetilde{F}^{-1}: W \to A \times B$ 는 어떤 $C^1$ 함수 $K:W \to B$ 에 대해 $\widetilde{F}^{-1}(\bf{x},\,\bf{y}) = (\bf{x},\, K(\bf{x},\, \bf{y}))$ 이다(@exm-CM_pts_of_inverse_function). 이제 $\Phi:\R^n \times \R^m \to \R^m$ 을 $\Phi (\bf{x},\, \bf{y}) := \bf{y}$ 로 정의하면 $\Phi \circ \widetilde{F} = F$ 이다. 따라서
+($a$) $H:E \to \R^{n}\times \R^{m}$ 을 아래와 같이 정의한다.
 
 $$
-F(\bf{x},\, K(\bf{x},\, \bf{y})) = (F \circ \widetilde{F}^{-1})(\bf{x},\, \bf{y}) = (\Phi \circ \widetilde{F} \circ \widetilde{F}^{-1})(\bf{x},\, \bf{y}) = \bf{y}
-$$
+H(\bf{x},\,\bf{y}) := (\bf{x},\,F(\bf{x},\,\bf{y})).
+$$ {#eq-thm-CM_implicit_function_theorem_1}
 
-이며 $F(\bf{x},\, K(\bf{x},\,\bf{0})) = \bf{0}$ 이므로 $G(\bf{x}) = K(\bf{x},\,\bf{0})$ 으로 놓으면 된다. $\square$
+그렇다면 $H$ 는 $C^1$ 급 함수임은 자명하며
+
+$$
+H'(\bf{x},\,\bf{y}) = \begin{bmatrix} I_n & 0 \\ D_\bf{x} F(\bf{x},\,\bf{y}) & D_\bf{y} F(\bf{x},\,\bf{y})\end{bmatrix},\quad H'(\bf{a},\,\bf{b}) = \begin{bmatrix}  I_n & 0 \\ L_x & L_y \end{bmatrix}
+$${#eq-thm-CM_implicit_function_theorem_2}
+
+이다. $L_y$ 가 가역이므로 $\det (H'(\bf{a},\bf{b})) = \det (L_x) \ne 0$ 이고 따라서 $H'(\bf{a},\,\bf{b})$ 는 가역이다. 
+
+
+$H'(\bf{a},\,\bf{b})$ 가 가역이므로 역함수 정리에 의해 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $U$ 와 $(\bf{a},\,\bf{0})$ 를 포함하는 어떤 열린 집합 $V$ 가 존재하여 $H:U\to V$ 는 전단사함수이고, 그 역함수 $H^{-1}:V\to U$ 는 $C^1$ 급 함수이다. 
+
+
+$W:=\{\bf{x}\in \R^n: (\bf{x},\,\bf{0}) \in V\}$ 라고 하자. $\bf{a}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-CM_for_implicit_theorem_1). $\bf{x}\in W$ 이면 $H(\bf{x},\bf{y})=(\bf{x},\bf{0})$ 인 $(\bf{x},\,\bf{y})\in U$ 가 존재하며 @eq-thm-CM_implicit_function_theorem_1 에 따라 $F(\bf{x},\bf{y})=\bf{0}$ 이다. $\overline{\bf{y}} \ne \bf{y}$ 에 대해 $(\bf{x},\overline{\bf{y}})\in U$ 이고 $F(\bf{x},\overline{\bf{y}})=\bf{0}$ 이라면
+
+$$
+H(\bf{x},\overline{\bf{y}}) = H(\bf{x},\bf{y})
+$${#eq-thm-CM_implicit_function_theorem_3}
+
+이다. $H$ 는 $U$ 에서 전단사 이므로 $\overline{\bf{y}}=\bf{y}$ 이다. 
+
+($b$) 각각의 $\bf{x}\in W$ 에 대해 $F(\bf{x},\,\bf{y}) = \bf{0}$ 인 $\bf{y}$ 가 유일하게 정해지므로 이를 함수 $G(\bf{x})=\bf{y}$ 로 놓자. 즉 $\bf{x}\in W$ 에 대해 $H(\bf{x},G(\bf{x}))=(\bf{x},\,\bf{0})$ 이며 
+
+$$
+(\bf{x},\,G(\bf{x})) = H^{-1}(\bf{x},\, \bf{0})
+$${#eq-thm-CM_implicit_function_theorem_4}
+
+이다. $H^{-1}$ 이 $C^1$ 급 함수이므로 $G$ 역시 $C^1$ 급 함수이다. $\bf{a}\in W$ 이므로 $G(\bf{a})=\bf{b}$ 이다. 
+
+($c$) @eq-thm-CM_implicit_function_theorem_2 의 두번째 식과 $H(\bf{x},\,G(\bf{x}))= (\bf{x},\,0)$ 에 대한 연쇄법칙을 이용하면
+
+$$
+\begin{bmatrix}  I_n & 0 \\ L_x & L_y \end{bmatrix}\begin{bmatrix} I_m \\ G'(\bf{a}) \end{bmatrix} = \begin{bmatrix} I_m & 0 \\ 0 & 0 \end{bmatrix}
+$${#eq-thm-CM_implicit_function_theorem_5}
+
+이며 이로부터 $L_x + L_y G'(\bf{a})=0$ 을 얻는다. $\square$
 
 :::
-
-</br>
-
-$F(\bf{x},\,G(\bf{x}))=\bf{0}$ 이므로 $f^i(\bf{x},\, G(\bf{x}))=0$ 에 대해 양변에 $D_j$ 를 취하면 
-
-$$
-0 = D_j f^i(\bf{x},\, G(\bf{x})) + \sum_{k=1}^m D_{n+k}f^i (\bf{x},\, G(\bf{x})) \cdot D_j g^k(\bf{x})
-$$
-
-이다. ($F=\begin{bmatrix} f^1 & \cdots f^m\end{bmatrix}^T$ 이며 $G=\begin{bmatrix} g^1 & \cdots g^m\end{bmatrix}^T$ 이다.) 위 식은 행렬 $M_{ij} = D_{n+j}f^i(\bf{x},\, G(\bf{x}))$ 에 대한 선형방정식이며, $\det (M) \ne 0$ 이므로 $D_jg^k(\bf{x})$ 는 $D_jf^i(\bf{x},\, G(\bf{x}))$ 를 사용하여 구할 수 있다. $D_jg^k(\bf{x})$ 를 구할 수 있으므로 $G(\bf{x})$ 역시 구할 수 있다. 그러나 모든 편미분을 이용하여 구하는 것이므로 $G(\bf{x})$ 는 유일하지 않다. 그리고 일반적으로 매우 어렵다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_implicit_function_theorem_2}
 
-$F:\R^n \times \R^m  \to \R^m$ 가 $(\bf{a},\,\bf{b})\in \R^n \times \R^m$ 을 포함하는 열린 집합에서 $C^1$ 급 함수라고 하자. $F(\bf{a},\,\bf{b})=\bf{0}$ 이며 $m\times (n+m)$ 행렬 $M_{ij} = D_{j}f_i(\bf{a},\,\bf{b})$ 에 대해 $\text{rank}(M)=m$ 라면 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $A\subset \R^{n+m}$ 에서 정의된, 아래의 ($1$), ($2$) 를 만족하는 $H: A\to \R^n \times \R^m$ 이 존재한다. 
+$F:\R^n \times \R^m  \to \R^m$ 가 $(\bf{a},\,\bf{b})\in \R^n \times \R^m$ 을 포함하는 열린 집합에서 $C^1$ 급 함수라고 하자. $F(\bf{a},\,\bf{b})=\bf{0}$ 이며 $\text{rank}(J_F(\bf{a},\,\bf{b})) = m$ 라면 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $A\subset \R^{n+m}$ 에서 정의된, 아래의 ($1$), ($2$) 를 만족하는 $H: A\to \R^n \times \R^m$ 이 존재한다. 
 
 &emsp;($1$) $H^{-1}$ 이 존재하고 미분가능하며,
 
@@ -531,11 +572,11 @@ $F:\R^n \times \R^m  \to \R^m$ 가 $(\bf{a},\,\bf{b})\in \R^n \times \R^m$ 을 �
 
 ::: {.proof}
 
-우선 @thm-CM_implicit_function_theorem_1 와의 차이를 보자. 양쪽 모두 $F'(\bf{a},\,\bf{b})$ 는 $m \times (n +m )$ 행렬이다. @thm-CM_implicit_function_theorem_1 은 정체 행과 마지막 $m$ 개의 열로 이루어진 행렬의 행렬식이 $0$ 이 아난 경우, 즉 마지막 $m$ 개의 열이 선형독립인 경우이며, @thm-CM_implicit_function_theorem_2 는 전체 $m+n$ 개의 열 가운데 위치에 무관하게 $m$ 개의 열이 선형독립인 경우이다. 
+우선 @thm-CM_implicit_function_theorem 와의 차이를 보자. 양쪽 모두 $F'(\bf{a},\,\bf{b})$ 는 $m \times (n +m )$ 행렬이다. @thm-CM_implicit_function_theorem 은 정체 행과 마지막 $m$ 개의 열로 이루어진 행렬의 행렬식이 $0$ 이 아난 경우, 즉 마지막 $m$ 개의 열이 선형독립인 경우이며, @thm-CM_implicit_function_theorem_2 는 전체 $m+n$ 개의 열 가운데 위치에 무관하게 $m$ 개의 열이 선형독립인 경우이다. 
 
-이제 $m$ 개의 선형독립인 열의 인덱스를 $j_1,\ldots,\,j_m$ 이라고 하고 열에 대한 permutation $G: \R^n \times \R^m \to \R^n \times \R^m$ 을 $G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})$ 이라고 하면 $F\circ G$ 는 @thm-CM_implicit_function_theorem_1 의 $F$ 와 똑같은 경우이다. 물론 $G$ 는 선형변환이며 따라서 전체 $\R^n \times \R^m$ 에서 $C^\infty$ 급 함수이다.
+이제 $m$ 개의 선형독립인 열의 인덱스를 $j_1,\ldots,\,j_m$ 이라고 하고 열에 대한 permutation $G: \R^n \times \R^m \to \R^n \times \R^m$ 을 $G(x_1,\ldots,\,x_{m+n}) = (\cdots, x_{j_1}, \ldots, x_{j_m})$ 이라고 하면 $F\circ G$ 는 @thm-CM_implicit_function_theorem 의 $F$ 와 똑같은 경우이다. 물론 $G$ 는 선형변환이며 따라서 전체 $\R^n \times \R^m$ 에서 $C^\infty$ 급 함수이다.
 
-@thm-CM_implicit_function_theorem_1 에 따라 $F \circ G$ 에 대해
+@thm-CM_implicit_function_theorem 에 따라 $F \circ G$ 에 대해
 
 $$
 (F \circ G)(\bf{x},\,K(\bf{x},\, \bf{y})) = \bf{y}
@@ -549,7 +590,24 @@ $$
 
 ### 연습문제 {.unnumbered}
 
+
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_for_implicit_theorem_1}
+
+$V\subset \R^{n}\times \R^{m}$ 이 열린 집합일 때 $W=\{\bf{x}\in \R^n : (\bf{x},\,\bf{0}) \in V\}$ 역시 열린집합임을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$V$ 가 열린집합이므로 $(\bf{x},\,\bf{0})\in V$ 일 때 $N((\bf{x},\,\bf{0}),\, \delta)\subset V$ 인 $\delta>0$ 이 존재한다. 그렇다면 $N(\bf{y},\,\delta)\subset W$ 이므로 $W$ 는 열린집합이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_spivak_2_40}
 #### Spivak 2.40
@@ -568,7 +626,7 @@ $$
 f_i (t,\,\bf{x}) = \sum_{j=1}^n a_{ij}(t)x_j - b_i(t)
 $$
 
-로 정의한다. $\det ([a_{ij}]) \ne 0$ 이므로 @thm-CM_implicit_function_theorem_1 에 의해 $F(t,\, X(t)) = 0$ 이 되도록 하는 미분가능한 $X(t) = \begin{bmatrix} x_1(t) & \cdots & x_n(t)\end{bmatrix}^T$ 가 존재한다.
+로 정의한다. $\det ([a_{ij}]) \ne 0$ 이므로 @thm-CM_implicit_function_theorem 에 의해 $F(t,\, X(t)) = 0$ 이 되도록 하는 미분가능한 $X(t) = \begin{bmatrix} x_1(t) & \cdots & x_n(t)\end{bmatrix}^T$ 가 존재한다.
 
 :::
 
@@ -629,326 +687,46 @@ $$
 
 </br>
 
-## 역함수 정리와 음함수 정리에 대한 다른 증명
+## 다변수 함수의 최대값과 최소값
 
-### 루딘의 방법을 따르는 역함수 정리 {#sec-CA_inverse_function_theorem_by_rudin}
-
-지금까지는 거의 @Spivak1965 의 방식을 따른 증명이었다. 이제 @Rudin1976 과 @KKK1997Multivariable 의 방식을 따라 증명해보자.
-
-
-### 역함수 정리 {#sec-CM_inverse_function_theorem_by_rudin}
-::: {.callout-note appearance="simple" icon="false"}
-
-::: {#def-CM_contraction}
-
-#### Contraction
-
-거리공간 $X$ 에서 정의된 함수 $\varphi :X \to X$ 가 어떤 실수 $c<1$ 에 대해
+열린 $E\subset \R^n \times \R^m$ 에서 정의된 $C^1$ 급 함수 $F: E \to \R^m$ 에 대해
 
 $$
-x,\,y\in X \implies \|\phi(x)-\phi(y)\| \le c \|x-y\|
-$$ {#eq-CM_def_of_contraction}
-
-일 때 $\phi$ 를 $X$ 에서의 **contraction** 이라고 한다.
-
-::: 
-:::
-
-</br>
-
-Contraction 의 정의에 의해 다음은 자명하다.
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#prp-CM_uniform_continuity_of_contraction}
-
-거리공간 $X$ 에서의 contraction 은 고른 연속 함수이다.
-::: 
-
-</div></br>
-
-Contraction 과 고정점의 관계를 알아보자.
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#prp-CM_contraction_and_fixed_point}
-
-$\varphi$ 가 완비거리공간 $X$ 에서의 contraction 일 때 $\phi(x)=x$ 인 $x\in X$ 는 유일하게 존재한다.
-::: 
-
-</div>
-
-::: {.proof}
-
-즉 contraction 은 완비거리공간에서 유일한 고정점을 가진다는 의미이다. 임의의 $x_0\in X$ 를 선택하고 수열 $\langle x_n\rangle$ 을 $x_{n+1}=\varphi(x_n)$ 으로 정의하자. $n\ge 1$ 에 대해
-
-$$
-\|x_{n+1}-x_n\| = \|\varphi(x_n)-\varphi(x_{n-1})\| \le c\|x_n - x_{n-1}\| \le \cdots \le c^{n}\|x_1-x_0\|
+M_F := \{(\bf{x},\,\bf{y})\in E : F(\bf{x},\,\bf{y}) = \bf{0}\}
 $$
 
-이다. 임의의 $n>m>1$ 에 대해 
+를 생각하자. $\bf{p}=(\bf{a},\,\bf{b})\in M_F$ 이고 $\{ \nabla f^1(\bf{p}),\ldots,\, \nabla f^m(\bf{p})\}$ 가 선형 독립이면 $\R^m \times \R^m$ 의 좌표 순서를 적당히 바꿔서 $J_F(P)$ 의 마지막 $m\times m$ 행렬이 가역이 되도록 할 수 있다. 이제 $F$ 가 그러하다고 가정한다. 그랗다면 음함수 정리(@thm-CM_implicit_function_theorem) 를 적용 할 수 있다.
+
+음함수 정리의 증명과정의 @eq-thm-CM_implicit_function_theorem_4 에서 $\Gamma (\bf{x})= H^{-1}(\bf{x},\,\bf{0})= (\bf{x},\,G(\bf{x}))$ 인 $C^1$ 급 함수 $\Gamma$ 를 생각 할 수 있다. $\Gamma$ 는 $W \to V \cap M_F$ 함수이며 $M_F$ 는 $m$ 차원 곡면임을 알 수 있다.
+
+점 $P$ 를 지나고 $M_F$ 위에 있는 곡선
 
 $$
-\begin{aligned}
-\|x_n - x_m \| &\le \|x_n-x_{n-1}\| + \cdots + \|x_{m+1} - x_m\|  \\[0.3em]
-&\le \left(c^{n-1} + c^{n-2} + \cdots + c^{m}\right)\|x_1-x_0\| \\[0.3em]
-&= \dfrac{c^m(1-c^{n-m})}{1-c}\|x_1-x_0\| \le \dfrac{c^m}{1-c}\|x_1-x_0\|
-\end{aligned}
+X: (-\delta,\,\delta)  \to M_F,\qquad X(0) = \bf{p}
 $$
 
-이므로 $\langle x_n \rangle$ 은 코시수열이며, $X$ 가 완비거리공간이므로 수렴한다. $\square$
-
-
-:::
-
-</br>
-
-이제 contraction 을 이용하여 역함수 정리를 증명한다.
-
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_inverse_function_theorem_rudin}
-
-열린 집합 $A\subset \R^n$ 에서 정의된 $C^1$ 함수 $F:A \to \R^n$ 과 $\bf{a}\in A$ 에 대해 $\det \left(F'(\bf{a})\right) \ne 0$ 일 때 다음이 성립한다. 
-
-($1$) $\bf{a}$ 를 포함하는 어떤 열린 집합 $U$ 와 $F(\bf{a})$ 를 포함하는 어떤 열린 집합 $V$ 에 대해 $F:U\to V$ 는 전단사이며,
-
-($2$) $(F^{-1})'(\bf{y}) = \left[F'(F^{-1}(\bf{y}))\right]^{-1}$ 이다. 
-
-($3$) $F$ 가 $C^k$ 급 함수이면 $F^{-1}$ 역시 $C^k$ 급 함수이다.
- 
-::: 
-
-</div>
-
-::: {.proof}
-
-($1$) (**1-a**) 우선 어떤 열린집합 $U\subset A$ 에 대해 $F|_U : U \to \R^n$ 이 단사임을 보이자.$\bf{b}=F(\bf{a}),\, L=F'(\bf{a})$ 에 대해 
+을 생각 할 수 있다. $X$ 가 $t=0$ 에서 미분가능할 때 $X'(0)$ 을 $M_F$ 의 접벡터라고 한다. $F(X(t))=\bf{0}$ 이므로 $F'(X(0))X'(0)=\bf{0}$ 이며 따라서
 
 $$
-2\lambda \left\|L^{-1}\right\|=1
-$$ {#eq-thm-CM_inverse_function_theorem_rudin_0}
-
-이 되도록 $\lambda$ 를 정하자. $F'$ 이 연속이므로 어떤 $\bf{a}$ 열린 근방 $U$ 를 아래를 만족하도록 잡을 수 있다.
-
-$$
-\bf{x}\in U \implies \|F'(\bf{x})-L\|\le \lambda
-$$ {#eq-thm-CM_inverse_function_theorem_rudin_1}
-
-이제 임의의 $\bf{y}\in \R^n$ 에 대해 $\varphi:U \to \R^n$ 을 다음과 같이 정의하자.
-
-$$
-\varphi(\bf{x}) := \bf{x} + L^{-1}(\bf{y}-F(\bf{x})).
-$$ {#eq-thm-CM_inverse_function_theorem_rudin_2}
-
-그렇다면 
-
-$$
-\varphi'(\bf{x}) = I - L^{-1}F'(\bf{x}) = L^{-1}(L-F'(\bf{x}))
-$$ {#eq-thm-CM_inverse_function_theorem_rudin_3}
-
-이므로 @eq-thm-CM_inverse_function_theorem_rudin_1 과 $2\lambda \|A^{-1}\|=1$ 조건을 사용하면
-
-$$
-\forall \bf{x}\in U,\,\left\|\varphi'(\bf{x})\right\| \le \dfrac{1}{2}
-$${#eq-thm-CM_inverse_function_theorem_rudin_4}
-
-이다. 다변수 함수의 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 에 따라
-
-$$
-\bf{x}_1,\,\bf{x}_2 \in U \implies \|\varphi(\bf{x}_1) - \varphi (\bf{x}_2) \| \le \dfrac{1}{2}\|\bf{x}_1-\bf{x}_2\|
-$${#eq-thm-CM_inverse_function_theorem_rudin_5}
-
-이다. $\varphi$ 는 contraction 이며, 따라서 $F(\bf{x})=\bf{y}$ 를 만족하는 $\bf{x}\in U$ 는 많아야 하나 존재한다(@prp-CM_contraction_and_fixed_point). 즉 $F$ 는 단사이다.
-
-(**1-b**) $V=F(U)$ 라고 할 때 $V$ 가 열린 집합이며 따라서 $F|_U :U \to V$ 는 열린 집합 사이의 전단사함수임을 보이자. $\bf{y}_0\in V$ 를 선택하면 $F(\bf{x}_0)=\bf{y}_0$ 인 $\bf{x}_0\in U$ 가 유일하게 정해진다. $\bf{x}_0$ 를 중심으로 하는 열린 근방 $B = N(\bf{x}_0,\, r)$ 를 $\overline{B}\subset U$ 가 되도록 잡을 수 있다. $0<R<\lambda r$ 에 대해 $B'=N(\bf{y}_0,\,R)$ 을 생각하자. $\bf{y} \in B'$ 이라면 @eq-thm-CM_inverse_function_theorem_rudin_2 에 의해
-
-$$
-\|\varphi(\bf{x}_0)-\bf{x}_0\| = \|L^{-1}(\bf{y}-\bf{y}_0)\| \le \|L^{-1}\| \|\bf{y}-\bf{y}_0\| < \|L^{-1}\| R\le \dfrac{r}{2}
-$${#eq-thm-CM_inverse_function_theorem_rudin_6}
-
-이다. $\bf{x}\in \overline{B}$ 이라면 @eq-thm-CM_inverse_function_theorem_rudin_5 에 따라
-
-$$
-\|\varphi(\bf{x})-\bf{x}_0 \| \le \|\varphi(\bf{x})-\varphi(\bf{x}_0)\| + \|\varphi(\bf{x}_0)-\bf{x}_0\| < \dfrac{\|\bf{x}-\bf{x}_0\|}{2} + \dfrac{r}{2} \le r
-$${#eq-thm-CM_inverse_function_theorem_rudin_7}
-
-이므로 $\varphi(\bf{x})\in B$ 이다. @eq-thm-CM_inverse_function_theorem_rudin_5 는 $\bf{x}_1,\,\bf{x}_2\in \overline{B}$ 일 경우에도 성립한다는 것을 생각하면 $\varphi$ 는 $\overline{B} \to \overline{B}$ contraction 이다. $\overline{B}$ 는 완비거리공간 $\R^n$ 의 닫힌 부분집합이므로 $\varphi$ 는 유일한 고정점 $\bf{x}\in \overline{B}$ 를 가진다. 이 $\bf{x}$ 에 대해 $F(\bf{x})=\bf{y}$ 이며 따라서 $\bf{y}=F(\bf{x})\in F(U)=V$ 이다. 즉 $B'\subset V$ 이므로 $V$ 는 열린집합이다. 따라서 $F|_U : U \to V$ 는 열린집합 $U,\,V$ 에서의 전단사 함수이다. 
-
-
-($2$) $\bf{y},\, \bf{y}+\bf{k}\in V$ 이면 $\bf{x}=F^{-1}(\bf{y}),\, \bf{x+h}=F^{-1}(\bf{y}+\bf{k})$ 는 모두 $U$ 에 속한다. 따라서
-
-$$
-\varphi(\bf{x}+\bf{h})- \varphi(\bf{x}) = \bf{h} + L^{-1}(F(\bf{x})- F(\bf{x}+\bf{h})) = \bf{h}-L^{-1}\bf{k}
-$${#eq-thm-CM_inverse_function_theorem_rudin_8}
-
-이다. @eq-thm-CM_inverse_function_theorem_rudin_5 로 부터 $\|\bf{h}-L^{-1}\bf{k}\| \le \dfrac{1}{2}\|\bf{h}\|$ 이므로 $\|L^{-1}\bf{k}\| \ge \dfrac{1}{2}\|\bf{h}\|$ 이며, 따라서
-
-$$
-\|\bf{h}\| \le 2\|L^{-1}\| \|\bf{k}\| = \lambda^{-1}\|\bf{k}\|
-$${#eq-thm-CM_inverse_function_theorem_rudin_9}
-
-이다. @eq-thm-CM_inverse_function_theorem_rudin_0, @eq-thm-CM_inverse_function_theorem_rudin_1 과 @prp-CM_properties_of_matrix_norm_3
-로부터
-
-$$
-\|F'(\bf{x}) - L\| \cdot \|L^{-1}\| < \dfrac{1}{2} < 1
-$$ {#eq-thm-CM_inverse_function_theorem_rudin_10}
-
-이므로 $F'(\bf{x})$ 는 가역이다. 이제 $G=F^{-1}$, $T=\left(F'(\bf{x})\right)^{-1}$ 라고 하자.
-
-$$
-\begin{aligned}
-G(\bf{y}+\bf{k}) - G(\bf{y})-T\bf{k} &= \bf{h} - T\bf{k} \\[0.3em]
-&= -T \left[F(\bf{x}+\bf{h}) - F(\bf{x}) - F'(\bf{x})\bf{h}\right]
-\end{aligned}
-$${#eq-thm-CM_inverse_function_theorem_rudin_11}
-
-이며 @eq-thm-CM_inverse_function_theorem_rudin_6 를 이용하면 
-
-$$
-\begin{aligned}
-\dfrac{\|G(\bf{y}+\bf{k}) - G(\bf{y})-T\bf{k}\|}{\|\bf{k}\|} \le \dfrac{\|T\|}{\lambda} \dfrac{\|F(\bf{x}+\bf{h}) - F(\bf{x}) - F'(\bf{x})\bf{h}\|}{\|\bf{h}\|}
-\end{aligned}
+X'(0) \in \ker F'(\bf{p})
 $$
 
-이다. $\|\bf{k}\| \to 0$ 극한에서 $\|\bf{k}\| \to 0$ 이며 우변이 $0$ 이므로 $G$ 는 $\bf{y}$ 에서 미분가능하고 $T=G'(\bf{y})$ 이다. 즉
+이다. 역으로 $\bf{h}\in \R^n\times \R^m$ 이 $\bf{h}\in \ker F'(\bf{p})$ 라고 하자. $\bf{h}_1\in \R^n,\, \bf{h}_2\in \R^m$ 에 대해 $\bf{h} = (\bf{h}_1,\,\bf{h}_2)$ 라고 쓸 수 있다. $J_F(\bf{p}) = \begin{bmatrix}J_1 & J_2 \end{bmatrix}$ 에 대해
 
 $$
-G'(\bf{y}) = (F'(G(\bf{y})))^{-1}
+J_F(\bf{p})\bf{h} = J_1\bf{h}_1 + J_2 \bf{h}_2 = \bf{0}
 $$
 
-이다. 이제 $G'$ 이 연속임을 보이자. $G$ 가 $V$ 에서 $U$ 로의 전단사 연속함수이고 $F'$ 역시 $U$ 에서 $GL_n(\R)$ 로의 연속함수이며, $(F')^{-1}$ 역시 $U \mapsto GL_n(\R)$ 연속함수이다. @prp-CM_properties_of_matrix_norm_3 ($2$) 의 $\phi(A)=A^{-1}$ 은 연속함수 이며 $G'(\bf{y}) = \phi (F'(G(\bf{y})))$ 이므로 $G'(\bf{y})$ 는 연속이다. 즉 $G=F^{-1}$ 역시 $C^1$ 급 함수이다.
-
-($3$) 귀납법을 이용해 증명한다. $k=1$ 경우는 이미 보였다. $k$ 에 대해 성립함을 가정하자. $F$ 가 $C^{k+1}$ 급이면 $F$ 는 $C^k$ 급이고 귀납적 가정에 의해 $G$ 역시 $C^k$ 급이다. 
-$\square$
-
-:::
-
-</br>
-
-### 음함수 정리 {#sec-CM_implicit_function_theorem_by_rudin}
-
-$\bf{x}\in \R^n,\, \bf{y}\in \R^m$ 을 $(\bf{x},\, \bf{y}) = (x_1,\ldots,\,x_n,\, y_1,\ldots,\,y_m)$ 으로 흔히 표기한다. $L\in \mathcal{L}(\R^{n}\times \R^m,\, \R^m)$ 일 때 $L$ 를 $L_x\bf{x}=A(\bf{x},\,\bf{0}),\, L_y \bf{y} = A(\bf{0},\, \bf{y})$ 인 두 선형변환 $L_x,\,L_y$ 로 분리할 수 있다. 그렇다면
+이다. 이제 함수 $Y: (-\delta,\,\delta) \to M_F$ 를
 
 $$
-L(\bf{x},\,\bf{y}) = L_x\bf{x} + L_y\bf{y}
-$${#eq-CM_split_of_linear_operator}
-
-이다. 
-
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#lem-CM_implicit_function_theorem_rudin}
-
-$L\in \mathcal{L}(\R^{n}\times \R^m,\, \R^m)$ 에서 $L_y$ 가 가역행렬이라고 하자. 각각의 $\bf{h}\in \R^n$ 에 대해 $L(\bf{h},\,\bf{k})=\bf{0}$ 이 되도록 하는 $\bf{k}\in \R^m$ 이 유일하게 존재하며 그 $\bf{k}$ 는 다음과 같다.
-
-$$
-\bf{k} = -(L_y)^{-1} L_x\bf{h}.
-$$ {#eq-CM_split_of_linear_operator_2}
-
-
-::: 
-
-</div>
-
-::: {.proof}
-$L_x$ 가 가역행렬이므로 유일하다. $\square$
-
-:::
-
-</br>
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#thm-CM_implicit_function_theorem_rudin}
-
-#### 음함수 정리
-
-열린 $E\subset \R^{n}\times \R^m$ 에서 정의된 $F:E \to \R^m$ 이 $C^1$ 함수이고 어떤 $(\bf{a},\,\bf{b}) \in E$ 에서 $F(\bf{a},\bf{b})=\bf{0}$ 이라고 하자. $L=F'(\bf{a},\,\bf{b})$ 이고 $L_y$ 가 가역이면 어떤 $(\bf{a},\,\bf{b})$ 를 포함하는 열린집합 $U$ 와 $\bf{b}$ 를 포함하는 열린 집합 $W$ 가 존재하여
-
-&emsp;($a$) 각각의 $\bf{y}\in W$ 에 대해 유일한 $\bf{x}\in \R^n$ 이 존재하여 $(\bf{x},\,\bf{y})\in U,\,F(\bf{x},\,\bf{y})=\bf{0}$ 이고,
-
-&emsp;($b$) ($a$) 에 의해 $\bf{x}=G(\bf{y})$ 라 놓을 수 있는데, $G$ 는 $C^1$ 급 함수이며 $G(\bf{b})=\bf{a}$ 이며,
-
-&emsp;($c$) $G'(\bf{b}) = -(-A_x)^{-1}A_y$ 이다.
-
-::: 
-
-</div>
-
-::: {.proof}
-
-($a$) $H:E \to \R^{m+n}$ 을 아래와 같이 정의한다.
-
-$$
-H(\bf{x},\,\bf{y}) := (\bf{x},\,F(\bf{x},\,\bf{y})).
-$$ {#eq-thm-CM_implicit_function_theorem_rudin_1}
-
-그렇다면 $H$ 는 $C^1$ 급 함수임은 자명하며
-
-$$
-H'(\bf{x},\,\bf{y}) = \begin{bmatrix} D_\bf{x} F(\bf{x},\,\bf{y}) & D_\bf{y} F(\bf{x},\,\bf{y}) \\ \bf{0} & I_n\end{bmatrix},\quad H'(\bf{a},\,\bf{b}) = \begin{bmatrix} A_x & A_y \\ \bf{0} & I_n\end{bmatrix}
-$${#eq-thm-CM_implicit_function_theorem_rudin_2}
-
-이다. $A_x$ 가 가역이므로 $\det (H'(\bf{a},\bf{b})) = \det (A_x) \ne 0$ 이고 따라서 $H'(\bf{a},\,\bf{b})$ 는 가역이다. 
-
-<!-- 우선 $H'(\bf{a},\,\bf{b})$ 가 가역임을 보이자. $F(\bf{a},\,\bf{b})=\bf{0}$ 임을 고려하여
-
-$$
-F(\bf{a}+\bf{h},\,\bf{b}+\bf{k}) = A(\bf{h},\bf{k}) + R(\bf{h},\bf{k})
+Y(t) := \Gamma (\bf{p}+ t\bf{h}_1)
 $$
 
-가 되도록 $R$ 을 정한다. 그렇다면
+로 정의하자. 그렇다면
 
 $$
-\begin{aligned}
-H(\bf{a}+\bf{h},\, \bf{b}+\bf{k}) - H(\bf{a},\,\bf{b}) &= \left(F(\bf{a}+\bf{h},\bf{b}+\bf{k}),\,\bf{k}\right) \\[0.3em]
-&=\left(A(\bf{h},\bf{k}),\,\bf{k}\right) + (R(\bf{h},\,\bf{k}),\,\bf{0})
-\end{aligned}
+Y'(0) = \begin{bmatrix} I_n \\ G'(\bf{a})\end{bmatrix}\bf{h}_1 = \begin{bmatrix} \bf{h}_1 \\ G'(\bf{a})\bf{h}_1\end{bmatrix} = \begin{bmatrix} \bf{h}_1 \\ -(J_2)^{-1}J_1 \bf{h}_1\end{bmatrix} = \begin{bmatrix} \bf{h}_1 \\ \bf{h}_2\end{bmatrix} = \bf{h}
 $$
 
-이다. 이는 $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k}) = (A(\bf{h},\,\bf{k}),\,\bf{k})$ 임을 의미한다. $H'(\bf{a},\,\bf{b})(\bf{h},\,\bf{k})=\bf{0}$ 이면 $\bf{k}=0$ 이며 $A(\bf{h},\,\bf{0}) =\bf{0}$ 이므로 @lem-CM_implicit_function_theorem_rudin 에 따라 $\bf{h}=\bf{0}$ 이다.  -->
-
-$H'(\bf{a},\,\bf{b})$ 가 가역이므로 역함수 정리에 의해 $(\bf{a},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $U$ 와 $(\bf{0},\,\bf{b})$ 를 포함하는 어떤 열린 집합 $V$ 가 존재하여 $H:U\to V$ 는 전단사함수이고, 그 역함수 $G:U\to V$ 는 $C^1$ 급 함수이다. 
-
-
-$W:=\{\bf{y}\in \R^n: (\bf{0},\,\bf{y}) \in V\}$ 라고 하자. $\bf{b}\in W$ 이며 $V$ 가 열린 집합이므로 $W$ 도 열린 집합이다(@exr-CM_for_implicit_theorem_rudin_1). $\bf{y}\in W$ 이면 $H(\bf{x},\bf{y})=(\bf{0},\bf{y})$ 인 $(\bf{x},\,\bf{y})\in U$ 가 존재하며 @eq-thm-CM_implicit_function_theorem_rudin_1 에 따라 $F(\bf{x},\bf{y})=\bf{0}$ 이다. $\overline{\bf{x}} \ne \bf{x}$ 에 대해 $(\overline{\bf{x}},\bf{y})\in U$ 이고 $F(\overline{\bf{x}},\bf{y})=\bf{0}$ 이라면
-
-$$
-H(\overline{\bf{x}},\bf{y}) = H(\bf{x},\bf{y})
-$$
-
-이다. $H$ 는 $U$ 에서 전단사 이므로 $\overline{\bf{x}}=\bf{x}$ 이다. 
-
-($b$) 각각의 $\bf{y}\in W$ 에 대해 $H(\bf{x},\,\bf{y}) = \bf{0}$ 인 $\bf{x}$ 가 유일해게 정해지므로 이를 함수 $G(\bf{y})=\bf{x}$ 로 놓자. 즉 $\bf{y}\in W$ 에 대해 $H(G(\bf{y}),\bf{y})=(\bf{0},\,\bf{y})$ 이며 
-
-$$
-(G(\bf{y}),\,\bf{y}) = H^{-1}(\bf{0},\, \bf{y})
-$$
-
-이다. 역함수 정리에 의해 $H^{-1}:V \to U$ 는 $C^1$ 급 함수이며, 
-
-
-:::
-
-
-</br>
-
-### 연습문제 {.unnumbered}
-
-</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
-
-::: {#exr-CM_for_implicit_theorem_rudin_1}
-
-$V\subset \R^{m+n}$ 이 열린 집합일 때 $W=\{\bf{y}\in \R^n : (\bf{0},\,\bf{y}) \in V\}$ 역시 열린집합임을 보여라.
-
-:::
-
-</div>
-
-::: {.solution}
-
-$V$ 가 열린집합이므로 $(\bf{0},\,\bf{y})\in V$ 일 때 $N((0,\,\bf{y}),\, \delta)\subset V$ 인 $\delta>0$ 이 존재한다. 그렇다면 $N(\bf{y},\,\delta)\subset W$ 이므로 $W$ 는 열린집합이다. 
-
-:::
+이므로 $\bf{h}$ 는 $\bf{p}$ 를 지나는 $M_F$ 의 접벡터이다. 즉 $\bf{p}$ 를 지나는 $M_F$ 의 접벡터의 집합은 $\ker F'(\bf{p})$ 와 일치한다. $\dim \ker F'(\bf{p}) = n$ 이므로 $M_F$ 의 접평먼도 $n$ 차원이다. $\{ \nabla f^1(\bf{p}),\ldots,\, \nabla f^m(\bf{p})\}$ 가 선형독립이며 이 접평면에 수직이므로 $\{ \nabla f^1(\bf{p}),\ldots,\, \nabla f^m(\bf{p})\}$ 가 $M_F$ 의 접평면에 수직인 공간의 기저임을 알 수 있다.

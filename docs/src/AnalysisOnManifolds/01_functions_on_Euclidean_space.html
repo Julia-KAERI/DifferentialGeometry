@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>1&nbsp; 유클리드 공간에서의 함수 – Differential Geometry</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,15 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/AnalysisOnManifolds/AOM.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -203,6 +205,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">스토크스 정리</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/AnalysisOnManifolds/A01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -262,7 +270,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-%
+<p>%</p>
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -659,7 +667,7 @@ $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_properties_of_matrix_norm_1" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.1</strong></span> 행렬의 노름에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\|L\boldsymbol{x}\|=0 \iff L=0\)</span>.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\|L\|=0 \iff L=0\)</span>.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\boldsymbol{x}\|\le \|L\|\cdot \|\boldsymbol{x}\|\)</span> 이다.</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(L\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 일 때 <span class="math inline">\(\|L\|&lt;\infty\)</span> 이며 <span class="math inline">\(A\)</span> 는 고른 연속이다.</p>
 <p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(L,\, T\in \mathcal{L}(\mathbb{R}^n,\, \mathbb{R}^m)\)</span> 이며 <span class="math inline">\(c\in \mathbb{R}\)</span> 일 때 다음이 성립한다.</p>
@@ -696,7 +704,7 @@ $N(\bf{a},\,\delta) \subset C(\bf{a},\,\delta)$ 는 자명하다. $C(\boldsymbol
 <div id="prp-CM_properties_of_matrix_norm_3" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 1.3</strong></span> <span class="math inline">\(GL_n(\mathbb{R})\)</span> 은 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 모든 가역 선형 연자의 집합이다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\in GL_n(\mathbb{R}),\, B\in \mathcal{L}(\mathbb{R}^n)\)</span> 이며 <span class="math inline">\(\|B-A\|\cdot \|A^{-1}\| &lt; 1\)</span> 이면 <span class="math inline">\(B \in GL_n(\mathbb{R})\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(GL_n(\mathbb{R})\)</span> 는 <span class="math inline">\(\mathcal{L}(\mathbb{R}^n)\)</span> 의 열린 집합이며 <span class="math inline">\(\phi(A)=A^{-1}\)</span> 은 연속이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(GL_n(\mathbb{R})\)</span> 는 <span class="math inline">\(\mathcal{L}(\mathbb{R}^n)\)</span> 의 열린 부분집합이며 <span class="math inline">\(\phi(A)=A^{-1}\)</span> 은 연속이다.</p>
 </div>
 </div>
 <div class="proof">

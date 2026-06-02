@@ -29,6 +29,7 @@ book:
         - src/AnalysisOnManifolds/05_change_of_variables.qmd
         - src/AnalysisOnManifolds/06_differential_forms.qmd
         - src/AnalysisOnManifolds/07_stokes_theorem.qmd
+        - src/AnalysisOnManifolds/A01.qmd
 
     - references.qmd
 

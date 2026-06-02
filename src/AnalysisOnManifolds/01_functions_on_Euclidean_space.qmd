@@ -596,7 +596,7 @@ $$ {#eq-CM_definition_of_matrix_norm}
 
 행렬의 노름에 대해 다음이 성립한다. 
 
-&emsp;($1$) $\|L\bf{x}\|=0 \iff L=0$.
+&emsp;($1$) $\|L\|=0 \iff L=0$.
 
 &emsp;($2$) $L\in \mathcal{L}(\R^n,\, \R^m)$ 일 때 $\|L\bf{x}\|\le \|L\|\cdot \|\bf{x}\|$ 이다.
 
@@ -664,7 +664,7 @@ $GL_n(\R)$ 은 $\R^n$ 에서의 모든 가역 선형 연자의 집합이다.
 
 &emsp;($1$) $A\in GL_n(\R),\, B\in \mathcal{L}(\R^n)$ 이며 $\|B-A\|\cdot \|A^{-1}\| < 1$ 이면 $B \in GL_n(\R)$ 이다.
 
-&emsp;($2$) $GL_n(\R)$ 는 $\mathcal{L}(\R^n)$ 의 열린 집합이며 $\phi(A)=A^{-1}$ 은 연속이다.
+&emsp;($2$) $GL_n(\R)$ 는 $\mathcal{L}(\R^n)$ 의 열린 부분집합이며 $\phi(A)=A^{-1}$ 은 연속이다.
 
 :::
 
