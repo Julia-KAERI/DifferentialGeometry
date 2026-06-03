@@ -1823,7 +1823,7 @@ $$
 라고 하자. 이 때 $\phi$ 의 $k$ 차 미분은 다음과 같다.
 
 $$
-\phi^{(k)}(t) = \sum_{i_1=1}^n \cdots \sum_{i_k=1}^n h_{i_1} \cdots h_{i_k} D_{i_1}\cdots D_{i_k} f(\bf{x}+t\bf{h}).
+\phi^{(k)}(t) = \sum_{i_1=1}^n \cdots \sum_{i_k=1}^n h^{i_1} \cdots h^{i_k} D_{i_1}\cdots D_{i_k} f(\bf{x}+t\bf{h}).
 $$
 
 :::
@@ -1836,8 +1836,8 @@ $k=1$ 인 경우는 이미 보였다. $k$ 에서 성립함을 가정하자.
 
 $$
 \begin{aligned}
-\phi^{(k+1)}(t) &= \sum_{i_{k+1}=1}^n h_{i_{k+1}} D_{i_{k+1}}\phi^{(k)} (\bf{x}+t\bf{h}) \\[0.3em]
-& =\sum_{i_1=1}^n \cdots \sum_{i_{k+1}=1}^n h_{i_1} \cdots h_{i_{k+1}} D_{i_1}\cdots D_{i_{k+1}} f(\bf{x}+t\bf{h}). \square
+\phi^{(k+1)}(t) &= \sum_{i_{k+1}=1}^n h^{i_{k+1}} D_{i_{k+1}}\phi^{(k)} (\bf{x}+t\bf{h}) \\[0.3em]
+& =\sum_{i_1=1}^n \cdots \sum_{i_{k+1}=1}^n h^{i_1} \cdots h^{i_{k+1}} D_{i_1}\cdots D_{i_{k+1}} f(\bf{x}+t\bf{h}). \square
 \end{aligned}
 $$
 
@@ -1845,10 +1845,16 @@ $$
 
 </br>
 
+표기가 복잡하기 때문에 단순화하자. $D^k_X f(\bf{a})$ 를 다음과 같이 정의하자.
+
+$$
+\boxed{D^k_\bf{h} f(\bf{a}) := \sum_{i_1=1}^n \cdots \sum_{i_{k+1}=1}^n h^{i_1} \cdots h^{i_{k+1}} D_{i_1}\cdots D_{i_{k+1}} f(\bf{a}).}
+$$ {#eq-CM_abb_for_multiple_partial_derivatives}
+
 이로부터 
 
 $$
-\phi^{(k)}(0) = \sum_{i_1=1}^n \cdots \sum_{i_k=1}^n h_{i_1} \cdots h_{i_k} D_{i_1}\cdots D_{i_k} f(\bf{x})
+\phi^{(k)}(0) = D^k_\bf{h} f(\bf{x})
 $$
 
 임을 안다. $\phi$ 가 $C^{k+1}$ 함수이면 테일러 정리를 이용하여
@@ -1869,7 +1875,7 @@ $$
 볼록 집합 $U\subset \R^n$ 에서 정의된 $C^{k+1}$ 급 함수 $f:U \to \R$ 와 정해진 $\bf{x},\,\bf{x}+\bf{h}\in U$, 그리고 @prp-CM_nth_derivative_of_function 에서 정의된 $\phi(t)$ 와 $\phi^{(k)}(t)$ 에 대해
 
 $$
-f(\bf{x}+\bf{h})= f(\bf{x}) + \sum_{j=1}^k \dfrac{\phi^{(j)}(0)}{j!} + \dfrac{\phi^{(k+1)}(s)}{(k+1)!}
+f(\bf{x}+\bf{h})= f(\bf{x}) + \sum_{j=1}^k \dfrac{D^j_\bf{h}f(\bf{x})}{j!} + \dfrac{D^{k+1}_\bf{h}f(\bf{x}+s\bf{h})}{(k+1)!}
 $$
 
 을 만족하는 $s\in [0,\,1]$ 이 존재한다.

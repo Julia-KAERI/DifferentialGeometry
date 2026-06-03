@@ -731,7 +731,6 @@ $$
 
 이므로 $\bf{h}$ 는 $\bf{p}$ 를 지나는 $M_F$ 의 접벡터이다. 즉 $\bf{p}$ 를 지나는 $M_F$ 의 접벡터의 집합은 $\ker F'(\bf{p})$ 와 일치한다. $\dim \ker F'(\bf{p}) = n$ 이므로 $M_F$ 의 접평먼도 $n$ 차원이다. $\{ \nabla f^1(\bf{p}),\ldots,\, \nabla f^m(\bf{p})\}$ 가 선형독립이며 이 접평면에 수직이므로 $\{ \nabla f^1(\bf{p}),\ldots,\, \nabla f^m(\bf{p})\}$ 가 $M_F$ 의 접평면에 수직인 공간의 기저임을 알 수 있다.
 
-
  </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_extreme_value_and_gradiant}
@@ -782,7 +781,7 @@ $$
 
 ::: {#def-CM_hessian_matrix}
 
-두번 미분 가능한 $f:U\subset \R^n \to \R$ 에 대한 **헤세 행렬 (Hessian matrix)** $H_f(\bf{a})$ 는 다음과 같이 정의된다.
+$C^2$ 급 함수 $f:U\subset \R^n \to \R$ 에 대한 **헤세 행렬 (Hessian matrix)** $H_f(\bf{a})$ 는 다음과 같이 정의된다.
 
 $$
 H_f (\bf{a}) := \begin{bmatrix} D_1D_1 f(\bf{a}) & \cdots & D_1D_n f(\bf{a}) \\ \vdots & \ddots & \vdots \\D_nD_1 f(\bf{a})  & \cdots & D_n D_n f(\bf{a}) \end{bmatrix}.
@@ -791,105 +790,38 @@ $$ {#eq-CM_definition_of_hessian}
 ::: 
 :::
 
-
-::: {.callout-note icon="false"}
-
-#### **양부호 행렬**
-
-::: {#def-CM_positive_definitive_matrix}
-
-대칭행렬 $A\in \R^{n\times n}$ 이 각각의 $\bf{0}$ 이 아닌 $\bf{x}\in \R^n$ 에 대해 $\bf{x}^TA\bf{x}\ge 0$ 일 때 $A$ 를 **준양부호 행렬 (positive semidefinitive matrix)** 라고 하며 $\bf{x}^TA\bf{x}> 0$ 일 때 $A$ 를 **양부호 행렬 (positive definitve matrix)** 라고 한다. 같은 방법으로 **음부호 행렬 (negative definitive matrix)** 과 **준음부호 행렬 (negative semidefinitive matrix)** 를 정의 할 수 있다.
-
-::: 
-:::
+헤세 행렬은 정의에 의해 대칭행렬이다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-CM_positive_and_semidefinitive_matrix}
+::: {#thm-CM_hessian_and_extreme_value}
 
-대칭행렬 $A\in \R^{n \times n}$ 에 대해 다음 두 명제는 동치이다.
+열린 연결집합 $U\subset \R^n$ 에서 정의된 $C^2$ 급 함수 $f:U \to \R$ 이 $\bf{a}\in U$ 에서 $\nabla f(\bf{a})=\bf{0}$ 일 때 다음이 성립한다.
 
-&emsp;($1$) $A$ 는 양부호 행렬이다.
+($1$) $H_f(\bf{a})$ 가 양부호 행렬이면 $f$ 는 $\bf{a}$ 에서 극소값을 가진다.
 
-&emsp;($2$) $A$ 는 준양부호 행렬이며 가역행렬이다.
+($2$) $H_f(\bf{a})$ 가 음부호 행렬이면 $f$ 는 $\bf{a}$ 에서 극대값을 가진다.
+
+($3$) $H_f(\bf{a})$ 가 준양부호 행렬도 준음부호 행렬도 아니라면 $\bf{a}$ 는 $f$ 의 안장점이다.
+
+
 :::
 
 </div>
 
 ::: {.proof}
 
-trivial
-:::
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#prp-CM_determinant_of_definitive_matrix}
-
-대칭행렬 $A\in \R^{n \times n}$ 에 대해 다음이 성립한다.
-
-&emsp;($1$) $A$ 가 양부호 행렬이면 $\det (A) > 0$ 이다.
-
-&emsp;($2$) $A$ 가 준 양부호 행렬이면 $\det  (A) \ge 0$ 이다.
-
-::: 
-
-</div>
-
-::: {.proof}
-
-$\gamma : [0,\,1] \to \R$ 을 다음과 같이 정의하자.
+다변수 함수의 테일러 정리(@prp-CM_taylor_expansion_of_multivariable_function) 애 의해
 
 $$
-\gamma (\lambda) := \det (\lambda A + (1-\lambda)I_n)
+f(\bf{a}+\bf{h})= f(\bf{x}) +  \dfrac{D^2_\bf{h}f(\bf{a})}{2} + \dfrac{D^{3}_\bf{h}f(\bf{a}+s\bf{h})}{6}
 $$
 
-$\gamma(\lambda)$ 는 $\lambda$ 이하의 $n$ 차 이하의 다항식이므로 $\gamma$ 는 연속함수이다. 또한
+를 만족하는 $s\in [0,\,1]$ 이 존재한다. 여기서 $s$ 는
 
 $$
-\langle (\lambda A + (1-\lambda )I_n) \bf{x},\,\bf{x}\rangle = \lambda \langle A \bf{x},\,\bf{x}\rangle + (1-\lambda ) \langle  \bf{x},\,\bf{x}\rangle
-$${#eq-prp-CM_determinant_of_definitive_matrix}
-
-이므로 $A$ 가 양부호이면 $\lambda A + (1-\lambda)I_n$ 역시 $\lambda \in [0,\,1]$ 에서 양부호 행렬로 가역행렬이다. 양부호 행렬을 가역행렬이므로 $\det (A) \ne 0$ 이다. 그런데 $\gamma (0) =1$ 이며 $\gamma$ 는 연속함수이므로 $\gamma(1)=\det (A) > 0$ 이다.
-
-$A$ 가 준양부호 행렬이면 $\lambda \in [0,\,1)$ 에 대해 $\lambda A + (1-\lambda)I_n$ 가 양부호이며 따라서 $\det (A) = \gamma (1) = \lim_{\lambda \to 1}\gamma (\lambda) \ge 0$ 이다. $\square$
-
-:::
-
-::: {.callout-note icon="false"}
-
-#### **부분행렬**
-
-::: {#def-CM_submatrix}
-
-행렬 $A\in \R^{n\times n}$ 과 $\{i_1,\ldots,\,i_k\} \subset \{1,\ldots,\,n\}$ 에 대해 $(A_{i_j,\, i_m}: 1 \le j,\,m \le k)$ 을 모아 만든 $k \times k$ 행렬을 $A$ 의 부분행렬 이라고 한다.
-
-::: 
-:::
-
-
-</br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-
-::: {#prp-CM_definitive_matrix_and_submatrix}
-
-대칭행렬 $A\in \R^{n \times n}$ 에 대해 다음이 성립한다.
-
-&emsp;($1$) $A$ 가 양부호 행렬이면 $A$ 의 모든 부분행렬은 양부호 행렬이다.
-
-&emsp;($2$) $A$ 가 준양부호 행렬이면 $A$ 의 모든 부분행렬은 준양부호 행렬이다.
-
-::: 
-
-</div>
-
-::: {.proof}
-
-$A$ 와 $\bf{x}\in \R^n$ 에 대해 $\{i_1,\ldots,\,i_k\}$ 를 선택하여 만든 $A$ 의 부분행렬 $\overline{A}$ 와 $\overline{\bf{x}} = (x^{i_1},\ldots,\,x^{i_k})$ 를 생각하자. 또한 $A_S$ 를 $A$ 에서 부분행렬로 선택되는 성분 이외의 성분을 모두 $0$ 으로 놓은 행렬이라고 하고 $\bf{x}_S$ 를 $\bf{x}$ 에서 $\{i_1,\ldots,\,i_k\}$ 행에 포함되지 않는 성분을 모두 $0$ 으로 바꾼 열벡터라고 하자. 그렇다면
-
+D^2_\bf{h}(\bf{a}+\bf{h}) - D^2_\bf{h}(\bf{a}) = D^3
 $$
-\overline{\bf{x}}^T\overline{A}\overline{\bf{x}} = {\bf{x}_S}^T A_S \bf{x}_S = {\bf{x}_S}^T A \bf{x}_S 
-$$
-
-이다. $\square$
 
 
 :::

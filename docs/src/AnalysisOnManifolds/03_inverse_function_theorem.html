@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>3&nbsp; 역함수 정리와 음함수 정리 – Differential Geometry</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -54,15 +56,14 @@ div.csl-indent {
 <link href="../../src/AnalysisOnManifolds/02_differentiation_of_manifolds.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -92,7 +93,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -283,7 +284,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-%
+<p>%</p>
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -413,7 +414,7 @@ f^i(\boldsymbol{y})-f^i(\boldsymbol{x}) = \nabla f^i(\boldsymbol{c}_i) (\boldsym
 \boldsymbol{x}\in U_3 \implies \|D_jf_i(\boldsymbol{x})-D_jf_i(\boldsymbol{a})\|&lt; \dfrac{1}{2n^2}
 \]</span></p>
 <p>이며, 따라서 <span class="math inline">\(U_3\)</span> 에서 <span class="math inline">\(D_jf_i(\boldsymbol{x})\)</span> 는 유계이다. (<a href="#lem-CM_inverse_function_theorem_1" class="quarto-xref">보조정리&nbsp;<span>3.1</span></a> 의 조건)</p>
-<p>이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 <span class="math inline">\(U_1 \cap U_2 \cap U_3\)</span> 에 포함되는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(U\)</span> 를 작게 잡아 <span class="math inline">\(\partial U \cap \partial U_1 = \varnothing\)</span> 이 되도록 잡을 수 있다. 이 때 <span class="math inline">\(\partial U\)</span> 는 <span class="math inline">\(U\)</span> 의 경계점(<a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<span>2011</span>)</span> 연습문제 2.7.6</a>) 이다.</p>
+<p>이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 <span class="math inline">\(U_1 \cap U_2 \cap U_3\)</span> 에 포함되는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(U\)</span> 를 작게 잡아 <span class="math inline">\(\partial U \cap \partial U_1 = \varnothing\)</span> 이 되도록 잡을 수 있다. 이 때 <span class="math inline">\(\partial U\)</span> 는 <span class="math inline">\(U\)</span> 의 경계점(<a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기 et al. (<span>2011</span>)</span> 연습문제 2.7.6</a>) 이다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\partial U\)</span> 는 유계인 닫힌 집합이므로 옹골집합이며 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하지 않는다. <span class="math inline">\(\partial U \subset U_1\)</span> 이며 <span class="math inline">\(U_1\)</span> 에서 <span class="math inline">\(F\)</span> 는 단사이므로 <span class="math inline">\(F(\boldsymbol{a}) \notin F(\partial U)\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F\)</span> 가 연속이므로 <span class="math inline">\(F(\partial U)\)</span> 도 옹골집합이며 따라서 모든 <span class="math inline">\(\boldsymbol{x}\in \partial U\)</span> 에 대해 <span class="math inline">\(\|F(\boldsymbol{x})-F(\boldsymbol{a})\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다.</p>
 <p>이 <span class="math inline">\(d\)</span> 에 대해 집합 <span class="math inline">\(W\)</span> 를 다음과 같이 정의한다.</p>
@@ -767,92 +768,36 @@ Y'(0) = \begin{bmatrix} I_n \\ G'(\boldsymbol{a})\end{bmatrix}\boldsymbol{h}_1 =
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_hessian_matrix" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.1</strong></span> 두번 미분 가능한 <span class="math inline">\(f:U\subset \mathbb{R}^n \to \mathbb{R}\)</span> 에 대한 <strong>헤세 행렬 (Hessian matrix)</strong> <span class="math inline">\(H_f(\boldsymbol{a})\)</span> 는 다음과 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 3.1</strong></span> <span class="math inline">\(C^2\)</span> 급 함수 <span class="math inline">\(f:U\subset \mathbb{R}^n \to \mathbb{R}\)</span> 에 대한 <strong>헤세 행렬 (Hessian matrix)</strong> <span class="math inline">\(H_f(\boldsymbol{a})\)</span> 는 다음과 같이 정의된다.</p>
 <p><span id="eq-CM_definition_of_hessian"><span class="math display">\[
 H_f (\boldsymbol{a}) := \begin{bmatrix} D_1D_1 f(\boldsymbol{a}) &amp; \cdots &amp; D_1D_n f(\boldsymbol{a}) \\ \vdots &amp; \ddots &amp; \vdots \\D_nD_1 f(\boldsymbol{a})  &amp; \cdots &amp; D_n D_n f(\boldsymbol{a}) \end{bmatrix}.
 \tag{3.12}\]</span></span></p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>양부호 행렬</strong>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="def-CM_positive_definitive_matrix" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.2</strong></span> 대칭행렬 <span class="math inline">\(A\in \mathbb{R}^{n\times n}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{0}\)</span> 이 아닌 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\ge 0\)</span> 일 때 <span class="math inline">\(A\)</span> 를 <strong>준양부호 행렬 (positive semidefinitive matrix)</strong> 라고 하며 <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}&gt; 0\)</span> 일 때 <span class="math inline">\(A\)</span> 를 <strong>양부호 행렬 (positive definitve matrix)</strong> 라고 한다. 같은 방법으로 <strong>음부호 행렬 (negative definitive matrix)</strong> 과 <strong>준음부호 행렬 (negative semidefinitive matrix)</strong> 를 정의 할 수 있다.</p>
-</div>
-</div>
-</div>
+<p>헤세 행렬은 정의에 의해 대칭행렬이다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CM_positive_and_semidefinitive_matrix" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 3.3</strong></span> 대칭행렬 <span class="math inline">\(A\in \mathbb{R}^{n \times n}\)</span> 에 대해 다음 두 명제는 동치이다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 는 양부호 행렬이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 는 준양부호 행렬이며 가역행렬이다.</p>
+<div id="thm-CM_hessian_and_extreme_value" class="theorem">
+<p><span class="theorem-title"><strong>정리 3.4</strong></span> 열린 연결집합 <span class="math inline">\(U\subset \mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(C^2\)</span> 급 함수 <span class="math inline">\(f:U \to \mathbb{R}\)</span> 이 <span class="math inline">\(\boldsymbol{a}\in U\)</span> 에서 <span class="math inline">\(\nabla f(\boldsymbol{a})=\boldsymbol{0}\)</span> 일 때 다음이 성립한다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(H_f(\boldsymbol{a})\)</span> 가 양부호 행렬이면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 극소값을 가진다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(H_f(\boldsymbol{a})\)</span> 가 음부호 행렬이면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\(\boldsymbol{a}\)</span> 에서 극대값을 가진다.</p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(H_f(\boldsymbol{a})\)</span> 가 준양부호 행렬도 준음부호 행렬도 아니라면 <span class="math inline">\(\boldsymbol{a}\)</span> 는 <span class="math inline">\(f\)</span> 의 안장점이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>trivial</p>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CM_determinant_of_definitive_matrix" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 3.4</strong></span> 대칭행렬 <span class="math inline">\(A\in \mathbb{R}^{n \times n}\)</span> 에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 가 양부호 행렬이면 <span class="math inline">\(\det (A) &gt; 0\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 가 준 양부호 행렬이면 <span class="math inline">\(\det  (A) \ge 0\)</span> 이다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\gamma : [0,\,1] \to \mathbb{R}\)</span> 을 다음과 같이 정의하자.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>다변수 함수의 테일러 정리(<a href="02_differentiation_of_manifolds.html#prp-CM_taylor_expansion_of_multivariable_function" class="quarto-xref">명제&nbsp;<span>2.7</span></a>) 애 의해</p>
 <p><span class="math display">\[
-\gamma (\lambda) := \det (\lambda A + (1-\lambda)I_n)
+f(\boldsymbol{a}+\boldsymbol{h})= f(\boldsymbol{x}) +  \dfrac{D^2_\boldsymbol{h}f(\boldsymbol{a})}{2} + \dfrac{D^{3}_\boldsymbol{h}f(\boldsymbol{a}+s\boldsymbol{h})}{6}
 \]</span></p>
-<p><span class="math inline">\(\gamma(\lambda)\)</span> 는 <span class="math inline">\(\lambda\)</span> 이하의 <span class="math inline">\(n\)</span> 차 이하의 다항식이므로 <span class="math inline">\(\gamma\)</span> 는 연속함수이다. 또한</p>
-<p><span id="eq-prp-CM_determinant_of_definitive_matrix"><span class="math display">\[
-\langle (\lambda A + (1-\lambda )I_n) \boldsymbol{x},\,\boldsymbol{x}\rangle = \lambda \langle A \boldsymbol{x},\,\boldsymbol{x}\rangle + (1-\lambda ) \langle  \boldsymbol{x},\,\boldsymbol{x}\rangle
-\tag{3.13}\]</span></span></p>
-<p>이므로 <span class="math inline">\(A\)</span> 가 양부호이면 <span class="math inline">\(\lambda A + (1-\lambda)I_n\)</span> 역시 <span class="math inline">\(\lambda \in [0,\,1]\)</span> 에서 양부호 행렬로 가역행렬이다. 양부호 행렬을 가역행렬이므로 <span class="math inline">\(\det (A) \ne 0\)</span> 이다. 그런데 <span class="math inline">\(\gamma (0) =1\)</span> 이며 <span class="math inline">\(\gamma\)</span> 는 연속함수이므로 <span class="math inline">\(\gamma(1)=\det (A) &gt; 0\)</span> 이다.</p>
-<p><span class="math inline">\(A\)</span> 가 준양부호 행렬이면 <span class="math inline">\(\lambda \in [0,\,1)\)</span> 에 대해 <span class="math inline">\(\lambda A + (1-\lambda)I_n\)</span> 가 양부호이며 따라서 <span class="math inline">\(\det (A) = \gamma (1) = \lim_{\lambda \to 1}\gamma (\lambda) \ge 0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span><strong>부분행렬</strong>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="def-CM_submatrix" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 3.3</strong></span> 행렬 <span class="math inline">\(A\in \mathbb{R}^{n\times n}\)</span> 과 <span class="math inline">\(\{i_1,\ldots,\,i_k\} \subset \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\((A_{i_j,\, i_m}: 1 \le j,\,m \le k)\)</span> 을 모아 만든 <span class="math inline">\(k \times k\)</span> 행렬을 <span class="math inline">\(A\)</span> 의 부분행렬 이라고 한다.</p>
-</div>
-</div>
-</div>
-<br>
-<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CM_definitive_matrix_and_submatrix" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 3.5</strong></span> 대칭행렬 <span class="math inline">\(A\in \mathbb{R}^{n \times n}\)</span> 에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(A\)</span> 가 양부호 행렬이면 <span class="math inline">\(A\)</span> 의 모든 부분행렬은 양부호 행렬이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\)</span> 가 준양부호 행렬이면 <span class="math inline">\(A\)</span> 의 모든 부분행렬은 준양부호 행렬이다.</p>
-</div>
-</div>
-<div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(A\)</span> 와 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(\{i_1,\ldots,\,i_k\}\)</span> 를 선택하여 만든 <span class="math inline">\(A\)</span> 의 부분행렬 <span class="math inline">\(\overline{A}\)</span> 와 <span class="math inline">\(\overline{\boldsymbol{x}} = (x^{i_1},\ldots,\,x^{i_k})\)</span> 를 생각하자. 또한 <span class="math inline">\(A_S\)</span> 를 <span class="math inline">\(A\)</span> 에서 부분행렬로 선택되는 성분 이외의 성분을 모두 <span class="math inline">\(0\)</span> 으로 놓은 행렬이라고 하고 <span class="math inline">\(\boldsymbol{x}_S\)</span> 를 <span class="math inline">\(\boldsymbol{x}\)</span> 에서 <span class="math inline">\(\{i_1,\ldots,\,i_k\}\)</span> 행에 포함되지 않는 성분을 모두 <span class="math inline">\(0\)</span> 으로 바꾼 열벡터라고 하자. 그렇다면</p>
+<p>를 만족하는 <span class="math inline">\(s\in [0,\,1]\)</span> 이 존재한다. 여기서 <span class="math inline">\(s\)</span> 는</p>
 <p><span class="math display">\[
-\overline{\boldsymbol{x}}^T\overline{A}\overline{\boldsymbol{x}} = {\boldsymbol{x}_S}^T A_S \boldsymbol{x}_S = {\boldsymbol{x}_S}^T A \boldsymbol{x}_S
+D^2_\boldsymbol{h}(\boldsymbol{a}+\boldsymbol{h}) - D^2_\boldsymbol{h}(\boldsymbol{a}) = D^3
 \]</span></p>
-<p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Rudin1976" class="csl-entry" role="listitem">
 Rudin, W. 1976. <em>Principles of Mathematical Analysis</em>. Third. International Series in Pure and Applied Mathematics. McGraw-Hill.
 </div>
