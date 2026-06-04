@@ -689,6 +689,9 @@ $$
 
 ## 다변수 함수의 최대값과 최소값
 
+### 탄젠트 공간과 직교 공간 {#sec-CM_tangent_space_and_normal_space}
+
+
 열린 $E\subset \R^n \times \R^m$ 에서 정의된 $C^1$ 급 함수 $F: E \to \R^m$ 에 대해
 
 $$
@@ -774,6 +777,9 @@ $$
 
 :::
 
+</br>
+
+### 헤세 행렬과 극값 {#sec-CM_hessian_matrix_and_extreme_values}
 
 ::: {.callout-note icon="false"}
 
@@ -811,7 +817,7 @@ $$ {#eq-CM_definition_of_hessian}
 
 ::: {.proof}
 
-다변수 함수의 테일러 정리(@prp-CM_taylor_expansion_of_multivariable_function) 애 의해
+($1$) 다변수 함수의 테일러 정리(@prp-CM_taylor_expansion_of_multivariable_function) 애 의해
 
 $$
 f(\bf{a}+\bf{h}) - f(\bf{a}) =  \dfrac{D^2_\bf{h}f(\bf{a}+s\bf{h})}{2} 
@@ -833,31 +839,204 @@ $$
 &= |\bf{h}^T (H_f(\bf{a}+s\bf{h}) - H_f(\bf{a}))\bf{h}| \\[0.3em]
 &\le \|H_f(\bf{a}+s\bf{h}) - H_f(\bf{a})\| \|\bf{h}\|^2
 \end{aligned}
-$$
+$${#eq-thm_CM_hessian_and_extreme_value_3}
 
 이다. 그런데 $H_f$ 가 $U$ 에서 연속이므로 임의의 $\varepsilon > 0$ 에 대해 
 
 $$
 \|\bf{h}\|<\delta \implies \|H_f(\bf{a}+s\bf{h}) - H_f(\bf{a})\|< \varepsilon
-$$
+$${#eq-thm_CM_hessian_and_extreme_value_4}
 
 을 만족하는 $\delta>0$ 이 존재한다. 그렇다면
 
 $$
 \|\bf{h}\| < \delta \implies |\eta(\bf{h})| < \varepsilon \|\bf{h}\|^2
-$${#eq-thm_CM_hessian_and_extreme_value_3}
+$${#eq-thm_CM_hessian_and_extreme_value_5}
 
-이다. 이제 $S=\{\bf{x}\in \R^n : \|\bf{x}=1\}$ 라고 하면 $S$ 는 옹골집합이다. $H_f(\bf{a})$ 가 양부호행렬이면 $\bf{h}^TH_f(\bf{a})\bf{h}$ 는 $S$ 위에서 최소값 $\mu$ 를 가진다. 그렇다면 임의의 $\bf{x}\in \R^n$ 에 대해
+이다. 이제 $S=\{\bf{x}\in \R^n : \|\bf{x}\|=1\}$ 라고 하면 $S$ 는 옹골집합이다. $H_f(\bf{a})$ 가 양부호행렬이면 $\bf{h}^TH_f(\bf{a})\bf{h}$ 는 $S$ 위에서 최소값 $\mu > 0$ 를 가진다. 그렇다면 임의의 $\bf{x}\in \R^n$ 에 대해
 
 $$
-\bf{x}^T\bf{H}_f(\bf{a})\bf{x} = \|\bf{x}\|^2 \left(\dfrac{\bf{x}}{\|\bf{x}\|}\right)^TH_f(\bf{a})\left(\dfrac{\bf{x}}{\|\bf{x}\|}\right) \ge \mu \|\bf{x}\|^2
-$${#eq-thm_CM_hessian_and_extreme_value_4}
+\bf{x}^T H_f(\bf{a})\bf{x} = \|\bf{x}\|^2 \left(\dfrac{\bf{x}}{\|\bf{x}\|}\right)^TH_f(\bf{a})\left(\dfrac{\bf{x}}{\|\bf{x}\|}\right) \ge \mu \|\bf{x}\|^2
+$${#eq-thm_CM_hessian_and_extreme_value_6}
 
 이다. 그렇다면 $\|\bf{h}\|<\delta$ 일 때
 
 $$
 f(\bf{a}+\bf{h})-f(\bf{a}) = \dfrac{D^2_\bf{h}f(\bf{a}) +\eta(\bf{h})}{2}
+$${#eq-thm_CM_hessian_and_extreme_value_7}
+
+이다. @eq-thm_CM_hessian_and_extreme_value_3, @eq-thm_CM_hessian_and_extreme_value_4 로부터
+
+$$
+\eta(\bf{h}) > - \|H_f(\bf{a}+s\bf{h}) - H_f(\bf{a})\| \|\bf{h}\|^2 > -\varepsilon\|\bf{h}\|^2
+$${#eq-thm_CM_hessian_and_extreme_value_8}
+
+이며 @eq-thm_CM_hessian_and_extreme_value_6 로부터
+
+$$
+D^2_\bf{h}f(\bf{a}) = \bf{h}^T H_f(\bf{a})\bf{h} \ge \mu \|\bf{h}\|^2
+$$
+
+이다. @eq-thm_CM_hessian_and_extreme_value_8 의 $\varepsilon$ 은 임의의 값을 가질 수 있으므로 $\varepsilon < \mu/2$ 가 되도록 잡으면 @eq-thm_CM_hessian_and_extreme_value_7 은
+
+$$
+f(\bf{a} + \bf{h}) - f(\bf{a}) \ge \dfrac{1}{2}\left(\mu - \dfrac{\mu}{2}\right)\|\bf{h}\|^2 = \dfrac{\mu \|\bf{h}\|^2}{4} > 0
+$$
+
+이다. 즉 $f$ 는 $\bf{a}$ 에서 극소값을 가진다.
+
+($2$) 는 ($1$) 과 비슷한 방법으로 증명 할 수 있다.
+
+($3$) $\alpha = \bf{k}^T H_f(\bf{a})\bf{k} \ne 0$ 인 벡터 $\bf{k}\in \R^n$ 을 고정하자. 그렇다면
+
+$$
+f(\bf{a}+s\bf{k}) - f(\bf{a}) = \dfrac{D^2_{s\bf{h}}f(\bf{a}) + \eta (s\bf{k})}{2} = \dfrac{s^2\alpha + \eta(s\bf{k})}{2}
+$${#eq-thm_CM_hessian_and_extreme_value_9}
+
+로 표현 할 수 있다. 또한 
+
+$$
+r=\dfrac{\delta (|\alpha|/\|\bf{k}\|^2)}{\|\bf{k}\|}
+$$
+
+라고 하자. $|s|<r$ 이면 $\|s\bf{k}\| < \delta (|\alpha|/\\|\bf{h}\|^2)$ 이다. @eq-thm_CM_hessian_and_extreme_value_5 의 $\varepsilon =  |\alpha|/(2\|\bf{k}\|^2)$ 로 놓으면 
+
+$$
+\left|\eta(s\bf{k})\right| < \dfrac{1}{2}\dfrac{|\alpha|}{\|\bf{k}\|^2} \|s\bf{k}\|^2 = \dfrac{s^2|\alpha|}{2}
+$${#eq-thm_CM_hessian_and_extreme_value_10}
+
+이므로 @eq-thm_CM_hessian_and_extreme_value_9 에 의해 $f(\bf{a}+s\bf{k})-f(\bf{a})$ 는 $|s|<r$ 인 범위에서 $\alpha$ 와 같은 부호를 가진다. $\alpha$ 가 양수도 음수도 될 수 있으므로 $\bf{a}$ 를 포함하는 임의의 근방에서 $f(\bf{a})$ 는 최대값도 최소값도 아니다. $\square$
+
+::: 
+
+</br>
+
+### 라그랑제 승수법 {#sec-CM_lagrange_multiplier}
+
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_hessian_and_extreme_value}
+
+열린 연결 집합 $U\subset \R^n$ 에서 정의된 두 함수 
+
+$$
+f:U \to \R,\qquad G: U\to \R^m,\qquad (m<n)
+$$
+
+이 주어져 있고, 집합
+
+$$
+M = \{\bf{x}\in U : G(\bf{x})=\bf{0}\}
+$$
+
+위에서 정의된 함수 $f|_M : M \to \R$ 이 점 $\bf{a}\in M$ 에서 극값을 가진다고 가정하자. 만약 $\{\nabla g^1(\bf{a}),\ldots,\, \nabla g^m(\bf{a})\}$ 가 선형독립이면
+
+$$
+\nabla f(\bf{a}) + \lambda_1 g^1(\bf{a})+ \cdots \lambda_m \nabla g^m (\bf{a})= \bf{0}
 $$
 
 
-::: 
+을 만족하는 실수 $\lambda_1,\ldots,\,\lambda_m$ 이 존재한다.
+
+:::
+</div>
+
+::: {.proof}
+
+$M$ 에서 정의된 임의의 곡선 $X:(-\delta,\,\delta) \to M$ 이 $X(\bf{0})= \bf{a}$ 를 만족한다고 하자. $f(X(t))$ 가 $t=0$ 에서 극값을 가지므로
+
+$$
+(f\circ X)'(0) = \nabla f(X(0)) \bf\cdot X'(0)= 0
+$$
+
+이며, 따라서 $\nabla f(\bf{a})$ 는 $M$ 의 접평면에 수직이다. 그런데 $\{\nabla g^1(\bf{a}),\ldots,\, \nabla g^m(\bf{a})\}$ 가 접평면을 span 하므로 $\nabla f(\bf{a})$ 는 이 벡터들의 선형결합으로 표현 할 수 있다. $\square$
+
+:::
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_lagrange_multiplier_1}
+
+$S=\{\bf{x}\in \R^3 : \|\bf{x}\|^2 \le 1\}$ 위에서 $x^1x^2+x^2x^3+x^3x^1$ 의 최대값과 최소값을 구해보자. 이를 위해
+
+$$
+f(\bf{x}) := x^1x^2+x^2x^3+x^3x^1,\qquad g(\bf{x}) := \|\bf{x}\|^2
+$$
+
+라고 하자. 그렇다면
+
+$$
+\nabla f = (x^2+x^3,\, x^3+x^1,\, x^1+x^2),\qquad \nabla g = (2x^1,\, 2x^2,\,2x^3)
+$$
+
+이다. $f$ 가 극값을 가질 수 있는 가능성은 원점 뿐이고 이 때 $f(\bf{0})=0$ 이다. 이제 $S$ 의 경계에서 극값을 갖는다고 하자. 그렇다면
+
+$$
+(x^2+x^3,\, x^3+x^1,\, x^1+x^2) = \lambda (2x^1,\, 2x^2,\,2x^3)
+$$
+
+을 만족하는 $\lambda$ 가 존재하며 계산해보면 $\lambda=-1/2$ 이거나 $\lambda =1$ 이어야 한다. $\lambda = -1/2$ 이면 $x^1+x^2+x^3=0$ 이면 $\|\bf{x}\|^2=1$ 로 부터 $x^1x^2+x^2x^3+x^3x^1=-1/2$ 이다. $\lambda=1$ 이면 $x^1=x^2=x^3$ 이므로 $x^1x^2+x^2x^3+x^3x^1=1$ 임을 안다. 따라서 최대값과 최소값은 각각 $1$ 과 $-1/2$ 이다.
+
+:::
+
+</div>
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_2_6_4}
+
+#### KKK 2.6.4
+
+정해진 $\bf{a}\in \R^n,\, a_0\in \R$ 에 대해 원점에서 평면 $\{\bf{x}\in \R^n : \bf{a\cdot x}=a_0\}$ 까지의 거리를 구하라.
+
+
+:::
+
+</div>
+
+::: {.solution}
+
+$f(\bf{x}):=\|\bf{x}\|^2$, $g(\bf{x}):= \bf{a\cdot x}-a_0$ 에 대해
+
+$$
+\nabla f(\bf{x})= 2\bf{x},\qquad \nabla g = \bf{a}
+$$
+
+이므로 $2x^i + \lambda a^i=0$ 을 만족해야 한다. $x^i = - \lambda a^i/2$ 를 $\bf{a\cdot x}-a_0=0$ 에 대입하면 $\lambda = -2a_0/\|\bf{a}\|^2$ 이며 이 때 거리의 제곱은 $a_0^2/\|\bf{a}\|^2$ 이므로 거리는 $|a_0|/\|\bf{a}\|$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_2_6_5}
+
+#### KKK 2.6.5
+
+평면 $\{\bf{x}\in \R^n : x^1+\cdots +x^n = 1\}$ 위에서 함수 $f(\bf{x})= (x^1)^k + \cdots + (x^n)^k$ 의 최대값과 최소값을 구하라. 여기서 $k$ 는 자연수이다.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$g(\bf{x})=x^1+\cdots +x^n -1$ 로 하면
+
+$$
+\nabla f = k((x^1)^{k-1},\ldots,\, (x^n)^{k-1}),\qquad \nabla g = (1,\ldots,\,1)
+$$
+
+이다. $\nabla f + \lambda \nabla g=0$ 을 만족하는 $\lambda$ 는 $k(x^{i})^{k-1}=-\lambda$ 를 만족한다.
+
+($i$) $k$ 가 홀수인 경우 : 아래로 유계도 아니고 위로 유계도 아니다. 따라서 최대값과 최소값을 갖지 않는다.
+
+($ii$) $k$ 가 짝수인 경우 : $f(\bf{x})>0$ 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑쥬 조건으로 부터 $x^1=\cdots =x^n$ 이어야 하므로 $x^i=1/n$ 이다. 따라서 최소값 $1/n^{k-1}$ 을 가진다.
+
+
+
+
+:::
