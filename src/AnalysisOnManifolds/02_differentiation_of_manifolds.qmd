@@ -1863,7 +1863,7 @@ $$
 \phi(1) = \phi (0) + \sum_{j=1}^k \dfrac{\phi^{(j)}(0)}{j!} + \dfrac{\phi^{(k+1)}(t')}{(k+1)!}
 $$
 
-을 만족하는 $t'\in [0,\,1]$ 이 존재한다는 것을 안다. 이로부터 다분수 함수에 대한 테일러 정리를 얻는다.
+을 만족하는 $t'\in [0,\,1]$ 이 존재한다는 것을 안다. 이로부터 다변수 함수에 대한 테일러 정리를 얻는다.
 
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">

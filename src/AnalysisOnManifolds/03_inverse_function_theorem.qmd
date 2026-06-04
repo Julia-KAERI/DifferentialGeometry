@@ -814,14 +814,50 @@ $$ {#eq-CM_definition_of_hessian}
 다변수 함수의 테일러 정리(@prp-CM_taylor_expansion_of_multivariable_function) 애 의해
 
 $$
-f(\bf{a}+\bf{h})= f(\bf{x}) +  \dfrac{D^2_\bf{h}f(\bf{a})}{2} + \dfrac{D^{3}_\bf{h}f(\bf{a}+s\bf{h})}{6}
+f(\bf{a}+\bf{h}) - f(\bf{a}) =  \dfrac{D^2_\bf{h}f(\bf{a}+s\bf{h})}{2} 
+$${#eq-thm_CM_hessian_and_extreme_value_1}
+
+를 만족하는 $s\in [0,\,1]$ 이 존재한다. 여기서 
+
+$$
+\begin{aligned}
+\eta(\bf{h}) :=& D^2_\bf{h}f(\bf{a}+s\bf{h}) - D^2_\bf{h}f(\bf{a}) \\[0.3em]
+\end{aligned}
+$${#eq-thm_CM_hessian_and_extreme_value_2}
+
+라고 하면
+
+$$
+\begin{aligned}
+|\eta(\bf{h}) | &= \left|\sum_{i, j =1}^n h^ih^j D_i D_j \left[f(\bf{a}+s\bf{h}) - f(\bf{a})\right]\right| \\[0.3em]
+&= |\bf{h}^T (H_f(\bf{a}+s\bf{h}) - H_f(\bf{a}))\bf{h}| \\[0.3em]
+&\le \|H_f(\bf{a}+s\bf{h}) - H_f(\bf{a})\| \|\bf{h}\|^2
+\end{aligned}
 $$
 
-를 만족하는 $s\in [0,\,1]$ 이 존재한다. 여기서 $s$ 는
+이다. 그런데 $H_f$ 가 $U$ 에서 연속이므로 임의의 $\varepsilon > 0$ 에 대해 
 
 $$
-D^2_\bf{h}(\bf{a}+\bf{h}) - D^2_\bf{h}(\bf{a}) = D^3
+\|\bf{h}\|<\delta \implies \|H_f(\bf{a}+s\bf{h}) - H_f(\bf{a})\|< \varepsilon
+$$
+
+을 만족하는 $\delta>0$ 이 존재한다. 그렇다면
+
+$$
+\|\bf{h}\| < \delta \implies |\eta(\bf{h})| < \varepsilon \|\bf{h}\|^2
+$${#eq-thm_CM_hessian_and_extreme_value_3}
+
+이다. 이제 $S=\{\bf{x}\in \R^n : \|\bf{x}=1\}$ 라고 하면 $S$ 는 옹골집합이다. $H_f(\bf{a})$ 가 양부호행렬이면 $\bf{h}^TH_f(\bf{a})\bf{h}$ 는 $S$ 위에서 최소값 $\mu$ 를 가진다. 그렇다면 임의의 $\bf{x}\in \R^n$ 에 대해
+
+$$
+\bf{x}^T\bf{H}_f(\bf{a})\bf{x} = \|\bf{x}\|^2 \left(\dfrac{\bf{x}}{\|\bf{x}\|}\right)^TH_f(\bf{a})\left(\dfrac{\bf{x}}{\|\bf{x}\|}\right) \ge \mu \|\bf{x}\|^2
+$${#eq-thm_CM_hessian_and_extreme_value_4}
+
+이다. 그렇다면 $\|\bf{h}\|<\delta$ 일 때
+
+$$
+f(\bf{a}+\bf{h})-f(\bf{a}) = \dfrac{D^2_\bf{h}f(\bf{a}) +\eta(\bf{h})}{2}
 $$
 
 
-:::
+::: 
