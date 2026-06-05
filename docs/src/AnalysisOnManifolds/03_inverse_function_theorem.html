@@ -936,6 +936,33 @@ f(\boldsymbol{x}) := x^1x^2+x^2x^3+x^3x^1,\qquad g(\boldsymbol{x}) := \|\boldsym
 <p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(k\)</span> 가 홀수인 경우 : 아래로 유계도 아니고 위로 유계도 아니다. 따라서 최대값과 최소값을 갖지 않는다.</p>
 <p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(k\)</span> 가 짝수인 경우 : <span class="math inline">\(f(\boldsymbol{x})&gt;0\)</span> 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑쥬 조건으로 부터 <span class="math inline">\(x^1=\cdots =x^n\)</span> 이어야 하므로 <span class="math inline">\(x^i=1/n\)</span> 이다. 따라서 최소값 <span class="math inline">\(1/n^{k-1}\)</span> 을 가진다.</p>
 </div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_KKK_exm_2_6_4" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.13 (KKK exm 2.6.4)</strong></span> &nbsp;</p>
+<blockquote class="blockquote">
+<p><span class="math inline">\(\boldsymbol{x}=(x_1,\ldots,\,x_n)\)</span> 표기법을 사용한다.</p>
+</blockquote>
+<p>임의의 양수 <span class="math inline">\(a_1,\ldots,\,a_n\)</span> 에 대해 다음의 절대부등식이 성립함을 증명하고자 한다.</p>
+<p><span id="eq-exr-CK_KKK_exm_2_6_4"><span class="math display">\[
+(a_1\cdots a_n)^{1/n} \le \dfrac{a_1+\cdots + a_n}{n}.
+\tag{3.23}\]</span></span></p>
+<p>구면 <span class="math inline">\(\{\boldsymbol{x}\in \mathbb{R}^n : \|\boldsymbol{x}\|=1\}\)</span> 위에서 <span class="math inline">\(f(\boldsymbol{x}) =\Pi_{i=1}^n x_i^2\)</span> 의 최대값을 구해보자.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(f\)</span> 의 최대값이 <span class="math inline">\(x_i = \pm 1/\sqrt{n}\)</span> 일 때 <span class="math inline">\(1/n^n\)</span> 임을 보여라.</p>
+<p> (<span class="math inline">\(2\)</span>) 임의의 양수 <span class="math inline">\(a_1,\ldots,\,a_n\)</span> 에 대해</p>
+<p><span class="math display">\[
+  x_i^2 = \dfrac{a_i}{a_1+\cdots +a_n}
+  \]</span></p>
+<p>  을 대입하여 <a href="#eq-exr-CK_KKK_exm_2_6_4" class="quarto-xref">식&nbsp;<span>3.23</span></a> 이 성립함을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(g(\boldsymbol{x}):=\|\boldsymbol{x}\|^2-1\)</span> 이라고 하자.</p>
+<p><span class="math display">\[
+\nabla f(\boldsymbol{x}) = 2\left(\dfrac{f(\boldsymbol{x})}{x_1},\ldots, \dfrac{f(\boldsymbol{x})}{x_1}\right),\qquad \nabla g(\boldsymbol{x}) = 2\boldsymbol{x}
+\]</span></p>
+<p>이므로 <span class="math inline">\(\nabla f = \lambda \nabla g\)</span> 로부터 <span class="math inline">\(x_1 = \cdots =x_n= \pm 1/\sqrt{n}\)</span> 에서 극값을 가짐을 안다. <span class="math inline">\(f(\boldsymbol{x})\)</span> 의 최소값은 <span class="math inline">\(0\)</span> 임은 자명하며 위 값은 최대값일 때 이다. 따라서 <span class="math inline">\(f\)</span> 의 최대값은 <span class="math inline">\(1/n^n\)</span> 이다.</p>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

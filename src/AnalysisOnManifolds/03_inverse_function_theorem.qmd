@@ -1036,7 +1036,47 @@ $$
 
 ($ii$) $k$ 가 짝수인 경우 : $f(\bf{x})>0$ 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑쥬 조건으로 부터 $x^1=\cdots =x^n$ 이어야 하므로 $x^i=1/n$ 이다. 따라서 최소값 $1/n^{k-1}$ 을 가진다.
 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_exm_2_6_4}
+
+#### KKK exm 2.6.4
+
+> $\bf{x}=(x_1,\ldots,\,x_n)$ 표기법을 사용한다.
+
+임의의 양수 $a_1,\ldots,\,a_n$ 에 대해 다음의 절대부등식이 성립함을 증명하고자 한다.
+
+$$
+(a_1\cdots a_n)^{1/n} \le \dfrac{a_1+\cdots + a_n}{n}.
+$$ {#eq-exr-CK_KKK_exm_2_6_4}
 
 
+구면 $\{\bf{x}\in \R^n : \|\bf{x}\|=1\}$ 위에서 $f(\bf{x}) =\Pi_{i=1}^n x_i^2$ 의 최대값을 구해보자.
+
+&emsp;($1$) $f$ 의 최대값이 $x_i = \pm 1/\sqrt{n}$ 일 때 $1/n^n$ 임을 보여라.
+
+&emsp;($2$) 임의의 양수 $a_1,\ldots,\,a_n$ 에 대해 
+
+$$
+  x_i^2 = \dfrac{a_i}{a_1+\cdots +a_n}
+  $$
+
+&emsp;  을 대입하여 @eq-exr-CK_KKK_exm_2_6_4 이 성립함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$)  $g(\bf{x}):=\|\bf{x}\|^2-1$ 이라고 하자. 
+
+$$
+\nabla f(\bf{x}) = 2\left(\dfrac{f(\bf{x})}{x_1},\ldots, \dfrac{f(\bf{x})}{x_1}\right),\qquad \nabla g(\bf{x}) = 2\bf{x}
+$$
+
+이므로 $\nabla f = \lambda \nabla g$ 로부터 $x_1 = \cdots =x_n= \pm 1/\sqrt{n}$ 에서 극값을 가짐을 안다. $f(\bf{x})$ 의 최소값은 $0$ 임은 자명하며 위 값은 최대값일 때 이다. 따라서 $f$ 의 최대값은 $1/n^n$ 이다.
 
 :::
