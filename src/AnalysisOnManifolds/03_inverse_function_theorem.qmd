@@ -1,5 +1,5 @@
 ---
-title: "역함수 정리와 음함수 정리"
+title: "역함수 정리, 음함수 정리, 최대값과 최소값"
 number-sections: true
 number-depth : 3
 crossref:
@@ -911,7 +911,7 @@ $${#eq-thm_CM_hessian_and_extreme_value_10}
 
 </br>
 
-### 라그랑제 승수법 {#sec-CM_lagrange_multiplier}
+### 라그랑주 승수법 {#sec-CM_lagrange_multiplier}
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -1034,7 +1034,7 @@ $$
 
 ($i$) $k$ 가 홀수인 경우 : 아래로 유계도 아니고 위로 유계도 아니다. 따라서 최대값과 최소값을 갖지 않는다.
 
-($ii$) $k$ 가 짝수인 경우 : $f(\bf{x})>0$ 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑쥬 조건으로 부터 $x^1=\cdots =x^n$ 이어야 하므로 $x^i=1/n$ 이다. 따라서 최소값 $1/n^{k-1}$ 을 가진다.
+($ii$) $k$ 가 짝수인 경우 : $f(\bf{x})>0$ 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑주 조건으로 부터 $x^1=\cdots =x^n$ 이어야 하므로 $x^i=1/n$ 이다. 따라서 최소값 $1/n^{k-1}$ 을 가진다.
 
 :::
 
@@ -1077,6 +1077,154 @@ $$
 \nabla f(\bf{x}) = 2\left(\dfrac{f(\bf{x})}{x_1},\ldots, \dfrac{f(\bf{x})}{x_1}\right),\qquad \nabla g(\bf{x}) = 2\bf{x}
 $$
 
-이므로 $\nabla f = \lambda \nabla g$ 로부터 $x_1 = \cdots =x_n= \pm 1/\sqrt{n}$ 에서 극값을 가짐을 안다. $f(\bf{x})$ 의 최소값은 $0$ 임은 자명하며 위 값은 최대값일 때 이다. 따라서 $f$ 의 최대값은 $1/n^n$ 이다.
+이므로 $\nabla f = \lambda \nabla g$ 로부터 $x_1 = \cdots =x_n= \pm 1/\sqrt{n}$ 에서 극값을 가짐을 안다. $f(\bf{x})$ 의 최소값은 $0$ 임은 자명하며 위 값은 최대값일 때 이다. 따라서 $f$ 의 최대값은 $1/n^n$ 이다. 즉 다음이 성립한다. 
+
+$$
+x_1^2+\cdots + x_n^2 =1 \implies \Pi_{i=1}^n (x_i)^2 \le \dfrac{1}{n^n}.
+$$ {#eq-exr-CK_KKK_exm_2_6_4_1}
+
+($2$) $x_1^2 +\cdots + x_n^2 = 1$ 이므로
+
+$$
+\dfrac{a_1\cdots a_n}{(a_1+\cdots +a_n)^n} \le \dfrac{1}{n^n}
+$$
+
+이며 이로부터 @eq-exr-CK_KKK_exm_2_6_4 이 성립함을 안다.
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_exr_2_6_6}
+
+#### KKK 2.6.6, Hadamard's inequality
+
+행렬 $X\in \R^{n \times n}$ 의 행벡터 $\bf{x}_1,\ldots \bf{x}_n \in \R^{1\times n}$ 이
+
+$$
+\|\bf{x}_1\| = \cdots = \|\bf{x}_n\| = 1
+$$
+
+을 만족할 때 $\det (X)$ 의 최대값과 최소값을 구하라. 그리고 $A\in \R^{n\times n}$ 과 그 행벡터 $\bf{a}_1,\ldots,\,\bf{a}_n$ 에 대해 다음 부등식이 성립함을 보이고 등호가 성립할 조건을 구하라.
+
+$$
+|\det (A) | \le \prod_{i=1}^n \|\bf{a}_i\|.
+$$ {#eq-CM_hardmard_inequality}
+
+이 부등식을 **아다마르 부등식 (Hadamard's inequality)** 이라고 한다.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$g(\bf{x}) := \|\bf{x}\|-1$ 로 정의하자. 그리고 행렬식은 cofactor $C_{ij}$ 에 대해 $\det (X)= \sum_i x_{ij}C_{ij}$ 임을 안다. 라그랑주 승수법으로부터
+
+$$
+\dfrac{\partial \det (X)}{\partial x_{ij}} - \sum_{i,\,j=1}^n \lambda_{i} \dfrac{\partial g(\bf{x}_i)}{\partial x_{ij}} = 0
+$$ {#eq-exr-CM_KKK_exr_2_6_6_1}
+
+을 얻는다. 이로부터
+
+$$
+C_{ij} = 2\lambda_{i} x_{ij}
+$${#eq-exr-CM_KKK_exr_2_6_6_2}
+
+을 얻는다. 정해진 $i\in \{1,\ldots,\,n\}$ 에 대해 $\|\bf{x}_i\|=\sum_{j} {x_{ij}}^2=1$ 을 이용하면
+
+$$
+\det(X) = \sum_{j=1}x_{ij} C_{ij} = \sum_{j=1} 2\lambda_{i} {x_{ij}}^2 =  2\lambda_i
+$${#eq-exr-CM_KKK_exr_2_6_6_3}
+
+이다. 즉 $\lambda_i = \det (X)/2$ 이다. @eq-exr-CM_KKK_exr_2_6_6_2 에 대입하면
+
+$$
+C_{ij} = x_{ij}\det (X)
+$$
+
+이다. 임의의 $k\in \{1,\ldots,\,n\}$ 에 대해
+
+$$
+\sum_{j=1}x_{kj}C_{ij} = (\det (X))\sum_{j=1}x_{kj}x_{ij} = (\det(X))\bf{x}_k \bf{\cdot x}_i
+$$
+
+을 얻는다. 행렬식의 성질로부터 
+
+$$
+\sum_{j=1}x_{kj}C_{ij} = \delta_{ik}\det (X)
+$$
+
+이므로 $\det (X)\ne 0$ 이면 극값을 갖는 조건에서 $X \in O_n(\R)$ 이며 따라서 $\det (X) = \pm 1$ 이다. 즉 $\det (X)$ 의 최대값과 최소값은 $+1,\, -1$ 이다.
+
+($b$) $\bf{b}_i = \bf{a}_i/\|\bf{a}_i\|$ 라고 하고 $\bf{b}_i$ 를 $i$ 번째 행으로 갖는 행렬을 $B$ 라고 하면 
+
+$$
+1 \ge |\det (B)| = \left(\prod_{i=1}^n \dfrac{1}{\|\bf{a}_i\|} \right) \det (A)
+$$
+
+이며 이로부터 주어진 식을 얻는다.
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_exr_2_6_7}
+
+#### KKK 2.6.7
+
+선형변환에 의해 단위구면이 어떻게 변하는지 알아보자. 주어진 대칭행렬 $A\in \R^{n\times n}$ 에 대해 $q,\,g:\R^n \to \R$ 이
+$$
+q(\bf{x}) := \bf{x}^TA\bf{x},\qquad g(\bf{x}):=\|\bf{x}\|^2-1
+$$
+
+
+로 정의되었다. $q$ 가 구면 $M_1 = \{\bf{x}\in \R^n : g(\bf{x})=0\}$ 위에서 갖는 최대값을 $\sigma_1$ 라고 하자. 이 때 $q(\bf{x}_1) = \sigma_1$ 이라고 하자.
+
+&emsp;($1$) $\nabla q(\bf{x}) = 2A\bf{x}$ 이고 $\nabla g(\bf{x})=2\bf{x}$ 임을 보여라.
+
+라그랑주 승수법에 의해 $A\bf{x}_1 = \sigma_1 \bf{x}_1$ 이다. $k=2,\ldots,\,n$ 에 대해
+
+$$ 
+\begin{aligned}
+M_k &:= \{\bf{x}\in \R^n : \|\bf{x}\|=1,\, \bf{x \cdot}\bf{x}_1 = \cdots \bf{x \cdot x}_{k-1}=0\} \\[0.3em]
+\sigma_k &:= \max \{q(\bf{x}): \bf{x}\in M_k\} = q(\bf{x}_k)
+\end{aligned}
+$$
+
+라고 할 때,
+
+&emsp;($2$) $A\bf{x}_k = \sigma_k \bf{x}_k$ 이며 $\sigma_1 \ge \cdots \ge \sigma_n$ 임을 보여라.
+
+
+:::
+
+</div>
+
+::: {.solution}
+
+($1$) $q(\bf{x}) = \sum_{j,k=1}^n x^jA_{jk}x^k$ 이며 $A_{ik}= A_{ki}$ 이므로
+
+$$
+\partial_i q (\bf{x})= \sum_{k=1} A_{ik}x^k + \sum_{j=1}x^j A_{ji} = 2A\bf{x}
+$$
+
+이며
+
+$$
+\partial_i g(\bf{x})= \partial_i \left[\left(\sum_{j=1}^n (x^j)^2\right)-1\right] = 2\bf{x}
+$$
+
+이다.
+
+($2$) $M_k$ 는 옹골집합이므로 최대값이 존재한다. $M_1 \supset \cdots \supset M_n$ 이므로 $\sigma_1 \ge \cdots \ge \sigma_n$ 이다.
+
+$g_j (\bf{x}) := \bf{x \cdot x}_j$ 라고 하면 $\nabla g_j = \bf{x}_j$ 이다. 라그랑주 승수법에 의해
+
+$$
+A\bf{x}_k = \sum_{j=1}^k \lambda_j \bf{x}_j
+$$
+
+이어야 하며 $(\bf{x}_k)^T A \bf{x}_k = \lambda_k$ 이다. 
 
 :::

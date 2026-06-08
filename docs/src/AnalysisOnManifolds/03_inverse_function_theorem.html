@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; 역함수 정리와 음함수 정리 – Differential Geometry</title>
+<title>3&nbsp; 역함수 정리, 음함수 정리, 최대값과 최소값 – Differential Geometry</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -54,15 +56,14 @@ div.csl-indent {
 <link href="../../src/AnalysisOnManifolds/02_differentiation_of_manifolds.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -92,7 +93,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -133,7 +134,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리, 음함수 정리, 최대값과 최소값</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -196,7 +197,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리, 음함수 정리, 최대값과 최소값</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -259,7 +260,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-CM_tangent_space_and_normal_space" id="toc-sec-CM_tangent_space_and_normal_space" class="nav-link" data-scroll-target="#sec-CM_tangent_space_and_normal_space"><span class="header-section-number">3.3.1</span> 탄젠트 공간과 직교 공간</a></li>
   <li><a href="#sec-CM_hessian_matrix_and_extreme_values" id="toc-sec-CM_hessian_matrix_and_extreme_values" class="nav-link" data-scroll-target="#sec-CM_hessian_matrix_and_extreme_values"><span class="header-section-number">3.3.2</span> 헤세 행렬과 극값</a></li>
-  <li><a href="#sec-CM_lagrange_multiplier" id="toc-sec-CM_lagrange_multiplier" class="nav-link" data-scroll-target="#sec-CM_lagrange_multiplier"><span class="header-section-number">3.3.3</span> 라그랑제 승수법</a></li>
+  <li><a href="#sec-CM_lagrange_multiplier" id="toc-sec-CM_lagrange_multiplier" class="nav-link" data-scroll-target="#sec-CM_lagrange_multiplier"><span class="header-section-number">3.3.3</span> 라그랑주 승수법</a></li>
   <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
   </ul></li>
   </ul>
@@ -268,9 +269,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리, 음함수 정리, 최대값과 최소값</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리와 음함수 정리</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">역함수 정리, 음함수 정리, 최대값과 최소값</span></h1>
 </div>
 
 
@@ -289,7 +290,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-%
+<p>%</p>
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -419,7 +420,7 @@ f^i(\boldsymbol{y})-f^i(\boldsymbol{x}) = \nabla f^i(\boldsymbol{c}_i) (\boldsym
 \boldsymbol{x}\in U_3 \implies \|D_jf_i(\boldsymbol{x})-D_jf_i(\boldsymbol{a})\|&lt; \dfrac{1}{2n^2}
 \]</span></p>
 <p>이며, 따라서 <span class="math inline">\(U_3\)</span> 에서 <span class="math inline">\(D_jf_i(\boldsymbol{x})\)</span> 는 유계이다. (<a href="#lem-CM_inverse_function_theorem_1" class="quarto-xref">보조정리&nbsp;<span>3.1</span></a> 의 조건)</p>
-<p>이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 <span class="math inline">\(U_1 \cap U_2 \cap U_3\)</span> 에 포함되는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(U\)</span> 를 작게 잡아 <span class="math inline">\(\partial U \cap \partial U_1 = \varnothing\)</span> 이 되도록 잡을 수 있다. 이 때 <span class="math inline">\(\partial U\)</span> 는 <span class="math inline">\(U\)</span> 의 경계점(<a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<span>2011</span>)</span> 연습문제 2.7.6</a>) 이다.</p>
+<p>이제 <span class="math inline">\(\boldsymbol{a}\)</span> 를 중심으로 <span class="math inline">\(U_1 \cap U_2 \cap U_3\)</span> 에 포함되는 열린 <span class="math inline">\(n\)</span>-입방체 <span class="math inline">\(U\)</span> 를 생각하자. <span class="math inline">\(U\)</span> 를 작게 잡아 <span class="math inline">\(\partial U \cap \partial U_1 = \varnothing\)</span> 이 되도록 잡을 수 있다. 이 때 <span class="math inline">\(\partial U\)</span> 는 <span class="math inline">\(U\)</span> 의 경계점(<a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기 et al. (<span>2011</span>)</span> 연습문제 2.7.6</a>) 이다.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(\partial U\)</span> 는 유계인 닫힌 집합이므로 옹골집합이며 <span class="math inline">\(\boldsymbol{a}\)</span> 를 포함하지 않는다. <span class="math inline">\(\partial U \subset U_1\)</span> 이며 <span class="math inline">\(U_1\)</span> 에서 <span class="math inline">\(F\)</span> 는 단사이므로 <span class="math inline">\(F(\boldsymbol{a}) \notin F(\partial U)\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(F\)</span> 가 연속이므로 <span class="math inline">\(F(\partial U)\)</span> 도 옹골집합이며 따라서 모든 <span class="math inline">\(\boldsymbol{x}\in \partial U\)</span> 에 대해 <span class="math inline">\(\|F(\boldsymbol{x})-F(\boldsymbol{a})\| \ge d\)</span> 인 <span class="math inline">\(d&gt;0\)</span> 이 존재한다.</p>
 <p>이 <span class="math inline">\(d\)</span> 에 대해 집합 <span class="math inline">\(W\)</span> 를 다음과 같이 정의한다.</p>
@@ -862,7 +863,7 @@ r=\dfrac{\delta (|\alpha|/\|\boldsymbol{k}\|^2)}{\|\boldsymbol{k}\|}
 <p><br></p>
 </section>
 <section id="sec-CM_lagrange_multiplier" class="level3" data-number="3.3.3">
-<h3 data-number="3.3.3" class="anchored" data-anchor-id="sec-CM_lagrange_multiplier"><span class="header-section-number">3.3.3</span> 라그랑제 승수법</h3>
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="sec-CM_lagrange_multiplier"><span class="header-section-number">3.3.3</span> 라그랑주 승수법</h3>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_hessian_and_extreme_value" class="theorem">
 <p><span class="theorem-title"><strong>정리 3.5</strong></span> 열린 연결 집합 <span class="math inline">\(U\subset \mathbb{R}^n\)</span> 에서 정의된 두 함수</p>
@@ -934,7 +935,7 @@ f(\boldsymbol{x}) := x^1x^2+x^2x^3+x^3x^1,\qquad g(\boldsymbol{x}) := \|\boldsym
 \]</span></p>
 <p>이다. <span class="math inline">\(\nabla f + \lambda \nabla g=0\)</span> 을 만족하는 <span class="math inline">\(\lambda\)</span> 는 <span class="math inline">\(k(x^{i})^{k-1}=-\lambda\)</span> 를 만족한다.</p>
 <p>(<span class="math inline">\(i\)</span>) <span class="math inline">\(k\)</span> 가 홀수인 경우 : 아래로 유계도 아니고 위로 유계도 아니다. 따라서 최대값과 최소값을 갖지 않는다.</p>
-<p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(k\)</span> 가 짝수인 경우 : <span class="math inline">\(f(\boldsymbol{x})&gt;0\)</span> 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑쥬 조건으로 부터 <span class="math inline">\(x^1=\cdots =x^n\)</span> 이어야 하므로 <span class="math inline">\(x^i=1/n\)</span> 이다. 따라서 최소값 <span class="math inline">\(1/n^{k-1}\)</span> 을 가진다.</p>
+<p>(<span class="math inline">\(ii\)</span>) <span class="math inline">\(k\)</span> 가 짝수인 경우 : <span class="math inline">\(f(\boldsymbol{x})&gt;0\)</span> 이므로 아래로 유계이며 위로는 유계가 아니다. 라그랑주 조건으로 부터 <span class="math inline">\(x^1=\cdots =x^n\)</span> 이어야 하므로 <span class="math inline">\(x^i=1/n\)</span> 이다. 따라서 최소값 <span class="math inline">\(1/n^{k-1}\)</span> 을 가진다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -961,11 +962,101 @@ f(\boldsymbol{x}) := x^1x^2+x^2x^3+x^3x^1,\qquad g(\boldsymbol{x}) := \|\boldsym
 <p><span class="math display">\[
 \nabla f(\boldsymbol{x}) = 2\left(\dfrac{f(\boldsymbol{x})}{x_1},\ldots, \dfrac{f(\boldsymbol{x})}{x_1}\right),\qquad \nabla g(\boldsymbol{x}) = 2\boldsymbol{x}
 \]</span></p>
-<p>이므로 <span class="math inline">\(\nabla f = \lambda \nabla g\)</span> 로부터 <span class="math inline">\(x_1 = \cdots =x_n= \pm 1/\sqrt{n}\)</span> 에서 극값을 가짐을 안다. <span class="math inline">\(f(\boldsymbol{x})\)</span> 의 최소값은 <span class="math inline">\(0\)</span> 임은 자명하며 위 값은 최대값일 때 이다. 따라서 <span class="math inline">\(f\)</span> 의 최대값은 <span class="math inline">\(1/n^n\)</span> 이다.</p>
+<p>이므로 <span class="math inline">\(\nabla f = \lambda \nabla g\)</span> 로부터 <span class="math inline">\(x_1 = \cdots =x_n= \pm 1/\sqrt{n}\)</span> 에서 극값을 가짐을 안다. <span class="math inline">\(f(\boldsymbol{x})\)</span> 의 최소값은 <span class="math inline">\(0\)</span> 임은 자명하며 위 값은 최대값일 때 이다. 따라서 <span class="math inline">\(f\)</span> 의 최대값은 <span class="math inline">\(1/n^n\)</span> 이다. 즉 다음이 성립한다.</p>
+<p><span id="eq-exr-CK_KKK_exm_2_6_4_1"><span class="math display">\[
+x_1^2+\cdots + x_n^2 =1 \implies \Pi_{i=1}^n (x_i)^2 \le \dfrac{1}{n^n}.
+\tag{3.24}\]</span></span></p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(x_1^2 +\cdots + x_n^2 = 1\)</span> 이므로</p>
+<p><span class="math display">\[
+\dfrac{a_1\cdots a_n}{(a_1+\cdots +a_n)^n} \le \dfrac{1}{n^n}
+\]</span></p>
+<p>이며 이로부터 <a href="#eq-exr-CK_KKK_exm_2_6_4" class="quarto-xref">식&nbsp;<span>3.23</span></a> 이 성립함을 안다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_KKK_exr_2_6_6" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.14 (KKK 2.6.6, Hadamard’s inequality)</strong></span> 행렬 <span class="math inline">\(X\in \mathbb{R}^{n \times n}\)</span> 의 행벡터 <span class="math inline">\(\boldsymbol{x}_1,\ldots \boldsymbol{x}_n \in \mathbb{R}^{1\times n}\)</span> 이</p>
+<p><span class="math display">\[
+\|\boldsymbol{x}_1\| = \cdots = \|\boldsymbol{x}_n\| = 1
+\]</span></p>
+<p>을 만족할 때 <span class="math inline">\(\det (X)\)</span> 의 최대값과 최소값을 구하라. 그리고 <span class="math inline">\(A\in \mathbb{R}^{n\times n}\)</span> 과 그 행벡터 <span class="math inline">\(\boldsymbol{a}_1,\ldots,\,\boldsymbol{a}_n\)</span> 에 대해 다음 부등식이 성립함을 보이고 등호가 성립할 조건을 구하라.</p>
+<p><span id="eq-CM_hardmard_inequality"><span class="math display">\[
+|\det (A) | \le \prod_{i=1}^n \|\boldsymbol{a}_i\|.
+\tag{3.25}\]</span></span></p>
+<p>이 부등식을 <strong>아다마르 부등식 (Hadamard’s inequality)</strong> 이라고 한다.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(g(\boldsymbol{x}) := \|\boldsymbol{x}\|-1\)</span> 로 정의하자. 그리고 행렬식은 cofactor <span class="math inline">\(C_{ij}\)</span> 에 대해 <span class="math inline">\(\det (X)= \sum_i x_{ij}C_{ij}\)</span> 임을 안다. 라그랑주 승수법으로부터</p>
+<p><span id="eq-exr-CM_KKK_exr_2_6_6_1"><span class="math display">\[
+\dfrac{\partial \det (X)}{\partial x_{ij}} - \sum_{i,\,j=1}^n \lambda_{i} \dfrac{\partial g(\boldsymbol{x}_i)}{\partial x_{ij}} = 0
+\tag{3.26}\]</span></span></p>
+<p>을 얻는다. 이로부터</p>
+<p><span id="eq-exr-CM_KKK_exr_2_6_6_2"><span class="math display">\[
+C_{ij} = 2\lambda_{i} x_{ij}
+\tag{3.27}\]</span></span></p>
+<p>을 얻는다. 정해진 <span class="math inline">\(i\in \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\(\|\boldsymbol{x}_i\|=\sum_{j} {x_{ij}}^2=1\)</span> 을 이용하면</p>
+<p><span id="eq-exr-CM_KKK_exr_2_6_6_3"><span class="math display">\[
+\det(X) = \sum_{j=1}x_{ij} C_{ij} = \sum_{j=1} 2\lambda_{i} {x_{ij}}^2 =  2\lambda_i
+\tag{3.28}\]</span></span></p>
+<p>이다. 즉 <span class="math inline">\(\lambda_i = \det (X)/2\)</span> 이다. <a href="#eq-exr-CM_KKK_exr_2_6_6_2" class="quarto-xref">식&nbsp;<span>3.27</span></a> 에 대입하면</p>
+<p><span class="math display">\[
+C_{ij} = x_{ij}\det (X)
+\]</span></p>
+<p>이다. 임의의 <span class="math inline">\(k\in \{1,\ldots,\,n\}\)</span> 에 대해</p>
+<p><span class="math display">\[
+\sum_{j=1}x_{kj}C_{ij} = (\det (X))\sum_{j=1}x_{kj}x_{ij} = (\det(X))\boldsymbol{x}_k \boldsymbol{\cdot x}_i
+\]</span></p>
+<p>을 얻는다. 행렬식의 성질로부터</p>
+<p><span class="math display">\[
+\sum_{j=1}x_{kj}C_{ij} = \delta_{ik}\det (X)
+\]</span></p>
+<p>이므로 <span class="math inline">\(\det (X)\ne 0\)</span> 이면 극값을 갖는 조건에서 <span class="math inline">\(X \in O_n(\mathbb{R})\)</span> 이며 따라서 <span class="math inline">\(\det (X) = \pm 1\)</span> 이다. 즉 <span class="math inline">\(\det (X)\)</span> 의 최대값과 최소값은 <span class="math inline">\(+1,\, -1\)</span> 이다.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\boldsymbol{b}_i = \boldsymbol{a}_i/\|\boldsymbol{a}_i\|\)</span> 라고 하고 <span class="math inline">\(\boldsymbol{b}_i\)</span> 를 <span class="math inline">\(i\)</span> 번째 행으로 갖는 행렬을 <span class="math inline">\(B\)</span> 라고 하면</p>
+<p><span class="math display">\[
+1 \ge |\det (B)| = \left(\prod_{i=1}^n \dfrac{1}{\|\boldsymbol{a}_i\|} \right) \det (A)
+\]</span></p>
+<p>이며 이로부터 주어진 식을 얻는다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_KKK_exr_2_6_7" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.15 (KKK 2.6.7)</strong></span> 선형변환에 의해 단위구면이 어떻게 변하는지 알아보자. 주어진 대칭행렬 <span class="math inline">\(A\in \mathbb{R}^{n\times n}\)</span> 에 대해 <span class="math inline">\(q,\,g:\mathbb{R}^n \to \mathbb{R}\)</span> 이 <span class="math display">\[
+q(\boldsymbol{x}) := \boldsymbol{x}^TA\boldsymbol{x},\qquad g(\boldsymbol{x}):=\|\boldsymbol{x}\|^2-1
+\]</span></p>
+<p>로 정의되었다. <span class="math inline">\(q\)</span> 가 구면 <span class="math inline">\(M_1 = \{\boldsymbol{x}\in \mathbb{R}^n : g(\boldsymbol{x})=0\}\)</span> 위에서 갖는 최대값을 <span class="math inline">\(\sigma_1\)</span> 라고 하자. 이 때 <span class="math inline">\(q(\boldsymbol{x}_1) = \sigma_1\)</span> 이라고 하자.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\nabla q(\boldsymbol{x}) = 2A\boldsymbol{x}\)</span> 이고 <span class="math inline">\(\nabla g(\boldsymbol{x})=2\boldsymbol{x}\)</span> 임을 보여라.</p>
+<p>라그랑주 승수법에 의해 <span class="math inline">\(A\boldsymbol{x}_1 = \sigma_1 \boldsymbol{x}_1\)</span> 이다. <span class="math inline">\(k=2,\ldots,\,n\)</span> 에 대해</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_k &amp;:= \{\boldsymbol{x}\in \mathbb{R}^n : \|\boldsymbol{x}\|=1,\, \boldsymbol{x \cdot}\boldsymbol{x}_1 = \cdots \boldsymbol{x \cdot x}_{k-1}=0\} \\[0.3em]
+\sigma_k &amp;:= \max \{q(\boldsymbol{x}): \boldsymbol{x}\in M_k\} = q(\boldsymbol{x}_k)
+\end{aligned}
+\]</span></p>
+<p>라고 할 때,</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(A\boldsymbol{x}_k = \sigma_k \boldsymbol{x}_k\)</span> 이며 <span class="math inline">\(\sigma_1 \ge \cdots \ge \sigma_n\)</span> 임을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(q(\boldsymbol{x}) = \sum_{j,k=1}^n x^jA_{jk}x^k\)</span> 이며 <span class="math inline">\(A_{ik}= A_{ki}\)</span> 이므로</p>
+<p><span class="math display">\[
+\partial_i q (\boldsymbol{x})= \sum_{k=1} A_{ik}x^k + \sum_{j=1}x^j A_{ji} = 2A\boldsymbol{x}
+\]</span></p>
+<p>이며</p>
+<p><span class="math display">\[
+\partial_i g(\boldsymbol{x})= \partial_i \left[\left(\sum_{j=1}^n (x^j)^2\right)-1\right] = 2\boldsymbol{x}
+\]</span></p>
+<p>이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(M_k\)</span> 는 옹골집합이므로 최대값이 존재한다. <span class="math inline">\(M_1 \supset \cdots \supset M_n\)</span> 이므로 <span class="math inline">\(\sigma_1 \ge \cdots \ge \sigma_n\)</span> 이다.</p>
+<p><span class="math inline">\(g_j (\boldsymbol{x}) := \boldsymbol{x \cdot x}_j\)</span> 라고 하면 <span class="math inline">\(\nabla g_j = \boldsymbol{x}_j\)</span> 이다. 라그랑주 승수법에 의해</p>
+<p><span class="math display">\[
+A\boldsymbol{x}_k = \sum_{j=1}^k \lambda_j \boldsymbol{x}_j
+\]</span></p>
+<p>이어야 하며 <span class="math inline">\((\boldsymbol{x}_k)^T A \boldsymbol{x}_k = \lambda_k\)</span> 이다.</p>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Rudin1976" class="csl-entry" role="listitem">
 Rudin, W. 1976. <em>Principles of Mathematical Analysis</em>. Third. International Series in Pure and Applied Mathematics. McGraw-Hill.
 </div>
