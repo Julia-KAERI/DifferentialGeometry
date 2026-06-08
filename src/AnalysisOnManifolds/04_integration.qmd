@@ -50,7 +50,7 @@ $n$ cell $q=[a^{(1)}_{i_1},\,a^{(1)}_{i_1+1}] \times \cdots \times [a^{(n)}_{i_n
 
 짐작하듯이 $n$-cell $Q$ 에 대한 분할 $P$ 가 정해지면 이에 따른 모든 subcell 도 정해진다. 
 
-::: {.callout-note appearance="simple" icon="false"}
+::: {.callout-note icon="false"}
 
 #### refinement
 
@@ -67,7 +67,7 @@ $n$-cell $Q$ 에 대한 두 분할 $P_1$, $P_2$ 를 생각하자. $P_1$ 에 의�
 
 ::: {#def-CM_riemann_upper_sum_and_lower_sum}
 
-$Q\subset \R^n$ 이 $n$-cell 이고 $Q$ 에 대해 정의된 함수 $f:Q \to \R$ 이 유계라고 하자. $P$ 가 $Q$ 의 분할이며 $S$ 가 $P$ 의 subcell 일 때
+$Q\subset \R^n$ 이 $n$-cell 이고 $Q$ 에 대해 정의된 함수 $f:Q \to \R$ 이 유계라고 하자. $P$ 가 $Q$ 의 분할이며 $S$ 가 $P$ 의 subcell 일 때 $M_S(f)$ 와 $m_S(f)$ 를 아래와 같이 정의한다.
 
 $$
 \begin{aligned}
@@ -76,7 +76,7 @@ m_S(f) &:= \inf \{f(\bf{f}): \bf{x}\in S\}
 \end{aligned}
 $$
 
-라고 하자. $\text{vol}(S)$ 를 subcell $S$ 의 부피라고 할 때 분할 $P$ 에 대한 $f$ 의 리만 상합 $U(f,\, P)$ 와 리만 하합 $L(f,\,P)$ 는 다음과 같이 정의된다.
+$\text{vol}(S)$ 를 subcell $S$ 의 부피라고 할 때 분할 $P$ 에 대한 $f$ 의 **리만 상합** $U(f,\, P)$ 와 **리만 하합** $L(f,\,P)$ 는 다음과 같이 정의된다.
 
 $$
 \begin{aligned}

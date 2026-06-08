@@ -1225,6 +1225,76 @@ $$
 A\bf{x}_k = \sum_{j=1}^k \lambda_j \bf{x}_j
 $$
 
-이어야 하며 $(\bf{x}_k)^T A \bf{x}_k = \lambda_k$ 이다. 
+이어야 하며 $\{\bf{x}_1,\ldots,\,\bf{x}_n\}$ 은 선형독립이므로 $A\bf{x}_k = \lambda_k \bf{x}_k$ 이다. 그리고 $\lambda_k = \sigma_k$.  
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_exr_2_6_9}
+
+#### KKK 2.6.9
+
+임의의 $A\in \R^{n\times n}$ 에 대해 $A^TA$ 는 대칭행렬이고 그 고유값이 모두 $0$ 보다 크거나 같음을 보여라. 선형사상 $F_A :\R^n \to \R^n$ 이 $F_A(\bf{x}):=A\bf{x}$ 로 정의되었을 때 $\|F_A\|$ 는 $A^TA$ 의 최대고유값의 제곱근과 같음을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$$
+(A^TA)_{ij} = \sum_k (A^T)_{ik}A_{kj}= \sum_k A_{ki}A_{kj} = \sum_k (A^T)_{jk}A_{ki} = (A^TA)_{ji}
+$$
+
+이므로 $A^TA$ 는 대칭행렬이다.
+
+$\bf{a}$ 가 $\lambda$ 를 고유값으로 갖는 $A^TA$ 의 고유벡터라고 하자. 
+
+$$
+\begin{aligned}
+A^TA\bf{a} = \lambda \bf{a} &\implies \bf{a}^TA^TA\bf{a} = \lambda \|\bf{a}\|^2 \\[0.3em]
+&\implies \|A\bf{a}\|^2 = \lambda \|\bf{a}\|^2 
+\end{aligned}
+$$ 
+
+이며 $\|A\bf{a}\|^2 \ge 0$, $\|\bf{a}\|^2 \ge 0$ 이므로 $\lambda > 0$ 이다.
+
+$A^TA$ 는 대칭행렬이므로 대각화 할 수 있다. 고유값 $\lambda_1\ge \ldots\ge \lambda_n$ 에 대한 정규직교기저를 각각 $\bf{u}_1,\ldots,\,\bf{u}_n$ 이라고 하자. $\bf{u}$ 를 $\|\bf{u}\|=1$ 인 임의의 벡터라고 하면 $\bf{u} = \sum_j a_j \bf{u}_j$ 로 놓을 수 있으며 $\sum_j (a_j)^2 = 1$ 이다. 고유값중 가장 큰 값을 $\lambda_1$ 이라고 하면
+
+$$
+\|A\bf{u}\|^2 = \bf{u}^TA^TA\bf{u} = \sum_j (a_j)^2 \lambda_j \ge \lambda_1
+$$
+
+이며 등호는 $\bf{u}$ 가 $\lambda_1$ 에 대한 고유벡터일때 성립한다. $\|A\bf{u}\|^2 \ge \lambda_1$ 이므로 $\|F_A\| = \sqrt{\lambda_1}$ 이다. 
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_KKK_exr_2_6_10}
+
+#### KKK 2.6.10
+
+행렬
+
+$$
+\begin{bmatrix} 1 & 1 \\ 1 & t\end{bmatrix},\qquad t\in \R
+$$
+
+로 주어지는 선형사상의 노름이 가장 작아지는 때는 언제인가 살펴보고 이 때 그 노름을 구하여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+대칭행렬이므로 고유값이 존재하며 고유값은 $x^2-(t+1)x + t-1 =0$ 의 해이므로
+
+$$
+\dfrac{(t+1)\pm \sqrt{t^2-2t+5}}{2}
+$$
+
+이다. 대칭행렬의 노름은 고유값의 절대값이 가장 큰 값이므로 그 값을 찾으면 된다.
 
 :::
