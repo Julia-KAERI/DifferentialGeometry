@@ -193,6 +193,38 @@ $$
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
+::: {#exr-CM_KKK_3_1_3}
+
+#### KKK 3.1.3
+
+$n$-cell 에서 정의된 연속함수는 리만적분 가능함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$n$-cell $Q$ 는 옹골집합이며 $f :Q\to \R$ 이 연속이라면 $f$ 는 고른연속이다. 따라서 주어진 $\varepsilon >0$ 에 대해
+
+$$
+\|\bf{b}-\bf{a}\|< \delta \implies \|f(\bf{b})-f(\bf{a})\|<\dfrac{\varepsilon}{\text{vol}(Q)}
+$$
+
+가 되도록 하는 $\delta > 0$ 이 존재한다. 대각선의 길이가 $\delta$ 보다 작은 $n$-cell 로 이루어진 분할 $P\in \mathcal{P}[Q]$ 가 존재한다. 그렇다면
+
+$$
+U(f,\, P) - L(f,\, P) = \sum_{S\in P} (M_S-m_S)\text{vol}(S) < \sum_{S\in P} \dfrac{\varepsilon}{\text{vol}(Q)} \text{vol}(S) = \varepsilon
+$$
+
+이 성립한다. 임의의 $\varepsilon>0$ 에 대해 성립하므로 $f \in \mathcal{R}[Q]$ 이다. 
+
+
+:::
+
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
 ::: {#exr-CM_spivak_3_1}
 
 #### Spivak 3.1
@@ -520,6 +552,17 @@ $A\subset \R^n$ 이 measure zero 일 때 다음이 성립한다.
 &emsp;($3$) $A\subset \R^n$ 이 유한개의 점의 집합이면 measure zero 이다.
 
 :::
+
+</div></br>
+
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+
+::: {#exm-CM_boundary_of_n_cell}
+
+$n$ 차원 유클리드 공간의 $n$-cell $[a_1,\,b_1]\times \cdots \times [a_n,\,b_n]$ 을 생각하자. 
+
+:::
+
 
 </div></br>
 

@@ -466,8 +466,25 @@ L(f,\,P_1) \le L(f,\, P_3) \le U(f,\, P_3) \le L(f,\,P_2)
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CM_KKK_3_1_3" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 4.1 (KKK 3.1.3)</strong></span> <span class="math inline">\(n\)</span>-cell 에서 정의된 연속함수는 리만적분 가능함을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(n\)</span>-cell <span class="math inline">\(Q\)</span> 는 옹골집합이며 <span class="math inline">\(f :Q\to \mathbb{R}\)</span> 이 연속이라면 <span class="math inline">\(f\)</span> 는 고른연속이다. 따라서 주어진 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해</p>
+<p><span class="math display">\[
+\|\boldsymbol{b}-\boldsymbol{a}\|&lt; \delta \implies \|f(\boldsymbol{b})-f(\boldsymbol{a})\|&lt;\dfrac{\varepsilon}{\text{vol}(Q)}
+\]</span></p>
+<p>가 되도록 하는 <span class="math inline">\(\delta &gt; 0\)</span> 이 존재한다. 대각선의 길이가 <span class="math inline">\(\delta\)</span> 보다 작은 <span class="math inline">\(n\)</span>-cell 로 이루어진 분할 <span class="math inline">\(P\in \mathcal{P}[Q]\)</span> 가 존재한다. 그렇다면</p>
+<p><span class="math display">\[
+U(f,\, P) - L(f,\, P) = \sum_{S\in P} (M_S-m_S)\text{vol}(S) &lt; \sum_{S\in P} \dfrac{\varepsilon}{\text{vol}(Q)} \text{vol}(S) = \varepsilon
+\]</span></p>
+<p>이 성립한다. 임의의 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 성립하므로 <span class="math inline">\(f \in \mathcal{R}[Q]\)</span> 이다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.1 (Spivak 3.1)</strong></span> <span class="math inline">\(f: [0,\,1]\times [0,\,1] \to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
+<p><span class="theorem-title"><strong>연습문제 4.2 (Spivak 3.1)</strong></span> <span class="math inline">\(f: [0,\,1]\times [0,\,1] \to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
 <p><span class="math display">\[
 f(x,\,y) = \left\{ \begin{array}{ll} 0, \qquad &amp; \text{if } 0 \le x &lt; \frac{1}{2}, \\ 1 &amp; \text{if } \frac{1}{2} \le x &lt; 1. \end{array}\right. .
 \]</span></p>
@@ -492,7 +509,7 @@ U(f,\,P)-L(f,\,P) = \dfrac{\varepsilon}{2} &lt; \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_2" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.2 (Spivak 3.2)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 적분가능하며 <span class="math inline">\(g\)</span> 는 유한개의 점을 제외하고는 <span class="math inline">\(f\)</span> 와 같다. <span class="math inline">\(g\)</span> 가 적분가능하며 <span class="math inline">\(\int_A f = \int_A g\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.3 (Spivak 3.2)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 적분가능하며 <span class="math inline">\(g\)</span> 는 유한개의 점을 제외하고는 <span class="math inline">\(f\)</span> 와 같다. <span class="math inline">\(g\)</span> 가 적분가능하며 <span class="math inline">\(\int_A f = \int_A g\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -517,7 +534,7 @@ L(f,\,P) - \dfrac{\varepsilon}{2} \le \int_A g \le U(f,\,P) + \dfrac{\varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_3" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.3 (Spivak 3.3)</strong></span> <span class="math inline">\(f,\,g:A \to \mathbb{R}\)</span> 은 적분가능하다.</p>
+<p><span class="theorem-title"><strong>연습문제 4.4 (Spivak 3.3)</strong></span> <span class="math inline">\(f,\,g:A \to \mathbb{R}\)</span> 은 적분가능하다.</p>
 <p>(<span class="math inline">\(a\)</span>) 임의의 분할 <span class="math inline">\(P\)</span> 와 <span class="math inline">\(P\)</span> 에 의한 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(S\)</span> 에 대해</p>
 <p><span id="eq-CM_spivak_3_3_1"><span class="math display">\[
 \begin{gather}
@@ -555,7 +572,7 @@ U(f+g,\,P)-L(f+g,\,P) \le U(f,\,P)-L(f,\,P) + U(g,\,P)-L(g,\,P) &lt; \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_4" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.4 (Spivak 3.4)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 과 <span class="math inline">\(P\in \mathcal{P}[A]\)</span> 를 생각하자. <span class="math inline">\(f\in \mathcal{R}[A]\)</span> 일 필요충분조건은 각각의 <span class="math inline">\(P\)</span> 의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(f|_S \in \mathcal{R}[S]\)</span> 인 것임을 보여라. 그리고 이 경우 <span class="math inline">\(\int_A f = \sum_S \int_S f|_S\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.5 (Spivak 3.4)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 과 <span class="math inline">\(P\in \mathcal{P}[A]\)</span> 를 생각하자. <span class="math inline">\(f\in \mathcal{R}[A]\)</span> 일 필요충분조건은 각각의 <span class="math inline">\(P\)</span> 의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(S\)</span> 에 대해 <span class="math inline">\(f|_S \in \mathcal{R}[S]\)</span> 인 것임을 보여라. 그리고 이 경우 <span class="math inline">\(\int_A f = \sum_S \int_S f|_S\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -577,11 +594,11 @@ U(f,\,P')-L(f,\,P') \le \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_5" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.5 (Spivak 3.5)</strong></span> <span class="math inline">\(f,\,g: A \to \mathbb{R}\)</span> 가 적분가능하고 <span class="math inline">\(f\le g\)</span> 라면 <span class="math inline">\(\int_A f \le \int_A g\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.6 (Spivak 3.5)</strong></span> <span class="math inline">\(f,\,g: A \to \mathbb{R}\)</span> 가 적분가능하고 <span class="math inline">\(f\le g\)</span> 라면 <span class="math inline">\(\int_A f \le \int_A g\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(h=g-f\)</span> 이면 <span class="math inline">\(h\ge 0\)</span> 이다. 임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(U(f,\,P) \ge L(f,\,P) \ge 0\)</span> 이므로 <span class="math inline">\(\int_A h \ge 0\)</span> 이다. <a href="#exr-CM_spivak_3_3" class="quarto-xref">연습문제&nbsp;<span>4.3</span></a> 에 의해</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(h=g-f\)</span> 이면 <span class="math inline">\(h\ge 0\)</span> 이다. 임의의 분할 <span class="math inline">\(P\)</span> 에 대해 <span class="math inline">\(U(f,\,P) \ge L(f,\,P) \ge 0\)</span> 이므로 <span class="math inline">\(\int_A h \ge 0\)</span> 이다. <a href="#exr-CM_spivak_3_3" class="quarto-xref">연습문제&nbsp;<span>4.4</span></a> 에 의해</p>
 <p><span class="math display">\[
 \int_A g- \int_A f = \int_A (g-f) = \int_A h \ge 0
 \]</span></p>
@@ -590,7 +607,7 @@ U(f,\,P')-L(f,\,P') \le \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_6" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.6 (Spivak 3.6)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 적분가능하다면 <span class="math inline">\(|f|\)</span> 역시 적분가능하며 <span class="math inline">\(\left|\int_A f\right| \le \int_A|f|\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.7 (Spivak 3.6)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 적분가능하다면 <span class="math inline">\(|f|\)</span> 역시 적분가능하며 <span class="math inline">\(\left|\int_A f\right| \le \int_A|f|\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof">
@@ -608,7 +625,7 @@ U(f,\,P')-L(f,\,P') \le \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_7" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.7 (Spivak 3.7)</strong></span> <span class="math inline">\(f:[0,\,1]\times [0,\,1]\to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
+<p><span class="theorem-title"><strong>연습문제 4.8 (Spivak 3.7)</strong></span> <span class="math inline">\(f:[0,\,1]\times [0,\,1]\to \mathbb{R}\)</span> 이 다음과 같이 정의되었다.</p>
 <p><span class="math display">\[
 f(x,\,y) = \left\{\begin{array}{ll} 0, \qquad &amp; x\in \mathbb{R}\backslash \mathbb{Q}, \\  0, &amp; x\in \mathbb{Q},\, y \in \mathbb{R}\backslash\mathbb{Q}\\ 1/q &amp; x\in \mathbb{Q},\, y=p/q \text{ in lowest terms}. \end{array}\right.
 \]</span></p>
@@ -668,8 +685,14 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 </div>
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CM_boundary_of_n_cell" class="theorem example">
+<p><span class="theorem-title"><strong>예제 4.1</strong></span> <span class="math inline">\(n\)</span> 차원 유클리드 공간의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 을 생각하자.</p>
+</div>
+</div>
+<p><br></p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_Q_is_measure_zero" class="theorem example">
-<p><span class="theorem-title"><strong>예제 4.1</strong></span> (<span class="math inline">\(1\)</span>) 양의 정수의 집합 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 measure zero 이다. 임의의 작은 <span class="math inline">\(\varepsilon&gt;0\)</span> 과 <span class="math inline">\(i\in\mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(U_i = \left[i -\dfrac{\varepsilon}{2^{i+1}},\, i+\dfrac{\varepsilon}{2^{2+i}}\right]\)</span> 라고 하면 <span class="math inline">\(\sum_{U_i}\text{vol}(U_i) \le \varepsilon\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>예제 4.2</strong></span> (<span class="math inline">\(1\)</span>) 양의 정수의 집합 <span class="math inline">\(\mathbb{Z}_+\)</span> 는 measure zero 이다. 임의의 작은 <span class="math inline">\(\varepsilon&gt;0\)</span> 과 <span class="math inline">\(i\in\mathbb{Z}_+\)</span> 에 대해 <span class="math inline">\(U_i = \left[i -\dfrac{\varepsilon}{2^{i+1}},\, i+\dfrac{\varepsilon}{2^{2+i}}\right]\)</span> 라고 하면 <span class="math inline">\(\sum_{U_i}\text{vol}(U_i) \le \varepsilon\)</span> 이다.</p>
 <p>(<span class="math inline">\(2\)</span>) 유리수의 집합 <span class="math inline">\(Q\)</span> 가 measure zero 이다. 우리는 <span class="math inline">\(\mathbb{Q}\)</span> 와 <span class="math inline">\(\mathbb{Z}_+\)</span> 사이에 전단사 함수 <span class="math inline">\(f:\mathbb{Q}\to \mathbb{Z}_+\)</span> 가 존재함을 안다. (<span class="math inline">\(1\)</span>) 에 의해 measure zero 이다.</p>
 </div>
 </div>
@@ -723,7 +746,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_content_zero" class="theorem example">
-<p><span class="theorem-title"><strong>예제 4.2</strong></span> <span class="math inline">\(a&lt;b\)</span> 에 대해 <span class="math inline">\([a,\,b]\subset \mathbb{R}\)</span> 은 content zero 가 아니다. <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 에 대한 닫힌 <span class="math inline">\(1\)</span>-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 <span class="math inline">\(U_i\)</span> 의 끝점을 <span class="math inline">\(a=t_0 &lt; t_1&lt; \cdots &lt;t_k=b\)</span> 가 되도록 놓을 수 있다. <span class="math inline">\(\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}\)</span> 이므로 <span class="math inline">\(\sum_{i}\text{vol} (U_i)\)</span> 를 임의로 작게 할 수 없다. <span class="math inline">\(\square\)</span></p>
+<p><span class="theorem-title"><strong>예제 4.3</strong></span> <span class="math inline">\(a&lt;b\)</span> 에 대해 <span class="math inline">\([a,\,b]\subset \mathbb{R}\)</span> 은 content zero 가 아니다. <span class="math inline">\(\mathcal{U}=\{U_1,\ldots,\,U_m\}\)</span> 이 <span class="math inline">\([a,\,b]\)</span> 에 대한 닫힌 <span class="math inline">\(1\)</span>-cell 의 집합, 즉 닫힌 구간의 집합이라고 하자. 각각의 <span class="math inline">\(U_i\)</span> 의 끝점을 <span class="math inline">\(a=t_0 &lt; t_1&lt; \cdots &lt;t_k=b\)</span> 가 되도록 놓을 수 있다. <span class="math inline">\(\text{vol}(U_i) \ge \min \{t_{j}-t_{j-1}:j=1,\ldots,\,m\}\)</span> 이므로 <span class="math inline">\(\sum_{i}\text{vol} (U_i)\)</span> 를 임의로 작게 할 수 없다. <span class="math inline">\(\square\)</span></p>
 </div>
 </div>
 <p><br></p>
@@ -738,7 +761,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_measure_zero_not_compact" class="theorem example">
-<p><span class="theorem-title"><strong>예제 4.3</strong></span> <a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a> 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 가 아닌 집합이 존재한다. <span class="math inline">\(A\)</span> 를 <span class="math inline">\([0,\,1]\)</span> 사이의 유리수의 집합이라고 하자. <span class="math inline">\(A\subset \mathbb{Q}\)</span> 이며 <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로(<a href="#exm-CM_Q_is_measure_zero" class="quarto-xref">예제&nbsp;<span>4.1</span></a>) <span class="math inline">\(A\)</span> 도 measure zero 이다. <span class="math inline">\(A\)</span> 가 content zero 라면 유한개의 <span class="math inline">\(\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}\)</span> 에 대해 <span class="math inline">\([0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]\)</span> 이어야 한다. 즉 <span class="math inline">\(\sum \text{vol} \ge 1\)</span> 이므로 <span class="math inline">\(A\)</span> 는 content zero 가 아니다.</p>
+<p><span class="theorem-title"><strong>예제 4.4</strong></span> <a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a> 의 역은 성립하지 않는다. 즉 measure zero 이지만 content zero 가 아닌 집합이 존재한다. <span class="math inline">\(A\)</span> 를 <span class="math inline">\([0,\,1]\)</span> 사이의 유리수의 집합이라고 하자. <span class="math inline">\(A\subset \mathbb{Q}\)</span> 이며 <span class="math inline">\(\mathbb{Q}\)</span> 가 measure zero 이므로(<a href="#exm-CM_Q_is_measure_zero" class="quarto-xref">예제&nbsp;<span>4.2</span></a>) <span class="math inline">\(A\)</span> 도 measure zero 이다. <span class="math inline">\(A\)</span> 가 content zero 라면 유한개의 <span class="math inline">\(\{[a_1,\,b_1],\ldots,\,[a_m,\,b_m]\}\)</span> 에 대해 <span class="math inline">\([0,\,1]\subset \bigcup_{j=1}^m [a_i,\,b_i]\)</span> 이어야 한다. 즉 <span class="math inline">\(\sum \text{vol} \ge 1\)</span> 이므로 <span class="math inline">\(A\)</span> 는 content zero 가 아니다.</p>
 </div>
 </div>
 <p><br></p>
@@ -747,7 +770,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_8" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.8 (Spivak 3.8)</strong></span> 각각의 <span class="math inline">\(i\in \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 라면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 는 content zero 가 될 수 없음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.9 (Spivak 3.8)</strong></span> 각각의 <span class="math inline">\(i\in \{1,\ldots,\,n\}\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 라면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 는 content zero 가 될 수 없음을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -756,7 +779,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_9" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.9 (Spivak 3.9)</strong></span> (<span class="math inline">\(a\)</span>) 유계가 아닌 집합은 content zero 일 수 없음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.10 (Spivak 3.9)</strong></span> (<span class="math inline">\(a\)</span>) 유계가 아닌 집합은 content zero 일 수 없음을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) measure zero 이지만 content zero 가 아닌 닫힌 집합의 예를 들어라.</p>
 </div>
 </div>
@@ -767,7 +790,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_10" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.10 (Spivak 3.10)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(C\)</span> 가 content zero 집합이라면 <span class="math inline">\(C\)</span> 의 경계도 content zero 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.11 (Spivak 3.10)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(C\)</span> 가 content zero 집합이라면 <span class="math inline">\(C\)</span> 의 경계도 content zero 임을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) Measure zero 이며, 유계이지만 <span class="math inline">\(C\)</span> 의 경계가 measure zero 가 아닌 집합의 예를 보여라.</p>
 </div>
 </div>
@@ -778,7 +801,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_11" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.11 (Spivak 3.11)</strong></span> <span class="math inline">\(A\)</span> 가 <a href="01_functions_on_Euclidean_space.html#exr-CM_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>1.12</span></a> 의 <span class="math inline">\(A\)</span> 라고 하자. <span class="math inline">\(\sum_{i=1}^\infty (b_i-a_i)&lt;1\)</span> 이면 <span class="math inline">\(A\)</span> 의 경계는 measure zero 가 아님을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.12 (Spivak 3.11)</strong></span> <span class="math inline">\(A\)</span> 가 <a href="01_functions_on_Euclidean_space.html#exr-CM_spivak_1_18" class="quarto-xref">연습문제&nbsp;<span>1.12</span></a> 의 <span class="math inline">\(A\)</span> 라고 하자. <span class="math inline">\(\sum_{i=1}^\infty (b_i-a_i)&lt;1\)</span> 이면 <span class="math inline">\(A\)</span> 의 경계는 measure zero 가 아님을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -787,7 +810,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_12" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.12 (Spivak 3.12)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(\{x: f\text{ is discontinuous at }x\}\)</span> 는 measure zero 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.13 (Spivak 3.12)</strong></span> <span class="math inline">\(f:[a,\,b] \to \mathbb{R}\)</span> 이 증가함수이다. <span class="math inline">\(\{x: f\text{ is discontinuous at }x\}\)</span> 는 measure zero 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -801,7 +824,7 @@ f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n
 <p><br></p>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_13" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.13 (Spivak 3.13)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell <span class="math inline">\([a_1,b_1]\times \cdots \times [a_n,b_n]\)</span> 에서 모든 <span class="math inline">\(a_i,\,b_i\)</span> 가 유리수인 것들의 집합은 나열 될 수 있음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.14 (Spivak 3.13)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(n\)</span>-cell <span class="math inline">\([a_1,b_1]\times \cdots \times [a_n,b_n]\)</span> 에서 모든 <span class="math inline">\(a_i,\,b_i\)</span> 가 유리수인 것들의 집합은 나열 될 수 있음을 보여라.</p>
 <p>(<span class="math inline">\(b\)</span>) 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 그 열린 덮개인 집합족 <span class="math inline">\(\mathcal{O}\)</span> 를 생각하자. <span class="math inline">\(A\)</span> 를 덮는 <span class="math inline">\(\mathcal{O}\)</span> 의 부분집합인 수열 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 가 존재함을 보여라.</p>
 </div>
 </div>
@@ -936,7 +959,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_14" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.14 (Spivak 3.14)</strong></span> <span class="math inline">\(f,\,g\in A\to \mathbb{R}\)</span> 이 적분가능하면 <span class="math inline">\(f\cdot g\)</span> 도 적분가능함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.15 (Spivak 3.14)</strong></span> <span class="math inline">\(f,\,g\in A\to \mathbb{R}\)</span> 이 적분가능하면 <span class="math inline">\(f\cdot g\)</span> 도 적분가능함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -945,16 +968,16 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_15" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.15 (Spivak 3.15)</strong></span> <span class="math inline">\(C\)</span> 가 content <span class="math inline">\(0\)</span> 이면 어떤 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(C \subset A\)</span> 이고 <span class="math inline">\(C\)</span> 는 조르당 가측이며 <span class="math inline">\(\int_A \chi_C=0\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.16 (Spivak 3.15)</strong></span> <span class="math inline">\(C\)</span> 가 content <span class="math inline">\(0\)</span> 이면 어떤 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\)</span> 에 대해 <span class="math inline">\(C \subset A\)</span> 이고 <span class="math inline">\(C\)</span> 는 조르당 가측이며 <span class="math inline">\(\int_A \chi_C=0\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_9" class="quarto-xref">연습문제&nbsp;<span>4.9</span></a> (<span class="math inline">\(a\)</span>) 에 따라 <span class="math inline">\(C\)</span> 는 유계이므로 어떤 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\)</span> 가 <span class="math inline">\(C\)</span> 를 포함한다. <a href="#exr-CM_spivak_3_10" class="quarto-xref">연습문제&nbsp;<span>4.10</span></a> 에 따라 <span class="math inline">\(\partial C\)</span> 도 content <span class="math inline">\(0\)</span> 이며 따라서 조르당 가측이다. <span class="math inline">\(C\)</span> 가 content <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_A \chi_C = 0\)</span> 이다.,</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_9" class="quarto-xref">연습문제&nbsp;<span>4.10</span></a> (<span class="math inline">\(a\)</span>) 에 따라 <span class="math inline">\(C\)</span> 는 유계이므로 어떤 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\)</span> 가 <span class="math inline">\(C\)</span> 를 포함한다. <a href="#exr-CM_spivak_3_10" class="quarto-xref">연습문제&nbsp;<span>4.11</span></a> 에 따라 <span class="math inline">\(\partial C\)</span> 도 content <span class="math inline">\(0\)</span> 이며 따라서 조르당 가측이다. <span class="math inline">\(C\)</span> 가 content <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_A \chi_C = 0\)</span> 이다.,</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_16" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.16 (Spivak 3.16)</strong></span> 유계이며 measure zero 이고 <span class="math inline">\(\int_A \chi_C\)</span> 가 존재하지 않는 집합 <span class="math inline">\(C\)</span> 의 예를 들어라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.17 (Spivak 3.16)</strong></span> 유계이며 measure zero 이고 <span class="math inline">\(\int_A \chi_C\)</span> 가 존재하지 않는 집합 <span class="math inline">\(C\)</span> 의 예를 들어라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -963,7 +986,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_17" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.17 (Spivak 3.17)</strong></span> <span class="math inline">\(C\)</span> 가 유계이며 measure <span class="math inline">\(0\)</span> 이고 <span class="math inline">\(\int_A \chi_C\)</span> 가 존재한다면 <span class="math inline">\(\int_A \chi_C=0\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.18 (Spivak 3.17)</strong></span> <span class="math inline">\(C\)</span> 가 유계이며 measure <span class="math inline">\(0\)</span> 이고 <span class="math inline">\(\int_A \chi_C\)</span> 가 존재한다면 <span class="math inline">\(\int_A \chi_C=0\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -972,7 +995,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_18" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.18 (Spivak 3.18)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 음이 아닌 함수이고 <span class="math inline">\(\int_A f=0\)</span> 이면 <span class="math inline">\(\{\boldsymbol{x}:f(\boldsymbol{x}) \ne 0\}\)</span> 이 measure <span class="math inline">\(0\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.19 (Spivak 3.18)</strong></span> <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 음이 아닌 함수이고 <span class="math inline">\(\int_A f=0\)</span> 이면 <span class="math inline">\(\{\boldsymbol{x}:f(\boldsymbol{x}) \ne 0\}\)</span> 이 measure <span class="math inline">\(0\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -986,7 +1009,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_19" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.19 (Spivak 3.19)</strong></span> <span class="math inline">\(U\)</span> 가 <a href="#exr-CM_spivak_3_11" class="quarto-xref">연습문제&nbsp;<span>4.11</span></a> 의 열린 집합이라고하자. <span class="math inline">\(f\)</span> 가 measure <span class="math inline">\(0\)</span> 인 어떤 집합 위를 제외하고 <span class="math inline">\(f=\chi_U\)</span> 라면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([0,\,1]\)</span> 에서 적분 가능하지 않음을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.20 (Spivak 3.19)</strong></span> <span class="math inline">\(U\)</span> 가 <a href="#exr-CM_spivak_3_11" class="quarto-xref">연습문제&nbsp;<span>4.12</span></a> 의 열린 집합이라고하자. <span class="math inline">\(f\)</span> 가 measure <span class="math inline">\(0\)</span> 인 어떤 집합 위를 제외하고 <span class="math inline">\(f=\chi_U\)</span> 라면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([0,\,1]\)</span> 에서 적분 가능하지 않음을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -995,7 +1018,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_20" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.20 (Spivak 3.20)</strong></span> 단조증가함수 <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 은 <span class="math inline">\([a,\,b]\)</span> 에서 적분가능함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.21 (Spivak 3.20)</strong></span> 단조증가함수 <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 은 <span class="math inline">\([a,\,b]\)</span> 에서 적분가능함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1004,7 +1027,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_jordan_measureable_set_and_boundary" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.21</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 조르당 가측이면 <span class="math inline">\(\partial A\)</span> 는 content <span class="math inline">\(0\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.22</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 조르당 가측이면 <span class="math inline">\(\partial A\)</span> 는 content <span class="math inline">\(0\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1013,22 +1036,22 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_21" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.22 (Spivak 3.21)</strong></span> <span class="math inline">\(A\)</span> 가 닫힌 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(C\subset A\)</span> 라고 하자. 이 때 아래 두 명제는 동치임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.23 (Spivak 3.21)</strong></span> <span class="math inline">\(A\)</span> 가 닫힌 <span class="math inline">\(n\)</span>-cell 이고 <span class="math inline">\(C\subset A\)</span> 라고 하자. 이 때 아래 두 명제는 동치임을 보여라.</p>
 <p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(C\)</span> 는 조르당 가측이다.</p>
 <p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(P\)</span> 가 <span class="math inline">\(A\)</span> 의 분할 일 때 <span class="math inline">\(\mathcal{S}_1\)</span> 은 <span class="math inline">\(C\)</span> 와 교집합이 있는 <span class="math inline">\(P\)</span> 의 subcell 의 집합이고 <span class="math inline">\(\mathcal{S}_2\)</span> 는 <span class="math inline">\(C\)</span> 에 포함되는 subcell 의 집합이라고 하자. 각각의 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 <span class="math inline">\(\sum_{S\in \mathcal{S}_1}\text{vol}(S) - \sum_{S\in \mathcal{S}_2} \text{vol}(S) &lt; \varepsilon\)</span> 을 만족하는 분할이 존재한다.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_jordan_measureable_set_and_boundary" class="quarto-xref">연습문제&nbsp;<span>4.21</span></a> 에 의해 <span class="math inline">\(\partial C\)</span> 는 content <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(\sum_{S\in \mathcal{S}_1}\text{vol}(S) - \sum_{S\in \mathcal{S}_2} \text{vol}(S) &lt; \varepsilon\)</span> 는 <span class="math inline">\(P\)</span> 의 subcell 가운데 <span class="math inline">\(\partial C\)</span> 와 교집합이 존재하는 subcell 의 부피의 합이다. 조르당 가측의 정의에 의해 두 명제는 동치이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_jordan_measureable_set_and_boundary" class="quarto-xref">연습문제&nbsp;<span>4.22</span></a> 에 의해 <span class="math inline">\(\partial C\)</span> 는 content <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(\sum_{S\in \mathcal{S}_1}\text{vol}(S) - \sum_{S\in \mathcal{S}_2} \text{vol}(S) &lt; \varepsilon\)</span> 는 <span class="math inline">\(P\)</span> 의 subcell 가운데 <span class="math inline">\(\partial C\)</span> 와 교집합이 존재하는 subcell 의 부피의 합이다. 조르당 가측의 정의에 의해 두 명제는 동치이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_22" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.23 (Spivak 3.22)</strong></span> <span class="math inline">\(A\)</span> 가 조르당 가측이면 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 어떤 조르당 가측이며 <span class="math inline">\(A\)</span> 의 부분집합인 옹골집합 <span class="math inline">\(C\)</span> 가 존재하여 <span class="math inline">\(\int_{A-C} 1 &lt; \varepsilon\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.24 (Spivak 3.22)</strong></span> <span class="math inline">\(A\)</span> 가 조르당 가측이면 <span class="math inline">\(\varepsilon &gt;0\)</span> 에 대해 어떤 조르당 가측이며 <span class="math inline">\(A\)</span> 의 부분집합인 옹골집합 <span class="math inline">\(C\)</span> 가 존재하여 <span class="math inline">\(\int_{A-C} 1 &lt; \varepsilon\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>4.22</span></a> 의 <span class="math inline">\(\mathcal{S}_2\)</span> 를 생각하자. 단 <a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>4.22</span></a> 의 <span class="math inline">\(C\)</span> 가 여기서의 <span class="math inline">\(A\)</span> 이며 닫힌 <span class="math inline">\(n\)</span>-cell 의 유한합집합이므로 옹골집합이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>4.23</span></a> 의 <span class="math inline">\(\mathcal{S}_2\)</span> 를 생각하자. 단 <a href="#exr-CM_spivak_3_21" class="quarto-xref">연습문제&nbsp;<span>4.23</span></a> 의 <span class="math inline">\(C\)</span> 가 여기서의 <span class="math inline">\(A\)</span> 이며 닫힌 <span class="math inline">\(n\)</span>-cell 의 유한합집합이므로 옹골집합이다.</p>
 </div>
 <p><br></p>
 </section>
@@ -1174,11 +1197,11 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <h3 class="unnumbered anchored" data-anchor-id="연습문제-3">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_23" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.24 (Spivak 3.23)</strong></span> <span class="math inline">\(C\subset A\times B\)</span> 가 content <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(A'\subset A\)</span> 는 <span class="math inline">\(\{\boldsymbol{y}\in B: (\boldsymbol{x},\boldsymbol{y})\in C\}\)</span> 가 content <span class="math inline">\(0\)</span> 이 아닌 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 의 집합이다. <span class="math inline">\(A'\)</span> 은 measure <span class="math inline">\(0\)</span> 집합임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.25 (Spivak 3.23)</strong></span> <span class="math inline">\(C\subset A\times B\)</span> 가 content <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(A'\subset A\)</span> 는 <span class="math inline">\(\{\boldsymbol{y}\in B: (\boldsymbol{x},\boldsymbol{y})\in C\}\)</span> 가 content <span class="math inline">\(0\)</span> 이 아닌 모든 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 의 집합이다. <span class="math inline">\(A'\)</span> 은 measure <span class="math inline">\(0\)</span> 집합임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_10" class="quarto-xref">연습문제&nbsp;<span>4.10</span></a> 에 따라 <span class="math inline">\(\partial C\)</span> 가 content <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_C 1 =\int_{A\times B}\chi_C= 0\)</span> 이므로 적분가능하다. <span class="math inline">\(\mathcal{L}(\boldsymbol{x}) = \underline{\int_B} \chi_C(\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span>, <span class="math inline">\(\mathcal{U}(\boldsymbol{x})=\overline{\int_B}\chi_C (\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span> 라고 하자. 푸비니의 정리에 따라</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#exr-CM_spivak_3_10" class="quarto-xref">연습문제&nbsp;<span>4.11</span></a> 에 따라 <span class="math inline">\(\partial C\)</span> 가 content <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_C 1 =\int_{A\times B}\chi_C= 0\)</span> 이므로 적분가능하다. <span class="math inline">\(\mathcal{L}(\boldsymbol{x}) = \underline{\int_B} \chi_C(\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span>, <span class="math inline">\(\mathcal{U}(\boldsymbol{x})=\overline{\int_B}\chi_C (\boldsymbol{x},\boldsymbol{y})\,d\boldsymbol{y}\)</span> 라고 하자. 푸비니의 정리에 따라</p>
 <p><span class="math display">\[
 0  = \int_{A\times B}\chi_C = \int_{A} \mathcal{L} = \int_A \mathcal{U}
 \]</span></p>
@@ -1187,7 +1210,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_24" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.25 (Spivak 3.24)</strong></span> <span class="math inline">\(C\subset [0,\,1]\times [0,\,1]\)</span> 는 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 사이의 기약분수 <span class="math inline">\(p/q\)</span> 에 대해 <span class="math inline">\([p/q]\times [0,\,1/q]\)</span> 의 합집합이다. <a href="#exr-CM_spivak_3_23" class="quarto-xref">연습문제&nbsp;<span>4.24</span></a> 에서 <span class="math inline">\(A'\)</span> 이 content <span class="math inline">\(0\)</span> 가 아닐 수 있음을 보여랴.</p>
+<p><span class="theorem-title"><strong>연습문제 4.26 (Spivak 3.24)</strong></span> <span class="math inline">\(C\subset [0,\,1]\times [0,\,1]\)</span> 는 <span class="math inline">\(0\)</span> 과 <span class="math inline">\(1\)</span> 사이의 기약분수 <span class="math inline">\(p/q\)</span> 에 대해 <span class="math inline">\([p/q]\times [0,\,1/q]\)</span> 의 합집합이다. <a href="#exr-CM_spivak_3_23" class="quarto-xref">연습문제&nbsp;<span>4.25</span></a> 에서 <span class="math inline">\(A'\)</span> 이 content <span class="math inline">\(0\)</span> 가 아닐 수 있음을 보여랴.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1196,7 +1219,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_25" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.26 (Spivak 3.25)</strong></span> 수학적 귀납법을 사용하여 각각의 <span class="math inline">\(i=1,\,2,\ldots,\,n\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 이면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 이 measure <span class="math inline">\(0\)</span> 이 아님을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.27 (Spivak 3.25)</strong></span> 수학적 귀납법을 사용하여 각각의 <span class="math inline">\(i=1,\,2,\ldots,\,n\)</span> 에 대해 <span class="math inline">\(a_i&lt;b_i\)</span> 이면 <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 이 measure <span class="math inline">\(0\)</span> 이 아님을 보여라.</p>
 </div>
 </div>
 <div class="{solution}">
@@ -1205,7 +1228,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_26" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.27 (Spivak 3.26)</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 적분가능하며 <span class="math inline">\(f \ge 0\)</span> 이다. <span class="math inline">\(A_f:=\{(x,\,y) : a\le x \le b,\, 0 \le y \le f(x)\}\)</span> 가 요르당 가측이며 면적이 <span class="math inline">\(\int_a^b f\)</span> 임을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.28 (Spivak 3.26)</strong></span> <span class="math inline">\(f:[a,\,b]\to \mathbb{R}\)</span> 이 적분가능하며 <span class="math inline">\(f \ge 0\)</span> 이다. <span class="math inline">\(A_f:=\{(x,\,y) : a\le x \le b,\, 0 \le y \le f(x)\}\)</span> 가 요르당 가측이며 면적이 <span class="math inline">\(\int_a^b f\)</span> 임을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1223,7 +1246,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_27" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.28 (Spivak 3.27)</strong></span> <span class="math inline">\(f:[a,\,b] \times [a,\,b] \to \mathbb{R}\)</span> 이 연속일 때 다음이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.29 (Spivak 3.27)</strong></span> <span class="math inline">\(f:[a,\,b] \times [a,\,b] \to \mathbb{R}\)</span> 이 연속일 때 다음이 성립함을 보여라.</p>
 <p><span class="math display">\[
 \int_a^b \int_a^y f(x,\,y)\,dx\,dy = \int_a^b \int_x^b f(x,\,y)\, dy\,dx.
 \]</span></p>
@@ -1235,7 +1258,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_28" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.29 (Spivak 3.28)</strong></span> 푸비니의 정리를 사용하여 <span class="math inline">\(D_{1,\,2}f\)</span> 와 <span class="math inline">\(D_{2,\,1}f\)</span> 연속 일 때 같다는 것을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.30 (Spivak 3.28)</strong></span> 푸비니의 정리를 사용하여 <span class="math inline">\(D_{1,\,2}f\)</span> 와 <span class="math inline">\(D_{2,\,1}f\)</span> 연속 일 때 같다는 것을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1256,7 +1279,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_29" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.30 (Spivak 3.29)</strong></span> <span class="math inline">\(yz\)</span> 평면에서의 조르당 가측 집합을 <span class="math inline">\(z\)</span> 축을 중심으로 회전하였을 때 생기는 회전체의 <span class="math inline">\(\mathbb{R}^3\)</span> 에서의 부피에 대한 표현식을 푸비니의 정리를 이용하여 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.31 (Spivak 3.29)</strong></span> <span class="math inline">\(yz\)</span> 평면에서의 조르당 가측 집합을 <span class="math inline">\(z\)</span> 축을 중심으로 회전하였을 때 생기는 회전체의 <span class="math inline">\(\mathbb{R}^3\)</span> 에서의 부피에 대한 표현식을 푸비니의 정리를 이용하여 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -1265,7 +1288,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_30" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.31 (Spivak 3.30)</strong></span> <span class="math inline">\(C\)</span> 가 <a href="01_functions_on_Euclidean_space.html#exr-CM_spivak_1_17" class="quarto-xref">연습문제&nbsp;<span>1.11</span></a> 에서의 집합일 때 <span class="math display">\[
+<p><span class="theorem-title"><strong>연습문제 4.32 (Spivak 3.30)</strong></span> <span class="math inline">\(C\)</span> 가 <a href="01_functions_on_Euclidean_space.html#exr-CM_spivak_1_17" class="quarto-xref">연습문제&nbsp;<span>1.11</span></a> 에서의 집합일 때 <span class="math display">\[
 \int_{[0,1]} \left(\int_{[0,1]} \chi_C (x,\,y)\,dx\right)dy = \int_{[0,1]}\left(\int_{[0,1]} \chi_C(y,x)\,dy \right)dx = 0
 \]</span></p>
 <p>이지만 <span class="math inline">\(\int_{[0,1]\times [0,1]} \chi_C\)</span> 는 존재하지 않음을 보여라.</p>
@@ -1277,7 +1300,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_31" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.32 (Spivak 3.31)</strong></span> <span class="math inline">\(A=[a_1,b_1] \times \cdots \times [a_n,b_n]\)</span> 이고 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(\tilde{f}:A \to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>연습문제 4.33 (Spivak 3.31)</strong></span> <span class="math inline">\(A=[a_1,b_1] \times \cdots \times [a_n,b_n]\)</span> 이고 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 연속일 때 <span class="math inline">\(\tilde{f}:A \to \mathbb{R}\)</span> 을 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
 \tilde{f}(\boldsymbol{x}) = \int_{[a_1,x_1] \times \cdots \times [a_n,x_n]} f.
 \]</span></p>
@@ -1297,7 +1320,7 @@ D_i \tilde{f}(\boldsymbol{x})= \int_{[a_1,x_1] \times \cdots \times [a_{i-1},x_{
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_32" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.33 (Spivak 3.32)</strong></span> <span class="math inline">\(f:[a,\,b]\times [c,\,d] \to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(D_2 f\)</span> 역시 연속이라고 하자. 아래의 식 (Leibnitz’s rule) 이 성립함을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.34 (Spivak 3.32)</strong></span> <span class="math inline">\(f:[a,\,b]\times [c,\,d] \to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(D_2 f\)</span> 역시 연속이라고 하자. 아래의 식 (Leibnitz’s rule) 이 성립함을 보여라.</p>
 <p><span id="eq-CM_leibnitz_rule"><span class="math display">\[
 \dfrac{d}{dy}\left(\int_a^b f(x,\,y) \,dx \right)= \int_a^b D_2 f(x,\,y)\, dx.
 \tag{4.9}\]</span></span></p>
@@ -1322,7 +1345,7 @@ f(x,\,y) = \int_{c}^y D_2 f(x,\,y)\, dy + f(x,\,c)
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_33" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.34 (Spivak 3.33)</strong></span> <span class="math inline">\(f:[a,\,b]\times [c,\,d] \to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(D_2 f\)</span> 역시 연속일 때 <span class="math inline">\(\tilde{f}(x,\,y) := \int_a^x f(t,\,y)\,dt\)</span> 라고 하자.</p>
+<p><span class="theorem-title"><strong>연습문제 4.35 (Spivak 3.33)</strong></span> <span class="math inline">\(f:[a,\,b]\times [c,\,d] \to \mathbb{R}\)</span> 이 연속이며 <span class="math inline">\(D_2 f\)</span> 역시 연속일 때 <span class="math inline">\(\tilde{f}(x,\,y) := \int_a^x f(t,\,y)\,dt\)</span> 라고 하자.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(D_1 \tilde{f}\)</span> 와 <span class="math inline">\(D_2 \tilde{f}\)</span> 를 구하라.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\tilde{g}(x) = \int_a^{g(x)} f(t,\,x)\, dt\)</span> 일 때 <span class="math inline">\(\tilde{g}'(x)\)</span> 를 구하라.</p>
 </div>
@@ -1358,7 +1381,7 @@ D_2 \tilde{f}(x,\,y) &amp;= \lim_{h\to 0}\dfrac{\int_a^{x} \left[f(t,\,y+h)\,dt 
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_34" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.35 (Spivak 3.34)</strong></span> <span class="math inline">\(g_1,\,g_2 : \mathbb{R}^2 \to\mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이며 <span class="math inline">\(D_1g_2 = D_2g_1\)</span> 이라고 하자. <a href="02_differentiation_of_manifolds.html#exr-CM_spivak_2_21" class="quarto-xref">연습문제&nbsp;<span>2.21</span></a> 에서와 같이</p>
+<p><span class="theorem-title"><strong>연습문제 4.36 (Spivak 3.34)</strong></span> <span class="math inline">\(g_1,\,g_2 : \mathbb{R}^2 \to\mathbb{R}\)</span> 이 <span class="math inline">\(C^1\)</span> 함수이며 <span class="math inline">\(D_1g_2 = D_2g_1\)</span> 이라고 하자. <a href="02_differentiation_of_manifolds.html#exr-CM_spivak_2_21" class="quarto-xref">연습문제&nbsp;<span>2.21</span></a> 에서와 같이</p>
 <p><span class="math display">\[
 f(x,\,y) = \int_0^x g_1(t,0)\,dt + \int_0^y g_2(x,t)\,dt
 \]</span></p>
@@ -1376,7 +1399,7 @@ D_1 f(x,\,y) &amp;= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_35" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.36 (Spivak 3.35)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(G:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 아래와 같은 세 타입가운데 하나라고 하자.</p>
+<p><span class="theorem-title"><strong>연습문제 4.37 (Spivak 3.35)</strong></span> (<span class="math inline">\(a\)</span>) <span class="math inline">\(G:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 아래와 같은 세 타입가운데 하나라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\left\{ \begin{array}{ll}G(\boldsymbol{e}_i) = \boldsymbol{e}_i ,\qquad &amp; i\ne j \\ G(\boldsymbol{e}_j) = a\boldsymbol{e}_j.\end{array}\right. \\[0.5em]
@@ -1395,7 +1418,7 @@ D_1 f(x,\,y) &amp;= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CM_spivak_3_36" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 4.37 (Spivak 3.36 -Cavalieri 정리)</strong></span> <span class="math inline">\(A,\,B\subset \mathbb{R}^3\)</span> 는 조르당 가측이다. <span class="math inline">\(A_c:=\{(x,\,y) | (x,\,y,\,c)\in A\}\)</span>, <span class="math inline">\(B_C =\{(x,\,y) | (x,\,y,\,c)\in B\}\)</span> 라고 하자. 각각의 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(A_c\)</span> 와 <span class="math inline">\(B_c\)</span> 가 조르당 가측이며 같은 면적을 가진다면 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 는 같은 부피를 가짐을 보여라.</p>
+<p><span class="theorem-title"><strong>연습문제 4.38 (Spivak 3.36 -Cavalieri 정리)</strong></span> <span class="math inline">\(A,\,B\subset \mathbb{R}^3\)</span> 는 조르당 가측이다. <span class="math inline">\(A_c:=\{(x,\,y) | (x,\,y,\,c)\in A\}\)</span>, <span class="math inline">\(B_C =\{(x,\,y) | (x,\,y,\,c)\in B\}\)</span> 라고 하자. 각각의 <span class="math inline">\(c\)</span> 에 대해 <span class="math inline">\(A_c\)</span> 와 <span class="math inline">\(B_c\)</span> 가 조르당 가측이며 같은 면적을 가진다면 <span class="math inline">\(A\)</span> 와 <span class="math inline">\(B\)</span> 는 같은 부피를 가짐을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
