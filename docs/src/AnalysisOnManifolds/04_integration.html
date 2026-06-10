@@ -686,7 +686,11 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 <p><br></p>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_boundary_of_n_cell" class="theorem example">
-<p><span class="theorem-title"><strong>예제 4.1</strong></span> <span class="math inline">\(n\)</span> 차원 유클리드 공간의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\([a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 을 생각하자.</p>
+<p><span class="theorem-title"><strong>예제 4.1</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 의 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(X=[a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 를 생각하자. 그리고</p>
+<p><span class="math display">\[
+m_c = (\max \{(b_i-a_i) : i=1,\ldots,\,n\})^{n-1}
+\]</span></p>
+<p>라고 하자. 정해진 <span class="math inline">\(\varepsilon&gt; 0\)</span> 에 대해 <span class="math inline">\(i\)</span> 번째 축에 수직한 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(X\)</span> 의 면에 대해 <span class="math inline">\(i\)</span> 번째 차원을 제외한 나머지 두께는 <span class="math inline">\(X\)</span> 와 동일하고 <span class="math inline">\(i\)</span> 반째 방향의 두께가 <span class="math inline">\(\varepsilon/(2nm_c)\)</span> 가 되는 <span class="math inline">\(n\)</span>-cell 을 생각 할 수 있다. 이 <span class="math inline">\(n\)</span>-cell 은 <span class="math inline">\(X\)</span> 의 <span class="math inline">\(i\)</span> 번째 면을 포함하며 그 부피는 <span class="math inline">\(\varepsilon/2n\)</span> 보다 작다 . 이 <span class="math inline">\(X\)</span> 의 각 면을 포함하는 <span class="math inline">\(2n\)</span> 개의 <span class="math inline">\(n\)</span> cell 의 총 부피는 <span class="math inline">\(\varepsilon\)</span> 보다 작으므로 <span class="math inline">\(n\)</span> cell 의 경계의 부피는 measure zero 이다.</p>
 </div>
 </div>
 <p><br></p>
@@ -814,7 +818,7 @@ U(f,\,P) - L(f,\,P) &lt; \varepsilon
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>정해진 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(X_n = \{x:o(f,\,x)&gt; \frac{1}{n}\}\)</span> 라고 하자. <a href="01_functions_on_Euclidean_space.html#prp-CM_oscillation_and_continuity" class="quarto-xref">명제&nbsp;<span>1.6</span></a> 로부터 <span class="math inline">\(X_n \subset X\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(X=\{x: f\text{ is discontinuous at }x\}\)</span> 라 하고, 정해진 자연수 <span class="math inline">\(n\)</span> 에 대해 <span class="math inline">\(X_n = \{x:o(f,\,x)&gt; \frac{1}{n}\}\)</span> 라고 하자. <a href="01_functions_on_Euclidean_space.html#prp-CM_oscillation_and_continuity" class="quarto-xref">명제&nbsp;<span>1.6</span></a> 로부터 <span class="math inline">\(X_n \subset X\)</span> 이다.</p>
 <p><span class="math inline">\(X_n = \{x_1,\,x_2,\ldots\}\)</span> 이고 <span class="math inline">\(x_1&lt;x_2&lt;\cdots\)</span> 라고 하면 <a href="01_functions_on_Euclidean_space.html#exr-CM_spivak_1_30" class="quarto-xref">연습문제&nbsp;<span>1.22</span></a> 에 따라</p>
 <p><span class="math display">\[
 f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n}
@@ -846,7 +850,7 @@ f(b)-f(a)&gt;f(x_k)- f(x_1) \ge \sum_{j=2}^k f(x_j)-f(x_{j-1})&gt; \dfrac{k-1}{n
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{x}\in A\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 를 내부에 포함하는 어떤 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_x\)</span> 에서 <span class="math inline">\(M_{U_x}(f) - m_{U_x}(f) &lt;\varepsilon\)</span> 이다. <span class="math inline">\(A\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(U_{x_1},\ldots,\,U_{x_n}\)</span> 이 존재하여 <span class="math inline">\(A\)</span> 를 덮는다. <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 의 각각의 subcell 이 어떤 <span class="math inline">\(U_{x_i}\)</span> 에 포함되도록 잡을 수 있다. <span class="math inline">\(S\)</span> 가 그런 subcell 이라면 <span class="math inline">\(M_S(f)-m_S(f)&lt;\varepsilon\)</span> 이며, 따라서</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\boldsymbol{x}\in A\)</span> 이면 <span class="math inline">\(\boldsymbol{x}\)</span> 를 내부에 포함하는 어떤 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_x\)</span> 에서 <span class="math inline">\(M_{U_x}(f) - m_{U_x}(f) &lt;\varepsilon\)</span> 이다. <span class="math inline">\(A\)</span> 가 옹골집합이므로 유한개의 <span class="math inline">\(U_{x_1},\ldots,\,U_{x_n}\)</span> 이 존재하여 <span class="math inline">\(A\)</span> 를 덮는다. <span class="math inline">\(A\)</span> 의 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 의 각각의 subcell 이 어떤 <span class="math inline">\(U_{x_i}\)</span> 에 포함되도록 잡을 수 있다. <span class="math inline">\(S\in P\)</span> 이면 <span class="math inline">\(M_S(f)-m_S(f)&lt;\varepsilon\)</span> 이며, 따라서</p>
 <p><span class="math display">\[
 U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt; \varepsilon \cdot \text{vol}(A)
 \]</span></p>
@@ -855,14 +859,14 @@ U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt;
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_integrability_and_measure_of_uncontinous_points" class="theorem">
-<p><span class="theorem-title"><strong>정리 4.3</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 유계인 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(B=\{\boldsymbol{x}\in A:f\text{ is not continuous at }f\}\)</span> 일 때 <span class="math inline">\(f\)</span> 가 적분가능한 것의 필요충분조건은 <span class="math inline">\(B\)</span> 가 measure zero 인 것이다.</p>
+<p><span class="theorem-title"><strong>정리 4.3</strong></span> 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 정의된 유계인 함수 <span class="math inline">\(f:A \to \mathbb{R}\)</span> 을 생각하자. <span class="math inline">\(B=\{\boldsymbol{x}\in A:f\text{ is not continuous at }\}\)</span> 일 때 <span class="math inline">\(f\)</span> 가 적분가능한 것의 필요충분조건은 <span class="math inline">\(B\)</span> 가 measure zero 인 것이다.</p>
 </div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(B_\varepsilon := \{\boldsymbol{x}\in A: o(f,\,\boldsymbol{x})\ge \varepsilon\}\)</span> 라고 하자.</p>
-<p>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(B\)</span> 가 measure zero 임을 가정하자 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(B_\varepsilon \subset B\)</span> 이므로 <span class="math inline">\(B_\varepsilon\)</span> 은 measure zero 이다. <a href="01_functions_on_Euclidean_space.html#prp-CM_oscillation_and_closed_set" class="quarto-xref">명제&nbsp;<span>1.7</span></a> 에 의해 <span class="math inline">\(B_\varepsilon\)</span> 은 닫힌집합이며 <span class="math inline">\(B_\varepsilon \subset A\)</span> 이므로 유계이다. 따라서 <span class="math inline">\(B_\varepsilon\)</span> 은 옹골집합이므로 content zero 이다(<a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a>). 따라서 유한개의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_1,\ldots,\,U_n\)</span> 로 <span class="math inline">\(\sum_{i=1}^n \text{vol}(U_i)&lt;\varepsilon\)</span> 이며 <span class="math inline">\(B_\varepsilon\)</span> 을 덮을 수 있다. 이제 <span class="math inline">\(A\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 에 따라 정해지는 subcell 이 아래의 <span class="math inline">\(\mathcal{S}_1\)</span> 이나 <span class="math inline">\(\mathcal{S}_2\)</span> 중의 하나에 속하도록 잡자.(<a href="#fig-CM_integrability_1" class="quarto-xref">그림&nbsp;<span>4.1</span></a>)</p>
-<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\mathcal{S}_1\)</span> : 어떤 <span class="math inline">\(U_i\)</span> 에 대해 <span class="math inline">\(S \subset U_i\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_1\)</span> 에 포힘된다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\mathcal{S}_2\)</span> : <span class="math inline">\(S\cap B_\varepsilon = \varnothing\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_2\)</span> 에 포함된다.</p>
+<p>(<span class="math inline">\(1\)</span>) 우선 <span class="math inline">\(B\)</span> 가 measure zero 임을 가정하자 <span class="math inline">\(\varepsilon&gt;0\)</span> 에 대해 <span class="math inline">\(B_\varepsilon \subset B\)</span> 이므로 <span class="math inline">\(B_\varepsilon\)</span> 은 measure zero 이다. <a href="01_functions_on_Euclidean_space.html#prp-CM_oscillation_and_closed_set" class="quarto-xref">명제&nbsp;<span>1.7</span></a> 에 의해 <span class="math inline">\(B_\varepsilon\)</span> 은 닫힌집합이며 <span class="math inline">\(B_\varepsilon \subset A\)</span> 이므로 유계이다. 따라서 <span class="math inline">\(B_\varepsilon\)</span> 은 옹골집합이므로 content zero 이다(<a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a>). 따라서 유한개의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_1,\ldots,\,U_n\)</span> 로 <span class="math inline">\(\sum_{i=1}^n \text{vol}(U_i)&lt;\varepsilon\)</span> 이며 <span class="math inline">\(B_\varepsilon\)</span> 을 덮을 수 있다. 이제 <span class="math inline">\(A\)</span> 에 대한 분할 <span class="math inline">\(P\)</span> 를 <span class="math inline">\(P\)</span> 에 따라 정해지는 subcell <span class="math inline">\(S\)</span> 가 아래의 <span class="math inline">\(\mathcal{S}_1\)</span> 이나 <span class="math inline">\(\mathcal{S}_2\)</span> 중의 하나에 속하도록 잡자.(<a href="#fig-CM_integrability_1" class="quarto-xref">그림&nbsp;<span>4.1</span></a>)</p>
+<p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(\mathcal{S}_1\)</span> : 어떤 <span class="math inline">\(U_i\)</span> 에 대해 <span class="math inline">\(S \subset U_i\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_1\)</span> 에 포힘된다.</p>
+<p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(\mathcal{S}_2\)</span> : <span class="math inline">\(S\cap B_\varepsilon = \varnothing\)</span> 이면 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(\mathcal{S}_2\)</span> 에 포함된다.</p>
 <div id="fig-CM_integrability_1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-CM_integrability_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -877,9 +881,9 @@ U(f,\,P)-L(f,\,P) = \sum_{S} \left[M_S(f)-m_S(f)\right] \cdot \text{vol}(S) &lt;
 <p><span class="math display">\[
 \sum_{S\in \mathcal{S}_1} \left[M_S(f) - m_S(f) \right]\cdot \text{vol}(S) &lt; 2M \sum_{i=1}^n \text{vol}(U_i) &lt; 2M\varepsilon
 \]</span></p>
-<p>이제 <span class="math inline">\(S\in \mathcal{S}_2\)</span> 이면 <span class="math inline">\(o(f,\boldsymbol{x})&lt;\varepsilon\)</span> 이므로 <a href="#lem-CM_integrability" class="quarto-xref">보조정리&nbsp;<span>4.1</span></a> 에 따라 <span class="math inline">\(P\)</span> 의 어떤 refinement <span class="math inline">\(P'\)</span> 이 존재하여 <span class="math inline">\(S\subset \mathcal{S}_2\)</span> 일 때</p>
+<p>이제 <span class="math inline">\(S\in \mathcal{S}_2\)</span> 이면 <span class="math inline">\(o(f,\boldsymbol{x})&lt;\varepsilon\)</span> 이므로 <a href="#lem-CM_integrability" class="quarto-xref">보조정리&nbsp;<span>4.1</span></a> 에 따라 <span class="math inline">\(P\)</span> 의 어떤 refinement <span class="math inline">\(P'\)</span> 이 존재하여 <span class="math inline">\(S\in \mathcal{S}_2\)</span> 일 때</p>
 <p><span class="math display">\[
-\sum_{S'}\subset S [M_{S'}(f) - m_{S'}(f)]\cdot \text{vol}(S') &lt; \varepsilon \cdot \text{vol}(S)
+\sum_{S'} S [M_{S'}(f) - m_{S'}(f)]\cdot \text{vol}(S') &lt; \varepsilon \cdot \text{vol}(S)
 \]</span></p>
 <p>이다. 그렇다면</p>
 <p><span class="math display">\[
@@ -900,6 +904,27 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 \end{aligned}
 \]</span></p>
 <p>이므로 결론적으로 <span class="math inline">\(\sum_{S\in \mathcal{S}} \text{vol}(S)&lt; \varepsilon\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+</div>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="cor-CM_integrability_and_measure_of_uncontinous_points" class="theorem corollary">
+<p><span class="theorem-title"><strong>따름정리 4.1</strong></span> <span class="math inline">\(n\)</span>-cell <span class="math inline">\(Q\)</span> 에서 정의된 리만적분 가능함수 <span class="math inline">\(f,\,g :Q \to \mathbb{R}\)</span> 에 대해 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(fg\in \mathcal{R}[Q]\)</span>,</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(|f|\in \mathcal{R}[Q]\)</span> 이며 아래 부등식이 성립한다.</p>
+<p><span class="math display">\[
+\left| \int_Q f\right| \le \int_Q |f|.
+\]</span></p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\max \{f,\,g\} \in \mathcal{R}[Q],\, \min \{f,\,g\}\in \mathcal{R}[Q]\)</span>.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(B_f,\, B_g\)</span> 를 각각 <span class="math inline">\(f,\,g\)</span> 가 불연속인 위치라고 하자. 연속함수 <span class="math inline">\(\phi : \mathbb{R}^2 \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(q : Q \to \mathbb{R}\)</span> 을 <span class="math inline">\(q(\boldsymbol{x}) := \phi (f(\boldsymbol{x}),\, g(\boldsymbol{x}))\)</span> 라고 하자. <span class="math inline">\(B_q\)</span> 역시 <span class="math inline">\(q\)</span> 가 불연속적인 위치라고 하자. 그렇다면 <span class="math inline">\(B_q \subset B_f \cup B_g\)</span> 이며 따라서 <span class="math inline">\(B_f,\,B_g\)</span> 가 measure zero 이면 <span class="math inline">\(B_q\)</span> 도 measure zero 이고 <span class="math inline">\(q \in \mathcal{R}[Q]\)</span> 이다.</p>
+<p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\phi (x,\,y) = xy\)</span> 는 연속함수이므로 <span class="math inline">\(fg\in \mathcal{R}[Q]\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\phi(x,\,y) = |x|\)</span> 는 연속함수이므로 <span class="math inline">\(|f|\in \mathcal{R}[Q]\)</span> 이다. <span class="math inline">\(\left| \int_Q f \right|= c\int_Q f\)</span> 을 만족하는 <span class="math inline">\(c=\pm 1\)</span> 이 존재한다. 이로부터</p>
+<p><span class="math display">\[
+\left| \int_Q f\right| = c \int_Q f = \int_Q cf \le \int_Q |f|
+\]</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\phi = \max\)</span> 혹은 <span class="math inline">\(\phi = \min\)</span> 은 연속함수 이므로 <span class="math inline">\(\max \{f,\,g\} \in \mathcal{R}[Q],\, \min \{f,\,g\}\in \mathcal{R}[Q]\)</span>. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 </section>
@@ -949,7 +974,7 @@ U(f,\,P') - L(f,\,P') &amp;= \sum_{S'\subset S \in \mathcal{S}_1} \left[M_{S'}(f
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_jordan_measureable_and_volume" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 4.9</strong></span> 집합 <span class="math inline">\(A\)</span> 가 유계이고 <span class="math inline">\(\partial A\)</span> 가 measure <span class="math inline">\(0\)</span> 일 때 <span class="math inline">\(A\)</span> 를 <strong>조르당 가측(Jordan-measureable)</strong> 이라고 한다. <span class="math inline">\(\int_A 1\)</span> 을 <span class="math inline">\(A\)</span> 의 <strong>content</strong> 혹은 <strong><span class="math inline">\(n\)</span>-차원 부피(volumn)</strong> 라고 한다. <span class="math inline">\(1\)</span> 차원일 경우는 <strong>길이(length)</strong>, 2차원일 경우는 <strong>넓이(area)</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 4.9</strong></span> 집합 <span class="math inline">\(A\)</span> 가 유계이고 <span class="math inline">\(\partial A\)</span> 가 measure <span class="math inline">\(0\)</span> 일 때 <span class="math inline">\(A\)</span> 를 <strong>조르당 가측(Jordan-measurable)</strong> 이라고 한다. <span class="math inline">\(\int_A 1\)</span> 을 <span class="math inline">\(A\)</span> 의 <strong>content</strong> 혹은 <strong><span class="math inline">\(n\)</span>-차원 부피(volumn)</strong> 라고 한다. <span class="math inline">\(1\)</span> 차원일 경우는 <strong>길이(length)</strong>, 2차원일 경우는 <strong>넓이(area)</strong> 라고 한다.</p>
 </div>
 </div>
 </div>
@@ -1137,7 +1162,7 @@ L(f,\,P) \le L(\mathcal{L},P_A) \le U(\mathcal{L}, P_A) \le U(\mathcal{U},P_A) \
 <p>아래 따름 정리는 푸비니 정리로부터 쉽게 보일 수 있다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="cor-CM_fubini_theorem" class="theorem corollary">
-<p><span class="theorem-title"><strong>따름정리 4.1</strong></span> 푸비니 정리에서 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(y\)</span> 변수 사이에 구별이 없다. 즉 <span class="math inline">\(h_\boldsymbol{y}(\boldsymbol{x}) := f(\boldsymbol{x},\boldsymbol{y})\)</span> 라고 할 때</p>
+<p><span class="theorem-title"><strong>따름정리 4.2</strong></span> 푸비니 정리에서 <span class="math inline">\(x\)</span> 와 <span class="math inline">\(y\)</span> 변수 사이에 구별이 없다. 즉 <span class="math inline">\(h_\boldsymbol{y}(\boldsymbol{x}) := f(\boldsymbol{x},\boldsymbol{y})\)</span> 라고 할 때</p>
 <p><span id="eq-CM_exchange_of_integral_order"><span class="math display">\[
 \begin{aligned}
 \int_{A\times B} f &amp;= \int_A L(g_\boldsymbol{x},\,B)\,d\boldsymbol{x} = \int_{A}U(g_\boldsymbol{x},\,B)\,\boldsymbol{x}\\[0.3em]
