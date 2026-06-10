@@ -1147,6 +1147,42 @@ $\partial U = [0,\,1]-U$ 가 meausre $0$ 이 아니므로 적분가능하지 않
 
 :::
 
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CM_kkk_3_2_7}
+
+### KKK 3.2.7
+
+$A,\,B \subset \R^n$ 가 조르당 가측 이면
+
+$$
+A \cup B,\quad A \cap B,\quad A\backslash B,\quad \overline{A},\quad \text{int}(A)
+$$
+
+이 모두 조르당 가측임을 보여라.
+:::
+</div>
+
+::: {.solution}
+
+$A,\,B$ 가 유계이므로 제시한 모든 집합은 유계이다. 따라서 제시한 집합의 경계가 measure 0 임을 보이면 된다. 
+
+($1$) $\partial (A \cup B)\subset (\partial A \cup \partial B)$ 임을 보이이기 위해 $(\partial A \cup \partial B)^C \subset (\partial (A \cup B))^C$ 임을 보이자.
+
+$x\not\in (\partial A \cup \partial B)$ 이면  $x$ 는 $A$ 의 내부 혹은 외부 그리고 $B$ 의 내부 혹은 외부 인 4가지 경우만 가능하며 모두 $x\notin (\partial (A \cup B))$ 이다. 따라서 $\partial (A \cup B)\subset (\partial A \cup \partial B)$ 이며 $\partial A \cup \partial B$ 가 measure 0 이므로 $\partial (A \cup B)$ 도 measure 0 이다.
+
+($2$) $x\in \partial (A\cap B)$ 이면 
+
+($3$) $A\backslash B = A \cap (B^C)$ 이며 $\partial (B^C)=\partial B$ 이므로 $B^C$ 역시 measure 0 이다. ($2$) 에 의해 $A\backslash B$ 는 measure 0 이다.
+
+($4$) $\partial (\overline{A}) = \partial A$.
+
+($5$) $\partial (\text{int}(A)) = \partial A$.
+
+
+:::
+
 </br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-CM_jordan_measureable_set_and_boundary}
