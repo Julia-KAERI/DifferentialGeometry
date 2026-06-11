@@ -28,7 +28,7 @@ $$
 
 ::: {.proof}
 
-볼록집합에서의 중간값 정리(@cor-CM_mean_value_theorem_for_convex) 에 의해
+볼록집합에서의 평균값 정리(@cor-CM_mean_value_theorem_for_convex) 에 의해
 
 $$
 f^i(\bf{y})-f^i(\bf{x}) = \nabla f^i(\bf{c}_i) (\bf{y}-\bf{x})
@@ -133,7 +133,7 @@ $$
 \bf{x}\in U \implies \|H'(\bf{x})\|\le \dfrac{1}{2nM_2}
 $$ 
 
-이다. $H(\bf{x}) = \begin{bmatrix} h^1(\bf{x})  & \cdots & h^n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 중간값 정리(@thm-CM_mean_value_theorem_for_vector_function) 를 이용하면 $\bf{x}_1,\, \bf{x}_2\in U$ 일 때 어떤 $\bf{c}_i\in U$ 에 대해 
+이다. $H(\bf{x}) = \begin{bmatrix} h^1(\bf{x})  & \cdots & h^n(\bf{x}) \end{bmatrix}^T$ 라고 할 때 평균값 정리(@thm-CM_mean_value_theorem_for_vector_function) 를 이용하면 $\bf{x}_1,\, \bf{x}_2\in U$ 일 때 어떤 $\bf{c}_i\in U$ 에 대해 
 
 $$
 |h^i(\bf{y})-h^i(\bf{x})| = |Dh^i(\bf{c}_i)\cdot (\bf{y}-\bf{x})|  \le \dfrac{1}{2nM_2}\|\bf{y}-\bf{x}\|
@@ -767,7 +767,7 @@ $$
 
 ::: {.solution}
 
-어떤 $\bf{x},\,\bf{y}\in U$ 에 대해 $f^i(\bf{x}) \ne f^i(\bf{y})$ 이면 중간값 정리에 의해
+어떤 $\bf{x},\,\bf{y}\in U$ 에 대해 $f^i(\bf{x}) \ne f^i(\bf{y})$ 이면 평균값 정리에 의해
 
 $$
 0 \ne f^i (\bf{x})- f^i(\bf{y}) = f'(\bf{c})(\bf{x}-\bf{y}) 

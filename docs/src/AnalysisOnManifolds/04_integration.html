@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>4&nbsp; 다변수 함수의 적분 – Differential Geometry</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,14 +54,15 @@ div.csl-indent {
 <link href="../../src/AnalysisOnManifolds/03_inverse_function_theorem.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,7 +92,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -297,7 +296,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-<p>%</p>
+%
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -1076,7 +1075,7 @@ A \cup B,\quad A \cap B,\quad A\backslash B,\quad \overline{A},\quad \text{int}(
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>조르당 가측의 정의에 의해 <span class="math inline">\(A\)</span> 는 유계이며, <span class="math inline">\(\partial A\)</span> 역시 유계이다. <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기 et al. (<span>2011</span>)</span> 연습문제 2.7.6</a> 에 의해 <span class="math inline">\(\partial A\)</span> 는 닫힌 집합며 따라서 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel">하이네 보렐 정리</a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 옹골집합이다. <a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 content <span class="math inline">\(0\)</span> 이다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>조르당 가측의 정의에 의해 <span class="math inline">\(A\)</span> 는 유계이며, <span class="math inline">\(\partial A\)</span> 역시 유계이다. <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_6"><span class="citation" data-cites="KKK2011">김성기, 김도한, and 계승혁 (<span>2011</span>)</span> 연습문제 2.7.6</a> 에 의해 <span class="math inline">\(\partial A\)</span> 는 닫힌 집합며 따라서 <a href="https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#thm-MA_heine_borrel">하이네 보렐 정리</a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 옹골집합이다. <a href="#prp-CM_content_zero_and_compact" class="quarto-xref">명제&nbsp;<span>4.4</span></a> 에 따라 <span class="math inline">\(\partial A\)</span> 는 content <span class="math inline">\(0\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1132,7 +1131,6 @@ A \cup B,\quad A \cap B,\quad A\backslash B,\quad \overline{A},\quad \text{int}(
 \int_{[a,b]\times [c,d]} f= \int_a^b h = \int_a^b \left(\int_c^d f(x,\,y)\, dy\right)\,dx
 \]</span></p>
 <p>임을 기대할 수 있다. 우리가 앞으로 할 일은 <span class="math inline">\(f\)</span> 가 연속일 경우 이것이 사실임을 보이는 것인데, 일반적인 경우에서는 그렇지 않을 수 있다. <span class="math inline">\(f:[a,\,b] \times [c,\,d] \to \mathbb{R}\)</span> 이 불연속인 점이 <span class="math inline">\([x]\times [c,\,d]\)</span> 라고 하자. 그랗다면 <span class="math inline">\(f\)</span> 는 <span class="math inline">\([a,\,b]\times [c,\,d]\)</span> 에서는 적분 가능하지만 <span class="math inline">\(h(x_0) = \int_c^d f(x_0,\,y)\,dy\)</span> 는 정의 자체가 안될 수도 있다. 앞으로 보겠지만 푸비니의 정리 자체는 이것을 생각하면 약간 의아할 수 있고, 여러 특별한 경우에 대한 주의사항이 붙게 된다.</p>
-<p>푸비니의 정리를 진행하기에 앞서 리만 상합과 리만 하합(<a href="#def-CM_riemann_upper_sum_and_lower_sum" class="quarto-xref">정의&nbsp;<span>4.4</span></a>) 을 다시 한번</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_fubini_theorem" class="theorem">
@@ -1319,7 +1317,7 @@ A=B=[0,\,1],\qquad C=\{(x,\,y)\in A\times B : \|(x,\,y)\|&lt;1\}
 &amp;\qquad \qquad  - f(a_2,b_2,\boldsymbol{r}) + f(a_2,b_1,\boldsymbol{r}) + f(a_2,b_1,\boldsymbol{r})-f(a_1,b_1,\boldsymbol{r}) =0
 \end{aligned}
 \]</span></p>
-<p>이므로 모순이다. 즉 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) \le 0\)</span> 이다. 같은 방법으로 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) ge 0\)</span> 임을 보일 수 있다. 즉 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) = 0\)</span> 이다.</p>
+<p>이므로 모순이다. 즉 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) \le 0\)</span> 이다. 같은 방법으로 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) \ge 0\)</span> 임을 보일 수 있다. 즉 <span class="math inline">\(D_{1,\,2}f(\boldsymbol{a})- D_{2,\,1}f(\boldsymbol{a}) = 0\)</span> 이다.</p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
@@ -1475,7 +1473,7 @@ D_1 f(x,\,y) &amp;= g_1(t,0) + \int_0^y D_1 g_2(x,\,t)\,dt = g_1(t,\,0) + \int_0
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-KKK2011" class="csl-entry" role="listitem">
 김성기, 김도한, and 계승혁. 2011. <em>해석개론</em>. 2nd ed. 서울대학교 출판문화원.
 </div>

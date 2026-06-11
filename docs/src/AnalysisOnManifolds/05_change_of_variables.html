@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>5&nbsp; 미분동형사상과 변수 변경 – Differential Geometry</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -56,14 +54,15 @@ div.csl-indent {
 <link href="../../src/AnalysisOnManifolds/04_integration.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b17db7588fdc07b21209b97146c65979.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -93,7 +92,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -290,7 +289,7 @@ window.Quarto = {
 
 <div class="hidden">
 <p>% %</p>
-<p>%</p>
+%
 <p><span class="math display">\[
 \DeclarePairedDelimiters{\set}{\{}{\}}
 \DeclareMathOperator*{\argmax}{argmax}
@@ -319,7 +318,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \int_G(U) g = \int_U (f \circ g) \cdot |\det (G')|
 \]</span></p>
-<p>이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는 <a href="#thm-CM_change_of_variable" class="quarto-xref">정리&nbsp;<span>5.6</span></a> 을 보이는 것이다.</p>
+<p>이다. 결과는 1변수 함수의 경우와 유사하지만 이것을 보이는 과정은 훨씬 더 복잡하며, 가장 간결한 증명법에 단위분할 등의 새로운 개념이 필요하며, 앞으로 미분기하 등을 다루는 데 필요한 미분동형사상도 다루게 된다. 결국 이 장의 목표는 <a href="#thm-CM_change_of_variable" class="quarto-xref">정리&nbsp;<span>5.5</span></a> 을 보이는 것이다.</p>
 <p><br></p>
 </section>
 <section id="sec-CM_diffeomorphism" class="level2" data-number="5.2">
@@ -349,29 +348,55 @@ window.Quarto = {
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\((G^{-1}\circ G)(\boldsymbol{x})=\boldsymbol{x}\)</span> 이며 연쇄 규칙에 의해 <span class="math inline">\((G^{-1})'(G(\boldsymbol{x}))G'(\boldsymbol{x})= I_n\)</span> 이다. 따라서 <span class="math inline">\(\det (G'(\boldsymbol{x})) \ne 0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
 </div>
+<!-- Munkres Lemma 18.1 앞부분 및 KKK 도움정리 3.2.5-->
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="thm-CM_diffeomorphism_on_measure_zero_set" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.1</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 <span class="math inline">\(C^1\)</span> 함수 <span class="math inline">\(G:A \to \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(E\subset A\)</span> 가 measure <span class="math inline">\(0\)</span> 이면 <span class="math inline">\(G(E)\)</span> 역시 meausre <span class="math inline">\(0\)</span> 이다.</p>
+<div id="lem-CM_measure_zero_with_countably_many_cell" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 5.1</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 Measure 0 집합 <span class="math inline">\(A\)</span> 와 임의의 양수 <span class="math inline">\(\varepsilon,\,\delta &gt; 0\)</span> 에 대해 어떤 <span class="math inline">\(n\)</span>-cell 의 유한 혹은 가산무한 집합 <span class="math inline">\(\mathcal{U}=\{U_1,\,U_2,\ldots\}\)</span> 가 존재하여 다음 두 조건을 만족한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <a href="04_integration.html#def-CM_measure_zero" class="quarto-xref">정의&nbsp;<span>4.6</span></a> 의 (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 를 만족하며,</p>
+<p> (<span class="math inline">\(2\)</span>) 각각의 <span class="math inline">\(n\)</span>-cell 의 최대 폭이 <span class="math inline">\(\delta\)</span> 보다 작다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(G(\boldsymbol{x}) = (g_1(\boldsymbol{x}),\ldots,\,g_n(\boldsymbol{x}))\)</span> 라고 하자. 임의의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U_i\subset A\)</span> 를 생각하자. <span class="math inline">\(U_i=[a_1,b_1]\times \cdots \times [a_n,b_n]\)</span> 일 때 <span class="math inline">\(w_i=\max \{b_i-a_i:i=1,\ldots,\,n\}\)</span> 라고 하자. <span class="math inline">\(M_i = \max \{\|G'(\boldsymbol{x})\|: \boldsymbol{x}\in U_i\}\)</span> 라고 할 때 <span class="math inline">\(G(U_i)\)</span> 는 각 방면으로의 폭이 <span class="math inline">\(nM_iw_i\)</span> 인 <span class="math inline">\(n\)</span>-입방체 안에 포함된다는 것을 보이자.</p>
-<p><span class="math inline">\(U_i\)</span> 의 중심점을 <span class="math inline">\(\boldsymbol{a}\)</span> 라고 하자. <span class="math inline">\(U_i\)</span> 에서의 평균값 정리에 의해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(n\)</span>-cell <span class="math inline">\(U=[a_1,\,b_1]\times \cdots \times [a_n,\,b_n]\)</span> 에 대해 <span class="math inline">\(U'=\prod_{j=1}^n [a_j-c,\,b_j+c]\)</span> 을 <span class="math inline">\(\text{vol}(U')&lt; 2\text{vol}(U)\)</span> 이 되도록 <span class="math inline">\(c&gt;0\)</span> 를 선택한다. 그리고 <span class="math inline">\(1/N &lt; \min \{\delta,\,c\}\)</span> 가 되도록 <span class="math inline">\(N\)</span> 을 선택한다. 이제</p>
 <p><span class="math display">\[
-g_j(\boldsymbol{x})- g_j (\boldsymbol{a}) = g_j'(\boldsymbol{c}^{(i)}_j) \boldsymbol{\cdot} (\boldsymbol{x}-\boldsymbol{a})
+[a_i,\,b_i] \subset [c_i,\,d_i] \subset [a_i-c,\,b_i+c]
 \]</span></p>
-<p>를 만족하는 <span class="math inline">\(\boldsymbol{c}^{(i)}_j \in K\)</span> 가 존재한다. 따라서 <span class="math inline">\(\left|g_j'(\boldsymbol{c}^{(i)}_j)\right| \le M_i\)</span> 임을 이용하면</p>
+<p>가 되도록 <span class="math inline">\(c_i,\,d_i\)</span> 를 <span class="math inline">\(m/N\)</span> 꼴의 유리수로 선택한다. 그리고 그리고 이렇게 선택된 <span class="math inline">\(\prod_{j=1}^n [c_j,\,d_j]\)</span> <span class="math inline">\(n\)</span>-cell 은 유한개의 폭이 <span class="math inline">\(1/N\)</span> 인 <span class="math inline">\(n\)</span>-cell 로 분할된다. <a href="04_integration.html#def-CM_measure_zero" class="quarto-xref">정의&nbsp;<span>4.6</span></a> 을 만족하는 각각의 <span class="math inline">\(R_i \in \mathcal{U}\)</span> 에 대해 이 과정을 수행한 <span class="math inline">\(n\)</span>-cell 들을 모으면 증명 끝. <span class="math inline">\(\square\)</span></p>
+</div>
+<!-- Munkres Lemma 18.1 -->
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="lem-CM_diffeomorphism_on_measure_zero_set" class="theorem lemma">
+<p><span class="theorem-title"><strong>보조정리 5.2</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에서 <span class="math inline">\(C^1\)</span> 급 함수 <span class="math inline">\(G:A \to \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(E\subset A\)</span> 가 measure <span class="math inline">\(0\)</span> 이면 <span class="math inline">\(G(E)\)</span> 역시 meausre <span class="math inline">\(0\)</span> 이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span>우선 <span class="math inline">\(G'(\boldsymbol{x})\)</span> 가 유계인 경우에 대해 증명하자. <span class="math inline">\(\|G'(\boldsymbol{x})\|\le M\)</span> 라고 하자.</p>
+<p><span class="math inline">\(G(\boldsymbol{x}) = (g^1(\boldsymbol{x}),\ldots,\,g^n(\boldsymbol{x}))\)</span> 라고 하자. 임의의 닫힌 <span class="math inline">\(n\)</span>-cell <span class="math inline">\(U\subset A\)</span> 를 생각하자. <span class="math inline">\(U=[a_1,b_1]\times \cdots \times [a_n,b_n]\)</span> 일 때 <span class="math inline">\(w=\max \{b_i-a_i:i=1,\ldots,\,n\}\)</span> 라고 하자. <span class="math inline">\(U\)</span> 의 중심점을 <span class="math inline">\(\boldsymbol{a}\)</span> 라고 하자. 평균값 정리(<a href="02_differentiation_of_manifolds.html#thm-CM_mean_value_theorem_for_vector_function" class="quarto-xref">정리&nbsp;<span>2.8</span></a>)에 의해</p>
 <p><span class="math display">\[
-|g_j(\boldsymbol{x})-g_j(\boldsymbol{a})| \le \left|g'_j(\boldsymbol{c}^{(i)}_j)\right|\dfrac{w_i}{2} \le\dfrac{ nM_iw_i}{2}
+g^j(\boldsymbol{x})- g^j (\boldsymbol{a}) = \nabla g^j(\boldsymbol{c}_j) \boldsymbol{\cdot} (\boldsymbol{x}-\boldsymbol{a})
 \]</span></p>
-<p>이다. 즉 <span class="math inline">\(G(U_i)\)</span> 는 <span class="math inline">\(G(\boldsymbol{a})\)</span> 를 중심으로 각 차원에 대한 폭이 <span class="math inline">\(nM_iw_i\)</span> 인 <span class="math inline">\(n\)</span>-cube 안에 포함된다.</p>
-<p>이제 <span class="math inline">\(E\)</span> 를 덮는, 총 부피가 <span class="math inline">\(\varepsilon\)</span> 보다 작은 닫힌 <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 를 생각하자. 그렇다면 <span class="math inline">\(G(U_1),\ldots\)</span> 는 <span class="math inline">\(G(E)\)</span> 를 덮는다. <span class="math inline">\(w=\max \{w_1,\ldots,\}\)</span>, <span class="math inline">\(M=\max \{M_1,\ldots\}\)</span> 라고 하면 전체 <span class="math inline">\(\{G(U_i)\}\)</span> 의 부피의 합은 <span class="math inline">\(n^2Mw\varepsilon\)</span> 보다 작으므로 <span class="math inline">\(G(E)\)</span> 역시 measure <span class="math inline">\(0\)</span> 이다. <span class="math inline">\(\square\)</span></p>
+<p>를 만족하는 <span class="math inline">\(\boldsymbol{c}_j \in U\)</span> 가 존재한다. 따라서 <span class="math inline">\(\left|\nabla g^j(\boldsymbol{c}_j)\right| \le M\)</span> 임을 이용하면</p>
+<p><span class="math display">\[
+|g^j(\boldsymbol{x})-g^j(\boldsymbol{a})|  \le\dfrac{ nMw}{2}
+\]</span></p>
+<p>이다. 즉 <span class="math inline">\(G(U)\)</span> 는 <span class="math inline">\(G(\boldsymbol{a})\)</span> 를 중심으로 각 차원에 대한 폭이 <span class="math inline">\(nMw\)</span> 인 <span class="math inline">\(n\)</span>-cube 안에 포함된다.</p>
+<p>이제 <span class="math inline">\(E\)</span> 를 덮는, 총 부피가 <span class="math inline">\(\varepsilon\)</span> 보다 작은 닫힌 <span class="math inline">\(n\)</span>-cell 의 집합 <span class="math inline">\(U_1,\,U_2,\ldots\)</span> 를 생각하자. 그렇다면 <span class="math inline">\(V_1,\ldots\)</span> 는 <span class="math inline">\(G(E)\)</span> 를 덮는다. <span class="math inline">\(w=\max \{w_1,\ldots,\}\)</span>, <span class="math inline">\(M=\max \{M_1,\ldots\}\)</span> 라고 하면 전체 <span class="math inline">\(\{V_i\}\)</span> 의 부피의 합은 <span class="math inline">\((nM)^n\varepsilon\)</span> 보다 작으므로 <span class="math inline">\(G(E)\)</span> 역시 measure <span class="math inline">\(0\)</span> 이다.</p>
+<p>이제 일반적인 경우, 즉 <span class="math inline">\(G'(\boldsymbol{x})\)</span> 의 유계 여부와 상관 없이 증명하기 위해</p>
+<p><span class="math display">\[
+A=\bigcup_{i=1}^\infty K_i,\qquad K_i \subset \text{int}(K_{i+1}),\quad i=1,\,2,\ldots
+\]</span></p>
+<p>를 만족하는 옹골집합열 <span class="math inline">\(\langle K_i\rangle\)</span> 을 생각하자. <span class="math inline">\(G'\)</span> 이 연속이므로 각 <span class="math inline">\(\text{int}(K_i)\)</span> 위에서 유계이므로 <span class="math inline">\(G(K_i \cap E)\)</span> 는 measure <span class="math inline">\(0\)</span> 이다. 그런데</p>
+<p><span class="math display">\[
+G(E) = G\left(\bigcup_{i=1}^\infty (K_i \cap E)\right) = \bigcup_{i=1}^\infty G(K_i \cap A)
+\]</span></p>
+<p>이므로 <span class="math inline">\(G(E)\)</span> 역시 영측도 집합이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_diffeomorphism_and_integrability" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.2</strong></span> 열린 <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(G:A\to B\)</span> 가 <span class="math inline">\(C^r\)</span> 급 미분동형사상이라고 하자. <span class="math inline">\(K\subset A\)</span> 가 옹골집합이고 <span class="math inline">\(E=G(K)\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>정리 5.1</strong></span> 열린 <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(G:A\to B\)</span> 가 <span class="math inline">\(C^r\)</span> 급 미분동형사상이라고 하자. <span class="math inline">\(K\subset A\)</span> 가 옹골집합이고 <span class="math inline">\(E=G(K)\)</span> 일 때 다음이 성립한다.</p>
 <p> (<span class="math inline">\(a\)</span>) <span class="math inline">\(G(\text{int}(K)) = \text{int}(E)\)</span> 이고 <span class="math inline">\(G(\partial K)= \partial E\)</span> 이다.</p>
 <p> (<span class="math inline">\(b\)</span>) <span class="math inline">\(\int_K 1\)</span> 이 존재하면 <span class="math inline">\(\int_E 1\)</span> 도 존재한다.</p>
 </div>
@@ -405,7 +430,7 @@ G^{-1}(\text{int}(E)) \subset \text{int}(K). \tag{4}
 \partial E = (G\circ G^{-1})(\partial E) \supset G(\partial K) \supset \partial E
 \]</span></p>
 <p>이며, 따라서 <span class="math inline">\(\partial E = G(\partial K)\)</span> 이다.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\int_K 1\)</span> 이 존재하면 <span class="math inline">\(\partial K\)</span> 는 measure <span class="math inline">\(0\)</span> 이며, <span class="math inline">\(G(\partial K)= \partial E\)</span> 이고 <a href="#thm-CM_diffeomorphism_on_measure_zero_set" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에 따라 <span class="math inline">\(\partial E\)</span> 도 measure <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_E 1\)</span> 도 존재한다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(\int_K 1\)</span> 이 존재하면 <span class="math inline">\(\partial K\)</span> 는 measure <span class="math inline">\(0\)</span> 이며, <span class="math inline">\(G(\partial K)= \partial E\)</span> 이고 <a href="#lem-CM_diffeomorphism_on_measure_zero_set" class="quarto-xref">보조정리&nbsp;<span>5.2</span></a> 에 따라 <span class="math inline">\(\partial E\)</span> 도 measure <span class="math inline">\(0\)</span> 이므로 <span class="math inline">\(\int_E 1\)</span> 도 존재한다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -421,23 +446,23 @@ G^{-1}(\text{int}(E)) \subset \text{int}(K). \tag{4}
 <div id="def-CM_primitive_diffeomorphism" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 5.2</strong></span> 2 차원 이상의 <span class="math inline">\(\mathbb{R}^n\)</span> 의 열린 부분집합에서 정의된 미분동형사상 <span class="math inline">\(H:A\subset\mathbb{R}^n \to B\)</span> 가</p>
 <p><span class="math display">\[
-H(\boldsymbol{x}) = (h_1(\boldsymbol{x}),\ldots,\,h_n(\boldsymbol{x}))
+H(\boldsymbol{x}) = (h^1(\boldsymbol{x}),\ldots,\,h^n(\boldsymbol{x}))
 \]</span></p>
-<p>라고 하자. 이 가운데 하나 이상의 <span class="math inline">\(i\)</span> 에 대해 <span class="math inline">\(h_i(\boldsymbol{x})= x_i\)</span> 일 때 이 미분동형사상을 <strong>원시 미분동형사상(primitive diffeomorphism)</strong> 이라고 한다.</p>
+<p>라고 하자. 이 가운데 하나 이상의 <span class="math inline">\(i\)</span> 에 대해 <span class="math inline">\(h_i(\boldsymbol{x})= x_i\)</span> 일 때 <span class="math inline">\(H\)</span> 를 <strong>원시 미분동형사상(primitive diffeomorphism)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_primitive_diffeomorphism" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.3</strong></span> <span class="math inline">\(\mathbb{R}^n,\, (n \ge 2)\)</span> 에서의 열린집합 <span class="math inline">\(A,\,B\)</span> 에서 정의된 미분동형사상 <span class="math inline">\(G:A\to B\)</span> 을 생각하자. <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}_0 \in U_0 \subset A\)</span> 인 열린 집합 <span class="math inline">\(U_0\)</span> 와 원시 미분동형사상의 수열 <span class="math inline">\(H_1,\ldots,\,H_k\)</span> 가 존재하여 아래를 만족한다.</p>
+<p><span class="theorem-title"><strong>정리 5.2</strong></span> <span class="math inline">\(n\ge 2\)</span> 인 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 열린집합 <span class="math inline">\(A,\,B\)</span> 에서 정의된 미분동형사상 <span class="math inline">\(G:A\to B\)</span> 을 생각하자. <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{a}_0 \in U_0 \subset A\)</span> 인 열린 집합 <span class="math inline">\(U_0\)</span> 와 원시 미분동형사상의 수열 <span class="math inline">\(H_1,\ldots,\,H_k\)</span> 가 존재하여 아래를 만족한다.</p>
 <p><span class="math display">\[
 H_k \circ \cdots \circ H_1 = G|_{U_0}.
 \]</span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(G(\boldsymbol{x}) = (g_1(\boldsymbol{x}),\ldots,\,g_n(\boldsymbol{x}))\)</span> 라고 하자.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(G(\boldsymbol{x}) = (g^1(\boldsymbol{x}),\ldots,\,g^n(\boldsymbol{x}))\)</span> 라고 하자.</p>
 <p><u><i>Case-1</i></u> : <span class="math inline">\(G\)</span> 가 가역 선형사상일 경우 위의 정리가 성립한다.</p>
 <p>(<em>Case-1 의 증명</em>) <span class="math inline">\(G\)</span> 가 가역인 선형사상이면 세가지 기본 행 연산((<span class="math inline">\(1\)</span>) <span class="math inline">\(i\)</span> 번째 열에 상수 곱하기, (<span class="math inline">\(2\)</span>) <span class="math inline">\(i\)</span> 행과 <span class="math inline">\(j\)</span> 행을 바꾸기, (<span class="math inline">\(3\)</span>) <span class="math inline">\(i\)</span> 행 을 <span class="math inline">\(i\)</span> 행과 <span class="math inline">\(j\)</span> 행의 합으로 바꾸기) 행렬의 곱으로 표현 할 수 있다. <span class="math inline">\(n&gt;2\)</span> 일 때는 세가지 모두 원시 미분동형사상이며 <span class="math inline">\(n=2\)</span> 일 때는 (<span class="math inline">\(2\)</span>) 를 제외하면 원시 미분동형사상임은 자명하다. 그런데 (<span class="math inline">\(2\)</span>) 은 (<span class="math inline">\(1\)</span>) 와 (<span class="math inline">\(3\)</span>) 의 곱으로 표현 할 수 있다는 것을 보일 수 있다. 따라서 <span class="math inline">\(G\)</span> 가 선형사상일 경우는 주어진 정리가 성립한다.</p>
 <p><u><i>Case-2</i></u> : <span class="math inline">\(G\)</span> 가 어떤 <span class="math inline">\(\boldsymbol{c}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(G(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{c}\)</span> 일 때 위의 정리가 성립한다.</p>
@@ -445,17 +470,19 @@ H_k \circ \cdots \circ H_1 = G|_{U_0}.
 H_i(\boldsymbol{x}) = \boldsymbol{x} + c_i \boldsymbol{e}_i.
 \]</span></p>
 <p><u><i>Case-3</i></u> : <span class="math inline">\(\boldsymbol{a}=\boldsymbol{0}\)</span> 이고 <span class="math inline">\(G(\boldsymbol{0})=\boldsymbol{0}\)</span> 이며 <span class="math inline">\(G'(\boldsymbol{0})=I_n\)</span> 일 때 위의 정리가 성립한다.</p>
-<p>(<em>Case-3 의 증명</em>) <span class="math inline">\(H:A\to \mathbb{R}^n\)</span> 을 <span class="math inline">\(H(\boldsymbol{x}):= (g_1(\boldsymbol{x}),\ldots,\,g_{n-1}(\boldsymbol{x}),\,x_n)\)</span> 으로 정의하자.</p>
+<p>(<em>Case-3 의 증명</em>) <span class="math inline">\(H:A\to \mathbb{R}^n\)</span> 을 <span class="math inline">\(H(\boldsymbol{x}):= (g^1(\boldsymbol{x}),\ldots,\,g^{n-1}(\boldsymbol{x}),\,x^n)\)</span> 으로 정의하자.</p>
 <p><span class="math display">\[
-H'(\boldsymbol{x})= \begin{bmatrix} \dfrac{\partial g_1}{\partial x_1} &amp; \cdots &amp;\dfrac{\partial g_1}{\partial x_{n-1}} &amp; \dfrac{\partial g_1}{\partial x_n} \\ \vdots &amp; \ddots &amp; \vdots &amp;\vdots \\ 0 &amp; \cdots &amp; 0 &amp; 1\end{bmatrix}
+H'(\boldsymbol{x})= \begin{bmatrix} \dfrac{\partial g^1}{\partial x^1} &amp; \cdots &amp;\dfrac{\partial g^1}{\partial x^{n-1}} &amp; \dfrac{\partial g^1}{\partial x^n} \\ \vdots &amp; \ddots &amp; \vdots &amp;\vdots \\
+\dfrac{\partial g^{n-1}}{\partial x^1} &amp; \cdots &amp;\dfrac{\partial g^{n-1}}{\partial x^{n-1}} &amp; \dfrac{\partial g^{n-1}}{\partial x^n} \\
+0 &amp; \cdots &amp; 0 &amp; 1\end{bmatrix}
 \]</span></p>
 <p>이며 <span class="math inline">\(H(\boldsymbol{0})=\boldsymbol{0},\, H'(\boldsymbol{0})=I_n\)</span> 이다. 역함수 정리에 의해 <span class="math inline">\(\boldsymbol{a}=\boldsymbol{0}\)</span> 을 포함하는 어떤 열린 집합 <span class="math inline">\(U_0\)</span> 와 <span class="math inline">\(G(\boldsymbol{0})\)</span> 을 포함하는 어떤 열린 집합 <span class="math inline">\(V_0\)</span> 에 대해 <span class="math inline">\(H:U_0 \to V_0\)</span> 는 미분동형사상이다. 이제 <span class="math inline">\(K:V_0 \to \mathbb{R}^n\)</span> 을</p>
 <p><span class="math display">\[
-K(\boldsymbol{y}) = (y_1,\ldots,\,y_{n-1},\, g_n(H^{-1}(\boldsymbol{y})))
+K(\boldsymbol{y}) = (y^1,\ldots,\,y^{n-1},\, g^n(H^{-1}(\boldsymbol{y})))
 \]</span></p>
 <p>라고 하자. <span class="math inline">\(K(\boldsymbol{0})= \boldsymbol{0}\)</span> 이며</p>
 <p><span class="math display">\[
-K'(\boldsymbol{y}) = \begin{bmatrix} \begin{array}{cc} I_{n-1} &amp;\boldsymbol{0}\end{array} \\ (g_n \circ H^{-1})'(\boldsymbol{y}) \end{bmatrix}
+K'(\boldsymbol{y}) = \begin{bmatrix} \begin{array}{cc} I_{n-1} &amp;\boldsymbol{0}\end{array} \\ (g^n \circ H^{-1})'(\boldsymbol{y}) \end{bmatrix}
 \]</span></p>
 <p>이다. 여기서 <span class="math inline">\(G'(\boldsymbol{0})=I_n\)</span> 이므로 <span class="math inline">\(g'_n(\boldsymbol{0})= \boldsymbol{e}_n^T = \begin{bmatrix} 0 &amp; \cdots &amp; 0 &amp; 1\end{bmatrix}\)</span> 임을 이용하면</p>
 <p><span class="math display">\[
@@ -472,13 +499,13 @@ W_0 \xrightarrow[]{\quad H|_{W_0}\quad } W_1 \xrightarrow[]{\quad K|_{W_1} \quad
 <p>이고 <span class="math inline">\(\boldsymbol{x}\in W_0\)</span> 에 대해</p>
 <p><span class="math display">\[
 \begin{aligned}
-(K|_{W_1}\circ H|_{W_0})(\boldsymbol{x}) &amp;= K(g_1(\boldsymbol{x}),\ldots,\, g_{n-1}(\boldsymbol{x}),\,x_n) \\[0.3em]
-&amp;= (g_1(\boldsymbol{x}),\ldots,\,g_{n-1}(\boldsymbol{x}),\,g_n(\boldsymbol{x})) = G(\boldsymbol{x})
+(K|_{W_1}\circ H|_{W_0})(\boldsymbol{x}) &amp;= K(g^1(\boldsymbol{x}),\ldots,\, g^{n-1}(\boldsymbol{x}),\,x^n) \\[0.3em]
+&amp;= (g^1(\boldsymbol{x}),\ldots,\,g^{n-1}(\boldsymbol{x}),\,g^n(\boldsymbol{x})) = G(\boldsymbol{x})
 \end{aligned}
 \]</span></p>
 <p>이므로 <span class="math inline">\((K|_{W_1}\circ H|_{W_0})=G|_{W_0}\)</span> 이다.</p>
 <p><u><i>Case-4</i></u> 일반적인 미분동형사상 <span class="math inline">\(G:A\to B\)</span> 에 대해 위의 정리가 성립한다.</p>
-<p>(<em>Case-3 의 증명</em>) <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에 대해 <span class="math inline">\(L=G'(\boldsymbol{a})\)</span> 라고 하고 미분동형사상 <span class="math inline">\(T_1,\,T_2,\,T :\mathbb{R}^n \to \mathbb{R}^n\)</span> 를 아래와 같이 정의한다.</p>
+<p>(<em>Case-4 의 증명</em>) <span class="math inline">\(\boldsymbol{a}\in A\)</span> 에 대해 <span class="math inline">\(L=G'(\boldsymbol{a})\)</span> 라고 하고 미분동형사상 <span class="math inline">\(T_1,\,T_2,\,T :\mathbb{R}^n \to \mathbb{R}^n\)</span> 를 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
 T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \boldsymbol{x}-G(\boldsymbol{a}),\qquad T(\boldsymbol{x})=L^{-1}\boldsymbol{\cdot x}.
 \]</span></p>
@@ -531,18 +558,18 @@ T_1(\boldsymbol{x})=\boldsymbol{x}+\boldsymbol{a},\qquad T_2(\boldsymbol{x})= \b
 <p><span class="math display">\[
 |g_j(\boldsymbol{x})-g_j(\boldsymbol{a})| \le \|G(\boldsymbol{x}) - G(\boldsymbol{a})\| \le M \|\boldsymbol{x}-\boldsymbol{a}\|
 \]</span></p>
-<p>이다. <a href="#thm-CM_diffeomorphism_on_measure_zero_set" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 에서와 같은 방법으로 <span class="math inline">\(G(E)\)</span> 역시 measure <span class="math inline">\(0\)</span> 임을 보일 수 있다. <span class="math inline">\(\square\)</span></p>
+<p>이다. <a href="#lem-CM_diffeomorphism_on_measure_zero_set" class="quarto-xref">보조정리&nbsp;<span>5.2</span></a> 에서와 같은 방법으로 <span class="math inline">\(G(E)\)</span> 역시 measure <span class="math inline">\(0\)</span> 임을 보일 수 있다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-thm-CM_munkres_18_5" class="theorem exercise">
 <p><span class="theorem-title"><strong>연습문제 5.3 (Munkres 18.5)</strong></span> <span class="math inline">\(A,\,B \subset \mathbb{R}^n\)</span> 이 열린 집합이며 <span class="math inline">\(G:A\to B\)</span> 는 전단사이다.</p>
-<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(G\)</span> 와 <span class="math inline">\(G^{-1}\)</span> 이 연속이면 <a href="#thm-CM_diffeomorphism_and_integrability" class="quarto-xref">정리&nbsp;<span>5.2</span></a> 의 (<span class="math inline">\(a\)</span>) 가 성립함을 보여라.</p>
-<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(G\)</span> 가 국소적으로 립시츠 조건을 만족하며 <span class="math inline">\(G^{-1}\)</span> 이 연속이면 <a href="#thm-CM_diffeomorphism_and_integrability" class="quarto-xref">정리&nbsp;<span>5.2</span></a> 의 (<span class="math inline">\(b\)</span>) 가 성립함을 보여라.</p>
+<p>(<span class="math inline">\(a\)</span>) <span class="math inline">\(G\)</span> 와 <span class="math inline">\(G^{-1}\)</span> 이 연속이면 <a href="#thm-CM_diffeomorphism_and_integrability" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 의 (<span class="math inline">\(a\)</span>) 가 성립함을 보여라.</p>
+<p>(<span class="math inline">\(b\)</span>) <span class="math inline">\(G\)</span> 가 국소적으로 립시츠 조건을 만족하며 <span class="math inline">\(G^{-1}\)</span> 이 연속이면 <a href="#thm-CM_diffeomorphism_and_integrability" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 의 (<span class="math inline">\(b\)</span>) 가 성립함을 보여라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <a href="#thm-CM_diffeomorphism_and_integrability" class="quarto-xref">정리&nbsp;<span>5.2</span></a> 의 (<span class="math inline">\(a\)</span>) 증명에서 <span class="math inline">\(G\)</span> 가 미분동형사상인 조건에서 사용한것은 <span class="math inline">\(G\)</span> 가 전단사이며 <span class="math inline">\(G,\,G^{-1}\)</span> 이 연속인 조건이다. 여기서 모두 충족된다.</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>(<span class="math inline">\(a\)</span>) <a href="#thm-CM_diffeomorphism_and_integrability" class="quarto-xref">정리&nbsp;<span>5.1</span></a> 의 (<span class="math inline">\(a\)</span>) 증명에서 <span class="math inline">\(G\)</span> 가 미분동형사상인 조건에서 사용한것은 <span class="math inline">\(G\)</span> 가 전단사이며 <span class="math inline">\(G,\,G^{-1}\)</span> 이 연속인 조건이다. 여기서 모두 충족된다.</p>
 <p>(<span class="math inline">\(b\)</span>) <a href="#exr-thm-CM_munkres_18_4" class="quarto-xref">연습문제&nbsp;<span>5.2</span></a> <span class="math inline">\(G^{-1}\)</span> 이 연속이라는 조건으로부터 <span class="math inline">\(\partial E \subset G(\partial K)\)</span> 를 얻으며 <span class="math inline">\(\partial K\)</span> 가 measure <span class="math inline">\(0\)</span> 이면 <span class="math inline">\(\partial E\)</span> 도 measure <span class="math inline">\(0\)</span> 이다.</p>
 </div>
 <p><br></p>
@@ -642,7 +669,7 @@ U_{2m} &amp;= (-1+(-m-1)\pi ,\, 1 + (-m+1)\pi).
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_existance_of_partition_of_unity_for_compact_set" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 5.1</strong></span> 옹골 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다.</p>
+<p><span class="theorem-title"><strong>보조정리 5.3</strong></span> 옹골 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 과 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다.</p>
 </div>
 </div>
 <div class="proof">
@@ -666,14 +693,14 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 5.2</strong></span> 옹골 집합 <span class="math inline">\(A_1,\,A_2,\ldots \subset \mathbb{R}^n\)</span> 가 <span class="math inline">\(A_k \subset \text{int}(A_{k+1})\)</span> 일 때 <span class="math inline">\(A=\bigcup A_k\)</span> 와 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다.</p>
+<p><span class="theorem-title"><strong>보조정리 5.4</strong></span> 옹골 집합 <span class="math inline">\(A_1,\,A_2,\ldots \subset \mathbb{R}^n\)</span> 가 <span class="math inline">\(A_k \subset \text{int}(A_{k+1})\)</span> 일 때 <span class="math inline">\(A=\bigcup A_k\)</span> 와 <span class="math inline">\(A\)</span> 의 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 대해 <span class="math inline">\(A\)</span> 의 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다.</p>
 </div>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>(증명)</em>. </span>각각의 <span class="math inline">\(k\)</span> 에 대해 집합족 <span class="math inline">\(\mathcal{O}_k\)</span> 를 아래와 같이 정하자. <span class="math display">\[
 \mathcal{O}_k = \{U \cap (\text{int}(A_{k+1}) - A_{k-2}): U \in\mathcal{O}\}.
 \]</span></p>
-<p>그렇다면 <span class="math inline">\(\mathcal{O}_k\)</span> 는 옹골 집합 <span class="math inline">\(B_k = A_k - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개이다(<a href="#exr-thm-CM_existance_of_partition_of_unity_1" class="quarto-xref">연습문제&nbsp;<span>5.5</span></a>). <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a> 에서 보았듯이 각각의 <span class="math inline">\(B_k\)</span> 에 대해 <span class="math inline">\(\mathcal{O}_k\)</span> 에 종속된 단위 분할 <span class="math inline">\(\Phi_k\)</span> 가 존재한다. <span class="math inline">\(\sigma:A \to \mathbb{R}\)</span> 을 아래와 같이 정의하자.</p>
+<p>그렇다면 <span class="math inline">\(\mathcal{O}_k\)</span> 는 옹골 집합 <span class="math inline">\(B_k = A_k - \text{int}(A_{i-1})\)</span> 에 대한 열린 덮개이다(<a href="#exr-thm-CM_existance_of_partition_of_unity_1" class="quarto-xref">연습문제&nbsp;<span>5.5</span></a>). <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.3</span></a> 에서 보았듯이 각각의 <span class="math inline">\(B_k\)</span> 에 대해 <span class="math inline">\(\mathcal{O}_k\)</span> 에 종속된 단위 분할 <span class="math inline">\(\Phi_k\)</span> 가 존재한다. <span class="math inline">\(\sigma:A \to \mathbb{R}\)</span> 을 아래와 같이 정의하자.</p>
 <p><span class="math display">\[
 \sigma(\boldsymbol{x}) := \sum_{\varphi_i^{(k)}\in \Phi_k,\, \text{all } k } \varphi_{i}^{(k)}(\boldsymbol{x}).
 \]</span></p>
@@ -687,12 +714,12 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_existance_of_partition_of_unity" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.4</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이고 <span class="math inline">\(\mathcal{O}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개일 때 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할은 존재한다.</p>
+<p><span class="theorem-title"><strong>정리 5.3</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이고 <span class="math inline">\(\mathcal{O}\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개일 때 <span class="math inline">\(A\)</span> 에 대한 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할은 존재한다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>우리는 <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.1</span></a>, <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.2</span></a> 를 통해 일부를 보였다.</p>
-<p><span class="math inline">\(A\)</span> 가 열린 집합일 경우 <a href="#exr-CM_open_set_and_union_of_compact_set" class="quarto-xref">연습문제&nbsp;<span>5.6</span></a> 의 <span class="math inline">\(\langle A_i \rangle\)</span> 에 <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.2</span></a> 의 경우를 적용 할 수 있다.</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>우리는 <a href="#lem-CM_existance_of_partition_of_unity_for_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.3</span></a>, <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.4</span></a> 를 통해 일부를 보였다.</p>
+<p><span class="math inline">\(A\)</span> 가 열린 집합일 경우 <a href="#exr-CM_open_set_and_union_of_compact_set" class="quarto-xref">연습문제&nbsp;<span>5.6</span></a> 의 <span class="math inline">\(\langle A_i \rangle\)</span> 에 <a href="#lem-CM_existance_of_partition_of_unity_over_sequence_of_compact_set" class="quarto-xref">보조정리&nbsp;<span>5.4</span></a> 의 경우를 적용 할 수 있다.</p>
 <p>이제 임의의 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 에 대해 생각하자. <span class="math inline">\(B=\bigcup_{U\in \mathcal{O}}U\)</span> 라고 하면 <span class="math inline">\(A\subset B\)</span> 이며 <span class="math inline">\(B\)</span> 가 열린 집합이므로 <span class="math inline">\(B\)</span> 에 대해 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위분할이 존재한다. 그리고 이 단위분할은 <span class="math inline">\(A\)</span> 에 대한 단위분할이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <br>
@@ -712,7 +739,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_integration_over_product_of_function_and_partition_of_unity" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 5.3</strong></span> <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(A\)</span> 에 대한 단위분할이고, <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린집합에서 유계이며, <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\(A\)</span> 의 집합이 measure <span class="math inline">\(0\)</span> 이면 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 <span class="math inline">\(\int_A \varphi_i \cdot |f|\)</span> 가 존재한다.</p>
+<p><span class="theorem-title"><strong>보조정리 5.5</strong></span> <span class="math inline">\(\Phi\)</span> 가 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(A\)</span> 에 대한 단위분할이고, <span class="math inline">\(f:A \to \mathbb{R}\)</span> 이 각각의 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해 <span class="math inline">\(\boldsymbol{x}\)</span> 를 포함하는 열린집합에서 유계이며, <span class="math inline">\(f\)</span> 가 불연속인 <span class="math inline">\(A\)</span> 의 집합이 measure <span class="math inline">\(0\)</span> 이면 각각의 <span class="math inline">\(\varphi_i \in \Phi\)</span> 에 대해 <span class="math inline">\(\int_A \varphi_i \cdot |f|\)</span> 가 존재한다.</p>
 </div>
 </div>
 <div class="proof">
@@ -721,7 +748,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_indepedence_of_partition_of_unity_for_integration" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 5.4</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\Phi=\langle \varphi_i\rangle\)</span> 이 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 이며 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 에 대해</p>
+<p><span class="theorem-title"><strong>보조정리 5.6</strong></span> 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 를 생각하자. <span class="math inline">\(\Phi=\langle \varphi_i\rangle\)</span> 이 <span class="math inline">\(A\)</span> 에 포함되는 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 이며 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 에 대해</p>
 <p><span class="math display">\[
 \sum_{\varphi_i \in \Phi} \int_A \varphi_i \cdot |f|
 \]</span></p>
@@ -752,7 +779,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="lem-CM_existance_of_integration_using_partition_of_unity" class="theorem lemma">
-<p><span class="theorem-title"><strong>보조정리 5.5</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 가 유계라고 하자. <span class="math inline">\(\Psi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 일 때 <span class="math inline">\(\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot |f|\)</span> 는 존재한다.</p>
+<p><span class="theorem-title"><strong>보조정리 5.7</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 와 <span class="math inline">\(f:A\to \mathbb{R}\)</span> 가 유계라고 하자. <span class="math inline">\(\Psi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 일 때 <span class="math inline">\(\sum_{\varphi_i\in \Phi} \int_A \varphi_i \cdot |f|\)</span> 는 존재한다.</p>
 </div>
 </div>
 <div class="proof">
@@ -765,14 +792,14 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_partition_of_unity_and_integration" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.5</strong></span> <span class="math inline">\(A\)</span> 가 조르당 가측이고 <span class="math inline">\(f\)</span> 가 유계라고 하자. <span class="math inline">\(\Psi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 일 때 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>정리 5.4</strong></span> <span class="math inline">\(A\)</span> 가 조르당 가측이고 <span class="math inline">\(f\)</span> 가 유계라고 하자. <span class="math inline">\(\Psi\)</span> 가 <span class="math inline">\(A\)</span> 에 대한 열린 덮개 <span class="math inline">\(\mathcal{O}\)</span> 에 종속된 <span class="math inline">\(C^\infty\)</span> 단위 분할 일 때 다음이 성립한다.</p>
 <p><span class="math display">\[
 \int_A f = \sum_{\varphi_i \in \Phi} \int_A\varphi \cdot f.
 \]</span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="04_integration.html#exr-CM_spivak_3_22" class="quarto-xref">연습문제&nbsp;<span>4.24</span></a> 에서 보였듯이 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해 조르당 가측이며 옹골집합인 어떤 <span class="math inline">\(K\subset A\)</span> 가 존재하여 <span class="math inline">\(\int_{A-K} 1 &lt; \varepsilon\)</span> 이다. 또한 <span class="math inline">\(\Gamma = \{\varphi_i\in \Phi : \varphi_i \text{ not }0 \text{ in }K\}\)</span> 는 <span class="math inline">\(\Phi\)</span> 의 유한 부분집합이다. <span class="math inline">\(|f| \le M\)</span> 이라고 하면 <span class="math display">\[
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="04_integration.html#exr-CM_spivak_3_22" class="quarto-xref">연습문제&nbsp;<span>4.25</span></a> 에서 보였듯이 <span class="math inline">\(\varepsilon &gt; 0\)</span> 에 대해 조르당 가측이며 옹골집합인 어떤 <span class="math inline">\(K\subset A\)</span> 가 존재하여 <span class="math inline">\(\int_{A-K} 1 &lt; \varepsilon\)</span> 이다. 또한 <span class="math inline">\(\Gamma = \{\varphi_i\in \Phi : \varphi_i \text{ not }0 \text{ in }K\}\)</span> 는 <span class="math inline">\(\Phi\)</span> 의 유한 부분집합이다. <span class="math inline">\(|f| \le M\)</span> 이라고 하면 <span class="math display">\[
 \begin{aligned}
 \left|\int_A f - \sum_{\varphi_i \in \Gamma} \int_A \varphi_i \cdot f\right| &amp;\le \int_A \left|f- \sum_{\varphi_i \in \Gamma} \varphi_i \cdot f\right| \\[0.3em]
 &amp;\le M\int_A \left(1-\sum_{\varphi_i \in \Gamma}\varphi_i\right) \\[0.3em]
@@ -781,7 +808,7 @@ A \subset \bigcup_{i=1}^n \text{int}(D_i) \subset \bigcup_{i=1}^n D_{i} \subset 
 \]</span></p>
 <p>이다. <span class="math inline">\(\square\)</span></p>
 </div>
-<p><a href="#thm-CM_partition_of_unity_and_integration" class="quarto-xref">정리&nbsp;<span>5.5</span></a> 으로부터 단위분할을 이용한 적분을 정의 할 수 있다.</p>
+<p><a href="#thm-CM_partition_of_unity_and_integration" class="quarto-xref">정리&nbsp;<span>5.4</span></a> 으로부터 단위분할을 이용한 적분을 정의 할 수 있다.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -901,7 +928,7 @@ D_i =\{\boldsymbol{x}\in A: \|\boldsymbol{x}\| \le i,\, \text{dist}(\{\boldsymbo
 <p><br></p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_change_of_variable" class="theorem">
-<p><span class="theorem-title"><strong>정리 5.6</strong></span> 열린 집합 <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 에서 정의된 미분동형사상 <span class="math inline">\(G:A \to B\)</span> 에 대해 <span class="math inline">\(f:G(A)\to \mathbb{R}\)</span> 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>정리 5.5</strong></span> 열린 집합 <span class="math inline">\(A,\,B\subset \mathbb{R}^n\)</span> 에서 정의된 미분동형사상 <span class="math inline">\(G:A \to B\)</span> 에 대해 <span class="math inline">\(f:G(A)\to \mathbb{R}\)</span> 이 적분가능하다고 하자. 그렇다면 다음이 성립한다.</p>
 <p><span id="eq-CM_change_of_variable"><span class="math display">\[
 \int_{G(A)} f = \int_A (f \circ G) \cdot | \det (G')|.
 \tag{5.1}\]</span></span></p>
@@ -959,7 +986,7 @@ U(f,\,P) \ge \int_{G^{-1}(V)} (f\circ G) | \det (G')|.
 \end{aligned}
 \]</span></p>
 <p><u><i>Case-4 </i></u> : <span class="math inline">\(G: A\to \mathbb{R}^n\)</span> 이 선형사상이면 정리가 성립한다.</p>
-<p>(Case-4 증명) <a href="04_integration.html#exr-CM_spivak_3_35" class="quarto-xref">연습문제&nbsp;<span>4.37</span></a> 에 의해</p>
+<p>(Case-4 증명) <a href="04_integration.html#exr-CM_spivak_3_35" class="quarto-xref">연습문제&nbsp;<span>4.38</span></a> 에 의해</p>
 <p><span class="math display">\[
 \int_{G(U)} 1 = \text{vol}(G(U)) = \int_U |\det (G')|
 \]</span></p>
@@ -992,7 +1019,7 @@ K(\boldsymbol{x}) = (x_1,\ldots,\,x_{n-1},\, g_n(H^{-1}(\boldsymbol{x})))
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-MunkresAnalysis" class="csl-entry" role="listitem">
 Munkres, J. R. 2019. <em>Analysis on Manifolds</em>. CRC Press. <a href="https://books.google.co.kr/books?id=rSTcqZMZ8UIC">https://books.google.co.kr/books?id=rSTcqZMZ8UIC</a>.
 </div>
