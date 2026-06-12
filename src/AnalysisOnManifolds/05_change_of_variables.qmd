@@ -46,8 +46,9 @@ $$
 
 </br>
 
-## 미분동형사상 {#sec-CM_diffeomorphism}
+## 미분동형사상 
 
+### 미분동형사상 {#sec-CM_diffeomorphism}
 ::: {.callout-note icon="false"}
 
 #### **미분동형사상**
@@ -142,10 +143,10 @@ $$
 A=\bigcup_{i=1}^\infty K_i,\qquad K_i \subset \text{int}(K_{i+1}),\quad i=1,\,2,\ldots
 $$
 
-를 만족하는 옹골집합열 $\langle K_i\rangle$ 을 생각하자. $G'$ 이 연속이므로 각 $\text{int}(K_i)$ 위에서 유계이므로 $G(K_i \cap E)$ 는 measure $0$ 이다. 그런데
+를 만족하는 옹골집합열 $\langle K_i\rangle$ 을 생각하자(@exr-thm-KKK_3_2_8 은 이러한 $K_i$ 가 실제 존재함을 보여준다.). $G'$ 이 연속이므로 각 $\text{int}(K_i)$ 위에서 유계이며 따라서 $G(K_i \cap E)$ 는 measure $0$ 이다. 그런데
 
 $$
-G(E) = G\left(\bigcup_{i=1}^\infty (K_i \cap E)\right) = \bigcup_{i=1}^\infty G(K_i \cap A)
+G(E) = G\left(\bigcup_{i=1}^\infty (K_i \cap E)\right) = \bigcup_{i=1}^\infty G(K_i \cap E)
 $$
 
 이므로 $G(E)$ 역시 영측도 집합이다. $\square$
@@ -216,8 +217,87 @@ $$
 
 </br>
 
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+
+::: {#thm-CM_sard_theorem}
+
+#### 사드 정리 (Sard theorem)
+
+열린 연결집합 $U\subset \R^n$ 에서 정의된 $C^1$ 급 함수 $F: U \to \R^m$ 에 대해
+
+$$
+S = \{\bf{x}\in U : \det(J_F(\bf{x}))=0\}
+$$
+
+은 measure 0 이다.
 
 
+:::
+
+</div>
+
+::: {.proof}
+
+$U$ 에 포함되는 너비가 $l$ 인 $n$-cube $B$ 를 생각하자. 임의의 양수 $\varepsilon > 0$ 에 대해 충분히 큰 $N$ 을 잡아 이 $B$ 를 $N^n$ 개의 $n$-cube 로 분할하여 각 분할의 $n$-cube $R$ 에서
+
+$$
+\bf{x},\,\bf{y} \in S \implies \|F'(\bf{x})-F'(\bf{y})\|< \varepsilon
+$$
+
+이 되도록 잡을 수 있다. 이 분할을 $P$ 라고 하자. 이제 $\bf{x},\,\bf{y}\in B$ 에 대해
+
+$$
+G(\bf{y}) := F'(\bf{x})(\bf{y}) - F(\bf{y})
+$$
+
+라고 하면
+
+$$
+G'(\bf{y}) = F'(\bf{x})-F'(\bf{y})
+$$
+
+이다. $R\in P$ 에 대해 $\bf{x},\,\bf{y}\in S$ 일 경우 
+
+$$
+\begin{aligned}
+\|F'(\bf{x})(\bf{y}-\bf{x})-F(\bf{y})+ F(\bf{x})\| &= \|G(\bf{y})-G(\bf{x})\|  < \varepsilon \|\bf{y}-\bf{x}\| \le \varepsilon \sqrt{n}\dfrac{l}{N}
+\end{aligned} 
+$$ {#eq-thm-CM_sard_theorem_1}
+
+이다. $F'$ 이 $B$ 에서 유계이므로 $\|F'(\bf{x})\|<M$ 이라고 하면
+
+$$
+\|F(\bf{y})-F(\bf{x})\| \le M\|\bf{y}-\bf{x}\|  \le M\dfrac{\sqrt{n}l}{N}
+$${#eq-thm-CM_sard_theorem_2}
+
+이다. 이제,
+
+$$
+T=\{R\in P : R \cap S \ne \varnothing \}
+$$
+
+라고 하자. $R\in T$ 이면 $\det(J_F(\bf{x}))=0$ 인 $\bf{x}\in R\cap S$ 가 존재하며 그렇다면 이 $R$ 과 $\bf{x}$ 에 대해 $\{F'(\bf{x})(\bf{y}-\bf{x}) : \bf{y}\in R\}$ 은 $m-1$ 차원 부분공간 $V\subset \R^m$ 에 포함된다. @eq-thm-CM_sard_theorem_1 에 의해
+
+$$
+F(R) \subset \{\bf{z}\in \R^m : \text{dist}(\bf{z},\, V+F(\bf{x})) < \varepsilon \dfrac{\sqrt{n}l}{N}\}
+$$
+
+이며 @eq-thm-CM_sard_theorem_2 에 의해
+
+$$
+F(R) \subset \{\bf{z}\in \R^m : \|\bf{z}-F(\bf{x})\| < M\dfrac{\sqrt{n}l}{N}\}
+$$
+
+
+
+
+
+:::
+
+
+</br>
+
+### 원시 미분동형사상 {#sec-CM_primitive_diffeomorphism}
 
 ::: {.callout-note icon="false"}
 
@@ -339,11 +419,46 @@ $$
 </br>
 
 
-
-
 ### 연습문제 {.unnumbered}
 
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-thm-KKK_3_2_8}
+
+#### KKK 3.2.8
+
+열린집합 $A\subset \R^n$ 와 각각의 $i=1,\,2,\ldots$ 에 대해
+
+$$
+K_i:=\left\{\bf{p}\in A : \|\bf{p}\|\le i,\quad \text{dist}(\bf{p},\,\partial A) \ge \dfrac{1}{i}\right\}
+$$
+
+라고 하면 $K_i$ 는 옹골집합이며 다음 성질을 만족함을 보여라.
+
+$$
+\bigcup_{i=1}^\infty K_i = A,\qquad K_i \subset \text{int}(K_{i+1}).
+$$
+
+여기서 
+
+$$
+\text{dist}(\bf{p},\,\partial A) = \inf \{\|\bf{p}-\bf{x}\|: \bf{x}\in \partial A\}
+$$
+
+이다.
+
+:::
+
+</div>
+
+::: {.solution}
+[@KKK2011 연습문제 2.7.8](https://julia-kaeri.github.io/MathematicalAnalysis/src/part2/2_1_basic_topology.html#exr-MA_KKK_2_7_8) 로부터 $K_i$ 는 닫힌 집합임을 안다. $K_i$ 는 유계이므로 옹골집합이다. 제시한 두 성질 역시 쉽게 보일 수 있다.
+
+
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 
 ::: {#exr-thm-CM_munkres_18_3}
 
