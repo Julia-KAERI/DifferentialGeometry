@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,14 +40,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/AnalysisOnManifolds/05_change_of_variables.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7bd9eafde439b8181b5d218da36d2089.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7951e09a8739cd0524ff39ef1179a6a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -106,17 +110,17 @@ window.Quarto = {
 <link rel="stylesheet" href="../../custom.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/06_differential_forms.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">미분 형식</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="사이드바 전환" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/06_differential_forms.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">미분 형식</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -127,7 +131,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Differential Geometry</a> 
@@ -157,12 +161,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../src/AnalysisOnManifolds/AOM.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">다변수 해석학</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="토글 섹션">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+ <span class="menu-text" id="quarto-sidebar-section-1-label">다변수 해석학</span></a>
+            <button type="button" class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true" aria-label="토글 섹션: 다변수 해석학">
+              <i class="bi bi-chevron-right ms-2" aria-hidden="true"></i>
+            </button> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../src/AnalysisOnManifolds/01_functions_on_Euclidean_space.html" class="sidebar-item-text sidebar-link">
@@ -225,7 +229,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">목차</h2>
    
   <ul>
@@ -249,9 +253,9 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/06_differential_forms.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">미분 형식</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/AOM.html">다변수 해석학</a></li><li class="breadcrumb-item"><a href="../../src/AnalysisOnManifolds/06_differential_forms.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">미분 형식</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">미분 형식</span></h1>
 </div>
@@ -391,7 +395,7 @@ T(v_1,\ldots,v_k) &amp;= \sum_{j_1,\ldots,\,j_k=1}^n a_{1,j_1}\cdots a_{k,j_k} T
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div id="def-CM_pullback" class="theorem definition">
+<div id="def-CM_pullback_on_differential_function" class="theorem definition">
 <p><span class="theorem-title"><strong>정의 6.3</strong></span> 미분가능한 함수 <span class="math inline">\(F:V \to W\)</span> 와 <span class="math inline">\(\phi\in \mathfrak{J}^k(W)\)</span> 에 대해 아래와 같이 정의되는 <span class="math inline">\(F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)\)</span> 를 <span class="math inline">\(F\)</span> 에 의한 <span class="math inline">\(\phi\)</span> 의 <strong>pull-back</strong> 이라고 한다.</p>
 <p><span id="eq-CM_def_pull_back_for_k_tensor"><span class="math display">\[
 \left(F^\ast (\phi)\right)(v_1,\ldots,v_k) := \phi(F(v_1),\ldots,\,F(v_k))
@@ -465,12 +469,12 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>교대화
+<span class="screen-reader-only">노트</span><strong>교대화</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_alternatization" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.5</strong></span> 아래에 정의된 <span class="math inline">\(\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)\)</span> 는 <span class="math inline">\(k\)</span>-텐서의 선형결합으로 교대 <span class="math inline">\(k\)</span>-텐서를 반환한다. 이를 <strong>교대화(Alternatization)</strong> 라고 한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
+<p><span class="theorem-title"><strong>정의 6.5</strong></span> 아래에 정의된 <span class="math inline">\(\text{Alt}: \mathfrak{J}^k(V) \to \Omega^k(V)\)</span> 는 <span class="math inline">\(k\)</span>-텐서의 선형결합으로 교대 <span class="math inline">\(k\)</span>-텐서를 반환한다. 이를 <strong>교대화(Alternatization)</strong> 라고 한다. 여기서 <span class="math inline">\(\sigma\)</span> 는 대칭군 <span class="math inline">\(S_k\)</span> 에 속하는 순열이며 <span class="math inline">\(\text{sgn}(\sigma)\)</span> 는 순열에 대한 부호함수이다.</p>
 <p><span id="eq-CM_definition_of_alt_function"><span class="math display">\[
 \text{Alt}(\phi)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot \phi\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
 \tag{6.7}\]</span></span></p>
@@ -481,13 +485,15 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_alt_function" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 6.5 (교대화의 기본 성질)</strong></span> <br></p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\phi)\in \Omega^k(V)\)</span> 이다.</p>
-<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega\in \Omega^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\omega) = \omega\)</span> 이다.</p>
-<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\text{Alt}(\phi)) = \text{Alt}(\phi)\)</span> 이다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\phi,\,\psi \in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\phi + \psi) = \text{Alt}(\phi) + \text{Alt}(\psi)\)</span> 이다.</p>
+<p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\phi)\in \Omega^k(V)\)</span> 이다.</p>
+<p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega\in \Omega^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\omega) = \omega\)</span> 이다.</p>
+<p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(\phi\in \mathfrak{J}^k(V)\)</span> 이면 <span class="math inline">\(\text{Alt}(\text{Alt}(\phi)) = \text{Alt}(\phi)\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\sigma,\,\tau \in S_k\)</span> 일 때 <span class="math inline">\(\text{sgn}(\sigma \circ \tau)= \text{sgn}(\sigma)\cdot \text{sgn}(\tau)\)</span> 임을 안다. 호환 (transportation) <span class="math inline">\(\tau = (i,j)\)</span> 를 생각하면 <span class="math inline">\(\text{sgn}(\tau)=-1\)</span> 이며</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) trivial.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\sigma,\,\tau \in S_k\)</span> 일 때 <span class="math inline">\(\text{sgn}(\sigma \circ \tau)= \text{sgn}(\sigma)\cdot \text{sgn}(\tau)\)</span> 임을 안다. 호환 (transportation) <span class="math inline">\(\tau = (i,j)\)</span> 를 생각하면 <span class="math inline">\(\text{sgn}(\tau)=-1\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
 \text{Alt}(\phi)(\cdots ,v_j,\ldots,\,v_i,\ldots) &amp;= \text{Alt}(\phi) (v_{\tau(1)},\ldots,v_{\tau(k)})  \\[0.3em]
@@ -497,7 +503,7 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 \end{aligned}
 \]</span></p>
 <p>이다. 따라서 <span class="math inline">\(\text{Alt}(\phi)\in \Omega^k(V)\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <a href="#eq-CM_alternating_property_of_k_tensor" class="quarto-xref">식&nbsp;<span>6.6</span></a> 로 부터 <span class="math inline">\(\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)\)</span> 임을 보일 수 있다. 따라서</p>
+<p>(<span class="math inline">\(3\)</span>) <a href="#eq-CM_alternating_property_of_k_tensor" class="quarto-xref">식&nbsp;<span>6.6</span></a> 로 부터 <span class="math inline">\(\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)\)</span> 임을 보일 수 있다. 따라서</p>
 <p><span class="math display">\[
 \begin{aligned}
 \text{Alt}(\omega)(v_1,\ldots,v_k)  &amp;= \dfrac{1}{k!}\sum_{\sigma\in S_k} \text{sgn}(\sigma) \cdot \omega(v_{\sigma (1)},\ldots,v_{\sigma(k)}) \\[0.3em]
@@ -505,7 +511,7 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 &amp;= \omega(v_1,\ldots,v_k).
 \end{aligned}
 \]</span></p>
-<p>(<span class="math inline">\(3\)</span>) (<span class="math inline">\(1\)</span>), (<span class="math inline">\(2\)</span>) 에 의해 자명하다. <span class="math inline">\(\square\)</span></p>
+<p>(<span class="math inline">\(4\)</span>) 는 (<span class="math inline">\(2\)</span>), (<span class="math inline">\(3\)</span>) 에 의해 자명하다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
 <p>우리는 이전에 <span class="math inline">\(\phi\in \mathfrak{J}^k(V),\,\psi\in \mathfrak{J}^l(V)\)</span> 일 때 <span class="math inline">\(\phi \otimes \psi \in \mathfrak{J}^{k+l}(V)\)</span> 임을 보였다. 그러나 <span class="math inline">\(\omega \in \Omega^k(V),\, \eta \in \Omega^l(V)\)</span> 일 때 <span class="math inline">\(\omega \otimes \eta\)</span> 는 일반적으로 <span class="math inline">\(\Omega^{k+l}(V)\)</span> 에 포함되지 않는다.</p>
@@ -540,7 +546,7 @@ F^\ast( \phi\otimes \psi) &amp; (v_1,\ldots,v_k,\,v_{k+1},\ldots,v_{k+l}) \\[0.3
 &amp;= \dfrac{1}{k!\,l!}\sum_{\sigma\in S_{k+l}} \text{sgn}(\sigma)\cdot \omega(v_{\sigma(1)},\ldots,v_{\sigma (k)}) \cdot \eta(v_{\sigma (k+1)},\ldots v_{\sigma (k+l)}).
 \end{aligned}
 \tag{6.9}\]</span></span></p>
-<p>아래는 정의와 <a href="#prp-CM_basic_properties_of_alt_function" class="quarto-xref">명제&nbsp;<span>6.5</span></a> 의 (<span class="math inline">\(1\)</span>) 로 부터 자명하다.</p>
+<p>아래는 정의와 <a href="#prp-CM_basic_properties_of_alt_function" class="quarto-xref">명제&nbsp;<span>6.5</span></a> 의 (<span class="math inline">\(2\)</span>) 로 부터 자명하다.</p>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_wedge_product_is_an_alternating_tensor" class="theorem proposition">
 <p><span class="theorem-title"><strong>명제 6.6</strong></span> <span class="math inline">\(\omega \wedge \eta \in \Omega^{k+l}(V)\)</span> 이다.</p>
@@ -642,11 +648,11 @@ _{k+l}) \\[0.3em]
 \end{aligned}
 \]</span></p>
 <p>이다. <span class="math inline">\(S_{k+l}\)</span> 은 군이며 <span class="math inline">\(G\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 의 부분군이다. 따라서 <span class="math inline">\(S_{k+l}\)</span> 은 서로소인 <span class="math inline">\(G\)</span> 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. <span class="math inline">\(\sigma_0\)</span> 는 <span class="math inline">\(S_{k+l}\)</span> 에 속하지만 <span class="math inline">\(G\)</span> 에 속하지 않는 임의의 원소이므로 <a href="#eq-prp_CM_basic_properties_of_wedge_product_3_1" class="quarto-xref">식&nbsp;<span>6.13</span></a> 은 <span class="math inline">\(0\)</span> 임을 알 수 있다.</p>
-<p>(<span class="math inline">\(2\)</span>) <a href="#prp-CM_basic_properties_of_alt_function" class="quarto-xref">명제&nbsp;<span>6.5</span></a> (<span class="math inline">\(3\)</span>) 으로부터</p>
+<p>(<span class="math inline">\(2\)</span>) <a href="#prp-CM_basic_properties_of_alt_function" class="quarto-xref">명제&nbsp;<span>6.5</span></a> (<span class="math inline">\(1\)</span>), (<span class="math inline">\(4\)</span>) 로부터</p>
 <p><span class="math display">\[
 \text{Alt}\left(\text{Alt}(\eta \otimes \zeta) - \eta \otimes \zeta\right) =0
 \]</span></p>
-<p>임을 안다. (<span class="math inline">\(1\)</span>) 로부터</p>
+<p>임을 안다. (<span class="math inline">\(2\)</span>) 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
 0 &amp;= \text{Alt}\left(\omega \otimes \left[ \text{Alt}(\eta \otimes \zeta) - \eta \otimes \zeta\right]\right) \\[0.3em]
@@ -667,7 +673,7 @@ _{k+l}) \\[0.3em]
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_basis_of_alternating_tensor_space" class="theorem">
-<p><span class="theorem-title"><strong>정리 6.2</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((e_1,\ldots,e_n)\)</span> 와 이 기저에 대한 쌍대기저 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 에 대해 아래 집합이 <span class="math inline">\(\Omega^k(V)\)</span> 의 기저이다.</p>
+<p><span class="theorem-title"><strong>정리 6.2 (교대공간의 기저와 차원)</strong></span> 벡터공간 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((e_1,\ldots,e_n)\)</span> 와 이 기저에 대한 쌍대기저 <span class="math inline">\(\varphi_1,\ldots,\,\varphi_n\)</span> 에 대해 아래 집합이 <span class="math inline">\(\Omega^k(V)\)</span> 의 기저이다.</p>
 <p><span class="math display">\[
 \{ \varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k} : 1 \le i_1 &lt;i_2 &lt; \cdots &lt; i_k \le n\}.
 \]</span></p>
@@ -679,7 +685,7 @@ _{k+l}) \\[0.3em]
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\omega \in \Omega^k(V) \subset \mathfrak{J}^k(V)\)</span> 에 대해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-CM_basis_of_tensor_product" class="quarto-xref">정리&nbsp;<span>6.1</span></a> 를 참고하라. <span class="math inline">\(\omega \in \Omega^k(V) \subset \mathfrak{J}^k(V)\)</span> 에 대해</p>
 <p><span class="math display">\[
 \omega = \sum_{i_1,\ldots,\,i_k} a_{i_1,\ldots,i_k} \left[\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k}\right]
 \]</span></p>
@@ -730,7 +736,7 @@ _{k+l}) \\[0.3em]
 <section id="방향과-부피요소" class="level4">
 <h4 class="anchored" data-anchor-id="방향과-부피요소"><strong>방향과 부피요소</strong></h4>
 <p><a href="#thm-CM_alternating_tensor_and_determinant" class="quarto-xref">정리&nbsp;<span>6.3</span></a> 에 따라 <span class="math inline">\(0\)</span> 이 아닌 <span class="math inline">\(\omega \in \Omega^n(V)\)</span> 는 <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((v_1,\ldots,\,v_n)\)</span> 를 <span class="math inline">\(\omega\)</span> 함수값이 양수인 것과 음수인 두 집합으로 분할한다. <span class="math inline">\(V\)</span> 의 두 기저 <span class="math inline">\((u_i)\)</span> 와 <span class="math inline">\((v_j)\)</span> 사이에 <span class="math inline">\(u_i = \sum_j a_{ij}v_j\)</span> 의 관계가 있을 때 <span class="math inline">\(\det(a_{ij})&gt;0\)</span> 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 <span class="math inline">\(V\)</span> 의 <strong>방향 (orientation)</strong> 으로 정할 수 있다. 기저 <span class="math inline">\((v_1,\ldots,v_n)\)</span> 이 속한 방향을 <span class="math inline">\([v_1,\ldots,v_n]\)</span> 으로 표기하며 반대 방향을 <span class="math inline">\(-[v_1,\ldots,v_n]\)</span> 으로 표기한다. 특별히 <span class="math inline">\(\mathbb{R}^n\)</span> 에서는 표준기저에 대한 방향, 즉 <span class="math inline">\([e_1,\ldots,e_n]\)</span> 을 <strong>정방향(usual orientation)</strong> 이라고 한다.</p>
-<p>벡터공간에 어떤 내적 <span class="math inline">\(T:V\times V \to \mathbb{R}\)</span> 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 <span class="math inline">\((e_i)\)</span> 와 <span class="math inline">\((f_j)\)</span> 사이에는 어떤 직교행렬 (orthogonal matrix) <span class="math inline">\(U\)</span> 에 대해 <span class="math inline">\(e_i = U f_i\)</span> 의 관계가 있다는 것을 안다. 직교행렬은 <span class="math inline">\(UU^T=I\)</span> 이므로 <span class="math inline">\(\det(U)= \pm 1\)</span> 이다. 만약 <span class="math inline">\(V\)</span> 의 방향 <span class="math inline">\(\mu\)</span> 가 정해졌다면 정규직교기저 <span class="math inline">\((e_1,\ldots,e_n)\)</span> 에 대해 <span class="math inline">\(\omega (e_1,\ldots,e_n)=1\)</span> 이 되도록 <span class="math inline">\(\omega\in \Omega^n(V)\)</span> 를 유일하게 정할 수 있다. 이 유일한 <span class="math inline">\(\omega\)</span> 를 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 <strong>부피 요소 (volume element)</strong> 라고 한다. <span class="math inline">\(\mathbb{R}^n\)</span> 에서 <span class="math inline">\(\det\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 <span class="math inline">\(|\det (e_1,\ldots,e_n)|\)</span> 은 원점과 <span class="math inline">\(e_1,\ldots,\,e_n\)</span> 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.</p>
+<p>벡터공간에 어떤 내적 <span class="math inline">\(T:V\times V \to \mathbb{R}\)</span> 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 <span class="math inline">\((e_i)\)</span> 와 <span class="math inline">\((f_j)\)</span> 사이에는 어떤 직교행렬 <span class="math inline">\(O\)</span> 에 대해 <span class="math inline">\(e_i = O f_i\)</span> 의 관계가 있다는 것을 안다. 직교행렬은 <span class="math inline">\(OO^T=I\)</span> 이므로 <span class="math inline">\(\det(O)= \pm 1\)</span> 이다. 만약 <span class="math inline">\(V\)</span> 의 방향 <span class="math inline">\(\mu\)</span> 가 정해졌다면 정규직교기저 <span class="math inline">\((e_1,\ldots,e_n)\)</span> 에 대해 <span class="math inline">\(\omega (e_1,\ldots,e_n)=1\)</span> 이 되도록 <span class="math inline">\(\omega\in \Omega^n(V)\)</span> 를 유일하게 정할 수 있다. 이 유일한 <span class="math inline">\(\omega\)</span> 를 내적 <span class="math inline">\(T\)</span> 와 방향 <span class="math inline">\(\mu\)</span> 에 의해 결정되는 <strong>부피 요소 (volume element)</strong> 라고 한다. <span class="math inline">\(\mathbb{R}^n\)</span> 에서 <span class="math inline">\(\det\)</span> 는 <span class="math inline">\(\mathbb{R}^n\)</span> 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 <span class="math inline">\(|\det (e_1,\ldots,e_n)|\)</span> 은 원점과 <span class="math inline">\(e_1,\ldots,\,e_n\)</span> 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.</p>
 <p><br></p>
 </section>
 <section id="벡터곱" class="level4">
@@ -1059,14 +1065,14 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_vector_field" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.9</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터장 (vector field)</strong> 라고 한다. <span class="math inline">\(F(\boldsymbol{p})\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 <span class="math inline">\(f_i(\boldsymbol{p})\)</span> 로 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 6.9</strong></span> <span class="math inline">\(\boldsymbol{p}\in \mathbb{R}^n\)</span> 에 대해 <span class="math inline">\(F_\boldsymbol{p}  \in T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 인 함수 <span class="math inline">\(F\)</span> 를 <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 <strong>벡터장 (vector field)</strong> 이라고 한다. <span class="math inline">\(F_\boldsymbol{p}\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 <span class="math inline">\(f^i_\boldsymbol{p}\)</span> 로 표기한다.</p>
 <p><span class="math inline">\(F,\,G\)</span> 가 벡터장이고 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 함수일 때 연산을 아래와 같이 정의한다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-(F+G)(\boldsymbol{p}) &amp;:= F(\boldsymbol{p}) + F(\boldsymbol{p}), \\[0.4em]
-\langle F,\, G\rangle (\boldsymbol{p}) &amp;: = \langle F(\boldsymbol{p}),\, G(\boldsymbol{p})\rangle, \\[0.4em]
-(f\cdot F)(\boldsymbol{p}) &amp;:= f(\boldsymbol{p})F(\boldsymbol{p}), \\[0.4em]
-(F \times \cdots \times G) (\boldsymbol{p}) &amp;:= F(\boldsymbol{p})\times \cdots \times G(\boldsymbol{p}).
+(F+G)_\boldsymbol{p} &amp;:= F_\boldsymbol{p} + G_\boldsymbol{p}, \\[0.4em]
+\langle F,\, G\rangle_\boldsymbol{p} &amp;: = \langle F_\boldsymbol{p},\, G_\boldsymbol{p}\rangle, \\[0.4em]
+(f\cdot F)_\boldsymbol{p} &amp;:= f_\boldsymbol{p} F_\boldsymbol{p}, \\[0.4em]
+(F \times \cdots \times G)_\boldsymbol{p} &amp;:= F_\boldsymbol{p} \times \cdots \times G_\boldsymbol{p}.
 \end{aligned}
 \]</span></p>
 </div>
@@ -1084,7 +1090,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_nabla_operator" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.10</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 nabla 연산자 <span class="math inline">\(\nabla\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.10</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 <span class="math inline">\(\nabla\)</span> 연산자를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_nabla_operator"><span class="math display">\[
 \nabla := \sum_{i=1}^n \boldsymbol{e}_i \boldsymbol{\cdot}D_i.
 \tag{6.18}\]</span></span></p>
@@ -1103,9 +1109,9 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_divergence_and_curl" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.11</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F(\boldsymbol{p}) = (f_1(\boldsymbol{p}),\ldots,f_n(\boldsymbol{p}))\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i f_i(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다. <span class="math inline">\(n=3\)</span> 인 경우 아래와 같이 정의된 <span class="math inline">\(\text{curl}\,F(\boldsymbol{p})\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>curl</strong> 이라고 하며 <span class="math inline">\(\nabla \times F\)</span> 로도 표기한다.</p>
+<p><span class="theorem-title"><strong>정의 6.11</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서의 벡터장 <span class="math inline">\(F_\boldsymbol{p} = (f^1_\boldsymbol{p},\ldots,f^n_\boldsymbol{p})\)</span> 에 대해 <span class="math inline">\(\sum_{i=1}^n D_i f^i_\boldsymbol{p}\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>divergence</strong> 라고 하며 <span class="math inline">\(\nabla \cdot F\)</span> 혹은 <span class="math inline">\(\text{div} \,F\)</span> 로 표기한다. <span class="math inline">\(n=3\)</span> 인 경우 아래와 같이 정의된 <span class="math inline">\(\text{curl}\,F_\boldsymbol{p}\)</span> 를 <span class="math inline">\(F\)</span> 에 대한 <strong>curl</strong> 이라고 하며 <span class="math inline">\(\nabla \times F\)</span> 로도 표기한다.</p>
 <p><span class="math display">\[
-\text{curl}\, F(\boldsymbol{p}) := (D_2f_3 - D_3f_2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f_1 - D_1f_3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f_2-D_2f_1)(\boldsymbol{e}_3)_\boldsymbol{p}.
+\text{curl}\, F_\boldsymbol{p} := (D_2f^3 - D_3f^2)(\boldsymbol{e}_1)_\boldsymbol{p} + (D_3f^1 - D_1f^3)(\boldsymbol{e}_2)_\boldsymbol{p} + (D_1f^2-D_2f^1)(\boldsymbol{e}_3)_\boldsymbol{p}.
 \]</span></p>
 </div>
 </div>
@@ -1114,7 +1120,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </section>
 <section id="sec-CM_differential_form" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="sec-CM_differential_form"><span class="header-section-number">6.2.2</span> 미분 형식</h3>
-<p><span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span>, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 <span class="math inline">\(k\)</span>-form 을 정의 할 수 있다.</p>
+<p><span class="math inline">\(\mathbb{R}^n\)</span> 과 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span>, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 <span class="math inline">\(k\)</span>-형식 을 정의 할 수 있다.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1126,23 +1132,37 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_differential_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.12</strong></span> <span class="math inline">\(\omega (\boldsymbol{p})\in \Omega^k(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 를 <span class="math inline">\(\mathbb{R}^n_\boldsymbol{p}\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 은 아래의 형태이다.</p>
+<p><span class="theorem-title"><strong>정의 6.12</strong></span> <span class="math inline">\(\omega_\boldsymbol{p} \in \Omega^k(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 를 <span class="math inline">\(\mathbb{R}^n_\boldsymbol{p}\)</span> 에서의 <span class="math inline">\(k\)</span>-형식, 혹은 <strong>미분 형식(differential form)</strong> 이라고 한다. 표준 기저 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 에 대한 쌍대 기저를 <span class="math inline">\(\varphi_i (\boldsymbol{p})\)</span> 라고 할 때 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega_\boldsymbol{p}\)</span> 은 아래의 형태이다.</p>
 <p><span id="eq-CM_form_of_differential_form"><span class="math display">\[
-\omega(\boldsymbol{p}) = \sum_{i_1&lt;\cdots &lt;i_k} \omega_{i_1,\ldots,\,i_k}(\boldsymbol{p})\cdot \left[\varphi_{i_1}(\boldsymbol{p}) \wedge \cdots \wedge \varphi_{i_k}(\boldsymbol{p})\right]
+\omega_\boldsymbol{p} = \sum_{i_1&lt;\cdots &lt;i_k} (\omega_{i_1,\ldots,\,i_k})_\boldsymbol{p} \cdot \left[{(\varphi_{i_1})}_\boldsymbol{p} \wedge \cdots \wedge {(\varphi_{i_k})}_\boldsymbol{p} \right]
 \tag{6.19}\]</span></span></p>
 </div>
 </div>
 </div>
 <p><br></p>
 <p>이제부터 <span class="math inline">\(\omega_{i_1,\ldots,i_k}\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}\)</span> 와 같은 표현을 많이 사용할텐다 이것을 항상 이렇게 사용하기는 불편하기 때문에 좀 더 간략한 표현을 사용하고자 한다.</p>
-<p><span class="math inline">\(n\)</span> 차원 벡터공간을 다룰 때 <span class="math inline">\(I = (i_1,\ldots,i_k)\)</span> 가 <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_k\le n\)</span> 인 <span class="math inline">\(k\)</span>-tuple 이라고 하자.tuple 은 유한 순서집합을 말한다. 그리고 <span class="math inline">\([I]\)</span> 는 <span class="math inline">\(n\)</span> 차원 집합에서 <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_k\le n\)</span> 인 모든 <span class="math inline">\(k\)</span>-tuple 의 집합이며 그 인덱스를 <span class="math inline">\(I\)</span> 로 표기한다는 것을 의미한다. 이런 의미에서 <a href="#eq-CM_form_of_differential_form" class="quarto-xref">식&nbsp;<span>6.19</span></a> 는 아래와 같이 표기할 수 있다.</p>
-<p><span class="math display">\[
+<p><span class="math inline">\(n\)</span> 차원 벡터공간을 다룰 때 <span class="math inline">\(I = (i_1,\ldots,i_k)\)</span> 가 <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_k\le n\)</span> 인 <span class="math inline">\(k\)</span>-튜플 (<span class="math inline">\(k\)</span>-tuple) 이라고 하자. 튜플은 유한 순서집합을 말한다. 그리고 <span class="math inline">\([I]\)</span> 는 <span class="math inline">\(n\)</span> 차원 집합에서 <span class="math inline">\(1\le i_1&lt;\cdots &lt;i_k\le n\)</span> 인 모든 <span class="math inline">\(k\)</span>-tuple 의 집합이며 그 인덱스를 <span class="math inline">\(I\)</span> 로 표기한다는 것을 의미한다. 이런 의미에서 <a href="#eq-CM_form_of_differential_form" class="quarto-xref">식&nbsp;<span>6.19</span></a> 는 아래와 같이 표기할 수 있다.</p>
+<p><span id="eq-CM_concice_representation_of_form"><span class="math display">\[
 \boxed{
-\quad\omega(\boldsymbol{p}) = \sum_{[I]} \omega_I(\boldsymbol{p}) d\varphi_I(\boldsymbol{p}) \qquad \text{or} \qquad \omega = \sum_{[I]} \omega_I d\varphi_I \quad
+\quad\omega_\boldsymbol{p} = \sum_{[I]} \omega_{I,\boldsymbol{p}} d\varphi_{I,\boldsymbol{p}} \qquad \text{or} \qquad \omega = \sum_{[I]} \omega_I d\varphi_I \quad
 }
-\]</span></p>
-<p>여기서 <span class="math inline">\(\omega_I(\boldsymbol{p}) = \omega_{i_1,\ldots,i_k}(\boldsymbol{p})\)</span> 이고 <span class="math inline">\(d\varphi_I(\boldsymbol{p}) = d\varphi_{i_1}(\boldsymbol{p})\wedge \cdots \wedge d\varphi_{i_k}(\boldsymbol{p})\)</span> 이다.</p>
-<p>각각의 <span class="math inline">\(\omega_{I}(\boldsymbol{p})\)</span> 가 연속이거나 미분가능 할 때 <span class="math inline">\(\omega (\boldsymbol{p})\)</span> 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 <span class="math inline">\(k\)</span>-형식이 미분가능하다고 할 때 <span class="math inline">\(C^\infty\)</span> 를 의미한다.</p>
+\tag{6.20}\]</span></span></p>
+<p>여기서 <span class="math inline">\(\omega_{I,\boldsymbol{p}} = (\omega_{i_1,\ldots,i_k})_\boldsymbol{p}\)</span> 이고 <span class="math inline">\(d\varphi_{I,\boldsymbol{p}} = (d\varphi_{i_1})_\boldsymbol{p}\wedge \cdots \wedge (d\varphi_{i_k})_\boldsymbol{p}\)</span> 이다.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">노트</span><strong>미분형식의 미분가능성</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div id="def-CM_class_of_form" class="theorem definition">
+<p><span class="theorem-title"><strong>정의 6.13</strong></span> <a href="#eq-CM_concice_representation_of_form" class="quarto-xref">식&nbsp;<span>6.20</span></a> 에서 각각의 <span class="math inline">\(\omega_{I,\boldsymbol{p}}\)</span> 가 연속이거나 미분가능 할 때 <span class="math inline">\(\omega_\boldsymbol{p}\)</span> 를 연속이거나 미분가능하다고 한다. 여기서 벡터장이나 <span class="math inline">\(k\)</span>-형식이 미분가능하다고 할 때 <span class="math inline">\(C^\infty\)</span> 를 의미한다.</p>
+</div>
+</div>
+</div>
 <br>
 <div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 <div id="exm-CM_0_form_and_1_form" class="theorem example">
@@ -1161,12 +1181,12 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_arithmatic_of_differential_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.13</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \zeta\)</span>, <span class="math inline">\(m\)</span>-형식 <span class="math inline">\(\eta\)</span>, 스칼라장 <span class="math inline">\(f\)</span> 에 대해 연산이 아래와 같이 정의된다.</p>
+<p><span class="theorem-title"><strong>정의 6.14</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \zeta\)</span>, <span class="math inline">\(m\)</span>-형식 <span class="math inline">\(\eta\)</span>, 스칼라장 <span class="math inline">\(f\)</span> 에 대해 연산이 아래와 같이 정의된다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-\omega (\boldsymbol{p}) + \zeta (\boldsymbol{p}) &amp;:= \sum_{[I]} \left(\omega_I(\boldsymbol{p}) + \zeta_I(\boldsymbol{p})\right) \cdot d\varphi_I(\boldsymbol{p}), \\[0.3em]
-(f \cdot \omega)(\boldsymbol{p})  &amp;:=  \sum_{[I]} \left(f(\boldsymbol{p}) \cdot \omega_I(\boldsymbol{p}) \right)\cdot d\varphi_I(\boldsymbol{p}), \\[0.3em]
-\omega (\boldsymbol{p})\wedge \eta (\boldsymbol{p}) &amp;:= \sum_{[I]} \sum_{[J]} \omega_{I}(\boldsymbol{p})\cdot \eta_{J}(\boldsymbol{p})  \left[d\varphi_I(\boldsymbol{p}) \wedge d\varphi_{J}(\boldsymbol{p}) \right]
+\omega_\boldsymbol{p} + \zeta_\boldsymbol{p} &amp;:= \sum_{[I]} \left(\omega_{I,\boldsymbol{p}} + \zeta_{I,\boldsymbol{p}}\right) \cdot d\varphi_{I,\boldsymbol{p}}, \\[0.3em]
+(f \cdot \omega)_\boldsymbol{p}  &amp;:=  \sum_{[I]} \left(f_\boldsymbol{p} \cdot \omega_{I,\boldsymbol{p}} \right)\cdot d\varphi_{I,\boldsymbol{p}}, \\[0.3em]
+\omega_\boldsymbol{p} \wedge \eta_\boldsymbol{p} &amp;:= \sum_{[I]} \sum_{[J]} \omega_{I,\boldsymbol{p}} \cdot \eta_{J,\boldsymbol{p}}  \left[d\varphi_{I,\boldsymbol{p}} \wedge d\varphi_{J,\boldsymbol{p}} \right]
 \end{aligned}
 \]</span></p>
 </div>
@@ -1176,7 +1196,7 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </section>
 <section id="sec-CM_form_and_differentiation" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="sec-CM_form_and_differentiation"><span class="header-section-number">6.2.3</span> 형식과 미분</h3>
-<p>미분 가능한 함수 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 을 생각하자. 이런 함수를 <strong>스칼라장 (scalar field)</strong> 라고 한다. <span class="math inline">\(Df(\boldsymbol{p})\in \Omega^1(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.</p>
+<p>미분 가능한 함수 <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 을 생각하자. 이런 함수를 <strong>스칼라장 (scalar field)</strong> 라고 한다. <span class="math inline">\(Df_\boldsymbol{p}\in \Omega^1(T_\boldsymbol{p}(\mathbb{R}^n))\)</span> 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1188,32 +1208,32 @@ a\cdot (\boldsymbol{p},\,\boldsymbol{x}) &amp;= (\boldsymbol{p},\,a\boldsymbol{x
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_1_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.14</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.15</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 에 대해 <span class="math inline">\(1\)</span>-형식 <span class="math inline">\(df(\boldsymbol{p})\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_differential_1-form"><span class="math display">\[
-df(\boldsymbol{p}) (\boldsymbol{v}_\boldsymbol{p}) := Df(\boldsymbol{p})(\boldsymbol{v}) = Df(\boldsymbol{p})\cdot \boldsymbol{v}.
-\tag{6.20}\]</span></span></p>
+df_\boldsymbol{p} (\boldsymbol{v}_\boldsymbol{p}) := Df_\boldsymbol{p}(\boldsymbol{v}) = Df_\boldsymbol{p}\cdot \boldsymbol{v}.
+\tag{6.21}\]</span></span></p>
 </div>
 </div>
 </div>
-<p><span class="math inline">\(x_i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x_i\)</span> 의 1차 형식 <span class="math inline">\(dx_i(\boldsymbol{p})\)</span> 를 생각 할 수 있다. <span class="math inline">\(T_{\boldsymbol{p}}(\mathbb{R}^n)\)</span> 의 표준기저벡터 <span class="math inline">\((\boldsymbol{e}_j)_\boldsymbol{p}\)</span> 에 대해 <span class="math inline">\(dx_i(\boldsymbol{p})\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx_i (\boldsymbol{p})\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 는 다음과 같이 쓸 수 있다.</p>
+<p><span class="math inline">\(x^i :\mathbb{R}^n \to \mathbb{R}\)</span> 을 <span class="math inline">\(\boldsymbol{x}\in \mathbb{R}^n\)</span> 의 <span class="math inline">\(i\)</span> 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 <span class="math inline">\(x^i\)</span> 의 1차 형식 <span class="math inline">\(dx^i_\boldsymbol{p}\)</span> 를 생각 할 수 있다. <span class="math inline">\(T_{\boldsymbol{p}}(\mathbb{R}^n)\)</span> 의 표준기저벡터 <span class="math inline">\((\boldsymbol{e}_j)_\boldsymbol{p}\)</span> 에 대해 <span class="math inline">\(dx^i_\boldsymbol{p}\left((\boldsymbol{e}_j)_\boldsymbol{p}\right) = \delta_{ij}\)</span> 이므로 <span class="math inline">\(dx^i _\boldsymbol{p}\)</span> 는 <span class="math inline">\((\boldsymbol{e}_i)_\boldsymbol{p}\)</span> 의 쌍대기저이다. 따라서 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega(\boldsymbol{p})\)</span> 는 다음과 같이 쓸 수 있다.</p>
 <p><span class="math display">\[
-\omega (\boldsymbol{p}) = \sum_{[I]} \omega_{I}(\boldsymbol{p}) dx_I(\boldsymbol{p}).
+\omega_\boldsymbol{p} = \sum_{[I]} \omega_{I,\boldsymbol{p}} dx^I_\boldsymbol{p}.
 \]</span></p>
-<p>탄젠트 공간을 지정하는 <span class="math inline">\((\boldsymbol{p})\)</span> 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.</p>
+<p>탄젠트 공간을 지정하는 <span class="math inline">\({}_\boldsymbol{p}\)</span> 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.</p>
 <p><span class="math display">\[
-\omega = \sum_{[I]} \omega_{I}\cdot dx_{I}.
+\omega = \sum_{[I]} \omega_{I}\cdot dx^{I}.
 \]</span></p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_differentiation_of_function_and_form" class="theorem">
 <p><span class="theorem-title"><strong>정리 6.4</strong></span> <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}\)</span> 이 미분가능할 때 다음이 성립한다.</p>
 <p><span class="math display">\[
-df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
+df = D_1 f \cdot dx^1 + \cdots + D_n f \cdot dx^n.
 \]</span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle df(\boldsymbol{p})(\boldsymbol{v}_p) = Df(\boldsymbol{p}) \boldsymbol{\cdot}\boldsymbol{v} = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot v_i = \sum_{i=1}^n D_i f(\boldsymbol{p})\cdot \left(dx_i(\boldsymbol{p})(\boldsymbol{v}_p)\right). \square\)</span></p>
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(\displaystyle df_\boldsymbol{p}(\boldsymbol{v}_p) = Df_\boldsymbol{p} \boldsymbol{\cdot}\boldsymbol{v} = \sum_{i=1}^n D_i f_\boldsymbol{p}\cdot v_i = \sum_{i=1}^n D_i f_\boldsymbol{p}\cdot \left(dx^i_\boldsymbol{p}(\boldsymbol{v}_\boldsymbol{p})\right). \square\)</span></p>
 </div>
 <p><br></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1227,66 +1247,67 @@ df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_push_forward_and_pull_back" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.15</strong></span> 미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 아래와 같이 정의되는 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}(T_\boldsymbol{p}(\mathbb{R}^n),\, T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 을 <span class="math inline">\(F\)</span> 에 대한 <strong>push-forward</strong> 라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 6.16</strong></span> 미분가능한 함수 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 과 선형변환인 <span class="math inline">\(F'(\boldsymbol{p}) \in \mathcal{L}(\mathbb{R}^n, \mathbb{R}^m)\)</span> 을 생각하자. 아래와 같이 정의되는 선형변환 <span class="math inline">\(F_\ast  \in \mathcal{L}(T_\boldsymbol{p}(\mathbb{R}^n),\, T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 을 <span class="math inline">\(F\)</span> 에 대한 <strong>push-forward</strong> 라고 한다.</p>
 <p><span id="eq-def_CM_push_forward"><span class="math display">\[
-F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p})(\boldsymbol{v})\right)_{F(\boldsymbol{p})}
-\tag{6.21}\]</span></span></p>
-<p>이로부터 유도되는 선형변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\right),\, \Omega^k\left(T_\boldsymbol{p}(\mathbb{R}^n)\right)\right)\)</span> 아래와 같이 정의하고 이를 <strong>pull-back</strong> 이라고 한다. <span class="math inline">\(\omega \in \Omega^k \left( T_{F(\boldsymbol{p})}(\mathbb{R}^m) \right)\)</span> 에 대해</p>
-<p><span id="eq-def_CM_pull_back"><span class="math display">\[
-(F^\ast \omega) (\boldsymbol{p}) := (F_\ast)^\ast (\omega (F(\boldsymbol{p})))
+F_\ast (\boldsymbol{v}_p) := \left(F'(\boldsymbol{p}) \boldsymbol{v}\right)_{F(\boldsymbol{p})}
 \tag{6.22}\]</span></span></p>
+<p>이로부터 유도되는 선형변환 <span class="math inline">\(F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\right),\, \Omega^k\left(T_\boldsymbol{p}(\mathbb{R}^n)\right)\right)\)</span> 아래와 같이 정의하고 이를 <strong>pull-back</strong> 이라고 한다. <span class="math inline">\(\omega \in \Omega^k \left( T_{F(\boldsymbol{p})}(\mathbb{R}^m) \right)\)</span> 에 대해 (<span class="math inline">\(\omega = \omega_{F(\boldsymbol{p})}\)</span> 임을 기억하자.)</p>
+<p><span id="eq-def_CM_pull_back"><span class="math display">\[
+(F^\ast (\omega))_\boldsymbol{p} := (F_\ast)^\ast (\omega_{F(\boldsymbol{p})}))
+\tag{6.23}\]</span></span></p>
 <p>이다. 그렇다면 <span class="math display">\[
 \begin{aligned}
-\left(F^\ast \omega\right)(\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= (F_\ast)^\ast(\omega(F(\boldsymbol{p})))(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
-&amp;= \omega (F(\boldsymbol{p})) (F_\ast (\boldsymbol{v}_1),\ldots,\, F_\ast(\boldsymbol{v}_k)) \\[0.3em]
-&amp;= \omega (F(\boldsymbol{p})) \left( \left(F'(\boldsymbol{p})(\boldsymbol{v}_1)\right)_{F(\boldsymbol{p})},\ldots,\,\left(F'(\boldsymbol{p})(\boldsymbol{v}_k)\right)_{F(\boldsymbol{p})} \right)
+\left(F^\ast (\omega)\right)_\boldsymbol{p}(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) &amp;= (F_\ast)^\ast(\omega_{F(\boldsymbol{p})})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k) \\[0.3em]
+&amp;= \omega_{F(\boldsymbol{p})} (F_\ast (\boldsymbol{v}_1),\ldots,\, F_\ast(\boldsymbol{v}_k)) \\[0.3em]
+&amp;= \omega_{F(\boldsymbol{p})} \left( \left(F'(\boldsymbol{p})\boldsymbol{v}_1 \right)_{F(\boldsymbol{p})},\ldots,\,\left(F'(\boldsymbol{p})\boldsymbol{v}_k\right)_{F(\boldsymbol{p})} \right)
 \end{aligned}
 \]</span></p>
 <p>이다.</p>
 </div>
 </div>
 </div>
+<p><a href="#def-CM_pullback_on_differential_function" class="quarto-xref">정의&nbsp;<span>6.3</span></a> 는 미분가능한 함수에 대한 pull-back 이며 <a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>6.16</span></a> 는 미분형식에 대한 pull-back 의 정의이다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_properties_of_full_back" class="theorem">
-<p><span class="theorem-title"><strong>정리 6.5</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f_1(\boldsymbol{x}) &amp; \cdots f_m (\boldsymbol{x})\end{bmatrix}^T\)</span> 이 미분가능할 때 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle F^\ast(dx_i) = \sum_{j=1}^n D_jf_i \cdot dx_i = \sum_{j=1}^n \dfrac{\partial f_i}{\partial x_j}\,dx_j\)</span>,</p>
+<p><span class="theorem-title"><strong>정리 6.5</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math inline">\(F(\boldsymbol{x}) = \begin{bmatrix} f^1(\boldsymbol{x}) &amp; \cdots f^m (\boldsymbol{x})\end{bmatrix}^T\)</span> 이 미분가능할 때 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(\displaystyle F^\ast(dx^i) = \sum_{j=1}^n D_jf^i \cdot dx^i = \sum_{j=1}^n \dfrac{\partial f^i}{\partial x^j}\,dx^j\)</span>,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(F^\ast (\omega_1 + \omega_2) = F^\ast(\omega_1)+ F^\ast (\omega_2)\)</span>,</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(F^\ast (g \cdot \omega) = (g\circ F) \cdot F^\ast \omega\)</span>,</p>
 <p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(F^\ast (\omega \wedge \eta) = F^\ast \omega \wedge F^\ast \eta\)</span>.</p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(dx_i\)</span> 는 1-형식 이므로</p>
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <span class="math inline">\(dx^i\)</span> 는 1-형식 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast (dx_i) (\boldsymbol{p})(\boldsymbol{v}_p) &amp;= dx_i(F(\boldsymbol{p})) \left(\left(F'(\boldsymbol{p})(\boldsymbol{v}_\boldsymbol{p})\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
-&amp;= dx_i(F(\boldsymbol{p}))\left(\sum_{j=1}^n v_j D_jf_1(\boldsymbol{p}),\ldots,\,\sum_{j=1}^n v_jD_j f_m (\boldsymbol{p})\right)_{F(\boldsymbol{p})} \\[0.3em]
-&amp;= \sum_{j=1}^n v_j D_jf_i (\boldsymbol{p}) = \sum_{j=1} D_j f_i (\boldsymbol{p}) \cdot dx_j(\boldsymbol{p})(\boldsymbol{v}_\boldsymbol{p}).
+(F^\ast (dx^i))_\boldsymbol{p}(\boldsymbol{v}_p) &amp;= dx^i(F(\boldsymbol{p})) \left(\left(F'(\boldsymbol{p})\boldsymbol{v}_\boldsymbol{p}\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
+&amp;= dx^i(F(\boldsymbol{p}))\left(\sum_{j=1}^n v_j D_jf^1(\boldsymbol{p}),\ldots,\,\sum_{j=1}^n v_jD_j f^m (\boldsymbol{p})\right)_{F(\boldsymbol{p})} \\[0.3em]
+&amp;= \sum_{j=1}^n v_j D_jf^i (\boldsymbol{p}) = \sum_{j=1} D_j f^i (\boldsymbol{p}) \cdot dx^j_\boldsymbol{p}(\boldsymbol{v}_\boldsymbol{p}).
 \end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega_1,\,\omega_2 \in \Omega^k\left(T_{F(\boldsymbol{p})} (\mathbb{R}^m)\right)\)</span> 라고 하자.</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast (\omega_1 +\omega_2)&amp;(\boldsymbol{p})\left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right) \\[0.3em]
-&amp;=(\omega_1+\omega_2)(F(\boldsymbol{p}))\left(\left(F'(\boldsymbol{p})(\boldsymbol{v}_1)\right)_{F(\boldsymbol{p})},\ldots,\, \left(F'(\boldsymbol{p})(\boldsymbol{v}_k)\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
-&amp;=\left[F^\ast(\omega_1)(\boldsymbol{p}) + F^\ast (\omega_2)(\boldsymbol{p})\right] \left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right).
+(F^\ast (\omega_1 +\omega_2)&amp;)_\boldsymbol{p}\left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right) \\[0.3em]
+&amp;=(\omega_1+\omega_2)_{F(\boldsymbol{p})}\left(\left(F'(\boldsymbol{p})\boldsymbol{v}_1\right)_{F(\boldsymbol{p})},\ldots,\, \left(F'(\boldsymbol{p})\boldsymbol{v}_k\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
+&amp;=\left[(F^\ast(\omega_1))_\boldsymbol{p} + (F^\ast (\omega_2))_\boldsymbol{p}\right] \left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right).
 \end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(3\)</span>)</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast (g \cdot \omega)&amp;(\boldsymbol{p})\left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right)  \\[0.3em]
-&amp;= (g\cdot \omega)(F(\boldsymbol{p}))(F'(\boldsymbol{p})(\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})}) \\[0.3em]
-&amp;= g(F(\boldsymbol{p})) \omega (F(\boldsymbol{p})) \left(\left(F'(\boldsymbol{p})(\boldsymbol{v}_1)\right)_{F(\boldsymbol{p})},\ldots,\,\left(F'(\boldsymbol{p})(\boldsymbol{v}_k)\right)_{F(\boldsymbol{p})}\right) \\[0.3em]
-&amp;= (g\circ F) \cdot (F^\ast \omega)(\boldsymbol{p}) \left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right).
+(F^\ast (g \cdot \omega)&amp;)_\boldsymbol{p}\left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right)  \\[0.3em]
+&amp;= (g\cdot \omega)_{F(\boldsymbol{p})}((F'(\boldsymbol{p})\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,(F'(\boldsymbol{p})\boldsymbol{v}_k)_{F(\boldsymbol{p})}) \\[0.3em]
+&amp;= g(F(\boldsymbol{p})) \omega_{F(\boldsymbol{p})}((F'(\boldsymbol{p})\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,(F'(\boldsymbol{p})\boldsymbol{v}_k)_{F(\boldsymbol{p})})\\[0.3em]
+&amp;= (g\circ F) \cdot (F^\ast \omega)_\boldsymbol{p} \left((\boldsymbol{v}_1)_\boldsymbol{p},\ldots,(\boldsymbol{v}_k)_\boldsymbol{p}\right).
 \end{aligned}
 \]</span></p>
 <p>(<span class="math inline">\(4\)</span>) <a href="#prp-CM_basic_properties_of_wedge_product_2" class="quarto-xref">명제&nbsp;<span>6.8</span></a> 와 같은 방법으로 증명 할 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast (\omega \wedge \eta)&amp;(\boldsymbol{p})((\boldsymbol{v}_1)_\boldsymbol{p},\ldots, (\boldsymbol{v}_{k+l})_\boldsymbol{p}) \\[0.3em]
-&amp;= (\omega \wedge \eta)(F(\boldsymbol{p})) \left((\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})}\right) \\[0.3em]
+(F^\ast (\omega \wedge \eta)&amp;)_\boldsymbol{p}((\boldsymbol{v}_1)_\boldsymbol{p},\ldots, (\boldsymbol{v}_{k+l})_\boldsymbol{p}) \\[0.3em]
+&amp;= (\omega \wedge \eta)_{F(\boldsymbol{p})} \left((\boldsymbol{v}_1)_{F(\boldsymbol{p})},\ldots,\,F'(\boldsymbol{p})(\boldsymbol{v}_k)_{F(\boldsymbol{p})}\right) \\[0.3em]
 &amp;= (F^\ast \omega \wedge F^\ast \eta)(\boldsymbol{p}) ((\boldsymbol{v}_1)_\boldsymbol{p},\ldots, (\boldsymbol{v}_{k+l})_\boldsymbol{p}) . \qquad \square
 \end{aligned}
 \]</span></p>
@@ -1295,37 +1316,38 @@ F^\ast (\omega \wedge \eta)&amp;(\boldsymbol{p})((\boldsymbol{v}_1)_\boldsymbol{
 <p>여기서 (<span class="math inline">\(4\)</span>) 는 매끄러운 사상 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 <span class="math inline">\(T_{F(\boldsymbol{p})}(\mathbb{R}^m)\)</span> 의 미분 형식의 구조가 <span class="math inline">\(T_\boldsymbol{p}(\mathbb{R}^n)\)</span> 에서도 보존됨을 의미한다. 그리고 이 정리를 이용하면 다음을 알 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast &amp;(P \,dx_1 \wedge dx_2 + Q\,dx_2 \wedge dx_3) =  (P \circ F) \cdot F^\ast (dx_1 \wedge dx_2) + (Q\circ F)\cdot F^\ast (dx_2 \wedge dx_3) \\[0.3em]
-&amp;\qquad = (P\circ F)\cdot (F^\ast dx_1 \wedge F^\ast dx_2) + (Q\circ F)\cdot (F^\ast dx_2 \wedge F^\ast dx_3)
+F^\ast &amp;(P \,dx^1 \wedge dx^2 + Q\,dx^2 \wedge dx^3) \\[0.3em]
+&amp;\qquad=  (P \circ F) \cdot F^\ast (dx^1 \wedge dx^2) + (Q\circ F)\cdot F^\ast (dx^2 \wedge dx^3) \\[0.3em]
+&amp;\qquad = (P\circ F)\cdot (F^\ast dx^1 \wedge F^\ast dx^2) + (Q\circ F)\cdot (F^\ast dx^2 \wedge F^\ast dx^3)
 \end{aligned}
 \]</span></p>
-<p>이것은 다소 복잡한 계산이며 이런 류의 계산을 줄이기 위한 정리가 있다.</p>
+<p>이것은 다소 복잡한 계산이며 아래의 정리는 이런 류의 계산을 줄여준다.</p>
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
-<div id="prp-CM_full_back_simplification" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.12</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 미분가능 할 때 다음이 성립한다.</p>
-<p><span class="math display">\[
-F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h \circ F)\cdot \det (F')\cdot (dx_1 \wedge \cdots \wedge dx_n).
-\]</span></p>
+<div id="thm-CM_full_back_simplification" class="theorem">
+<p><span class="theorem-title"><strong>정리 6.6</strong></span> <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^n\)</span> 이 미분가능 할 때 다음이 성립한다.</p>
+<p><span id="eq-thm-CM_full_back_simplification"><span class="math display">\[
+F^\ast (h\, dx^1 \wedge \cdots \wedge dx^n) = (h \circ F)\cdot \det (F')\cdot (dx^1 \wedge \cdots \wedge dx^n).
+\tag{6.24}\]</span></span></p>
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-CM_properties_of_full_back" class="quarto-xref">정리&nbsp;<span>6.5</span></a> 에 의해</p>
+<p><span class="proof-title"><em>(증명)</em>. </span><a href="#thm-CM_properties_of_full_back" class="quarto-xref">정리&nbsp;<span>6.5</span></a> (<span class="math inline">\(3\)</span>) 에 의해</p>
 <p><span class="math display">\[
-F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
+F^\ast (h\, dx^1 \wedge \cdots \wedge dx^n) = (h\circ F) \cdot (F^\ast (dx^1 \wedge \cdots \wedge dx^n)).
 \]</span></p>
 <p>여기서 <span class="math inline">\(\mathbb{R}^n\)</span> 의 표준 기저 <span class="math inline">\(\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n\)</span> 을 생각하자. 그리고 <span class="math inline">\(F'(\boldsymbol{p})=A\)</span> 는 <span class="math inline">\(n \times n\)</span> 행렬이다.</p>
 <p><span class="math display">\[
 \begin{aligned}
-(F^\ast (dx_1 \wedge \cdots \wedge dx_n))&amp; (\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n) \\[0.3em]
-&amp;= (dx_1 \wedge \cdots \wedge dx_n) (F_\ast (\boldsymbol{e}_1),\ldots,\,F_\ast (\boldsymbol{e}_n)) \\[0.3em]
-&amp;=(dx_1 \wedge \cdots \wedge dx_n) (F'(\boldsymbol{p})(\boldsymbol{e}_1),\ldots,\, F'(\boldsymbol{p})(\boldsymbol{e}_n)) \\[0.3em]
-&amp;=(dx_1 \wedge \cdots \wedge dx_n) \left(\sum_{i=1}^n A_{i1}\boldsymbol{e}_i,\ldots \sum_{i=1}^n A_{in}\boldsymbol{e}_i\right) \\[0.3em]
+(F^\ast (dx^1 \wedge \cdots \wedge dx^n))&amp; (\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n) \\[0.3em]
+&amp;= (dx^1 \wedge \cdots \wedge dx^n) (F_\ast (\boldsymbol{e}_1),\ldots,\,F_\ast (\boldsymbol{e}_n)) \\[0.3em]
+&amp;=(dx^1 \wedge \cdots \wedge dx^n) (F'(\boldsymbol{p})(\boldsymbol{e}_1),\ldots,\, F'(\boldsymbol{p})(\boldsymbol{e}_n)) \\[0.3em]
+&amp;=(dx^1 \wedge \cdots \wedge dx^n) \left(\sum_{i=1}^n A_{i1}\boldsymbol{e}_i,\ldots \sum_{i=1}^n A_{in}\boldsymbol{e}_i\right) \\[0.3em]
 \end{aligned}
 \]</span></p>
 <p><a href="#thm-CM_alternating_tensor_and_determinant" class="quarto-xref">정리&nbsp;<span>6.3</span></a> 에 따라 다음이 성립한다.</p>
 <p><span class="math display">\[
-(F^\ast (dx_1 \wedge \cdots \wedge dx_n)) (\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n) = \det(A)\cdot (dx_1 \wedge \cdots \wedge dx_n)\cdot (\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n).\square
+(F^\ast (dx^1 \wedge \cdots \wedge dx^n)) (\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n) = \det(A)\cdot (dx^1 \wedge \cdots \wedge dx^n)(\boldsymbol{e}_1,\ldots,\,\boldsymbol{e}_n).\square
 \]</span></p>
 </div>
 <p><br></p>
@@ -1343,12 +1365,12 @@ F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \we
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_differential_of_forms" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.16</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega = \sum_{[I]} \omega_{I}dx_{I}\)</span> 에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="theorem-title"><strong>정의 6.17</strong></span> <span class="math inline">\(\mathbb{R}^n\)</span> 에서 정의된 <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega = \sum_{[I]} \omega_{I}dx^{I}\)</span> 에 대한 <span class="math inline">\(\omega\)</span> 의 <strong>외미분 (external derivative)</strong> <span class="math inline">\(d\omega\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CM_def_of_differential_of_form"><span class="math display">\[
 \begin{aligned}
-d\omega :=&amp; \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx_\alpha \wedge dx_{I}.
+d\omega :=&amp; \sum_{[I]} d\omega_{I} \wedge dx^{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx^\alpha \wedge dx^{I}.
 \end{aligned}
-\tag{6.23}\]</span></span></p>
+\tag{6.25}\]</span></span></p>
 </div>
 </div>
 </div>
@@ -1356,8 +1378,8 @@ d\omega :=&amp; \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_basic_properties_of_differential_of_form" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.13</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \eta\)</span> 과 <span class="math inline">\(l\)</span>-형식 <span class="math inline">\(\zeta\)</span>, 미분가능한 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 다음이 성립한다.</p>
-<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(d(dx_{I}) = 0\)</span>,</p>
+<p><span class="theorem-title"><strong>명제 6.12</strong></span> <span class="math inline">\(k\)</span>-형식 <span class="math inline">\(\omega,\, \eta\)</span> 과 <span class="math inline">\(l\)</span>-형식 <span class="math inline">\(\zeta\)</span>, 미분가능한 <span class="math inline">\(F:\mathbb{R}^n \to \mathbb{R}^m\)</span> 에 대해 다음이 성립한다.</p>
+<p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(d(dx^{I}) = 0\)</span>,</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(d(\omega + \eta) = d\omega + d\eta\)</span>,</p>
 <p> (<span class="math inline">\(3\)</span>) <span class="math inline">\(d(\omega \wedge \zeta) = d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta\)</span>,</p>
 <p> (<span class="math inline">\(4\)</span>) <span class="math inline">\(d(d\omega)=0\)</span>,</p>
@@ -1365,36 +1387,41 @@ d\omega :=&amp; \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1
 </div>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-CM_def_of_differential_of_form" class="quarto-xref">식&nbsp;<span>6.23</span></a> 에서 <span class="math inline">\(D_\alpha (\omega_{i_1,\ldots,i_k})=0\)</span> 이다.</p>
-<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(D_\alpha (\omega_\cdots + \eta_\cdots )\,dx_\alpha = D_\alpha \omega_\cdots dx_\alpha + D_\alpha \eta_\cdots dx_\alpha\)</span> 이다.</p>
-<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega = \omega_I dx_{I}\)</span>, <span class="math inline">\(\zeta = \zeta_0 dx_{J}\)</span> 이라고 하자. <span class="math display">\[
+<p><span class="proof-title"><em>(증명)</em>. </span>(<span class="math inline">\(1\)</span>) <a href="#eq-CM_def_of_differential_of_form" class="quarto-xref">식&nbsp;<span>6.25</span></a> 에서 <span class="math inline">\(D_\alpha (\omega_{i_1,\ldots,i_k})=\dfrac{d1}{dx^\alpha} = 0\)</span> 이다.</p>
+<p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\omega = \sum_{[I]} \omega_I dx^I,\, \eta = \sum_{I} \eta_J dx^I\)</span> 라고 하면,</p>
+<p><span class="math display">\[
 \begin{aligned}
-d(\omega \wedge \zeta) &amp;= \sum_{\alpha=1}^n D_\alpha (\omega_I \zeta_J)dx_{\alpha} dx_{I}\wedge dx_{J}\\[0.3em]
-&amp;= \sum_{\alpha} D_\alpha (\omega_I)\,dx_{\alpha} \wedge dx_{I} \wedge \zeta + \omega \wedge (-1)^k D_\alpha (\zeta_J) dx_{\alpha} dx_{J}\\[0.3em]
+d(\omega + \eta) &amp;= \sum_{[I]} \sum_\alpha D_\alpha (\omega_I + \eta_I) dx^\alpha \wedge dx^I = d\omega + d\eta.
+\end{aligned}
+\]</span></p>
+<p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\omega = \omega_I dx^{I}\)</span>, <span class="math inline">\(\zeta = \zeta_J dx^{J}\)</span> 이라고 하자. <a href="#def-CM_arithmatic_of_differential_form" class="quarto-xref">정의&nbsp;<span>6.14</span></a> 으로부터 <span class="math display">\[
+\begin{aligned}
+d(\omega \wedge \zeta) &amp;= \sum_{\alpha=1}^n D_\alpha (\omega_I \zeta_J)dx_{\alpha} \wedge dx^{I}\wedge dx^{J}\\[0.3em]
+&amp;= \sum_{\alpha} D_\alpha (\omega_I)\,dx^{\alpha} \wedge dx^{I} \wedge \zeta + \omega \wedge (-1)^k D_\alpha (\zeta_J) dx^{\alpha} \wedge dx^{J}\\[0.3em]
 &amp;=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta
 \end{aligned}
 \]</span></p>
 <p>이다. <span class="math inline">\(\sum_{[I]}\sum_{[J]}\)</span> 를 고려해도 형태가 유지된다는 것은 쉽게 알 수 있다.</p>
-<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle d(d \omega) = \sum_{[I]} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha \wedge dx_{I}\)</span> 이다. 여기서</p>
+<p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\displaystyle d(d \omega) = \sum_{[I]} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx^\beta \wedge dx^\alpha \wedge dx^{I}\)</span> 이다. 여기서 <span class="math inline">\(D_{\alpha,\beta}=D_{\beta,\alpha}\)</span> 이며 <span class="math inline">\(dx^\beta \wedge dx^\alpha = - dx^\alpha \wedge dx^\beta\)</span> 이므로</p>
 <p><span class="math display">\[
-\sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha = 0
+\sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx^\beta \wedge dx^\alpha = 0.
 \]</span></p>
-<p>이므로 <span class="math inline">\(d(d\omega)=0\)</span> 이다.</p>
-<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(k\)</span> 에 대한 induction 으로 증명한다. <span class="math inline">\(k=0\)</span> 이면 <span class="math inline">\(d\omega = \sum_{i=1}^n(D_i\omega) dx_i\)</span> 이며</p>
+<p>따라서 <span class="math inline">\(d(d\omega)=0\)</span>.</p>
+<p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(k\)</span> 에 대한 induction 으로 증명한다. <span class="math inline">\(k=0\)</span> 이면 <span class="math inline">\(d\omega = \sum_{i=1}^n(D_i\omega) dx^i\)</span> 이며</p>
 <p><span class="math display">\[
 \begin{aligned}
-F^\ast (d\omega)(\boldsymbol{p})(\boldsymbol{v}) &amp;= \sum_{i=1}^n (D_i\omega) (F'(\boldsymbol{p})(\boldsymbol{v})), \\[0.3em]
-d(F^\ast \omega)(\boldsymbol{p})(\boldsymbol{v}) &amp;= d{\big (}\omega(F(\boldsymbol{p})) (F'(\boldsymbol{p})(\boldsymbol{v})){\big )}=\sum_{i=1}^n (D_i \omega)(F'(\boldsymbol{p})(\boldsymbol{v}))
+(F^\ast (d\omega))_\boldsymbol{p}(\boldsymbol{v}) &amp;= \sum_{i=1}^n (D_i\omega)_{F(\boldsymbol{p})} (F'(\boldsymbol{p})\boldsymbol{v})\,dx^i_{F(\boldsymbol{p})}, \\[0.3em]
+d(F^\ast \omega)_\boldsymbol{p}(\boldsymbol{v}) &amp;= d{\big (}\omega_{F(\boldsymbol{p})} (F'(\boldsymbol{p})\boldsymbol{v}){\big )}=\sum_{i=1}^n (D_i \omega)_{F(\boldsymbol{p})}(F'(\boldsymbol{p})(\boldsymbol{v}))\,dx^i_{F(\boldsymbol{p})}
 \end{aligned}
 \]</span></p>
-<p>이다. 이제 <span class="math inline">\(k\)</span> 보다 작은 자연수에 대해 성립함을 가정하고 <span class="math inline">\(k+1\)</span> 형식인 <span class="math inline">\(d(\omega \wedge dx_i)\)</span> 에서 성립함을 보이자.</p>
+<p>이다. 이제 <span class="math inline">\(k\)</span> 보다 크지 않은 자연수에 대해 성립함을 가정하고 <span class="math inline">\(k+1\)</span> 형식인 <span class="math inline">\(d(\omega \wedge dx_i)\)</span> 에서 성립함을 보이자.</p>
 <p><span id="eq-prp-CM_basic_properties_of_differential_of_form"><span class="math display">\[
 \begin{aligned}
-F^\ast (d(\omega \wedge dx_i)) &amp;=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i)) \\[0.3em]
+F^\ast (d(\omega \wedge dx_i)) &amp;=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i))\,\\[0.3em]
 &amp;= F^\ast (d\omega \wedge dx_i) = F^\ast (d\omega )\wedge F^\ast (dx_i) \\[0.3em]
 \end{aligned}
-\tag{6.24}\]</span></span></p>
-<p>이다. 여기서</p>
+\tag{6.26}\]</span></span></p>
+<p>이다. 마지막의 등호는 <a href="#thm-CM_properties_of_full_back" class="quarto-xref">정리&nbsp;<span>6.5</span></a> (<span class="math inline">\(4\)</span>) 로부터. 여기서</p>
 <p><span class="math display">\[
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-1)^k (F^\ast \omega)\wedge d(F^\ast dx_i)
 \]</span></p>
@@ -1402,7 +1429,7 @@ d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-
 <p><span class="math display">\[
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) = F^\ast d\omega \wedge F^\ast dx_i
 \]</span></p>
-<p>이다. <a href="#eq-prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">식&nbsp;<span>6.24</span></a> 에 대입하면</p>
+<p>이다. <a href="#eq-prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">식&nbsp;<span>6.26</span></a> 에 대입하면</p>
 <p><span class="math display">\[
 F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\omega \wedge dx_i)
 \]</span></p>
@@ -1420,14 +1447,14 @@ F^\ast (d(\omega \wedge dx_i)) =d(F^\ast \omega \wedge F^\ast dx_i) = dF^\ast (\
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_closed_and_exact_form" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.17</strong></span> 형식 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(d\omega=0\)</span> 일 때 <strong>닫힌 형식 (closed form)</strong> 이라고 한다. <span class="math inline">\(\omega\)</span> 가 다른 형식 <span class="math inline">\(\eta\)</span> 에 대해 <span class="math inline">\(\omega = d\eta\)</span> 일 때 <span class="math inline">\(\omega\)</span> 를 <strong>완전 형식 (exact form)</strong> 이라고 한다.</p>
+<p><span class="theorem-title"><strong>정의 6.18</strong></span> 형식 <span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(d\omega=0\)</span> 일 때 <strong>닫힌 형식 (closed form)</strong> 이라고 한다. <span class="math inline">\(\omega\)</span> 가 다른 형식 <span class="math inline">\(\eta\)</span> 에 대해 <span class="math inline">\(\omega = d\eta\)</span> 일 때 <span class="math inline">\(\omega\)</span> 를 <strong>완전 형식 (exact form)</strong> 이라고 한다.</p>
 </div>
 </div>
 </div>
 정의로 부터 아래는 자명하다.
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_closed_form_and_exact_form" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.14</strong></span> 모든 완전 형식은 닫힌 형식이다.</p>
+<p><span class="theorem-title"><strong>명제 6.13</strong></span> 모든 완전 형식은 닫힌 형식이다.</p>
 </div>
 </div>
 <br>
@@ -1452,7 +1479,7 @@ f(\boldsymbol{x}) = \int_0^1 \dfrac{d}{dt}f(t\boldsymbol{x})\,dt = \int_0^1 \sum
 <p>즉 주어진 <span class="math inline">\(\omega\)</span> 에 대해 <span class="math inline">\(\omega = df\)</span> 를 만족하는 <span class="math inline">\(f\)</span> 를 찾기 위해 아래의 함수를 정의할 필요가 있다.</p>
 <p><span id="eq-CM_Iomega_transform"><span class="math display">\[
 I\omega (\boldsymbol{x}) := \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdot x_i \,dt.
-\tag{6.25}\]</span></span></p>
+\tag{6.27}\]</span></span></p>
 <p><span class="math inline">\(I\omega\)</span> 의 정의가 일단 성립하기 위해 필요한 조건을 살펴 보자. 우선 <span class="math inline">\(\omega\)</span> 가 정의되는 열린 집합 <span class="math inline">\(A\subset \mathbb{R}^n\)</span> 이 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 일 때 <span class="math inline">\(0\)</span> 부터 <span class="math inline">\(\boldsymbol{x}\)</span> 까지의 선분이 <span class="math inline">\(A\)</span> 에 포함되어야 한다. 이런 성질을 가진 열린 집합을 <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 <strong>별모양 집합 (star shaped set)</strong> 이라고 한다.</p>
 <p><br></p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -1461,12 +1488,12 @@ I\omega (\boldsymbol{x}) := \int_0^1 \sum_{i=1}^n \omega_i (t\boldsymbol{x})\cdo
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">노트</span>미분가능한 호모토피
+<span class="screen-reader-only">노트</span><strong>미분가능한 호모토피</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <div id="def-CM_differentiable_homotopy" class="theorem definition">
-<p><span class="theorem-title"><strong>정의 6.18</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n,\,B\subset \mathbb{R}^m\)</span> 이 열린 집합이고 <span class="math inline">\(G,\,H \to A\to B\)</span> 가 <span class="math inline">\(C^\infty\)</span> 사상이라고 하자. 이 때 어떤 <span class="math inline">\(C^\infty\)</span> 사상 <span class="math inline">\(K:A\times [0,\,1] \to B\)</span> 가 존재하여</p>
+<p><span class="theorem-title"><strong>정의 6.19</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n,\,B\subset \mathbb{R}^m\)</span> 이 열린 집합이고 <span class="math inline">\(G,\,H : A\to B\)</span> 가 <span class="math inline">\(C^\infty\)</span> 사상이라고 하자. 이 때 어떤 <span class="math inline">\(C^\infty\)</span> 사상 <span class="math inline">\(K:A\times [0,\,1] \to B\)</span> 가 존재하여</p>
 <p><span class="math display">\[
 K(\boldsymbol{x},\,0) = G(\boldsymbol{x}),\qquad K(\boldsymbol{x},\,1) = H(\boldsymbol{x})
 \]</span></p>
@@ -1499,14 +1526,14 @@ d\mathcal{P}\omega +\mathcal{P}d\omega = H^\ast \omega - G^\ast \omega
 dP\omega + Pd\omega = \beta^\ast \omega - \alpha^\ast \omega  &amp; &amp; \text{if order }\omega &gt; 0, \\[0.3em]
 Pdf = \beta^\ast f - a\ast f &amp; &amp; \text{if order }f = 0.
 \end{aligned}
-\tag{6.26}\]</span></span></p>
+\tag{6.28}\]</span></span></p>
 <p><span class="math inline">\(\omega \in \Omega^{k+1}(A \times I)\)</span> 에 대해 <span class="math inline">\(\alpha^\ast,\, \beta ^\ast : \Omega^{k+1}(A \times I) \to \Omega^{k+1}(A)\)</span> 는 <span class="math inline">\(\boldsymbol{x}\in A\)</span> 에 대해</p>
 <p><span id="eq-thm-CM_for_poincare_lemma_1_1_1"><span class="math display">\[
 \begin{aligned}
 (\alpha^\ast \omega) (\boldsymbol{x}) &amp;= \omega (\beta (\boldsymbol{x})) (\beta(\boldsymbol{x})) = \left(\omega (\boldsymbol{x},\,0)\right) (\boldsymbol{x},\,0) \\[0.3em]
 (\beta^\ast \omega) (\boldsymbol{x}) &amp;=\left(\omega (\boldsymbol{x},\,1)\right) (\boldsymbol{x},\,1)
 \end{aligned}
-\tag{6.27}\]</span></span></p>
+\tag{6.29}\]</span></span></p>
 <p>이다.</p>
 <p><span class="math inline">\(g\)</span> 가 <span class="math inline">\(A\times I\)</span> 에서 정의된 연속인 스칼라 함수일 때 <span class="math inline">\(\mathcal{I}g\)</span> 를 다음과 같이 정의한다.</p>
 <p><span class="math display">\[
@@ -1519,27 +1546,27 @@ Pdf = \beta^\ast f - a\ast f &amp; &amp; \text{if order }f = 0.
 <p>라고 쓸 수 있다. 이 때 <span class="math inline">\(P\omega\)</span> 를 다음과 같이 정의한다.</p>
 <p><span id="eq-thm-CM_for_poincare_lemma_1_2"><span class="math display">\[
 P\omega := P\left(\sum_{[I]} f_I dx_I + \sum_{[J]} g_J dx_J \wedge dt\right) = (-1)^k (\mathcal{I}g_J)dx_J
-\tag{6.28}\]</span></span></p>
+\tag{6.30}\]</span></span></p>
 <p>이에 대해 다음 두 사실은 쉽게 보일 수 있다.</p>
 <p> (<span class="math inline">\(1\)</span>) <span class="math inline">\(P\)</span> 는 선형변환이다.</p>
 <p> (<span class="math inline">\(2\)</span>) <span class="math inline">\(g_J\)</span> 와 <span class="math inline">\(\mathcal{I}g_J\)</span> 도 <span class="math inline">\(C^\infty\)</span>-급이므로 <span class="math inline">\(P\omega\)</span> 도 <span class="math inline">\(C^\infty\)</span>-급이다.</p>
 <p><span class="math inline">\(\eta\)</span> 가 <span class="math inline">\(1\)</span>-형식이라면 <span class="math inline">\(\eta = \sum_i f_i dx_i + gdt\)</span> 이며 <span class="math inline">\(P\omega = \mathcal{I}g\)</span> 이다.</p>
-<p><strong>[Step 2].</strong> <span class="math inline">\(I\)</span> 와 <span class="math inline">\(J\)</span> 가 각각 <span class="math inline">\(1,\ldots,\,n\)</span> 에서 증가하는 <span class="math inline">\(k+1\)</span> 개와 <span class="math inline">\(k\)</span> 개의 정수로 이루어진 tuple 이 아닌 임의의 <span class="math inline">\(k+1\)</span>, <span class="math inline">\(k\)</span> tuple 일 때도 <a href="#eq-thm-CM_for_poincare_lemma_1_2" class="quarto-xref">식&nbsp;<span>6.28</span></a> 이 성립한다. 즉 <span class="math inline">\(I, J\)</span> 가 임의의 <span class="math inline">\(k+1\)</span>, <span class="math inline">\(k\)</span> tuple 일 때</p>
+<p><strong>[Step 2].</strong> <span class="math inline">\(I\)</span> 와 <span class="math inline">\(J\)</span> 가 각각 <span class="math inline">\(1,\ldots,\,n\)</span> 에서 증가하는 <span class="math inline">\(k+1\)</span> 개와 <span class="math inline">\(k\)</span> 개의 정수로 이루어진 tuple 이 아닌 임의의 <span class="math inline">\(k+1\)</span>, <span class="math inline">\(k\)</span> tuple 일 때도 <a href="#eq-thm-CM_for_poincare_lemma_1_2" class="quarto-xref">식&nbsp;<span>6.30</span></a> 이 성립한다. 즉 <span class="math inline">\(I, J\)</span> 가 임의의 <span class="math inline">\(k+1\)</span>, <span class="math inline">\(k\)</span> tuple 일 때</p>
 <p><span class="math display">\[
 P(f\,dx_I) =0,\qquad P(g\, dx_J\wedge dt) = (-1)^k (\mathcal{I}g)\,dx_J
 \]</span></p>
 <p>이다.</p>
-<p><strong>[Step 3].</strong> 우선 <span class="math inline">\(k=0\)</span> 인 경우 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.26</span></a> 가 성립함을 보이자.</p>
+<p><strong>[Step 3].</strong> 우선 <span class="math inline">\(k=0\)</span> 인 경우 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.28</span></a> 가 성립함을 보이자.</p>
 <p><span class="math display">\[
 \begin{aligned}
 P(df) &amp;= P\left(\sum_{j=1}^n D_j f dx_j\right) + P\left(D_t f\, dt\right) = \mathcal{I}D_tf \\[0.3em]
 &amp;=f\circ \beta - f \circ \alpha = \beta^\ast f - \alpha ^\ast f
 \end{aligned}
 \]</span></p>
-<p>이제 <span class="math inline">\(k&gt;0\)</span> 인 경우에도 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.26</span></a> 가 성립함을 보이자. <a href="#eq-thm-CM_for_poincare_lemma_1_1_1" class="quarto-xref">식&nbsp;<span>6.27</span></a> 로 부터</p>
+<p>이제 <span class="math inline">\(k&gt;0\)</span> 인 경우에도 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.28</span></a> 가 성립함을 보이자. <a href="#eq-thm-CM_for_poincare_lemma_1_1_1" class="quarto-xref">식&nbsp;<span>6.29</span></a> 로 부터</p>
 <p><span id="eq-thm-CM_for_poincare_lemma_1_3"><span class="math display">\[
 \alpha^\ast (dx_i) = \beta^\ast (dx_i) = dx_i, \qquad \alpha^\ast (dt) = \beta^\ast (dt) = 0
-\tag{6.29}\]</span></span></p>
+\tag{6.31}\]</span></span></p>
 <p>이다. <span class="math inline">\(d,\, P,\, \alpha,\, \beta\)</span> 모두 선형함수 이므로 <span class="math inline">\(\omega = \sum_{[I]}f_I dx_I + \sum_{[J]}g_J dx_J\wedge dt\)</span> 에서 <span class="math inline">\(\omega = f_Idx_I + g_J dx_J \wedge dt\)</span> 인 경우만 생각해도 된다. <span class="math inline">\(P(f_Idx_J)=0\)</span> 이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -1562,11 +1589,11 @@ dP(g_J dx_J \wedge dt) &amp;+ Pd(g_J dx_J \wedge dt) \\[0.3em]
 &amp;= 0
 \end{aligned}
 \]</span></p>
-<p>이다. 또한 <a href="#eq-thm-CM_for_poincare_lemma_1_3" class="quarto-xref">식&nbsp;<span>6.29</span></a> 으로부터</p>
+<p>이다. 또한 <a href="#eq-thm-CM_for_poincare_lemma_1_3" class="quarto-xref">식&nbsp;<span>6.31</span></a> 으로부터</p>
 <p><span class="math display">\[
 \beta^\ast (g_J dx_J \wedge dt) - \alpha^\ast (gdx_J \wedge dt) = 0
 \]</span></p>
-<p>이다. 결론적으로 우리는 임의의 <span class="math inline">\(k\)</span> 형식 <span class="math inline">\(\eta\)</span> 에 대해 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.26</span></a> 이 성립함을 보였다.</p>
+<p>이다. 결론적으로 우리는 임의의 <span class="math inline">\(k\)</span> 형식 <span class="math inline">\(\eta\)</span> 에 대해 <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.28</span></a> 이 성립함을 보였다.</p>
 <p><strong>[Step 4].</strong> 이제 일반적인 경우에 성립한다는 것을 보이자. 명제의 가정에 의해 <span class="math inline">\(G,\, H: A \to B\)</span> 사이에 미분가능한 호모토피 <span class="math inline">\(K : A\times I \to B\)</span> 가 존재한다. <span class="math inline">\(\alpha,\,\beta\)</span> 그리고 <span class="math inline">\(P\)</span> 는 Step 1 에서 정의된 그것이라고 하자. 그리고 선형변환 <span class="math inline">\(\mathcal{P} \in \mathcal{L}(\Omega^{k+1}(B),\Omega^k(A))\)</span> 를 아래와 같이 정의하자.</p>
 <p><span class="math display">\[
 \mathcal{P}\omega := P(K^\ast \omega).
@@ -1586,8 +1613,8 @@ d\mathcal{P}\omega  + \mathcal{P}d\omega &amp;=dP(K^\ast \omega) + P(K^\ast d\om
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>  (<span class="math inline">\(1\)</span>) <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>6.13</span></a> 에 의해 <span class="math inline">\(K^\ast d\omega = d(K^\ast \omega)\)</span> 이다.</p>
-<p>  (<span class="math inline">\(2\)</span>) <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.26</span></a></p>
+<p>  (<span class="math inline">\(1\)</span>) <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>6.12</span></a> 에 의해 <span class="math inline">\(K^\ast d\omega = d(K^\ast \omega)\)</span> 이다.</p>
+<p>  (<span class="math inline">\(2\)</span>) <a href="#eq-thm-CM_for_poincare_lemma_1_1" class="quarto-xref">식&nbsp;<span>6.28</span></a></p>
 </div>
 </div>
 </div>
@@ -1596,7 +1623,7 @@ d\mathcal{P}\omega  + \mathcal{P}d\omega &amp;=dP(K^\ast \omega) + P(K^\ast d\om
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="thm-CM_poincare_lemma" class="theorem">
-<p><span class="theorem-title"><strong>정리 6.6 (푸앙카레 보조정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 열린 별모양 집합일 때 <span class="math inline">\(A\)</span> 에서 정의된 모든 닫힌 형식은 완전 형식이다.</p>
+<p><span class="theorem-title"><strong>정리 6.7 (푸앙카레 보조정리)</strong></span> <span class="math inline">\(A\subset \mathbb{R}^n\)</span> <span class="math inline">\(\boldsymbol{0}\)</span> 주위의 열린 별모양 집합일 때 <span class="math inline">\(A\)</span> 에서 정의된 모든 닫힌 형식은 완전 형식이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -1634,7 +1661,7 @@ d\mathcal{P}\omega + \mathcal{P}d\omega = H^\ast \omega - G^\ast \omega = \omega
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>6.15</span></a> 을 보자. 접벡터를 <span class="math inline">\(\underline{(p,\,v)}\)</span> 형태로 밑줄과 함께 표현하면</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>6.16</span></a> 을 보자. 접벡터를 <span class="math inline">\(\underline{(p,\,v)}\)</span> 형태로 밑줄과 함께 표현하면</p>
 <p><span class="math display">\[
 \begin{aligned}
 F_\ast \underline{(p,\,v)} &amp;= \underline{(F(p),\, F'(p)v)}, \\[0.3em]
@@ -1778,11 +1805,11 @@ d(\zeta_F) &amp;= D_1f_1 dx \wedge dy \wedge dz + D_2f_2 dy \wedge dz \wedge dx 
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(F(U)\)</span> 위에서의 닫힌 형식이라고 하자. <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>6.13</span></a> 의 (<span class="math inline">\(5\)</span>) 에 의해 <span class="math inline">\(F^\ast (d\omega)=d(F^\ast \omega)\)</span> 이다. 여기서 <span class="math inline">\((F^\ast \omega)\)</span> 는 <span class="math inline">\(U\)</span> 에서의 형식이며 <span class="math inline">\(d(F^\ast \omega)=0\)</span> 이면 <span class="math inline">\(F^\ast \omega = d\zeta\)</span> 인 <span class="math inline">\(U\)</span> 에서의 형식 <span class="math inline">\(\zeta\)</span> 가 존재한다. <span class="math inline">\((F^{-1})^\ast \zeta\)</span> 는 <span class="math inline">\(F(U)\)</span> 위에서의 형식이며</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(\omega\)</span> 가 <span class="math inline">\(F(U)\)</span> 위에서의 닫힌 형식이라고 하자. <a href="#prp-CM_basic_properties_of_differential_of_form" class="quarto-xref">명제&nbsp;<span>6.12</span></a> 의 (<span class="math inline">\(5\)</span>) 에 의해 <span class="math inline">\(F^\ast (d\omega)=d(F^\ast \omega)\)</span> 이다. 여기서 <span class="math inline">\((F^\ast \omega)\)</span> 는 <span class="math inline">\(U\)</span> 에서의 형식이며 <span class="math inline">\(d(F^\ast \omega)=0\)</span> 이면 <span class="math inline">\(F^\ast \omega = d\zeta\)</span> 인 <span class="math inline">\(U\)</span> 에서의 형식 <span class="math inline">\(\zeta\)</span> 가 존재한다. <span class="math inline">\((F^{-1})^\ast \zeta\)</span> 는 <span class="math inline">\(F(U)\)</span> 위에서의 형식이며</p>
 <p><span class="math display">\[
 d((F^{-1})^\ast \zeta)= (F^{-1})^\ast(d\zeta) = (F^{-1})^\ast(F^\ast \omega)
 \]</span></p>
-<p>이다. 이 때 <span class="math inline">\(G=F^{-1}\)</span> 이라 하면, <span class="math inline">\(F'(G(\boldsymbol{p})) \cdot G'(\boldsymbol{p}) = I_n\)</span> 이다. <a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>6.15</span></a> 에 따라</p>
+<p>이다. 이 때 <span class="math inline">\(G=F^{-1}\)</span> 이라 하면, <span class="math inline">\(F'(G(\boldsymbol{p})) \cdot G'(\boldsymbol{p}) = I_n\)</span> 이다. <a href="#def-CM_push_forward_and_pull_back" class="quarto-xref">정의&nbsp;<span>6.16</span></a> 에 따라</p>
 <p><span class="math display">\[
 \begin{aligned}
 G^\ast &amp;(F^\ast \omega) (\boldsymbol{p})(\boldsymbol{v}_1,\ldots,\boldsymbol{v}_k)\\[0.3em]
@@ -1837,7 +1864,7 @@ d\theta = -\dfrac{y}{x^2}\dfrac{1}{1+y^2/x^2}\,dx + \dfrac{1}{x} \dfrac{1}{1+y^2
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_properties_of_hodge_star_operator" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.15 (Hodge 별 산자의 기본 성질)</strong></span> <span class="math inline">\(\omega \in \Omega^k(\mathbb{R}^n)\)</span> 에 대해 다음이 성립한다. <span class="math display">\[
+<p><span class="theorem-title"><strong>명제 6.14 (Hodge 별 산자의 기본 성질)</strong></span> <span class="math inline">\(\omega \in \Omega^k(\mathbb{R}^n)\)</span> 에 대해 다음이 성립한다. <span class="math display">\[
 \omega \wedge (\ast \omega) = (\ast \omega) \wedge (\ast \ast \omega)  = dx_1 \wedge \cdots \wedge dx_n.
 \]</span></p>
 </div>
@@ -1931,7 +1958,7 @@ d(*(df)) = \sum_i (-1)^{\sigma_i} \partial_i^2 f_i dx_i \wedge dx_{[n/i]}= \left
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_determinant_and_k_form" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.16</strong></span> <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n) = (\mathbb{R}^n)^\ast\)</span> 일 때 다음이 성립한다.</p>
+<p><span class="theorem-title"><strong>명제 6.15</strong></span> <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n) = (\mathbb{R}^n)^\ast\)</span> 일 때 다음이 성립한다.</p>
 <p><span class="math display">\[
 (\varphi_1 \wedge \cdots \wedge \varphi_k)(v_1,\ldots,\,v_k) = \det(\varphi_i(v_j)).
 \]</span></p>
@@ -1949,7 +1976,7 @@ d(*(df)) = \sum_i (-1)^{\sigma_i} \partial_i^2 f_i dx_i \wedge dx_{[n/i]}= \left
 <br>
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 <div id="prp-CM_independent_1_forms" class="theorem proposition">
-<p><span class="theorem-title"><strong>명제 6.17</strong></span> <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n)\)</span> 가 서로 독립이며 <span class="math inline">\(v_i \leftrightarrow \varphi_i\)</span> 이면 <span class="math inline">\(v_1,\ldots,\,v_k\)</span> 는 선형독립이다.</p>
+<p><span class="theorem-title"><strong>명제 6.16</strong></span> <span class="math inline">\(\varphi_1,\ldots,\,\varphi_k \in \Omega^1(\mathbb{R}^n)\)</span> 가 서로 독립이며 <span class="math inline">\(v_i \leftrightarrow \varphi_i\)</span> 이면 <span class="math inline">\(v_1,\ldots,\,v_k\)</span> 는 선형독립이다.</p>
 </div>
 </div>
 <div class="proof">
@@ -1960,7 +1987,7 @@ d(*(df)) = \sum_i (-1)^{\sigma_i} \partial_i^2 f_i dx_i \wedge dx_{[n/i]}= \left
 <p>이므로 <span class="math inline">\(c_1 = \cdots  = c_k = 0\)</span> 이다. 즉 <span class="math inline">\(v_1,\ldots,\,v_k\)</span> 는 선형독립이다. <span class="math inline">\(\square\)</span></p>
 </div>
 <p><br></p>
-<p>(<span class="math inline">\(a\)</span>) <a href="#prp-CM_determinant_and_k_form" class="quarto-xref">명제&nbsp;<span>6.16</span></a> 로부터 <span class="math inline">\((\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,v_k) = \det(\beta_i(v_j))\)</span> 이다. 행렬 <span class="math inline">\(B\)</span> 를 <span class="math inline">\(B_{ij} = \beta_i(v_j)\)</span>, 행렬 <span class="math inline">\(\Phi\)</span> 를 <span class="math inline">\(\Phi_{ij} = \varphi_i(v_j)\)</span> 로 정의하자. 또한 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(A_{ij}=a_{ij}\)</span> 로 정의하면 <span class="math inline">\(\Phi = AB\)</span> 이므로 <span class="math inline">\(\det (\Phi) = \det (A)\det (B) = \det (B)\)</span> 이므로 <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span> 이다.</p>
+<p>(<span class="math inline">\(a\)</span>) <a href="#prp-CM_determinant_and_k_form" class="quarto-xref">명제&nbsp;<span>6.15</span></a> 로부터 <span class="math inline">\((\beta_1 \wedge \cdots \wedge \beta_k)(v_1,\ldots,v_k) = \det(\beta_i(v_j))\)</span> 이다. 행렬 <span class="math inline">\(B\)</span> 를 <span class="math inline">\(B_{ij} = \beta_i(v_j)\)</span>, 행렬 <span class="math inline">\(\Phi\)</span> 를 <span class="math inline">\(\Phi_{ij} = \varphi_i(v_j)\)</span> 로 정의하자. 또한 <span class="math inline">\(A\)</span> 를 <span class="math inline">\(A_{ij}=a_{ij}\)</span> 로 정의하면 <span class="math inline">\(\Phi = AB\)</span> 이므로 <span class="math inline">\(\det (\Phi) = \det (A)\det (B) = \det (B)\)</span> 이므로 <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span> 이다.</p>
 <p>(<span class="math inline">\(b\)</span>) trivial</p>
 <p>(<span class="math inline">\(c\)</span>) <span class="math inline">\(\beta_1,\ldots,\,\beta_k\)</span> 를 확장하여 <span class="math inline">\((\mathbb{R}^n)^\ast\)</span> 의 기저 <span class="math inline">\(\beta_1,\ldots,\,\beta_n\)</span> 을 구성 할 수 있다. 따라서 <span class="math inline">\(\varphi_i\)</span> 는 <span class="math inline">\((\beta_i)\)</span> 의 선형결합으로 표현 할 수 있으므로 <span class="math inline">\(\varphi_i = \sum_{l=1}^k a_{il}\beta_l + \sum_{m=k+1}^n b_{im}\beta_m\)</span> 이라고 하자. <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span> 이므로 <span class="math inline">\(\beta_1\wedge \cdots \wedge \beta_k \wedge \varphi_i = 0\)</span> 이며 이로부터 <span class="math inline">\(m=k+1,\ldots,n\)</span> 에 대해 <span class="math inline">\(\beta_{im}=0\)</span> 이다. 즉 <span class="math inline">\(\text{span}\,(\varphi_1,\ldots,\,\varphi_k) = \text{span}\,(\beta_1,\ldots,\,\beta_k)\)</span> 이다.</p>
 <p>(<span class="math inline">\(d\)</span>) <span class="math inline">\(\varphi_1 \wedge \cdots \wedge \varphi_k = \beta_1 \wedge \cdots \wedge \beta_k\)</span>.</p>
@@ -2151,7 +2178,8 @@ d( (bz-cy)dx &amp;+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -2160,8 +2188,69 @@ d( (bz-cy)dx &amp;+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -2175,6 +2264,7 @@ d( (bz-cy)dx &amp;+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -2337,44 +2427,54 @@ d( (bz-cy)dx &amp;+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -2473,7 +2573,10 @@ d( (bz-cy)dx &amp;+ (cx -az)dy + (ay-bx)dz)  \\[0.3em]
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../../src/AnalysisOnManifolds/05_change_of_variables.html" class="pagination-link" aria-label="미분동형사상과 변수 변경">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">미분동형사상과 변수 변경</span></span>

@@ -135,7 +135,7 @@ $$
 
 #### **Pull-back**
 
-::: {#def-CM_pullback}
+::: {#def-CM_pullback_on_differential_function}
 
 미분가능한 함수 $F:V \to W$ 와 $\phi\in \mathfrak{J}^k(W)$ 에 대해 아래와 같이 정의되는 $F^\ast : \mathfrak{J}^k(W) \to \mathfrak{J}^k(V)$ 를 $F$ 에 의한 $\phi$ 의 **pull-back** 이라고 한다.
 
@@ -225,11 +225,11 @@ $\Omega^k(V)$ 는 벡터공간이며 $\mathfrak{J}^k(V)$ 의 부분공간이다.
 
 ::: {.callout-note icon="false"}
 
-#### 교대화
+#### **교대화**
 
 ::: {#def-CM_alternatization}
 
-아래에 정의된 $\text{Alt}: \mathfrak{J}^k(V) \to \Sigma^k(V)$ 는 $k$-텐서의 선형결합으로 교대 $k$-텐서를 반환한다. 이를 **교대화(Alternatization)** 라고 한다. 여기서 $\sigma$ 는 대칭군 $S_k$ 에 속하는 순열이며 $\text{sgn}(\sigma)$ 는 순열에 대한 부호함수이다.
+아래에 정의된 $\text{Alt}: \mathfrak{J}^k(V) \to \Omega^k(V)$ 는 $k$-텐서의 선형결합으로 교대 $k$-텐서를 반환한다. 이를 **교대화(Alternatization)** 라고 한다. 여기서 $\sigma$ 는 대칭군 $S_k$ 에 속하는 순열이며 $\text{sgn}(\sigma)$ 는 순열에 대한 부호함수이다.
 
 $$
 \text{Alt}(\phi)(v_1,\ldots,v_k) := \dfrac{1}{k!}\sum_{\sigma \in S_k} \text{sgn}(\sigma) \cdot \phi\left(v_{\sigma(1)},\ldots,v_{\sigma(k)}\right).
@@ -238,8 +238,6 @@ $$ {#eq-CM_definition_of_alt_function}
 :::
 :::
 
-
-
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#prp-CM_basic_properties_of_alt_function}
@@ -247,18 +245,22 @@ $$ {#eq-CM_definition_of_alt_function}
 #### 교대화의 기본 성질
 </br>
 
-&emsp;($1$) $\phi\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\phi)\in \Omega^k(V)$ 이다.
+&emsp;($1$) $\phi,\,\psi \in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\phi + \psi) = \text{Alt}(\phi) + \text{Alt}(\psi)$ 이다.
 
-&emsp;($2$) $\omega\in \Omega^k(V)$ 이면 $\text{Alt}(\omega) = \omega$ 이다.
+&emsp;($2$) $\phi\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\phi)\in \Omega^k(V)$ 이다.
 
-&emsp;($3$) $\phi\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\text{Alt}(\phi)) = \text{Alt}(\phi)$ 이다.
+&emsp;($3$) $\omega\in \Omega^k(V)$ 이면 $\text{Alt}(\omega) = \omega$ 이다.
+
+&emsp;($4$) $\phi\in \mathfrak{J}^k(V)$ 이면 $\text{Alt}(\text{Alt}(\phi)) = \text{Alt}(\phi)$ 이다.
 :::
 
 </div>
 
 ::: {.proof}
 
-($1$) $\sigma,\,\tau \in S_k$ 일 때 $\text{sgn}(\sigma \circ \tau)= \text{sgn}(\sigma)\cdot \text{sgn}(\tau)$ 임을 안다. 호환 (transportation) $\tau = (i,j)$ 를 생각하면 $\text{sgn}(\tau)=-1$ 이며
+($1$) trivial.
+
+($2$) $\sigma,\,\tau \in S_k$ 일 때 $\text{sgn}(\sigma \circ \tau)= \text{sgn}(\sigma)\cdot \text{sgn}(\tau)$ 임을 안다. 호환 (transportation) $\tau = (i,j)$ 를 생각하면 $\text{sgn}(\tau)=-1$ 이며
 
 $$
 \begin{aligned}
@@ -271,7 +273,7 @@ $$
 
 이다. 따라서 $\text{Alt}(\phi)\in \Omega^k(V)$ 이다.
 
-($2$) @eq-CM_alternating_property_of_k_tensor 로 부터 $\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)$ 임을 보일 수 있다. 따라서 
+($3$) @eq-CM_alternating_property_of_k_tensor 로 부터 $\omega (v_{\sigma (1)},\ldots,v_{\sigma (k)}) = \text{sgn}(\sigma) \cdot \omega (v_1,\ldots,v_k)$ 임을 보일 수 있다. 따라서 
 
 $$
 \begin{aligned}
@@ -281,7 +283,7 @@ $$
 \end{aligned}
 $$
 
-($3$) ($1$), ($2$) 에 의해 자명하다. $\square$
+($4$) 는 ($2$), ($3$) 에 의해 자명하다. $\square$
 
 :::
 
@@ -318,7 +320,7 @@ $$
 \end{aligned}
 $$ {#eq-CM_equation_of_wedge_product}
 
-아래는 정의와 @prp-CM_basic_properties_of_alt_function 의 ($1$) 로 부터 자명하다.
+아래는 정의와 @prp-CM_basic_properties_of_alt_function 의 ($2$) 로 부터 자명하다.
 
 <div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
@@ -465,13 +467,13 @@ $$
 
 이다. $S_{k+l}$ 은 군이며 $G$ 는 $S_{k+l}$ 의 부분군이다. 따라서 $S_{k+l}$ 은 서로소인 $G$ 에 대한 오른쪽 잉여류(left cosets) 로 분할되며 각 잉여류는 같거나 서로소이다. $\sigma_0$ 는 $S_{k+l}$ 에 속하지만 $G$ 에 속하지 않는 임의의 원소이므로 @eq-prp_CM_basic_properties_of_wedge_product_3_1 은 $0$ 임을 알 수 있다.
 
-($2$) @prp-CM_basic_properties_of_alt_function ($3$) 으로부터 
+($2$) @prp-CM_basic_properties_of_alt_function ($1$), ($4$) 로부터 
 
 $$
 \text{Alt}\left(\text{Alt}(\eta \otimes \zeta) - \eta \otimes \zeta\right) =0
 $$
 
-임을 안다. ($1$) 로부터
+임을 안다. ($2$) 로부터
 
 $$
 \begin{aligned}
@@ -502,6 +504,8 @@ $$
 
 ::: {#thm-CM_basis_of_alternating_tensor_space}
 
+#### 교대공간의 기저와 차원
+
 벡터공간 $V$ 의 기저 $(e_1,\ldots,e_n)$ 와 이 기저에 대한 쌍대기저 $\varphi_1,\ldots,\,\varphi_n$ 에 대해 아래 집합이 $\Omega^k(V)$ 의 기저이다.
 
 $$
@@ -522,7 +526,7 @@ $$ {#eq-CM_dimension_of_alternating_k_tensor_space}
 
 ::: {.proof}
 
-$\omega \in \Omega^k(V) \subset \mathfrak{J}^k(V)$ 에 대해
+@thm-CM_basis_of_tensor_product 를 참고하라. $\omega \in \Omega^k(V) \subset \mathfrak{J}^k(V)$ 에 대해
 
 $$
 \omega = \sum_{i_1,\ldots,\,i_k} a_{i_1,\ldots,i_k} \left[\varphi_{i_1}\otimes \cdots \otimes \varphi_{i_k}\right]
@@ -601,8 +605,7 @@ $\eta\in \Omega^n(\R^n)$ 이므로 @cor-CM_alternating_tensor_and_determinant �
 #### **방향과 부피요소**
 @thm-CM_alternating_tensor_and_determinant 에 따라 $0$ 이 아닌 $\omega \in \Omega^n(V)$ 는 $V$ 의 기저 $(v_1,\ldots,\,v_n)$ 를 $\omega$ 함수값이 양수인 것과 음수인 두 집합으로 분할한다. $V$ 의 두 기저 $(u_i)$ 와 $(v_j)$ 사이에 $u_i = \sum_j a_{ij}v_j$ 의 관계가 있을 때 $\det(a_{ij})>0$ 일 때에만 두 기저가 같은 집합에 속한다. 이 두 집합 가운데 하나를 벡터공간 $V$ 의 **방향 (orientation)** 으로 정할 수 있다. 기저 $(v_1,\ldots,v_n)$ 이 속한 방향을 $[v_1,\ldots,v_n]$ 으로 표기하며 반대 방향을 $-[v_1,\ldots,v_n]$ 으로 표기한다. 특별히 $\R^n$ 에서는 표준기저에 대한 방향, 즉 $[e_1,\ldots,e_n]$ 을 **정방향(usual orientation)** 이라고 한다. 
 
-벡터공간에 어떤 내적 $T:V\times V \to \R$ 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 $(e_i)$ 와 $(f_j)$ 
-사이에는 어떤 직교행렬 (orthogonal matrix) $U$ 에 대해 $e_i = U f_i$ 의 관계가 있다는 것을 안다. 직교행렬은 $UU^T=I$ 이므로 $\det(U)= \pm 1$ 이다. 만약 $V$ 의 방향 $\mu$ 가 정해졌다면 정규직교기저 $(e_1,\ldots,e_n)$ 에 대해 $\omega (e_1,\ldots,e_n)=1$ 이 되도록 $\omega\in \Omega^n(V)$ 를 유일하게 정할 수 있다. 이 유일한 $\omega$ 를 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 **부피 요소 (volume element)** 라고 한다. $\R^n$ 에서 $\det$ 는 $\R^n$ 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 $|\det (e_1,\ldots,e_n)|$ 은 원점과 $e_1,\ldots,\,e_n$ 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.
+벡터공간에 어떤 내적 $T:V\times V \to \R$ 이 정해졌다고 하자. 그리고 이 내적에 대한 두 정규직교기저 $(e_i)$ 와 $(f_j)$ 사이에는 어떤 직교행렬 $O$ 에 대해 $e_i = O f_i$ 의 관계가 있다는 것을 안다. 직교행렬은 $OO^T=I$ 이므로 $\det(O)= \pm 1$ 이다. 만약 $V$ 의 방향 $\mu$ 가 정해졌다면 정규직교기저 $(e_1,\ldots,e_n)$ 에 대해 $\omega (e_1,\ldots,e_n)=1$ 이 되도록 $\omega\in \Omega^n(V)$ 를 유일하게 정할 수 있다. 이 유일한 $\omega$ 를 내적 $T$ 와 방향 $\mu$ 에 의해 결정되는 **부피 요소 (volume element)** 라고 한다. $\R^n$ 에서 $\det$ 는 $\R^n$ 의 스칼라곱과 정방향에 의해 결정된 부피 요소와 같으며 $|\det (e_1,\ldots,e_n)|$ 은 원점과 $e_1,\ldots,\,e_n$ 에 의해 결정되는 다차원 평행육면체(parallelipiped) 의 부피이다.
 
 </br>
 
@@ -909,6 +912,7 @@ $\R^3$ 에서의 벡터곱이 아래의 성질을 가짐을 보여라.
 
 ($e$) $\|\bf{v}\times \bf{w}\| = \sqrt{\langle \bf{v}\,\bf{v}\rangle \langle \bf{w},\,\bf{w}\rangle - \langle \bf{v},\,\bf{w}\rangle^2}$.
 
+
 :::
 
 </div>
@@ -1103,16 +1107,16 @@ $$
 
 ::: {#def-CM_vector_field}
 
-$F:\R^n \to T_\bf{p}(\R^n)$ 를 $\R^n$ 에서의 **벡터장 (vector field)** 라고 한다. $F(\bf{p})$ 의 $i$ 번째 성분을 $f_i(\bf{p})$ 로 표기한다.
+$\bf{p}\in \R^n$ 에 대해 $F_\bf{p}  \in T_\bf{p}(\R^n)$ 인 함수 $F$ 를 $\R^n$ 에서의 **벡터장 (vector field)** 이라고 한다. $F_\bf{p}$ 의 $i$ 번째 성분을 $f^i_\bf{p}$ 로 표기한다.
 
 $F,\,G$ 가 벡터장이고 $f:\R^n \to \R$ 함수일 때 연산을 아래와 같이 정의한다.
 
 $$
 \begin{aligned}
-(F+G)(\bf{p}) &:= F(\bf{p}) + F(\bf{p}), \\[0.4em]
-\langle F,\, G\rangle (\bf{p}) &: = \langle F(\bf{p}),\, G(\bf{p})\rangle, \\[0.4em]
-(f\cdot F)(\bf{p}) &:= f(\bf{p})F(\bf{p}), \\[0.4em]
-(F \times \cdots \times G) (\bf{p}) &:= F(\bf{p})\times \cdots \times G(\bf{p}).
+(F+G)_\bf{p} &:= F_\bf{p} + G_\bf{p}, \\[0.4em]
+\langle F,\, G\rangle_\bf{p} &: = \langle F_\bf{p},\, G_\bf{p}\rangle, \\[0.4em]
+(f\cdot F)_\bf{p} &:= f_\bf{p} F_\bf{p}, \\[0.4em]
+(F \times \cdots \times G)_\bf{p} &:= F_\bf{p} \times \cdots \times G_\bf{p}.
 \end{aligned}
 $$
 
@@ -1127,7 +1131,7 @@ $$
 
 ::: {#def-CM_nabla_operator}
 
-$\R^n$ 에서 nabla 연산자 $\nabla$ 를 아래와 같이 정의한다.
+$\R^n$ 에서 $\nabla$ 연산자를 아래와 같이 정의한다.
 
 $$
 \nabla := \sum_{i=1}^n \bf{e}_i \bf{\cdot}D_i.
@@ -1146,10 +1150,10 @@ $$ {#eq-CM_nabla_operator}
 
 
 
-$\R^n$ 에서의 벡터장 $F(\bf{p}) = (f_1(\bf{p}),\ldots,f_n(\bf{p}))$ 에 대해 $\sum_{i=1}^n D_i f_i(\bf{p})$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. $n=3$ 인 경우 아래와 같이 정의된 $\text{curl}\,F(\bf{p})$ 를 $F$ 에 대한 **curl** 이라고 하며 $\nabla \times F$ 로도 표기한다.
+$\R^n$ 에서의 벡터장 $F_\bf{p} = (f^1_\bf{p},\ldots,f^n_\bf{p})$ 에 대해 $\sum_{i=1}^n D_i f^i_\bf{p}$ 를 $F$ 에 대한 **divergence** 라고 하며 $\nabla \cdot F$ 혹은 $\text{div} \,F$ 로 표기한다. $n=3$ 인 경우 아래와 같이 정의된 $\text{curl}\,F_\bf{p}$ 를 $F$ 에 대한 **curl** 이라고 하며 $\nabla \times F$ 로도 표기한다.
 
 $$
-\text{curl}\, F(\bf{p}) := (D_2f_3 - D_3f_2)(\bf{e}_1)_\bf{p} + (D_3f_1 - D_1f_3)(\bf{e}_2)_\bf{p} + (D_1f_2-D_2f_1)(\bf{e}_3)_\bf{p}.
+\text{curl}\, F_\bf{p} := (D_2f^3 - D_3f^2)(\bf{e}_1)_\bf{p} + (D_3f^1 - D_1f^3)(\bf{e}_2)_\bf{p} + (D_1f^2-D_2f^1)(\bf{e}_3)_\bf{p}.
 $$
 
 ::: 
@@ -1159,7 +1163,7 @@ $$
 
 ### 미분 형식 {#sec-CM_differential_form}
 
-$\R^n$ 과 $T_\bf{p}(\R^n)$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-form 을 정의 할 수 있다.
+$\R^n$ 과 $T_\bf{p}(\R^n)$, 벡터함수와 벡터장과 같이 탄젠트 공간에서 정의된 $k$-형식 을 정의 할 수 있다.
 
 ::: {.callout-note icon="false"}
 
@@ -1167,10 +1171,10 @@ $\R^n$ 과 $T_\bf{p}(\R^n)$, 벡터함수와 벡터장과 같이 탄젠트 공�
 
 ::: {#def-CM_differential_form}
 
-$\omega (\bf{p})\in \Omega^k(T_\bf{p}(\R^n))$ 를 $\R^n_\bf{p}$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega(\bf{p})$ 은 아래의 형태이다.
+$\omega_\bf{p} \in \Omega^k(T_\bf{p}(\R^n))$ 를 $\R^n_\bf{p}$ 에서의 $k$-형식, 혹은 **미분 형식(differential form)** 이라고 한다. 표준 기저 $(\bf{e}_i)_\bf{p}$ 에 대한 쌍대 기저를 $\varphi_i (\bf{p})$ 라고 할 때 $k$-형식 $\omega_\bf{p}$ 은 아래의 형태이다.
 
 $$
-\omega(\bf{p}) = \sum_{i_1<\cdots <i_k} \omega_{i_1,\ldots,\,i_k}(\bf{p})\cdot \left[\varphi_{i_1}(\bf{p}) \wedge \cdots \wedge \varphi_{i_k}(\bf{p})\right]
+\omega_\bf{p} = \sum_{i_1<\cdots <i_k} (\omega_{i_1,\ldots,\,i_k})_\bf{p} \cdot \left[{(\varphi_{i_1})}_\bf{p} \wedge \cdots \wedge {(\varphi_{i_k})}_\bf{p} \right]
 $$ {#eq-CM_form_of_differential_form}
 
 ::: 
@@ -1180,20 +1184,29 @@ $$ {#eq-CM_form_of_differential_form}
 
 이제부터 $\omega_{i_1,\ldots,i_k}\varphi_{i_1}\wedge \cdots \wedge \varphi_{i_k}$ 와 같은 표현을 많이 사용할텐다 이것을 항상 이렇게 사용하기는 불편하기 때문에 좀 더 간략한 표현을 사용하고자 한다.
 
-$n$ 차원 벡터공간을 다룰 때 $I = (i_1,\ldots,i_k)$ 가 $1\le i_1<\cdots <i_k\le n$ 인 $k$-tuple 이라고 하자.tuple 은 유한 순서집합을 말한다. 그리고 $[I]$ 는 $n$ 차원 집합에서 $1\le i_1<\cdots <i_k\le n$ 인 모든 $k$-tuple 의 집합이며 그 인덱스를 $I$ 로 표기한다는 것을 의미한다. 이런 의미에서 @eq-CM_form_of_differential_form 는 아래와 같이 표기할 수 있다.
+$n$ 차원 벡터공간을 다룰 때 $I = (i_1,\ldots,i_k)$ 가 $1\le i_1<\cdots <i_k\le n$ 인 $k$-튜플 ($k$-tuple) 이라고 하자. 튜플은 유한 순서집합을 말한다. 그리고 $[I]$ 는 $n$ 차원 집합에서 $1\le i_1<\cdots <i_k\le n$ 인 모든 $k$-tuple 의 집합이며 그 인덱스를 $I$ 로 표기한다는 것을 의미한다. 이런 의미에서 @eq-CM_form_of_differential_form 는 아래와 같이 표기할 수 있다.
 
 $$
 \boxed{
-\quad\omega(\bf{p}) = \sum_{[I]} \omega_I(\bf{p}) d\varphi_I(\bf{p}) \qquad \text{or} \qquad \omega = \sum_{[I]} \omega_I d\varphi_I \quad
+\quad\omega_\bf{p} = \sum_{[I]} \omega_{I,\bf{p}} d\varphi_{I,\bf{p}} \qquad \text{or} \qquad \omega = \sum_{[I]} \omega_I d\varphi_I \quad
 }
-$$
-
-여기서 $\omega_I(\bf{p}) = \omega_{i_1,\ldots,i_k}(\bf{p})$ 이고 $d\varphi_I(\bf{p}) = d\varphi_{i_1}(\bf{p})\wedge \cdots \wedge d\varphi_{i_k}(\bf{p})$ 이다.
+$$ {#eq-CM_concice_representation_of_form}
 
 
+여기서 $\omega_{I,\bf{p}} = (\omega_{i_1,\ldots,i_k})_\bf{p}$ 이고 $d\varphi_{I,\bf{p}} = (d\varphi_{i_1})_\bf{p}\wedge \cdots \wedge (d\varphi_{i_k})_\bf{p}$ 이다.
 
+::: {.callout-note icon="false"}
 
-각각의 $\omega_{I}(\bf{p})$ 가 연속이거나 미분가능 할 때 $\omega (\bf{p})$ 를 연속이거나 미분가능하다고 한다. 여기서 우리는 벡터장이나 $k$-형식이 미분가능하다고 할 때 $C^\infty$ 를 의미한다. 
+#### **미분형식의 미분가능성**
+
+::: {#def-CM_class_of_form}
+
+@eq-CM_concice_representation_of_form 에서 각각의 $\omega_{I,\bf{p}}$ 가 연속이거나 미분가능 할 때 $\omega_\bf{p}$ 를 연속이거나 미분가능하다고 한다. 여기서 벡터장이나 $k$-형식이 미분가능하다고 할 때 $C^\infty$ 를 의미한다. 
+
+:::
+
+:::
+
 
 </br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
@@ -1219,9 +1232,9 @@ $k$-형식 $\omega,\, \zeta$, $m$-형식 $\eta$, 스칼라장 $f$ 에 대해 연
 
 $$
 \begin{aligned}
-\omega (\bf{p}) + \zeta (\bf{p}) &:= \sum_{[I]} \left(\omega_I(\bf{p}) + \zeta_I(\bf{p})\right) \cdot d\varphi_I(\bf{p}), \\[0.3em]
-(f \cdot \omega)(\bf{p})  &:=  \sum_{[I]} \left(f(\bf{p}) \cdot \omega_I(\bf{p}) \right)\cdot d\varphi_I(\bf{p}), \\[0.3em]
-\omega (\bf{p})\wedge \eta (\bf{p}) &:= \sum_{[I]} \sum_{[J]} \omega_{I}(\bf{p})\cdot \eta_{J}(\bf{p})  \left[d\varphi_I(\bf{p}) \wedge d\varphi_{J}(\bf{p}) \right] 
+\omega_\bf{p} + \zeta_\bf{p} &:= \sum_{[I]} \left(\omega_{I,\bf{p}} + \zeta_{I,\bf{p}}\right) \cdot d\varphi_{I,\bf{p}}, \\[0.3em]
+(f \cdot \omega)_\bf{p}  &:=  \sum_{[I]} \left(f_\bf{p} \cdot \omega_{I,\bf{p}} \right)\cdot d\varphi_{I,\bf{p}}, \\[0.3em]
+\omega_\bf{p} \wedge \eta_\bf{p} &:= \sum_{[I]} \sum_{[J]} \omega_{I,\bf{p}} \cdot \eta_{J,\bf{p}}  \left[d\varphi_{I,\bf{p}} \wedge d\varphi_{J,\bf{p}} \right] 
 \end{aligned}
 $$
 
@@ -1233,7 +1246,7 @@ $$
 ### 형식과 미분 {#sec-CM_form_and_differentiation}
 
 
-미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. 이런 함수를 **스칼라장 (scalar field)** 라고 한다. $Df(\bf{p})\in \Omega^1(T_\bf{p}(\R^n))$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
+미분 가능한 함수 $f:\R^n \to \R$ 을 생각하자. 이런 함수를 **스칼라장 (scalar field)** 라고 한다. $Df_\bf{p}\in \Omega^1(T_\bf{p}(\R^n))$ 이므로 아래와 같이 미분과 관련된 1-형식을 정의 할 수 있다.
 
 ::: {.callout-note icon="false"}
 
@@ -1244,23 +1257,23 @@ $$
 $f:\R^n \to \R$ 에 대해 $1$-형식 $df(\bf{p})$ 를 아래와 같이 정의한다. 
 
 $$
-df(\bf{p}) (\bf{v}_\bf{p}) := Df(\bf{p})(\bf{v}) = Df(\bf{p})\cdot \bf{v}.
+df_\bf{p} (\bf{v}_\bf{p}) := Df_\bf{p}(\bf{v}) = Df_\bf{p}\cdot \bf{v}.
 $$ {#eq-CM_differential_1-form}
 
 ::: 
 :::
 
 
-$x_i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x_i$ 의 1차 형식 $dx_i(\bf{p})$ 를 생각 할 수 있다. $T_{\bf{p}}(\R^n)$ 의 표준기저벡터 $(\bf{e}_j)_\bf{p}$ 에 대해 $dx_i(\bf{p})\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx_i (\bf{p})$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
+$x^i :\R^n \to \R$ 을 $\bf{x}\in \R^n$ 의 $i$ 번째 성분을 반환하는 함수라고 하자. 이 함수는 선형함수이고 당연히 미분가능하다. 그렇다면 $x^i$ 의 1차 형식 $dx^i_\bf{p}$ 를 생각 할 수 있다. $T_{\bf{p}}(\R^n)$ 의 표준기저벡터 $(\bf{e}_j)_\bf{p}$ 에 대해 $dx^i_\bf{p}\left((\bf{e}_j)_\bf{p}\right) = \delta_{ij}$ 이므로 $dx^i _\bf{p}$ 는 $(\bf{e}_i)_\bf{p}$ 의 쌍대기저이다. 따라서 $k$-형식 $\omega(\bf{p})$ 는 다음과 같이 쓸 수 있다.
 
 $$
-\omega (\bf{p}) = \sum_{[I]} \omega_{I}(\bf{p}) dx_I(\bf{p}).
+\omega_\bf{p} = \sum_{[I]} \omega_{I,\bf{p}} dx^I_\bf{p}.
 $$
 
-탄젠트 공간을 지정하는 $(\bf{p})$ 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.
+탄젠트 공간을 지정하는 ${}_\bf{p}$ 는 표기의 편의상 생략되는 경우가 많다. 그렇다면 아래와 같이 표기된다.
 
 $$
-\omega = \sum_{[I]} \omega_{I}\cdot dx_{I}.
+\omega = \sum_{[I]} \omega_{I}\cdot dx^{I}.
 $$
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -1270,7 +1283,7 @@ $$
 $f:\R^n \to \R$ 이 미분가능할 때 다음이 성립한다.
 
 $$
-df = D_1 f \cdot dx_1 + \cdots + D_n f \cdot dx_n.
+df = D_1 f \cdot dx^1 + \cdots + D_n f \cdot dx^n.
 $$
 
 :::
@@ -1278,7 +1291,7 @@ $$
 
 ::: {.proof}
 
-$\displaystyle df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f(\bf{p})\cdot v_i = \sum_{i=1}^n D_i f(\bf{p})\cdot \left(dx_i(\bf{p})(\bf{v}_p)\right). \square$
+$\displaystyle df_\bf{p}(\bf{v}_p) = Df_\bf{p} \bf{\cdot}\bf{v} = \sum_{i=1}^n D_i f_\bf{p}\cdot v_i = \sum_{i=1}^n D_i f_\bf{p}\cdot \left(dx^i_\bf{p}(\bf{v}_\bf{p})\right). \square$
 :::
 
 </br>
@@ -1293,22 +1306,22 @@ $\displaystyle df(\bf{p})(\bf{v}_p) = Df(\bf{p}) \bf{\cdot}\bf{v} = \sum_{i=1}^n
 미분가능한 함수 $F:\R^n \to \R^m$ 과 선형변환인 $F'(\bf{p}) \in \mathcal{L}(\R^n, \R^m)$ 을 생각하자. 아래와 같이 정의되는 선형변환 $F_\ast  \in \mathcal{L}(T_\bf{p}(\R^n),\, T_{F(\bf{p})}(\R^m)$ 을 $F$ 에 대한 **push-forward** 라고 한다.
 
 $$
-F_\ast (\bf{v}_p) := \left(F'(\bf{p})(\bf{v})\right)_{F(\bf{p})}
+F_\ast (\bf{v}_p) := \left(F'(\bf{p}) \bf{v}\right)_{F(\bf{p})}
 $$ {#eq-def_CM_push_forward}
 
 
-이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\bf{p})}(\R^m)\right),\, \Omega^k\left(T_\bf{p}(\R^n)\right)\right)$ 아래와 같이 정의하고 이를 **pull-back** 이라고 한다. $\omega \in \Omega^k \left( T_{F(\bf{p})}(\R^m) \right)$ 에 대해
+이로부터 유도되는 선형변환 $F^\ast \in \mathcal{L}\left(\Omega^k\left(T_{F(\bf{p})}(\R^m)\right),\, \Omega^k\left(T_\bf{p}(\R^n)\right)\right)$ 아래와 같이 정의하고 이를 **pull-back** 이라고 한다. $\omega \in \Omega^k \left( T_{F(\bf{p})}(\R^m) \right)$ 에 대해 ($\omega = \omega_{F(\bf{p})}$ 임을 기억하자.)
 
 $$
-(F^\ast \omega) (\bf{p}) := (F_\ast)^\ast (\omega (F(\bf{p})))
+(F^\ast (\omega))_\bf{p} := (F_\ast)^\ast (\omega_{F(\bf{p})}))
 $$ {#eq-def_CM_pull_back}
 
 이다. 그렇다면 
 $$
 \begin{aligned}
-\left(F^\ast \omega\right)(\bf{p})(\bf{v}_1,\ldots,\bf{v}_k) &= (F_\ast)^\ast(\omega(F(\bf{p})))(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
-&= \omega (F(\bf{p})) (F_\ast (\bf{v}_1),\ldots,\, F_\ast(\bf{v}_k)) \\[0.3em]
-&= \omega (F(\bf{p})) \left( \left(F'(\bf{p})(\bf{v}_1)\right)_{F(\bf{p})},\ldots,\,\left(F'(\bf{p})(\bf{v}_k)\right)_{F(\bf{p})} \right)
+\left(F^\ast (\omega)\right)_\bf{p}(\bf{v}_1,\ldots,\bf{v}_k) &= (F_\ast)^\ast(\omega_{F(\bf{p})})(\bf{v}_1,\ldots,\bf{v}_k) \\[0.3em]
+&= \omega_{F(\bf{p})} (F_\ast (\bf{v}_1),\ldots,\, F_\ast(\bf{v}_k)) \\[0.3em]
+&= \omega_{F(\bf{p})} \left( \left(F'(\bf{p})\bf{v}_1 \right)_{F(\bf{p})},\ldots,\,\left(F'(\bf{p})\bf{v}_k\right)_{F(\bf{p})} \right)
 \end{aligned}
 $$
 
@@ -1318,13 +1331,16 @@ $$
 :::
 
 
+@def-CM_pullback_on_differential_function 는 미분가능한 함수에 대한 pull-back 이며 @def-CM_push_forward_and_pull_back 는 미분형식에 대한 pull-back 의 정의이다.
+
+
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
 ::: {#thm-CM_properties_of_full_back}
 
-$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots f_m (\bf{x})\end{bmatrix}^T$ 이 미분가능할 때 다음이 성립한다.
+$F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix} f^1(\bf{x}) & \cdots f^m (\bf{x})\end{bmatrix}^T$ 이 미분가능할 때 다음이 성립한다.
 
-&emsp;($1$) $\displaystyle F^\ast(dx_i) = \sum_{j=1}^n D_jf_i \cdot dx_i = \sum_{j=1}^n \dfrac{\partial f_i}{\partial x_j}\,dx_j$,
+&emsp;($1$) $\displaystyle F^\ast(dx^i) = \sum_{j=1}^n D_jf^i \cdot dx^i = \sum_{j=1}^n \dfrac{\partial f^i}{\partial x^j}\,dx^j$,
 
 &emsp;($2$) $F^\ast (\omega_1 + \omega_2) = F^\ast(\omega_1)+ F^\ast (\omega_2)$, 
 
@@ -1337,13 +1353,13 @@ $F:\R^n \to \R^m$, $F(\bf{x}) = \begin{bmatrix} f_1(\bf{x}) & \cdots f_m (\bf{x}
 
 ::: {.proof}
 
-($1$) $dx_i$ 는 1-형식 이므로
+($1$) $dx^i$ 는 1-형식 이므로
 
 $$
 \begin{aligned}
-F^\ast (dx_i) (\bf{p})(\bf{v}_p) &= dx_i(F(\bf{p})) \left(\left(F'(\bf{p})(\bf{v}_\bf{p})\right)_{F(\bf{p})}\right) \\[0.3em]
-&= dx_i(F(\bf{p}))\left(\sum_{j=1}^n v_j D_jf_1(\bf{p}),\ldots,\,\sum_{j=1}^n v_jD_j f_m (\bf{p})\right)_{F(\bf{p})} \\[0.3em]
-&= \sum_{j=1}^n v_j D_jf_i (\bf{p}) = \sum_{j=1} D_j f_i (\bf{p}) \cdot dx_j(\bf{p})(\bf{v}_\bf{p}).
+(F^\ast (dx^i))_\bf{p}(\bf{v}_p) &= dx^i(F(\bf{p})) \left(\left(F'(\bf{p})\bf{v}_\bf{p}\right)_{F(\bf{p})}\right) \\[0.3em]
+&= dx^i(F(\bf{p}))\left(\sum_{j=1}^n v_j D_jf^1(\bf{p}),\ldots,\,\sum_{j=1}^n v_jD_j f^m (\bf{p})\right)_{F(\bf{p})} \\[0.3em]
+&= \sum_{j=1}^n v_j D_jf^i (\bf{p}) = \sum_{j=1} D_j f^i (\bf{p}) \cdot dx^j_\bf{p}(\bf{v}_\bf{p}).
 \end{aligned}
 $$
 
@@ -1351,9 +1367,9 @@ $$
 
 $$
 \begin{aligned}
-F^\ast (\omega_1 +\omega_2)&(\bf{p})\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right) \\[0.3em]
-&=(\omega_1+\omega_2)(F(\bf{p}))\left(\left(F'(\bf{p})(\bf{v}_1)\right)_{F(\bf{p})},\ldots,\, \left(F'(\bf{p})(\bf{v}_k)\right)_{F(\bf{p})}\right) \\[0.3em]
-&=\left[F^\ast(\omega_1)(\bf{p}) + F^\ast (\omega_2)(\bf{p})\right] \left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right).
+(F^\ast (\omega_1 +\omega_2)&)_\bf{p}\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right) \\[0.3em]
+&=(\omega_1+\omega_2)_{F(\bf{p})}\left(\left(F'(\bf{p})\bf{v}_1\right)_{F(\bf{p})},\ldots,\, \left(F'(\bf{p})\bf{v}_k\right)_{F(\bf{p})}\right) \\[0.3em]
+&=\left[(F^\ast(\omega_1))_\bf{p} + (F^\ast (\omega_2))_\bf{p}\right] \left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right).
 \end{aligned}
 $$
 
@@ -1361,10 +1377,10 @@ $$
 
 $$
 \begin{aligned}
-F^\ast (g \cdot \omega)&(\bf{p})\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right)  \\[0.3em]
-&= (g\cdot \omega)(F(\bf{p}))(F'(\bf{p})(\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}) \\[0.3em]
-&= g(F(\bf{p})) \omega (F(\bf{p})) \left(\left(F'(\bf{p})(\bf{v}_1)\right)_{F(\bf{p})},\ldots,\,\left(F'(\bf{p})(\bf{v}_k)\right)_{F(\bf{p})}\right) \\[0.3em]
-&= (g\circ F) \cdot (F^\ast \omega)(\bf{p}) \left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right).
+(F^\ast (g \cdot \omega)&)_\bf{p}\left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right)  \\[0.3em]
+&= (g\cdot \omega)_{F(\bf{p})}((F'(\bf{p})\bf{v}_1)_{F(\bf{p})},\ldots,\,(F'(\bf{p})\bf{v}_k)_{F(\bf{p})}) \\[0.3em]
+&= g(F(\bf{p})) \omega_{F(\bf{p})}((F'(\bf{p})\bf{v}_1)_{F(\bf{p})},\ldots,\,(F'(\bf{p})\bf{v}_k)_{F(\bf{p})})\\[0.3em]
+&= (g\circ F) \cdot (F^\ast \omega)_\bf{p} \left((\bf{v}_1)_\bf{p},\ldots,(\bf{v}_k)_\bf{p}\right).
 \end{aligned}
 $$
 
@@ -1372,8 +1388,8 @@ $$
 
 $$
 \begin{aligned}
-F^\ast (\omega \wedge \eta)&(\bf{p})((\bf{v}_1)_\bf{p},\ldots, (\bf{v}_{k+l})_\bf{p}) \\[0.3em]
-&= (\omega \wedge \eta)(F(\bf{p})) \left((\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}\right) \\[0.3em]
+(F^\ast (\omega \wedge \eta)&)_\bf{p}((\bf{v}_1)_\bf{p},\ldots, (\bf{v}_{k+l})_\bf{p}) \\[0.3em]
+&= (\omega \wedge \eta)_{F(\bf{p})} \left((\bf{v}_1)_{F(\bf{p})},\ldots,\,F'(\bf{p})(\bf{v}_k)_{F(\bf{p})}\right) \\[0.3em]
 &= (F^\ast \omega \wedge F^\ast \eta)(\bf{p}) ((\bf{v}_1)_\bf{p},\ldots, (\bf{v}_{k+l})_\bf{p}) . \qquad \square
 \end{aligned}
 $$
@@ -1386,49 +1402,50 @@ $$
  
 $$
 \begin{aligned}
-F^\ast &(P \,dx_1 \wedge dx_2 + Q\,dx_2 \wedge dx_3) =  (P \circ F) \cdot F^\ast (dx_1 \wedge dx_2) + (Q\circ F)\cdot F^\ast (dx_2 \wedge dx_3) \\[0.3em]
-&\qquad = (P\circ F)\cdot (F^\ast dx_1 \wedge F^\ast dx_2) + (Q\circ F)\cdot (F^\ast dx_2 \wedge F^\ast dx_3)
+F^\ast &(P \,dx^1 \wedge dx^2 + Q\,dx^2 \wedge dx^3) \\[0.3em]
+&\qquad=  (P \circ F) \cdot F^\ast (dx^1 \wedge dx^2) + (Q\circ F)\cdot F^\ast (dx^2 \wedge dx^3) \\[0.3em]
+&\qquad = (P\circ F)\cdot (F^\ast dx^1 \wedge F^\ast dx^2) + (Q\circ F)\cdot (F^\ast dx^2 \wedge F^\ast dx^3)
 \end{aligned}
 $$
 
-이것은 다소 복잡한 계산이며 이런 류의 계산을 줄이기 위한 정리가 있다.
+이것은 다소 복잡한 계산이며 아래의 정리는 이런 류의 계산을 줄여준다.
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
 
-::: {#prp-CM_full_back_simplification}
+::: {#thm-CM_full_back_simplification}
 
 $F:\R^n \to \R^n$ 이 미분가능 할 때 다음이 성립한다.
 
 $$
-F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h \circ F)\cdot \det (F')\cdot (dx_1 \wedge \cdots \wedge dx_n).
-$$
+F^\ast (h\, dx^1 \wedge \cdots \wedge dx^n) = (h \circ F)\cdot \det (F')\cdot (dx^1 \wedge \cdots \wedge dx^n).
+$$ {#eq-thm-CM_full_back_simplification}
 
 :::
 </div>
 
 ::: {.proof}
 
-@thm-CM_properties_of_full_back 에 의해 
+@thm-CM_properties_of_full_back ($3$) 에 의해 
 
 $$
-F^\ast (h\, dx_1 \wedge \cdots \wedge dx_n) = (h\circ F) \cdot (F^\ast (dx_1 \wedge \cdots \wedge dx_n)).
+F^\ast (h\, dx^1 \wedge \cdots \wedge dx^n) = (h\circ F) \cdot (F^\ast (dx^1 \wedge \cdots \wedge dx^n)).
 $$
 
 여기서 $\R^n$ 의 표준 기저 $\bf{e}_1,\ldots,\,\bf{e}_n$ 을 생각하자. 그리고 $F'(\bf{p})=A$ 는 $n \times n$ 행렬이다. 
 
 $$
 \begin{aligned}
- (F^\ast (dx_1 \wedge \cdots \wedge dx_n))& (\bf{e}_1,\ldots,\,\bf{e}_n) \\[0.3em]
- &= (dx_1 \wedge \cdots \wedge dx_n) (F_\ast (\bf{e}_1),\ldots,\,F_\ast (\bf{e}_n)) \\[0.3em]
- &=(dx_1 \wedge \cdots \wedge dx_n) (F'(\bf{p})(\bf{e}_1),\ldots,\, F'(\bf{p})(\bf{e}_n)) \\[0.3em]
- &=(dx_1 \wedge \cdots \wedge dx_n) \left(\sum_{i=1}^n A_{i1}\bf{e}_i,\ldots \sum_{i=1}^n A_{in}\bf{e}_i\right) \\[0.3em]
+ (F^\ast (dx^1 \wedge \cdots \wedge dx^n))& (\bf{e}_1,\ldots,\,\bf{e}_n) \\[0.3em]
+ &= (dx^1 \wedge \cdots \wedge dx^n) (F_\ast (\bf{e}_1),\ldots,\,F_\ast (\bf{e}_n)) \\[0.3em]
+ &=(dx^1 \wedge \cdots \wedge dx^n) (F'(\bf{p})(\bf{e}_1),\ldots,\, F'(\bf{p})(\bf{e}_n)) \\[0.3em]
+ &=(dx^1 \wedge \cdots \wedge dx^n) \left(\sum_{i=1}^n A_{i1}\bf{e}_i,\ldots \sum_{i=1}^n A_{in}\bf{e}_i\right) \\[0.3em]
 \end{aligned}
 $$
 
 @thm-CM_alternating_tensor_and_determinant 에 따라 다음이 성립한다.
 
 $$
-(F^\ast (dx_1 \wedge \cdots \wedge dx_n)) (\bf{e}_1,\ldots,\,\bf{e}_n) = \det(A)\cdot (dx_1 \wedge \cdots \wedge dx_n)\cdot (\bf{e}_1,\ldots,\,\bf{e}_n).\square
+(F^\ast (dx^1 \wedge \cdots \wedge dx^n)) (\bf{e}_1,\ldots,\,\bf{e}_n) = \det(A)\cdot (dx^1 \wedge \cdots \wedge dx^n)(\bf{e}_1,\ldots,\,\bf{e}_n).\square
 $$
 
 :::
@@ -1443,11 +1460,11 @@ $$
 
 ::: {#def-CM_differential_of_forms}
 
-$\R^n$ 에서 정의된 $k$-형식 $\omega = \sum_{[I]} \omega_{I}dx_{I}$ 에 대한 $\omega$ 의 **외미분 (external derivative)** $d\omega$ 를 아래와 같이 정의한다.
+$\R^n$ 에서 정의된 $k$-형식 $\omega = \sum_{[I]} \omega_{I}dx^{I}$ 에 대한 $\omega$ 의 **외미분 (external derivative)** $d\omega$ 를 아래와 같이 정의한다.
 
 $$
 \begin{aligned}
-d\omega :=& \sum_{[I]} d\omega_{I} \wedge dx_{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx_\alpha \wedge dx_{I}.
+d\omega :=& \sum_{[I]} d\omega_{I} \wedge dx^{I} = \sum_{[I]} \sum_{\alpha=1}^n D_\alpha (\omega_I) \,dx^\alpha \wedge dx^{I}.
 \end{aligned}
 $$ {#eq-CM_def_of_differential_of_form}
 
@@ -1462,7 +1479,7 @@ $k$-형식 $\omega$ 에 대해 $d\omega$ 는 $k+1$ 형식이 된다는 것은 �
 
 $k$-형식 $\omega,\, \eta$ 과 $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to \R^m$ 에 대해 다음이 성립한다.
 
-&emsp;($1$) $d(dx_{I}) = 0$, 
+&emsp;($1$) $d(dx^{I}) = 0$, 
 
 &emsp;($2$) $d(\omega + \eta) = d\omega + d\eta$, 
 
@@ -1476,48 +1493,54 @@ $k$-형식 $\omega,\, \eta$ 과 $l$-형식 $\zeta$, 미분가능한 $F:\R^n \to 
 </div>
 
 ::: {.proof}
-($1$) @eq-CM_def_of_differential_of_form 에서 $D_\alpha (\omega_{i_1,\ldots,i_k})=0$ 이다.
+($1$) @eq-CM_def_of_differential_of_form 에서 $D_\alpha (\omega_{i_1,\ldots,i_k})=\dfrac{d1}{dx^\alpha} = 0$ 이다.
 
-($2$) $D_\alpha (\omega_\cdots + \eta_\cdots )\,dx_\alpha = D_\alpha \omega_\cdots dx_\alpha + D_\alpha \eta_\cdots dx_\alpha$ 이다.
+($2$) $\omega = \sum_{[I]} \omega_I dx^I,\, \eta = \sum_{I} \eta_J dx^I$ 라고 하면,
 
-($3$) $\omega = \omega_I dx_{I}$, $\zeta = \zeta_0 dx_{J}$ 이라고 하자. 
 $$
 \begin{aligned}
-d(\omega \wedge \zeta) &= \sum_{\alpha=1}^n D_\alpha (\omega_I \zeta_J)dx_{\alpha} dx_{I}\wedge dx_{J}\\[0.3em]
-&= \sum_{\alpha} D_\alpha (\omega_I)\,dx_{\alpha} \wedge dx_{I} \wedge \zeta + \omega \wedge (-1)^k D_\alpha (\zeta_J) dx_{\alpha} dx_{J}\\[0.3em]
+d(\omega + \eta) &= \sum_{[I]} \sum_\alpha D_\alpha (\omega_I + \eta_I) dx^\alpha \wedge dx^I = d\omega + d\eta.
+\end{aligned}
+$$
+
+($3$) $\omega = \omega_I dx^{I}$, $\zeta = \zeta_J dx^{J}$ 이라고 하자. @def-CM_arithmatic_of_differential_form 으로부터
+$$
+\begin{aligned}
+d(\omega \wedge \zeta) &= \sum_{\alpha=1}^n D_\alpha (\omega_I \zeta_J)dx_{\alpha} \wedge dx^{I}\wedge dx^{J}\\[0.3em]
+&= \sum_{\alpha} D_\alpha (\omega_I)\,dx^{\alpha} \wedge dx^{I} \wedge \zeta + \omega \wedge (-1)^k D_\alpha (\zeta_J) dx^{\alpha} \wedge dx^{J}\\[0.3em]
 &=d\omega \wedge \zeta + (-1)^k \omega \wedge d\zeta
 \end{aligned}
 $$
 
 이다. $\sum_{[I]}\sum_{[J]}$ 를 고려해도 형태가 유지된다는 것은 쉽게 알 수 있다.
 
-($4$) $\displaystyle d(d \omega) = \sum_{[I]} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha \wedge dx_{I}$ 이다. 여기서 
+($4$) $\displaystyle d(d \omega) = \sum_{[I]} \sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx^\beta \wedge dx^\alpha \wedge dx^{I}$ 이다. 여기서 $D_{\alpha,\beta}=D_{\beta,\alpha}$ 이며 $dx^\beta \wedge dx^\alpha = - dx^\alpha \wedge dx^\beta$ 이므로
 
 $$
-\sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx_\beta \wedge dx_\alpha = 0
+\sum_{\beta=1}^n \sum_{\alpha=1}^n D_{\alpha,\,\beta} (\omega_{I})\, dx^\beta \wedge dx^\alpha = 0.
 $$ 
 
-이므로 $d(d\omega)=0$ 이다.
+따라서 $d(d\omega)=0$.
 
-($5$) $k$ 에 대한 induction 으로 증명한다. $k=0$ 이면 $d\omega = \sum_{i=1}^n(D_i\omega) dx_i$ 이며
+($5$) $k$ 에 대한 induction 으로 증명한다. $k=0$ 이면 $d\omega = \sum_{i=1}^n(D_i\omega) dx^i$ 이며
 
 $$
 \begin{aligned}
-F^\ast (d\omega)(\bf{p})(\bf{v}) &= \sum_{i=1}^n (D_i\omega) (F'(\bf{p})(\bf{v})), \\[0.3em]
-d(F^\ast \omega)(\bf{p})(\bf{v}) &= d{\big (}\omega(F(\bf{p})) (F'(\bf{p})(\bf{v})){\big )}=\sum_{i=1}^n (D_i \omega)(F'(\bf{p})(\bf{v}))
+(F^\ast (d\omega))_\bf{p}(\bf{v}) &= \sum_{i=1}^n (D_i\omega)_{F(\bf{p})} (F'(\bf{p})\bf{v})\,dx^i_{F(\bf{p})}, \\[0.3em]
+d(F^\ast \omega)_\bf{p}(\bf{v}) &= d{\big (}\omega_{F(\bf{p})} (F'(\bf{p})\bf{v}){\big )}=\sum_{i=1}^n (D_i \omega)_{F(\bf{p})}(F'(\bf{p})(\bf{v}))\,dx^i_{F(\bf{p})}
 \end{aligned}
 $$
 
-이다. 이제 $k$ 보다 작은 자연수에 대해 성립함을 가정하고 $k+1$ 형식인 $d(\omega \wedge dx_i)$ 에서 성립함을 보이자.
+이다. 이제 $k$ 보다 크지 않은 자연수에 대해 성립함을 가정하고 $k+1$ 형식인 $d(\omega \wedge dx_i)$ 에서 성립함을 보이자.
 
 $$
 \begin{aligned}
-F^\ast (d(\omega \wedge dx_i)) &=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i)) \\[0.3em]
+F^\ast (d(\omega \wedge dx_i)) &=F^\ast ( d\omega \wedge dx_i + (-1)^k \omega \wedge d(dx_i))\,\\[0.3em]
 &= F^\ast (d\omega \wedge dx_i) = F^\ast (d\omega )\wedge F^\ast (dx_i) \\[0.3em]
 \end{aligned}
 $$ {#eq-prp-CM_basic_properties_of_differential_of_form}
 
-이다. 여기서
+이다. 마지막의 등호는 @thm-CM_properties_of_full_back ($4$) 로부터. 여기서
 
 $$
 d(F^\ast \omega \wedge F^\ast dx_i) = d(F^\ast \omega) \wedge (F^\ast dx_i) + (-1)^k (F^\ast \omega)\wedge d(F^\ast dx_i)
@@ -1606,11 +1629,11 @@ $I\omega$ 의 정의가 일단 성립하기 위해 필요한 조건을 살펴 �
 
 ::: {.callout-note icon="false"}
 
-#### 미분가능한 호모토피
+#### **미분가능한 호모토피**
 
 ::: {#def-CM_differentiable_homotopy}
 
-$A\subset \R^n,\,B\subset \R^m$ 이 열린 집합이고 $G,\,H \to A\to B$ 가 $C^\infty$ 사상이라고 하자. 이 때 어떤 $C^\infty$ 사상 $K:A\times [0,\,1] \to B$ 가 존재하여
+$A\subset \R^n,\,B\subset \R^m$ 이 열린 집합이고 $G,\,H : A\to B$ 가 $C^\infty$ 사상이라고 하자. 이 때 어떤 $C^\infty$ 사상 $K:A\times [0,\,1] \to B$ 가 존재하여
 
 $$
 K(\bf{x},\,0) = G(\bf{x}),\qquad K(\bf{x},\,1) = H(\bf{x})

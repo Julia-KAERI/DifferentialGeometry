@@ -485,7 +485,7 @@ $$
 \end{aligned}
 $$
 
-네번째 등식은 @prp-CM_full_back_simplification 로부터 얻었다.
+네번째 등식은 @thm-CM_full_back_simplification 로부터 얻었다.
 
 
 :::

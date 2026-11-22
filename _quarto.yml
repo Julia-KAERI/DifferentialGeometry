@@ -39,7 +39,7 @@ format:
   html:
     theme: cosmo
     fontsize: 0.9em
-    # html-math-method: mathml
+    html-math-method: mathjax
     css: custom.css
   # pdf:
   #   documentclass: scrreprt

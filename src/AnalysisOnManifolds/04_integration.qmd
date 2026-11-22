@@ -52,7 +52,7 @@ $n$ cell $q=[a^{(1)}_{i_1},\,a^{(1)}_{i_1+1}] \times \cdots \times [a^{(n)}_{i_n
 
 ::: {.callout-note icon="false"}
 
-#### refinement
+#### **refinement**
 
 ::: {#def-CM_refinement_of_partition}
 
@@ -63,7 +63,7 @@ $n$-cell $Q$ 에 대한 두 분할 $P_1$, $P_2$ 를 생각하자. $P_1$ 에 의�
 
 ::: {.callout-note icon="false"}
 
-#### 리만 상합, 리만 하합
+#### **리만 상합, 리만 하합**
 
 ::: {#def-CM_riemann_upper_sum_and_lower_sum}
 
@@ -134,7 +134,7 @@ $$
 
 ::: {.callout-note icon="false"}
 
-#### 리만 적분
+#### **리만 적분**
 
 ::: {#def-CM_riemann_integration_of_multivariable_function}
 
@@ -448,7 +448,7 @@ $f:A \to \R$ 이 적분가능하다면 $|f|$ 역시 적분가능하며 $\left|\i
 
 </div>
 
-::: {.proof}
+::: {.solution}
 
 $f^+(x) := \max (f(x),\,0),\, f^-(x) = \min (f(x),\,0)$ 이라고 하자. $f = f^+ + f^-$ 이며 $|f|=f^+ - f^-$ 이다. $A$ 에 포함되는 임의의 $n$-cell $S$ 에 대해
 
@@ -490,7 +490,7 @@ $f$ 가 적분가능하며 $\int_{[0,\,1]\times [0,\,1]} f = 0$ 임을 보여라
 
 ::: {.solution}
 
-임의의 partition $P\in \mathcal{P}{[0,1]\times [0,\,1]}$ 에 대해 $L(f,\,P)=0$ 임은 자명하다.
+임의의 분할 $P\in \mathcal{P}{[0,1]\times [0,\,1]}$ 에 대해 $L(f,\,P)=0$ 임은 자명하다.
 
 $f(x,\,y)=1$ 인 값은 $y=1$ 인 경우밖에 없다. $f(x,\,y)=1/2$ 인 것은 $y=2$ 인 경우, $f(x,\,y)=1/3$ 인 것은 $y=1/3,\, 2/3$ 인 경우이다. 즉 $f(x,\,y)=1/q$ 인 $y$ 값은 $q=1$ 인 경우를 제외하면 최대 $q-1$ 개이다. 
 
